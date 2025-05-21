@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .header {
+            color: #8e44ad;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            color: #8e44ad;
+        }
+        
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #16a085;
+        }
+        
+        .characters {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .grammar-goals {
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .conversation {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .japanese {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        .romaji {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .vietnamese {
+            color: #27ae60;
+        }
+        
+        .base {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .transform {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .middle {
+            color: #d35400;
+            font-weight: bold;
+        }
+        
+        .added {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .result {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .note {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        
+        .noun {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .verb {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .particle {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        
+        .purpose {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .state {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .benefit {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .grammar-point {
+            background-color: #fff8e1;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .examples {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .practice {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px dashed #4caf50;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-top: 10px;
+        }
+        
+        .answer {
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f1f8e9;
+            border-radius: 5px;
+        }
+        
+        .vocab {
+            background-color: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .vocab-item {
+            margin-bottom: 5px;
+        }
+        
+        .separator {
+            height: 2px;
+            background-color: #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        .scene {
+            background-color: #e8f4fd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #1565c0;
+        }
+        
+        .purpose-highlight {
+            background-color: #e8eaf6;
+            border-left: 3px solid #3f51b5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .state-highlight {
+            background-color: #fff3e0;
+            border-left: 3px solid #ff9800;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🇯🇵 Học N4 JLPT cùng Nam - Buổi 7 📅</h1>
+        <h2>🎯 Diễn Đạt Mục Đích: ～ために và ～ように 🎯</h2>
+        <img src="https://via.placeholder.com/800x300?text=%E7%9B%AE%E6%A8%99%E3%82%92%E9%81%94%E6%88%90%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB" alt="Biểu đạt mục đích" style="width: 100%; border-radius: 8px; margin-top: 15px;">
+    </div>
+    
+    <h3>📚 Chủ đề / Bối cảnh</h3>
+    <p><em>Nam nói chuyện với David về lý do cậu ấy học tiếng Nhật và nấu ăn, chia sẻ về những mục tiêu cậu ấy muốn đạt được trong tương lai.</em></p>
+    
+    <div class="characters">
+        <h3>👥 Nhân vật</h3>
+        <ul>
+            <li><strong>Nam</strong> 👨‍🎓: Chia sẻ về mục tiêu, lý do học tập của mình.</li>
+            <li><strong>David</strong> 👨‍🍳: Lắng nghe, hỏi thêm và chia sẻ mục tiêu của bản thân.</li>
+        </ul>
+    </div>
+    
+    <div class="grammar-goals">
+        <h3>🎯 Mục tiêu Ngữ Pháp Chính</h3>
+        <ul>
+            <li>✨ <strong>～ために (tame ni)</strong>: Vì ~ / Để ~ (Chỉ mục đích hoặc lợi ích, thường đi với hành động có ý chí)</li>
+            <li>✨ <strong>～ように (you ni)</strong>: Để ~ (Chỉ mục tiêu, trạng thái mong muốn đạt được, thường đi với V thể khả năng hoặc V thể ない)</li>
+        </ul>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <h2>💬 会話 (Kaiwa) - Hội thoại</h2>
+    
+    <div class="conversation">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <img src="https://via.placeholder.com/600x300?text=Nam+v%C3%A0+David+%E2%80%93+%C4%90ang+%C3%B4n+b%C3%A0i+sau+gi%E1%BB%9D+h%E1%BB%8Dc" alt="Nam và David – Đang ôn bài sau giờ học" style="width: 90%; border-radius: 8px;">
+        </div>
+        
+        <div class="scene">Nam và David đang cùng nhau ôn bài sau giờ học</div>
+        
+        <p>
+            <strong>デビッド (David)</strong>: <span class="japanese">ナムさんは本当（ほんとう）に熱心（ねっしん）だね。毎日（まいにち）日本語（にほんご）の勉強（べんきょう）も料理（りょうり）の練習（れんしゅう）も頑張（がんば）ってる。</span><br>
+            <span class="romaji">(Namu-san wa hontou ni nesshin da ne. Mainichi Nihongo no benkyou mo ryouri no renshuu mo ganbatteru.)</span><br>
+            <span class="vietnamese">(Nam thực sự nhiệt tình nhỉ. Ngày nào cũng cố gắng cả học tiếng Nhật lẫn luyện tập nấu ăn.)</span>
+        </p>
+        
+        <p>
+            <strong>ナム (Nam)</strong>: <span class="japanese">うん。将来（しょうらい）、サイゴンで自分（じぶん）のレストランを開（ひら）く<span class="result">ために</span>、今（いま）しっかり勉強（べんきょう）したいんだ。それに、お客（きゃく）さんとスムーズに話（はな）せる<span class="result">ように</span>、日本語（にほんご）ももっと上手（じょうず）になりたい。</span><br>
+            <span class="romaji">(Un. Shourai, Saigon de jibun no resutoran o hiraku <span class="result">tame ni</span>, ima shikkari benkyou shitain da. Sore ni, okyaku-san to sumuuzu ni hanaseru <span class="result">you ni</span>, Nihongo mo motto jouzu ni naritai.)</span><br>
+            <span class="vietnamese">(Ừ. <strong>Để</strong> tương lai mở nhà hàng của riêng mình ở Sài Gòn, bây giờ tớ muốn học hành chăm chỉ. Thêm nữa, <strong>để</strong> có thể nói chuyện với khách hàng một cách trôi chảy, tớ cũng muốn giỏi tiếng Nhật hơn nữa.)</span>
+        </p>
+        
+        <p>
+            <strong>デビッド (David)</strong>: <span class="japanese">すごい目標（もくひょう）だね！ 僕（ぼく）は日本（にほん）の文化（ぶんか）を深（ふか）く知（し）る<span class="result">ために</span>、和食（わしょく）を学（まな）んでるんだ。特（とく）に、お寿司（すし）が握（にぎ）れる<span class="result">ように</span>なりたいな。</span><br>
+            <span class="romaji">(Sugoi mokuhyou da ne! Boku wa Nihon no bunka o fukaku shiru <span class="result">tame ni</span>, washoku o mananderun da. Toku ni, o-sushi ga nigireru <span class="result">you ni</span> naritai na.)</span><br>
+            <span class="vietnamese">(Mục tiêu tuyệt vời nhỉ! Tớ thì học món Nhật <strong>để</strong> biết sâu hơn về văn hóa Nhật Bản. Đặc biệt, tớ muốn <strong>để có thể</strong> làm sushi.)</span>
+        </p>
+        
+        <p>
+            <strong>ナム (Nam)</strong>: <span class="japanese">お寿司（すし）か。いいね！ぼくは将来サイゴンで日本料理レストラン事業をやろうと考えています。メニューには絶対にすしがあるんだね。</span><br>
+            <span class="romaji">(O-sushi ka. Ii ne! Boku wa shourai Saigon de Nihon ryouri resutoran jigyou o yarou to kangaete imasu. Menyuu ni wa zettai ni sushi ga aru n da ne.)</span><br>
+            <span class="vietnamese">(Sushi à? Hay đấy! Tớ đang nghĩ sẽ kinh doanh nhà hàng ẩm thực Nhật ở Sài Gòn trong tương lai. Trong menu chắc chắn sẽ có sushi.)</span>
+        </p>
+        
+        <p>
+            <strong>デビッド (David)</strong>: <span class="japanese">日本料理のレストランだね。すごいね。Namくん、ぼくはナムくんのバインミーやフォが大好きなんだ。にほんでフォとバインミーのチェーン店を立ち上げるのはどうだ。</span><br>
+            <span class="romaji">(Nihon ryouri no resutoran da ne. Sugoi ne. Namu-kun, boku wa Namu-kun no bain mii ya fo ga daisuki nan da. Nihon de fo to bain mii no cheen-ten o tachiageru no wa dou da.)</span><br>
+            <span class="vietnamese">(Nhà hàng ẩm thực Nhật à. Tuyệt vời nhỉ. Nam này, tớ rất thích bánh mì và phở của cậu. Cậu nghĩ sao về việc mở chuỗi cửa hàng phở và bánh mì ở Nhật?)</span>
+        </p>
+        
+        <p>
+            <strong>ナム (Nam)</strong>: <span class="japanese">それはこころのなかにあるんだよ。まずはさいごんでの和食レストランだね。なので、まずは漢字だよ。じゃあ、忘（わす）れない<span class="result">ように</span>、今日（きょう）習（なら）った漢字（かんじ）を復習（ふくしゅう）しなくちゃ。</span><br>
+            <span class="romaji">(Sore wa kokoro no naka ni aru n da yo. Mazu wa Saigon de no washoku resutoran da ne. Na node, mazu wa kanji da yo. Jaa, wasure nai <span class="result">you ni</span>, kyou naratta kanji o fukushuu shinakucha.)</span><br>
+            <span class="vietnamese">(Điều đó có trong lòng tớ rồi. Nhưng trước tiên là nhà hàng món Nhật ở Sài Gòn đã. Vì vậy, đầu tiên là học chữ Hán. Thế nên, <strong>để không quên</strong>, tớ phải ôn lại chữ Hán đã học hôm nay.)</span><br>
+            <span class="note">* しなくちゃ là dạng nói tắt thân mật của しなければならない</span>
+        </p>
+        
+        <p>
+            <strong>デビッド (David)</strong>: <span class="japanese">さすがにナムくん。目標があって、それに向かって、コツコツ行動するのがすばらしい。あ、僕（ぼく）も！一緒（いっしょ）に頑張（がんば）ろう！</span><br>
+            <span class="romaji">(Sasuga ni Namu-kun. Mokuhyou ga atte, sore ni mukatte, kotsu kotsu koudou suru no ga subarashii. A, boku mo! Issho ni ganbarou!)</span><br>
+            <span class="vietnamese">(Đúng là Nam. Có mục tiêu và từng bước hành động hướng tới mục tiêu đó thật tuyệt vời. À, tớ cũng vậy! Cùng cố gắng nào!)</span>
+        </p>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <h2>📝 文法 (Bunpou) - Ngữ pháp</h2>
+    
+    <div class="grammar-point">
+        <h3>🔵 ～ために (tame ni)</h3>
+        
+        <h4>📌 Ý nghĩa</h4>
+        <p>Diễn tả mục đích (<span class="purpose">"để..."</span>) hoặc lợi ích/nguyên nhân (<span class="benefit">"vì..."</span>, <span class="benefit">"cho..."</span>). Cấu trúc này thường được dùng khi người nói có ý chí rõ ràng và hành động để đạt được mục đích đó.</p>
+        
+        <h4>📌 Cách dùng</h4>
+        <ol>
+            <li><strong><span class="noun">Danh từ</span> + <span class="particle">の</span> + <span class="purpose">ために</span>:</strong> <span class="benefit">Vì</span> <span class="noun">N</span> / <span class="benefit">Cho</span> <span class="noun">N</span>.</li>
+            <li><strong><span class="verb">Động từ thể từ điển (V-る)</span> + <span class="purpose">ために</span>:</strong> <span class="purpose">Để</span> làm <span class="verb">V</span>.</li>
+        </ol>
+        
+        <h4>📌 Ví dụ trong hội thoại</h4>
+        <div class="purpose-highlight">
+            <span class="verb">自分のレストランを開く</span> + <span class="purpose">ために</span> → <span class="result">自分のレストランを開くために</span><br>
+            (jibun no resutoran o hiraku tame ni)<br>
+            <em><span class="purpose">Để</span> mở nhà hàng của riêng mình</em>
+        </div>
+        
+        <div class="purpose-highlight">
+            <span class="verb">文化を深く知る</span> + <span class="purpose">ために</span> → <span class="result">文化を深く知るために</span><br>
+            (bunka o fukaku shiru tame ni)<br>
+            <em><span class="purpose">Để</span> biết sâu hơn về văn hóa</em>
+        </div>
+        
+        <h4>📌 Lưu ý</h4>
+        <ul>
+            <li>Chủ ngữ của hai vế thường giống nhau khi chỉ mục đích.</li>
+            <li>～<span class="purpose">ために</span> nhấn mạnh vào hành động có ý chí rõ ràng để đạt được mục đích.</li>
+            <li>Thường dùng với <span class="verb">động từ chỉ hành động</span> (có thể điều khiển được, có ý chí).</li>
+        </ul>
+    </div>
+    
+    <div class="grammar-point">
+        <h3>🟠 ～ように (you ni) [Mục đích]</h3>
+        
+        <h4>📌 Ý nghĩa</h4>
+        <p>Diễn tả mục tiêu, trạng thái mong muốn đạt được (<span class="purpose">"để..."</span>). Khác với ～<span class="purpose">ために</span>, cấu trúc ～<span class="state">ように</span> thường đi với những động từ không thể hiện ý chí mạnh mẽ của người nói, đặc biệt là động từ thể khả năng hoặc động từ thể ない. Nó hướng tới việc đạt được một trạng thái, khả năng nào đó.</p>
+        
+        <h4>📌 Cách dùng</h4>
+        <ul>
+            <li><strong><span class="verb">Động từ thể khả năng</span> + <span class="state">ように</span>:</strong> <span class="purpose">Để</span> <span class="state">có thể</span> làm gì đó.</li>
+            <li><strong><span class="verb">Động từ thể ない</span> + <span class="state">ように</span>:</strong> <span class="purpose">Để</span> <span class="state">không</span> làm gì đó.</li>
+        </ul>
+        
+        <h4>📌 Ví dụ trong hội thoại</h4>
+        <div class="state-highlight">
+            <span class="verb">話せる</span> + <span class="state">ように</span> → <span class="result">話せるように</span><br>
+            (hanaseru you ni)<br>
+            <em><span class="purpose">Để</span> <span class="state">có thể</span> nói chuyện</em>
+        </div>
+        
+        <div class="state-highlight">
+            <span class="verb">忘れ</span><span class="transform">ない</span> + <span class="state">ように</span> → <span class="result">忘れないように</span><br>
+            (wasurenai you ni)<br>
+            <em><span class="purpose">Để</span> <span class="state">không</span> quên</em>
+        </div>
+        
+        <div class="state-highlight">
+            <span class="verb">握れる</span> + <span class="state">ように</span> → <span class="result">握れるように</span><br>
+            (nigireru you ni)<br>
+            <em><span class="purpose">Để</span> <span class="state">có thể</span> làm (sushi)</em>
+        </div>
+        
+        <h4>📌 Lưu ý</h4>
+        <ul>
+            <li>Thường dùng với <span class="verb">động từ thể khả năng</span> (～できる, ～れる, ～える) hoặc <span class="verb">động từ thể phủ định</span> (～ない).</li>
+            <li>Nhấn mạnh vào <span class="state">trạng thái</span>, kết quả muốn đạt được, không phải hành động để đạt được nó.</li>
+        </ul>
+    </div>
+    
+    <h3>🔄 So sánh ～ために và ～ように</h3>
+    
+    <table class="comparison-table">
+        <tr>
+            <th>Cấu trúc</th>
+            <th>Đặc điểm</th>
+            <th>Ví dụ</th>
+        </tr>
+        <tr>
+            <td><strong>～<span class="purpose">ために</span></strong></td>
+            <td>
+                - Nhấn mạnh <span class="verb">hành động có ý chí</span><br>
+                - Đi với <span class="verb">V thể từ điển</span><br>
+                - Chỉ mục đích rõ ràng
+            </td>
+            <td>
+                <span class="japanese"><span class="verb">大学に入る</span><span class="purpose">ために</span>勉強する</span><br>
+                <em><span class="purpose">Để</span> vào đại học</em><br>
+                (Hành động: học)
+            </td>
+        </tr>
+        <tr>
+            <td><strong>～<span class="state">ように</span></strong></td>
+            <td>
+                - Nhấn mạnh <span class="state">trạng thái</span>, kết quả<br>
+                - Đi với <span class="verb">V thể khả năng/V-ない</span><br>
+                - Chỉ trạng thái mong muốn đạt được
+            </td>
+            <td>
+                <span class="japanese"><span class="verb">大学に入れる</span><span class="state">ように</span>勉強する</span><br>
+                <em><span class="purpose">Để</span> <span class="state">có thể</span> vào đại học</em><br>
+                (Trạng thái: có khả năng vào)
+            </td>
+        </tr>
+    </table>
+    
+    <div class="separator"></div>
+    
+    <h2>🌟 例文 (Reibun) - Ví dụ bổ sung</h2>
+    
+    <div class="examples">
+        <h3>💭 ～<span class="purpose">ために</span></h3>
+        
+        <p>
+            <span class="japanese"><span class="noun">健康</span>（けんこう）<span class="particle">の</span><span class="purpose">ために</span>、毎日（まいにち）ジョギングをしています。</span><br>
+            <span class="romaji">(Kenkou no tame ni, mainichi jogingu o shite imasu.)</span><br>
+            <span class="vietnamese">(<span class="benefit">Vì</span> <span class="noun">sức khỏe</span>, tôi chạy bộ mỗi ngày.)</span>
+        </p>
+        
+        <p>
+            <span class="japanese">N4（エヌよん）に<span class="verb">合格する</span><span class="purpose">ために</span>、一生懸命（いっしょうけんめい）勉強（べんきょう）しました。</span><br>
+            <span class="romaji">(N4 ni goukaku suru tame ni, isshoukenmei benkyou shimashita.)</span><br>
+            <span class="vietnamese">(<span class="purpose">Để</span> <span class="verb">đỗ</span> N4, tôi đã học hết sức chăm chỉ.)</span>
+        </p>
+        
+        <p>
+            <span class="japanese">日本（にほん）へ<span class="verb">留学する</span><span class="purpose">ために</span>、お金（かね）を貯（た）めています。</span><br>
+            <span class="romaji">(Nihon e ryuugaku suru tame ni, okane o tamete imasu.)</span><br>
+            <span class="vietnamese">(<span class="purpose">Để</span> <span class="verb">du học</span> Nhật Bản, tôi đang tiết kiệm tiền.)</span>
+        </p>
+    </div>
+    
+    <div class="examples">
+        <h3>💭 ～<span class="state">ように</span> [Mục đích]</h3>
+        
+        <p>
+            <span class="japanese">日本語（にほんご）のニュースが<span class="verb">わかる</span><span class="state">ように</span>なりたいです。</span><br>
+            <span class="romaji">(Nihongo no nyuusu ga wakaru you ni naritai desu.)</span><br>
+            <span class="vietnamese">(Tôi muốn <span class="purpose">để</span> <span class="state">có thể</span> <span class="verb">hiểu</span> được tin tức tiếng Nhật.)</span>
+        </p>
+        
+        <p>
+            <span class="japanese">風邪（かぜ）を<span class="verb">ひかない</span><span class="state">ように</span>、暖（あたた）かい服（ふく）を着（き）てください。</span><br>
+            <span class="romaji">(Kaze o hikanai you ni, atatakai fuku o kite kudasai.)</span><br>
+            <span class="vietnamese">(Hãy mặc quần áo ấm <span class="purpose">để</span> <span class="state">không</span> <span class="verb">bị cảm lạnh</span>.)</span>
+        </p>
+        
+        <p>
+            <span class="japanese">お客（きゃく）さんが<span class="verb">待たない</span><span class="state">ように</span>、早（はや）く料理（りょうり）を出（だ）しましょう。</span><br>
+            <span class="romaji">(Okyaku-san ga matanai you ni, hayaku ryouri o dashimashou.)</span><br>
+            <span class="vietnamese">(Chúng ta hãy nhanh chóng mang đồ ăn ra <span class="purpose">để</span> khách hàng <span class="state">không</span> <span class="verb">phải đợi</span>.)</span>
+        </p>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <h2>🏋️‍♀️ Luyện tập nhỏ</h2>
+    
+    <div class="practice">
+        <div class="question">📝 Câu hỏi 1</div>
+        <p>Bạn học tiếng Nhật "để" làm gì? Hãy dùng ～<span class="purpose">ために</span> hoặc ～<span class="state">ように</span> để trả lời.</p>
+        
+        <div class="answer">
+            <span class="japanese">日本（にほん）の文化（ぶんか）を<span class="verb">理解する</span><span class="purpose">ために</span>、日本語（にほんご）を勉強（べんきょう）しています。</span><br>
+            <span class="romaji">(Nihon no bunka o rikai suru tame ni, Nihongo o benkyou shite imasu.)</span><br>
+            <span class="vietnamese">(<span class="purpose">Để</span> <span class="verb">hiểu</span> văn hóa Nhật Bản, tôi học tiếng Nhật.)</span>
+        </div>
+        
+        <div class="answer">
+            <span class="japanese">日本人（にほんじん）と自由（じゆう）に<span class="verb">話せる</span><span class="state">ように</span>、日本語（にほんご）を勉強（べんきょう）しています。</span><br>
+            <span class="romaji">(Nihonjin to jiyuu ni hanaseru you ni, Nihongo o benkyou shite imasu.)</span><br>
+            <span class="vietnamese">(<span class="purpose">Để</span> <span class="state">có thể</span> <span class="verb">nói chuyện</span> tự do với người Nhật, tôi học tiếng Nhật.)</span>
+        </div>
+        
+        <div class="question">📝 Câu hỏi 2</div>
+        <p>Nói "Tôi ôn tập mỗi ngày để không quên Kanji". Bạn sẽ nói thế nào?</p>
+        <p>(Kanji: 漢字 kanji, Quên: 忘れる wasureru, Ôn tập: 復習する fukushuu suru)</p>
+        
+        <div class="answer">
+            <span class="japanese">漢字（かんじ）を<span class="verb">忘れない</span><span class="state">ように</span>、毎日（まいにち）復習（ふくしゅう）します。</span><br>
+            <span class="romaji">(Kanji o wasurenai you ni, mainichi fukushuu shimasu.)</span><br>
+            <span class="vietnamese">(<span class="purpose">Để</span> <span class="state">không</span> <span class="verb">quên</span> Kanji, tôi ôn tập mỗi ngày.)</span>
+        </div>
+        
+        <div class="question">📝 Câu hỏi 3</div>
+        <p>Nói "Tôi tiết kiệm tiền để mua xe ô tô". Bạn sẽ nói thế nào?</p>
+        <p>(Tiết kiệm tiền: 貯金する chokin suru, Xe ô tô: 車 kuruma)</p>
+        
+        <div class="answer">
+            <span class="japanese">車（くるま）を<span class="verb">買う</span><span class="purpose">ために</span>、お金（かね）を貯金（ちょきん）しています。</span><br>
+            <span class="romaji">(Kuruma o kau tame ni, okane o chokin shite imasu.)</span><br>
+            <span class="vietnamese">(<span class="purpose">Để</span> <span class="verb">mua</span> xe ô tô, tôi tiết kiệm tiền.)</span>
+        </div>
+    </div>文化（ぶんか）を理解（りかい）するために、日本語（にほんご）を勉強（べんきょう）しています。</span><br>
+            <span class="romaji">(Nihon no bunka o rikai suru tame ni, Nihongo o benkyou shite imasu.)</span><br>
+            <span class="vietnamese">(Tôi học tiếng Nhật để hiểu văn hóa Nhật Bản.)</span>
+        </div>
+        
+        <div class="answer">
+            <span class="japanese">日本人（にほんじん）と自由（じゆう）に話（はな）せるように、日本語（にほんご）を勉強（べんきょう）しています。</span><br>
+            <span class="romaji">(Nihonjin to jiyuu ni hanaseru you ni, Nihongo o benkyou shite imasu.)</span><br>
+            <span class="vietnamese">(Tôi học tiếng Nhật để có thể nói chuyện tự do với người Nhật.)</span>
+        </div>
+        
+        <div class="question">📝 Câu hỏi 2</div>
+        <p>Nói "Tôi ôn tập mỗi ngày để không quên Kanji". Bạn sẽ nói thế nào?</p>
+        <p>(Kanji: 漢字 kanji, Quên: 忘れる wasureru, Ôn tập: 復習する fukushuu suru)</p>
+        
+        <div class="answer">
+            <span class="japanese">漢字（かんじ）を忘（わす）れないように、毎日（まいにち）復習（ふくしゅう）します。</span><br>
+            <span class="romaji">(Kanji o wasurenai you ni, mainichi fukushuu shimasu.)</span><br>
+            <span class="vietnamese">(Tôi ôn tập mỗi ngày để không quên Kanji.)</span>
+        </div>
+        
+        <div class="question">📝 Câu hỏi 3</div>
+        <p>Nói "Tôi tiết kiệm tiền để mua xe ô tô". Bạn sẽ nói thế nào?</p>
+        <p>(Tiết kiệm tiền: 貯金する chokin suru, Xe ô tô: 車 kuruma)</p>
+        
+        <div class="answer">
+            <span class="japanese">車（くるま）を買（か）うために、お金（かね）を貯金（ちょきん）しています。</span><br>
+            <span class="romaji">(Kuruma o kau tame ni, okane o chokin shite imasu.)</span><br>
+            <span class="vietnamese">(Tôi tiết kiệm tiền để mua xe ô tô.)</span>
+        </div>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <h2>🎉 Hoàn thành!</h2>
+    
+    <p>Chúc mừng! Bạn đã hoàn thành Buổi 7 của khóa học N4 JLPT cùng Nam. Hôm nay chúng ta đã học cách diễn đạt mục đích trong tiếng Nhật với hai cấu trúc quan trọng: <strong>～ために</strong> và <strong>～ように</strong>!</p>
+    
+    <div style="text-align: center; margin: 20px 0;">
+        <img src="https://via.placeholder.com/800x400?text=Ho%C3%A0n+th%C3%A0nh+Bu%E1%BB%95i+7%3A+Di%E1%BB%85n+%C4%91%E1%BA%A1t+m%E1%BB%A5c+%C4%91%C3%ADch" alt="Hoàn thành Buổi 7" style="width: 90%; border-radius: 8px;">
+    </div>
+    
+    <div class="vocab">
+        <h3>🔑 Từ vựng quan trọng</h3>
+        <div class="vocab-item">
+            <strong>熱心 (ねっしん)</strong> - Nhiệt tình
+        </div>
+        <div class="vocab-item">
+            <strong>将来 (しょうらい)</strong> - Tương lai
+        </div>
+        <div class="vocab-item">
+            <strong>自分 (じぶん)</strong> - Bản thân
+        </div>
+        <div class="vocab-item">
+            <strong>開く (ひらく)</strong> - Mở (cửa hàng, doanh nghiệp)
+        </div>
+        <div class="vocab-item">
+            <strong>しっかり (shikkari)</strong> - Chăm chỉ, kỹ lưỡng
+        </div>
+        <div class="vocab-item">
+            <strong>お客さん (おきゃくさん)</strong> - Khách hàng
+        </div>
+        <div class="vocab-item">
+            <strong>スムーズに (sumuuzu ni)</strong> - Trôi chảy
+        </div>
+        <div class="vocab-item">
+            <strong>目標 (もくひょう)</strong> - Mục tiêu
+        </div>
+        <div class="vocab-item">
+            <strong>文化 (ぶんか)</strong> - Văn hóa
+        </div>
+        <div class="vocab-item">
+            <strong>深く (ふかく)</strong> - Sâu sắc
+        </div>
+        <div class="vocab-item">
+            <strong>和食 (わしょく)</strong> - Ẩm thực Nhật Bản
+        </div>
+        <div class="vocab-item">
+            <strong>握る (にぎる)</strong> - Nắm, làm (sushi)
+        </div>
+        <div class="vocab-item">
+            <strong>忘れる (わすれる)</strong> - Quên
+        </div>
+        <div class="vocab-item">
+            <strong>復習 (ふくしゅう)</strong> - Ôn tập
+        </div>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <h2>👀 Nhìn lại bài học</h2>
+    
+    <p>Trong bài học này, chúng ta đã học được cách diễn đạt mục đích trong tiếng Nhật với hai cấu trúc chính:</p>
+    
+    <ol>
+        <li><strong>～ために (tame ni)</strong>: Dùng khi muốn nhấn mạnh hành động có ý chí rõ ràng để đạt được mục đích.</li>
+        <li><strong>～ように (you ni)</strong>: Dùng khi muốn nhấn mạnh trạng thái, kết quả mong muốn đạt được.</li>
+    </ol>
+    
+    <p>Điểm khác biệt chính là:</p>
+    <ul>
+        <li>～ために đi với động từ thường (thể từ điển), chỉ hành động có ý chí.</li>
+        <li>～ように thường đi với động từ thể khả năng hoặc thể phủ định, chỉ trạng thái.</li>
+    </ul>
+    
+    <p>Hãy nhớ rằng:</p>
+    <ul>
+        <li>Khi nói về hành động chủ động: <strong>～ために</strong></li>
+        <li>Khi nói về trạng thái muốn đạt được: <strong>～ように</strong></li>
+    </ul>
+    
+    <p>Bạn đã sẵn sàng cho Buổi 8 về trạng thái ～ています và ～てあります chưa?</p>
+</body>
+</html>
+        
