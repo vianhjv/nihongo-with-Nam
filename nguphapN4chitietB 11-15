@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header h2 {
+            margin: 10px 0 0 0;
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+        
+        .lesson-section {
+            margin-bottom: 50px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 6px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .lesson-title {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .grammar-item {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .grammar-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .grammar-header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .grammar-content {
+            padding: 25px;
+        }
+        
+        .meaning {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .usage {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .conjugation {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #9c27b0;
+        }
+        
+        .example {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .japanese {
+            color: #d32f2f;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .vietnamese {
+            color: #388e3c;
+            font-weight: 500;
+            font-style: italic;
+        }
+        
+        .pattern {
+            color: #1976d2;
+            font-weight: bold;
+            background: #e3f2fd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 0 2px;
+        }
+        
+        .verb {
+            color: #2e7d32;
+            font-weight: bold;
+            background: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .particle {
+            color: #7b1fa2;
+            font-weight: bold;
+            background: #f3e5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .adjective {
+            color: #f57c00;
+            font-weight: bold;
+            background: #fff3e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .noun {
+            color: #c2185b;
+            font-weight: bold;
+            background: #fce4ec;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .section-label {
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .conjugation-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .conjugation-list li {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #9c27b0;
+        }
+        
+        .level-indicator {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .key-point {
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .key-point::before {
+            content: "💡 ";
+            font-size: 1.2em;
+        }
+        
+        .comparison-note {
+            background: #f0f4f8;
+            border: 2px solid #90a4ae;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .comparison-note::before {
+            content: "📝 ";
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇯🇵 TỔNG HỢP NGỮ PHÁP N4 📚</h1>
+            <h2>Bài 11 - Bài 15: Các cấu trúc nâng cao</h2>
+        </div>
+
+        <!-- BÀI 11 -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 BÀI 11 - Liệt kê và Ví dụ</div>
+            
+            <!-- 〜し -->
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜（も）〜し、（も）〜し</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Không những... mà còn...; Vừa... vừa...</strong><br>
+                        Dùng để liệt kê nhiều lý do, đặc điểm hoặc hành động. Thường ngụ ý rằng còn có những lý do/ví dụ khác nữa.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng để liệt kê nhiều hơn một lý do, đặc điểm hoặc hành động. "<span class="particle">も</span>" có thể có hoặc không.<br>
+                        <strong>Lưu ý:</strong> Khi chỉ có 1 [～し] dùng trong câu, câu thường có ngụ ý rằng còn có những lý do/ví dụ khác nữa (chưa được nói hết ra).
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: Thể thông thường (Vる, Vない, Vた, Vなかった) + <span class="pattern">し</span></li>
+                            <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> + <span class="pattern">し</span></li>
+                            <li><span class="adjective">Tính từ な</span>: với tính từ đuôi <span class="adjective">な</span>: bỏ <span class="adjective">な</span>, thêm <span class="particle">だ</span> + <span class="pattern">し</span> → A<s style="color: #e74c3c;">な</s> + <span class="particle">だ</span> + <span class="pattern">し</span></li>
+                            <li><span class="noun">Danh từ</span>: N + <span class="particle">だ</span> + <span class="pattern">し</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">このレストランは値段も安いし、おいしいし、それに親切だし、よく行きます。</div>
+                        <div class="vietnamese">Nhà hàng này giá vừa rẻ, đồ ăn lại ngon, hơn nữa (nhân viên) cũng thân thiện, nên tôi thường đến.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 〜たり〜たり -->
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜たり〜たりします</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Nào là... nào là...</strong><br>
+                        • Liệt kê một vài hành động tiêu biểu, không theo thứ tự cụ thể.<br>
+                        • Dùng với những động từ có nghĩa trái ngược nhau, thể hiện sự lặp đi lặp lại của những hành động đó.<br>
+                        <em>Ví dụ: ngày hôm qua cả ngày cứ lúc thì mưa, lúc thì tạnh.</em>
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng để đưa ra ví dụ về một vài hành động trong số nhiều hành động có thể có. Các hành động này không nhất thiết phải theo một trình tự cụ thể.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: V<span class="verb">た</span> + <span class="pattern">り</span>, V<span class="verb">た</span> + <span class="pattern">りします</span> (hoặc する, した tùy theo thì và mức độ lịch sự)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">日曜日は、掃除したり、洗濯したりします。</div>
+                        <div class="vietnamese">Chủ nhật tôi nào là dọn dẹp, nào là giặt giũ.</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">きのう一日中、雨が降ったり、やんだりしました。</div>
+                        <div class="vietnamese">Hôm qua cả ngày cứ lúc thì mưa, lúc thì tạnh.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BÀI 12 -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 BÀI 12 - Phỏng đoán và Khả năng</div>
+            
+            <!-- かもしれません -->
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜かもしれません</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Có lẽ, có thể là</strong><br>
+                        Diễn tả sự phỏng đoán, khả năng xảy ra không cao (khoảng 50% hoặc thấp hơn).
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng khi người nói không chắc chắn về một điều gì đó nhưng có khả năng xảy ra.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: Thể thông thường + <span class="pattern">かもしれません</span></li>
+                            <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> + <span class="pattern">かもしれません</span></li>
+                            <li><span class="adjective">Tính từ な</span>: A<span class="adjective">な</span> (bỏ だ) + <span class="pattern">かもしれません</span></li>
+                            <li><span class="noun">Danh từ</span>: N (bỏ だ) + <span class="pattern">かもしれません</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">明日は雨が降るかもしれません。</div>
+                        <div class="vietnamese">Có lẽ ngày mai trời sẽ mưa.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- はずです -->
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜はずです</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Chắc chắn là, đương nhiên là</strong><br>
+                        Diễn tả sự phỏng đoán có căn cứ, có lý do một cách khách quan, người nói khá tin tưởng vào phỏng đoán của mình.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng khi người nói có lý do hoặc căn cứ để tin rằng một điều gì đó là đúng hoặc sẽ xảy ra.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: Thể thông thường (Vる, Vた, Vない) + <span class="pattern">はずです</span></li>
+                            <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> + <span class="pattern">はずです</span></li>
+                            <li><span class="adjective">Tính từ な</span>: A<span class="adjective">な</span> (bỏ だ) + <span class="particle">な</span> + <span class="pattern">はずです</span></li>
+                            <li><span class="noun">Danh từ</span>: N (bỏ だ) + <span class="particle">の</span> + <span class="pattern">はずです</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">田中さんは今日来るはずです。昨日、約束しましたから。</div>
+                        <div class="vietnamese">Anh Tanaka chắc chắn hôm nay sẽ đến. Vì hôm qua đã hẹn rồi mà.</div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>So sánh:</strong> <span class="pattern">かもしれません</span> (50% trở xuống) vs <span class="pattern">はずです</span> (80-90% chắc chắn)
+                    </div>
+                </div>
+            </div>
+
+            <!-- ようです・みたいです -->
+            <div class="grammar-item">
+                <div class="grammar-header">3. 〜ようです・〜みたいです</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Hình như, dường như</strong><br>
+                        Dùng để nói về những phỏng đoán, suy luận của người nói dựa trên cảm giác, quan sát hoặc thông tin gián tiếp. <span class="pattern">みたいです</span> thân mật hơn, không dùng trong trường hợp cần sự lịch sự, xã giao.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng khi người nói đưa ra phán đoán dựa trên những gì mình nhìn thấy, nghe thấy hoặc cảm nhận được một cách không trực tiếp.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <strong>〜ようです:</strong>
+                                <ul class="conjugation-list">
+                                    <li><span class="verb">Động từ</span>: Thể thông thường + <span class="pattern">ようです</span></li>
+                                    <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> + <span class="pattern">ようです</span></li>
+                                    <li><span class="adjective">Tính từ な</span>: A<span class="adjective">な</span> (bỏ だ) + <span class="particle">な</span> + <span class="pattern">ようです</span></li>
+                                    <li><span class="noun">Danh từ</span>: N (bỏ だ) + <span class="particle">の</span> + <span class="pattern">ようです</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>〜みたいです:</strong>
+                                <ul class="conjugation-list">
+                                    <li><span class="verb">Động từ</span>: Thể thông thường + <span class="pattern">みたいです</span></li>
+                                    <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> + <span class="pattern">みたいです</span></li>
+                                    <li><span class="adjective">Tính từ な</span>: A<span class="adjective">な</span> (bỏ だ) + <span class="pattern">みたいです</span></li>
+                                    <li><span class="noun">Danh từ</span>: N (bỏ だ) + <span class="pattern">みたいです</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">あの人は風邪をひいたようです。咳をしています。</div>
+                        <div class="vietnamese">Người kia hình như bị cảm rồi. (Vì) đang ho kìa.</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">隣の部屋から音楽が聞こえますね。誰かパーティーをしているみたいです。</div>
+                        <div class="vietnamese">Nghe thấy tiếng nhạc từ phòng bên cạnh nhỉ. Hình như ai đó đang mở tiệc.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BÀI 13 -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 BÀI 13 - Mệnh lệnh và Lời khuyên</div>
+            
+            <!-- なさい -->
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜なさい</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Hãy làm đi</strong><br>
+                        Mệnh lệnh nhẹ nhàng, thường dùng cho người trên nói với người dưới.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng để ra lệnh hoặc yêu cầu một cách nhẹ nhàng, thường là cha mẹ nói với con cái, giáo viên nói với học sinh.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: V<span class="verb">ます</span> (bỏ ます) + <span class="pattern">なさい</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">早く宿題をしなさい。</div>
+                        <div class="vietnamese">Hãy nhanh làm bài tập về nhà đi.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ほうがいい -->
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜ほうがいいです</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Nên làm gì / Không nên làm gì</strong><br>
+                        Đưa ra lời khuyên cho người khác.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng để đưa ra lời khuyên hoặc gợi ý cho người khác về việc nên hay không nên làm điều gì đó.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><strong>Khuyên nên làm:</strong> V<span class="verb">た</span> + <span class="pattern">ほうがいいです</span></li>
+                            <li><strong>Khuyên không nên làm:</strong> V<span class="verb">ない</span> + <span class="pattern">ほうがいいです</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">疲れているなら、早く寝たほうがいいですよ。</div>
+                        <div class="vietnamese">Nếu đang mệt thì bạn nên ngủ sớm đi.</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">あまり無理をしないほうがいいです。</div>
+                        <div class="vietnamese">Bạn không nên làm việc quá sức đâu.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ないと -->
+            <div class="grammar-item">
+                <div class="grammar-header">3. 〜ないと</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Phải làm gì</strong><br>
+                        Dạng nói tắt, thân mật của 〜なければなりません／〜なければいけません.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả sự bắt buộc, cần thiết phải làm gì đó. Thường dùng trong văn nói thân mật.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: V<span class="verb">ない</span> (bỏ い) + <span class="pattern">と</span></li>
+                            <li><strong>Dạng ngắn hơn:</strong> V<span class="verb">ない</span> (bỏ ない) + <span class="pattern">なくちゃ</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">明日は早いから、もう寝ないと。</div>
+                        <div class="vietnamese">Vì ngày mai phải (dậy) sớm nên giờ phải ngủ thôi.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BÀI 14 & 15 -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 BÀI 14 & 15 - Điều kiện</div>
+            
+            <!-- たら -->
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜たら…</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Nếu... thì...; Sau khi... thì...</strong><br>
+                        Điều kiện giả định hoặc hành động xảy ra sau.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        <strong>• Điều kiện giả định:</strong> Diễn tả một sự việc có thể xảy ra (hoặc không) và kết quả của nó.<br>
+                        <strong>• Thứ tự thời gian:</strong> Diễn tả một hành động sẽ được thực hiện sau khi một hành động khác hoàn thành.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: V<span class="verb">た</span> + <span class="pattern">ら</span></li>
+                            <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> (bỏ い) → A<span class="adjective">かった</span> + <span class="pattern">ら</span></li>
+                            <li><span class="adjective">Tính từ な</span>: A<span class="adjective">な</span> (bỏ だ) → A<span class="adjective">だった</span> + <span class="pattern">ら</span></li>
+                            <li><span class="noun">Danh từ</span>: N (bỏ だ) → N<span class="particle">だった</span> + <span class="pattern">ら</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div style="margin-bottom: 15px;">
+                            <strong>Điều kiện giả định:</strong>
+                            <div class="japanese">宝くじが当たったら、大きな家を買いたいです。</div>
+                            <div class="vietnamese">Nếu trúng xổ số, tôi muốn mua một căn nhà lớn.</div>
+                        </div>
+                        <div>
+                            <strong>Thứ tự thời gian:</strong>
+                            <div class="japanese">大学を卒業したら、国へ帰るつもりです。</div>
+                            <div class="vietnamese">Sau khi tốt nghiệp đại học, tôi dự định sẽ về nước.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ば -->
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜ば…</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Nếu... thì...</strong><br>
+                        Điều kiện chung, thường nhấn mạnh mối quan hệ nhân quả logic.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        • Dùng để diễn tả một điều kiện chung. Nếu điều kiện ở vế trước được thỏa mãn thì kết quả ở vế sau sẽ xảy ra.<br>
+                        • Vế sau thường không dùng để diễn tả ý chí, nguyện vọng, mệnh lệnh.<br>
+                        • Thường mang tính khách quan, logic hơn 〜たら.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ nhóm 1</span>: đổi đuôi -u thành -eba (例: 書く → 書けば)</li>
+                            <li><span class="verb">Động từ nhóm 2</span>: bỏ -る thêm -れば (例: 食べる → 食べれば)</li>
+                            <li><span class="verb">Động từ nhóm 3</span>: する → すれば; 来る → くれば</li>
+                            <li><span class="adjective">Tính từ い</span>: bỏ い thêm ければ (例: 安い → 安ければ)</li>
+                            <li><span class="adjective">Tính từ な</span>: A<span class="adjective">で</span>なければ (phủ định)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">時間があれば、映画を見に行きましょう。</div>
+                        <div class="vietnamese">Nếu có thời gian, chúng ta hãy đi xem phim nhé.</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">このボタンを押せば、ドアが開きます。</div>
+                        <div class="vietnamese">Nếu ấn nút này thì cửa sẽ mở.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- なら -->
+            <div class="grammar-item">
+                <div class="grammar-header">3. 〜なら…</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Nếu là... thì...; Trong trường hợp là...</strong><br>
+                        Đưa ra lời khuyên, thông tin, hoặc đánh giá dựa trên một chủ đề/tình huống cụ thể.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        • Dùng khi người nói muốn đưa ra lời khuyên, đề nghị, thông tin liên quan đến một chủ đề cụ thể.<br>
+                        • Mệnh đề chứa 「なら」thường đứng trước mệnh đề chính.<br>
+                        • Mang tính chất "nếu đã là như vậy thì...", "nói về... thì...".
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="noun">Danh từ</span> + <span class="pattern">なら</span></li>
+                            <li><span class="verb">Động từ</span> (thể thông thường) + (<span class="particle">の</span>)<span class="pattern">なら</span></li>
+                            <li><span class="adjective">Tính từ い</span> + (<span class="particle">の</span>)<span class="pattern">なら</span></li>
+                            <li><span class="adjective">Tính từ な</span> (bỏ だ) + (<span class="particle">の</span>)<span class="pattern">なら</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">A: 日本へ旅行に行きたいです。<br>B: 日本へ行くなら、桜の季節がいいですよ。</div>
+                        <div class="vietnamese">A: Tôi muốn đi du lịch Nhật Bản.<br>B: Nếu (là) đi Nhật Bản thì mùa hoa anh đào là đẹp nhất đấy.</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">あなたが行かないなら、私も行きません。</div>
+                        <div class="vietnamese">Nếu bạn không đi thì tôi cũng sẽ không đi.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- と -->
+            <div class="grammar-item">
+                <div class="grammar-header">4. 〜と…</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Hễ mà... thì (ngay lập tức)...; Cứ... thì...</strong><br>
+                        Diễn tả kết quả tất yếu, tự nhiên.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng để diễn tả một kết quả xảy ra một cách tự nhiên, tất yếu khi điều kiện ở vế trước được hoàn thành (quy luật tự nhiên, hoạt động của máy móc, thói quen). Vế sau không dùng các câu thể hiện ý chí, mệnh lệnh, mong muốn.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        <ul class="conjugation-list">
+                            <li><span class="verb">Động từ</span>: V<span class="verb">る</span> + <span class="pattern">と</span></li>
+                            <li><span class="adjective">Tính từ い</span>: A<span class="adjective">い</span> + <span class="pattern">と</span></li>
+                            <li><span class="adjective">Tính từ な</span>: A<span class="adjective">な</span> (bỏ だ) + <span class="particle">だ</span> + <span class="pattern">と</span></li>
+                            <li><span class="noun">Danh từ</span>: N (bỏ だ) + <span class="particle">だ</span> + <span class="pattern">と</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">このボタンを押すと、電気がつきます。</div>
+                        <div class="vietnamese">Hễ ấn nút này thì đèn sẽ sáng.</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">春になると、花が咲きます。</div>
+                        <div class="vietnamese">Cứ đến mùa xuân là hoa nở.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- So sánh các dạng điều kiện -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔄 So sánh các dạng Điều kiện</div>
+            
+            <div class="comparison-note">
+                <strong>📊 Bảng so sánh nhanh:</strong><br><br>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: #f0f4f8;">
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Cấu trúc</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Đặc điểm</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Ví dụ điển hình</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><span class="pattern">〜たら</span></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">• Điều kiện giả định<br>• Thứ tự thời gian<br>• Vế sau có thể là ý chí, mệnh lệnh</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; font-style: italic;">お金があったら、旅行します。<br>(Nếu có tiền thì sẽ đi du lịch.)</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 10px;"><span class="pattern">〜ば</span></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">• Điều kiện logic<br>• Mối quan hệ nhân quả<br>• Vế sau ít dùng ý chí, mệnh lệnh</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; font-style: italic;">薬を飲めば、よくなります。<br>(Nếu uống thuốc thì sẽ khỏe.)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><span class="pattern">〜なら</span></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">• Chủ đề cụ thể<br>• Lời khuyên, thông tin<br>• "Nếu là... thì..."</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; font-style: italic;">日本なら、富士山が有名です。<br>(Nói về Nhật thì núi Phú Sĩ nổi tiếng.)</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 10px;"><span class="pattern">〜と</span></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">• Kết quả tự nhiên, tất yếu<br>• Quy luật, thói quen<br>• Vế sau không có ý chí</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; font-style: italic;">夏になると、暑くなります。<br>(Cứ đến mùa hè là nóng.)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tổng kết -->
+        <div class="lesson-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="lesson-title" style="color: white;">🎯 Tổng kết và Lưu ý</div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #FFE082; margin-top: 0;">💡 Mẹo ghi nhớ:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">🔹 <strong>Phỏng đoán:</strong> かもしれません (50%) < ようです/みたいです (quan sát) < はずです (có căn cứ)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Lời khuyên:</strong> ほうがいい (nên/không nên) vs なさい (mệnh lệnh nhẹ)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Điều kiện:</strong> と (tự nhiên) < ば (logic) < たら (giả định) < なら (chủ đề)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Liệt kê:</strong> し (lý do) vs たり (ví dụ hành động)</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="color: #FFE082; margin-top: 0;">📚 Lời khuyên học tập:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">✅ Luyện tập với từng cấu trúc riêng biệt trước khi kết hợp</li>
+                    <li style="margin-bottom: 10px;">✅ Chú ý sự khác biệt về mức độ chắc chắn trong phỏng đoán</li>
+                    <li style="margin-bottom: 10px;">✅ Thực hành nhiều với các dạng điều kiện trong tình huống thực tế</li>
+                    <li style="margin-bottom: 10px;">✅ Ghi nhớ những từ không thể dùng với từng loại điều kiện</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
