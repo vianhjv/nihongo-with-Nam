@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngữ pháp N4 - Bài 20: Sự thay đổi trạng thái</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile-specific optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px !important;
+                margin: 0 !important;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem !important;
+                margin-bottom: 10px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .header h2 {
+                font-size: 1.4rem !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .lesson-section {
+                margin-bottom: 20px !important;
+                padding: 15px !important;
+            }
+            
+            .lesson-title {
+                font-size: 1.3rem !important;
+                margin-bottom: 15px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .grammar-item {
+                margin-bottom: 15px !important;
+                padding: 12px !important;
+            }
+            
+            .grammar-header {
+                font-size: 1.1rem !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .section-label {
+                font-size: 1rem !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .japanese {
+                font-size: 18px !important;
+                line-height: 1.8 !important;
+                word-break: break-all !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .vietnamese {
+                font-size: 15px !important;
+                margin-bottom: 15px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .key-point, .comparison-note {
+                padding: 12px !important;
+                margin: 10px 0 !important;
+                font-size: 14px !important;
+            }
+            
+            .example {
+                padding: 12px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .examples-section h3 {
+                font-size: 1.2rem !important;
+                margin: 15px 0 10px 0 !important;
+            }
+            
+            .practice-section {
+                padding: 12px !important;
+            }
+            
+            .question {
+                font-size: 16px !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .answer {
+                padding: 12px !important;
+                margin: 10px 0 20px 0 !important;
+                font-size: 14px !important;
+            }
+            
+            .vocab-section {
+                padding: 12px !important;
+            }
+            
+            .vocab-item {
+                margin-bottom: 8px !important;
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+                padding: 8px !important;
+            }
+            
+            .vocab-jp {
+                font-size: 16px !important;
+                display: block !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .vocab-vn {
+                font-size: 14px !important;
+            }
+            
+            /* Table responsive for mobile */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                font-size: 12px !important;
+                margin: 10px 0 !important;
+            }
+            
+            th, td {
+                padding: 6px !important;
+                min-width: 120px !important;
+            }
+            
+            /* Touch-friendly spacing */
+            ul, ol {
+                padding-left: 20px !important;
+            }
+            
+            li {
+                margin-bottom: 8px !important;
+                line-height: 1.6 !important;
+            }
+        }
+        
+        /* Very small screens (phones in portrait) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 8px !important;
+            }
+            
+            .header h1 {
+                font-size: 1.6rem !important;
+            }
+            
+            .header h2 {
+                font-size: 1.2rem !important;
+            }
+            
+            .japanese {
+                font-size: 17px !important;
+            }
+            
+            .lesson-section {
+                padding: 12px !important;
+            }
+            
+            .grammar-item {
+                padding: 10px !important;
+            }
+            
+            table {
+                font-size: 11px !important;
+            }
+            
+            th, td {
+                padding: 4px !important;
+                min-width: 100px !important;
+            }
+        }
+
+        /* Màu sắc cho biến đổi ngữ pháp - Đặc biệt cho bài 20 */
+        .base {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .transform {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .added {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .result {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .note {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        
+        /* Màu cho い-adjective transformation */
+        .i-adj-base {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .i-adj-transform {
+            color: #d35400;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .i-adj-result {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Màu cho な-adjective transformation */
+        .na-adj-base {
+            color: #8e44ad;
+            font-weight: bold;
+        }
+        
+        .na-adj-transform {
+            color: #7d3c98;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .na-adj-result {
+            color: #16a085;
+            font-weight: bold;
+        }
+        
+        /* Màu cho verb transformation */
+        .verb-base {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        .verb-result {
+            color: #c0392b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇯🇵 NGỮ PHÁP N4 - BÀI 20 📚</h1>
+            <h2>Sự thay đổi trạng thái - 状態の変化</h2>
+        </div>
+
+        <!-- GIỚI THIỆU BÀI HỌC -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 Bài 20 - Sự thay đổi trạng thái</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">🎯 Chủ đề chính của bài học</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Khái niệm chung:</div>
+                        <strong>Sự thay đổi trạng thái</strong> là cách diễn đạt việc một sự vật, sự việc thay đổi từ trạng thái này sang trạng thái khác.<br>
+                        Tiếng Nhật phân biệt rõ ràng giữa "làm cho thay đổi" (có chủ ý) và "tự nhiên thay đổi" (không có chủ ý).
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">🎯 Mục tiêu học:</div>
+                        • <strong>〜くします・〜にします</strong>: Làm cho (có chủ ý) thay đổi trạng thái<br>
+                        • <strong>〜くなります・〜になります</strong>: Trở nên (tự nhiên) thay đổi trạng thái<br>
+                        • <strong>〜ようになります</strong>: Trở nên có thể làm gì / Thay đổi thói quen
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>🔑 Điểm quan trọng:</strong><br>
+                        Phân biệt rõ ràng giữa <span class="pattern">します</span> (có chủ ý làm cho thay đổi) và 
+                        <span class="pattern">なります</span> (thay đổi tự nhiên).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜くします・〜にします -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔧 〜くします・〜にします</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜くします・〜にします - Làm cho thay đổi</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        • <strong>〜くします:</strong> Làm cho (Tính từ đuôi い) trở nên...<br>
+                        • <strong>〜にします:</strong> Làm cho (Tính từ đuôi な/Danh từ) trở nên... / Quyết định chọn (Danh từ)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả hành động có chủ ý làm thay đổi trạng thái của một đối tượng, hoặc quyết định lựa chọn một thứ gì đó.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Tính từ đuôi い (い形容詞):</strong><br>
+                            <span class="i-adj-base">Tính từ đuôi</span> <span class="i-adj-transform">い</span> (bỏ <span class="i-adj-transform">い</span> cuối) + <span class="i-adj-result">くします</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="i-adj-base">大き</span><span class="i-adj-transform">い</span> (ookii) → <span class="i-adj-base">大き</span><span class="i-adj-result">くします</span> (ookiku shimasu)<br>
+                            • <span class="i-adj-base">小さ</span><span class="i-adj-transform">い</span> (chiisai) → <span class="i-adj-base">小さ</span><span class="i-adj-result">くします</span> (chiisaku shimasu)<br>
+                            • <span class="i-adj-base">高</span><span class="i-adj-transform">い</span> (takai) → <span class="i-adj-base">高</span><span class="i-adj-result">くします</span> (takaku shimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Tính từ đuôi な (な形容詞):</strong><br>
+                            <span class="na-adj-base">Tính từ đuôi</span> <span class="na-adj-transform">な</span> (bỏ <span class="na-adj-transform">な</span> cuối) + <span class="na-adj-result">にします</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="na-adj-base">静か</span><span class="na-adj-transform">な</span> (shizuka) → <span class="na-adj-base">静か</span><span class="na-adj-result">にします</span> (shizuka ni shimasu)<br>
+                            • <span class="na-adj-base">きれい</span><span class="na-adj-transform">な</span> (kirei) → <span class="na-adj-base">きれい</span><span class="na-adj-result">にします</span> (kirei ni shimasu)<br>
+                            • <span class="na-adj-base">元気</span><span class="na-adj-transform">な</span> (genki) → <span class="na-adj-base">元気</span><span class="na-adj-result">にします</span> (genki ni shimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Danh từ (名詞):</strong><br>
+                            <span class="verb-base">Danh từ</span> + <span class="verb-result">にします</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="verb-base">３時</span> (sanji) → <span class="verb-base">３時</span><span class="verb-result">にします</span> (sanji ni shimasu)<br>
+                            • <span class="verb-base">コーヒー</span> (koohii) → <span class="verb-base">コーヒー</span><span class="verb-result">にします</span> (koohii ni shimasu)
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">部屋をきれいにしてください。</div>
+                        <div class="vietnamese">Heya o kirei ni shite kudasai.<br>
+                        (Xin hãy làm cho phòng sạch sẽ.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">音を小さくします。</div>
+                        <div class="vietnamese">Oto o chiisaku shimasu.<br>
+                        (Tôi sẽ làm cho âm thanh nhỏ lại.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">会議の時間を３時にします。</div>
+                        <div class="vietnamese">Kaigi no jikan o sanji ni shimasu.<br>
+                        (Tôi sẽ (quyết định) đặt thời gian họp là 3 giờ.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">飲み物は何にしますか。<br>
+                        ー コーヒーにします。</div>
+                        <div class="vietnamese">Nomimono wa nani ni shimasu ka.<br>
+                        ー Koohii ni shimasu.<br>
+                        (Đồ uống bạn chọn gì?<br>
+                        ー Tôi chọn cà phê.)</div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>📌 Lưu ý / So sánh:</strong><br>
+                        • Đây là cách dùng tha động từ します với tính từ hoặc danh từ để chỉ sự thay đổi do tác động có chủ ý<br>
+                        • Khi dùng với danh từ, 〜にします có hai nghĩa chính: (1) làm cho danh từ đó trở thành một trạng thái nào đó (ít phổ biến hơn), (2) quyết định chọn danh từ đó (rất phổ biến, nhất là khi gọi món, chọn lựa)<br>
+                        • 〜く/にします là hành động có chủ ý của ai đó làm cho thay đổi
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜くなります・〜になります -->
+        <div class="lesson-section">
+            <div class="lesson-title">🌱 〜くなります・〜になります</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜くなります・〜になります - Trở nên</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Trở nên, trở thành</strong> (diễn tả sự thay đổi trạng thái một cách tự nhiên hoặc kết quả của một quá trình)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Dùng để diễn tả một sự vật, sự việc thay đổi sang một trạng thái khác.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Tính từ đuôi い (い形容詞):</strong><br>
+                            <span class="i-adj-base">Tính từ đuôi</span> <span class="i-adj-transform">い</span> (bỏ <span class="i-adj-transform">い</span> cuối) + <span class="i-adj-result">くなります</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="i-adj-base">寒</span><span class="i-adj-transform">い</span> (samui) → <span class="i-adj-base">寒</span><span class="i-adj-result">くなります</span> (samuku narimasu)<br>
+                            • <span class="i-adj-base">暖か</span><span class="i-adj-transform">い</span> (atatakai) → <span class="i-adj-base">暖か</span><span class="i-adj-result">くなります</span> (atatakaku narimasu)<br>
+                            • <span class="i-adj-base">忙し</span><span class="i-adj-transform">い</span> (isogashii) → <span class="i-adj-base">忙し</span><span class="i-adj-result">くなります</span> (isogashiku narimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Tính từ đuôi な (な形容詞):</strong><br>
+                            <span class="na-adj-base">Tính từ đuôi</span> <span class="na-adj-transform">な</span> (bỏ <span class="na-adj-transform">な</span> cuối) + <span class="na-adj-result">になります</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="na-adj-base">元気</span><span class="na-adj-transform">な</span> (genki) → <span class="na-adj-base">元気</span><span class="na-adj-result">になります</span> (genki ni narimasu)<br>
+                            • <span class="na-adj-base">上手</span><span class="na-adj-transform">な</span> (jouzu) → <span class="na-adj-base">上手</span><span class="na-adj-result">になります</span> (jouzu ni narimasu)<br>
+                            • <span class="na-adj-base">有名</span><span class="na-adj-transform">な</span> (yuumei) → <span class="na-adj-base">有名</span><span class="na-adj-result">になります</span> (yuumei ni narimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Danh từ (名詞):</strong><br>
+                            <span class="verb-base">Danh từ</span> + <span class="verb-result">になります</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="verb-base">２０歳</span> (hatachi) → <span class="verb-base">２０歳</span><span class="verb-result">になります</span> (hatachi ni narimasu)<br>
+                            • <span class="verb-base">春</span> (haru) → <span class="verb-base">春</span><span class="verb-result">になります</span> (haru ni narimasu)<br>
+                            • <span class="verb-base">先生</span> (sensei) → <span class="verb-base">先生</span><span class="verb-result">になります</span> (sensei ni narimasu)
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">だんだん暖かくなってきましたね。</div>
+                        <div class="vietnamese">Dandan atatakaku natte kimashita ne.<br>
+                        (Trời đã dần dần trở nên ấm hơn rồi nhỉ.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">一生懸命勉強して、日本語が上手になりました。</div>
+                        <div class="vietnamese">Isshookenmei benkyou shite, Nihongo ga jouzu ni narimashita.<br>
+                        (Vì đã học hành chăm chỉ nên tiếng Nhật của tôi đã trở nên giỏi.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">来年２０歳になります。</div>
+                        <div class="vietnamese">Rainen hatachi ni narimasu.<br>
+                        (Năm sau tôi sẽ (trở thành) 20 tuổi.)</div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>📌 Lưu ý / So sánh:</strong><br>
+                        • なります là một tự động từ, diễn tả sự thay đổi tự nhiên hoặc kết quả của một quá trình mà không có tác động trực tiếp, chủ ý của ai đó để "làm cho" nó thay đổi<br>
+                        • Dùng để nói về sự thay đổi thời tiết, tuổi tác, kỹ năng, trạng thái...<br>
+                        • 〜く/になります: Sự thay đổi tự nhiên, "trở nên"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜ようになります -->
+        <div class="lesson-section">
+            <div class="lesson-title">💪 〜ようになります</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">3. 〜ようになります - Trở nên có thể làm gì</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Trở nên có thể làm gì / Trở nên làm gì</strong> (thay đổi về khả năng hoặc thói quen)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả sự thay đổi về khả năng (từ không thể sang có thể) hoặc sự thay đổi về thói quen, tập quán (từ không làm sang làm, hoặc ngược lại).
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Động từ thể từ điển + ようになります:</strong><br>
+                            <span class="verb-base">Động từ thể từ điển</span> (thường là thể khả năng <span class="verb-base">Vれる/られる</span>) + <span class="verb-result">ようになります</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="verb-base">弾ける</span> (hikeru) → <span class="verb-base">弾ける</span><span class="verb-result">ようになります</span> (hikeru you ni narimasu)<br>
+                            • <span class="verb-base">食べる</span> (taberu) → <span class="verb-base">食べる</span><span class="verb-result">ようになります</span> (taberu you ni narimasu)<br>
+                            • <span class="verb-base">寝られる</span> (nerareru) → <span class="verb-base">寝られる</span><span class="verb-result">ようになります</span> (nerareru you ni narimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Động từ thể ない + ようになります:</strong><br>
+                            <span class="verb-base">Động từ thể</span> <span class="transform">ない</span> + <span class="verb-result">ようになります</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="verb-base">食べ</span><span class="transform">ない</span> (tabenai) → <span class="verb-base">食べない</span><span class="verb-result">ようになります</span> (tabenai you ni narimasu)<br>
+                            • <span class="verb-base">飲ま</span><span class="transform">ない</span> (nomanai) → <span class="verb-base">飲まない</span><span class="verb-result">ようになります</span> (nomanai you ni narimasu)
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">毎日練習して、ピアノが弾けるようになりました。</div>
+                        <div class="vietnamese">Mainichi renshuu shite, piano ga hikeru you ni narimashita.<br>
+                        (Sau khi luyện tập mỗi ngày, tôi đã trở nên có thể chơi được piano.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">前は野菜を食べませんでしたが、最近は食べるようになりました。</div>
+                        <div class="vietnamese">Mae wa yasai o tabemasen deshita ga, saikin wa taberu you ni narimashita.<br>
+                        (Trước đây tôi không ăn rau, nhưng gần đây tôi đã (trở nên) ăn (rau) rồi.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">この薬を飲んでから、よく寝られるようになりました。</div>
+                        <div class="vietnamese">Kono kusuri o nonde kara, yoku nerareru you ni narimashita.<br>
+                        (Sau khi uống thuốc này, tôi đã (trở nên) có thể ngủ ngon.)</div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>📌 Lưu ý / So sánh:</strong><br>
+                        • Thường diễn tả sự thay đổi tích cực sau một quá trình nỗ lực, luyện tập hoặc một sự kiện nào đó<br>
+                        • Động từ đứng trước ようになります thường là động từ ở thể khả năng (để diễn tả việc "trở nên có thể làm gì") hoặc động từ ở thể từ điển/thể ない (để diễn tả việc "trở nên có thói quen làm gì/không làm gì")<br>
+                        • So sánh với 〜ことができます (có thể làm): 〜ことができます chỉ diễn tả khả năng tại một thời điểm, 〜ようになります diễn tả sự thay đổi dẫn đến việc có khả năng đó
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SO SÁNH TẤT CẢ -->
+        <div class="lesson-section">
+            <div class="lesson-title">🆚 So sánh tổng hợp</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">So sánh 〜します vs 〜なります vs 〜ようになります</div>
+                <div class="grammar-content">
+                    <div class="comparison-note">
+                        <strong>📊 Bảng so sánh chi tiết:</strong><br><br>
+                        
+                        <table>
+                            <tr>
+                                <th>Ngữ pháp</th>
+                                <th>Ý nghĩa</th>
+                                <th>Đặc điểm</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                            <tr>
+                                <td><strong>〜くします<br>〜にします</strong></td>
+                                <td>Làm cho thay đổi</td>
+                                <td>🔧 Có chủ ý<br>⚡ Tác động trực tiếp</td>
+                                <td><span class="japanese">音を小さくします</span><br>
+                                (Tôi làm cho âm thanh nhỏ lại)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>〜くなります<br>〜になります</strong></td>
+                                <td>Trở nên</td>
+                                <td>🌱 Tự nhiên<br>📈 Kết quả của quá trình</td>
+                                <td><span class="japanese">暖かくなりました</span><br>
+                                (Trời đã trở nên ấm)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>〜ようになります</strong></td>
+                                <td>Trở nên có thể/làm</td>
+                                <td>💪 Thay đổi khả năng<br>🔄 Thay đổi thói quen</td>
+                                <td><span class="japanese">泳げるようになりました</span><br>
+                                (Tôi đã trở nên có thể bơi được)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>💡 Mẹo phân biệt:</strong><br>
+                        • <strong>〜します:</strong> "Tôi làm cho..." (có ý chí)<br>
+                        • <strong>〜なります:</strong> "Nó trở nên..." (tự nhiên)<br>
+                        • <strong>〜ようになります:</strong> "Trở nên có thể/làm..." (thay đổi khả năng/thói quen)<br><br>
+                        
+                        <strong>Ví dụ minh họa:</strong><br>
+                        • <span class="japanese">部屋をきれいにします。</span><br>
+                        &nbsp;&nbsp;→ Tôi làm cho phòng sạch sẽ (có chủ ý)<br>
+                        • <span class="japanese">部屋がきれいになりました。</span><br>
+                        &nbsp;&nbsp;→ Phòng đã trở nên sạch sẽ (tự nhiên)<br>
+                        • <span class="japanese">掃除ができるようになりました。</span><br>
+                        &nbsp;&nbsp;→ Tôi đã trở nên có thể dọn dẹp được (thay đổi khả năng)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BÀI LUYỆN TẬP -->
+        <div class="lesson-section">
+            <div class="lesson-title">🏋️‍♀️ Luyện tập</div>
+            
+            <div class="practice-section">
+                <div class="question">📝 Câu hỏi 1</div>
+                <p>Chia tính từ "大きい" theo cả hai cách: します và なります</p>
+                
+                <div class="answer">
+                    <span class="japanese">大きい → 大きくします (làm cho to lên)<br>
+                    大きい → 大きくなります (trở nên to)</span><br>
+                    <span class="vietnamese">ookii → ookiku shimasu / ookiku narimasu</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 2</div>
+                <p>Dịch: "Tôi quyết định chọn trà xanh." (Dùng にします)</p>
+                
+                <div class="answer">
+                    <span class="japanese">お茶にします。</span><br>
+                    <span class="vietnamese">Ocha ni shimasu.</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 3</div>
+                <p>Tạo câu với ようになります: "Tôi đã trở nên có thể nói tiếng Nhật được."</p>
+                
+                <div class="answer">
+                    <span class="japanese">日本語が話せるようになりました。</span><br>
+                    <span class="vietnamese">Nihongo ga hanaseru you ni narimashita.</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 4</div>
+                <p>Phân biệt nghĩa: A. 静かにしてください B. 静かになりました</p>
+                
+                <div class="answer">
+                    <span class="japanese">A: Xin hãy làm yên lặng (yêu cầu ai đó hành động)<br>
+                    B: Đã trở nên yên lặng (tự nhiên thay đổi)</span><br>
+                    <strong>→ します = có chủ ý, なります = tự nhiên</strong>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 5</div>
+                <p>Chia từ "元気な" theo 3 cách: します, なります, ようになります</p>
+                
+                <div class="answer">
+                    <span class="japanese">元気な → 元気にします (làm cho khỏe mạnh)<br>
+                    元気な → 元気になります (trở nên khỏe mạnh)<br>
+                    元気な → 元気になるようになります (trở nên có thể khỏe mạnh)</span><br>
+                    <span class="vietnamese">genki na → genki ni shimasu / genki ni narimasu / genki ni naru you ni narimasu</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỪ VỰNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔑 Từ vựng quan trọng</div>
+            
+            <div class="vocab-section">
+                <h3>📝 Từ vựng liên quan đến thay đổi trạng thái</h3>
+                
+                <div class="vocab-item">
+                    <span class="vocab-jp">部屋 (へや / heya)</span>
+                    <span class="vocab-vn">- Phòng</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">音 (おと / oto)</span>
+                    <span class="vocab-vn">- Âm thanh</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">会議 (かいぎ / kaigi)</span>
+                    <span class="vocab-vn">- Cuộc họp</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">時間 (じかん / jikan)</span>
+                    <span class="vocab-vn">- Thời gian</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">飲み物 (のみもの / nomimono)</span>
+                    <span class="vocab-vn">- Đồ uống</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">暖かい (あたたかい / atatakai)</span>
+                    <span class="vocab-vn">- Ấm áp</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">一生懸命 (いっしょうけんめい / isshookenmei)</span>
+                    <span class="vocab-vn">- Hết sức, chăm chỉ</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">上手 (じょうず / jouzu)</span>
+                    <span class="vocab-vn">- Giỏi, khéo léo</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">練習 (れんしゅう / renshuu)</span>
+                    <span class="vocab-vn">- Luyện tập</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">野菜 (やさい / yasai)</span>
+                    <span class="vocab-vn">- Rau củ</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">最近 (さいきん / saikin)</span>
+                    <span class="vocab-vn">- Gần đây</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">薬 (くすり / kusuri)</span>
+                    <span class="vocab-vn">- Thuốc</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỔNG KẾT BÀI 20 -->
+        <div class="lesson-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="lesson-title" style="color: white;">🎯 Tổng kết Bài 20</div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #FFE082; margin-top: 0;">💡 Điểm chính cần nhớ:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜くします・〜にします:</strong> Làm cho thay đổi (có chủ ý)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜くなります・〜になります:</strong> Trở nên (tự nhiên)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜ようになります:</strong> Trở nên có thể/làm (thay đổi khả năng/thói quen)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>い-adj:</strong> Bỏ い + く (shimasu/narimasu)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>な-adj/Noun:</strong> Bỏ な + に (shimasu/narimasu)</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="color: #FFE082; margin-top: 0;">📚 Phân biệt quan trọng:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">✅ <strong>します vs なります:</strong> Chủ ý vs Tự nhiên</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>にします với danh từ:</strong> Quyết định chọn (gọi món, lựa chọn)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>ようになります:</strong> Dùng với động từ (khả năng/thói quen)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Thời gian:</strong> します (ngay lập tức), なります (quá trình)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Cách nhớ:</strong> します = "làm cho", なります = "trở nên"</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #FFE082; margin-top: 0;">🚀 Hoàn thành:</h4>
+                <p style="margin-bottom: 0;">Bài 20 đã hoàn thành! Bạn đã học được cách diễn đạt <strong>sự thay đổi trạng thái</strong> trong tiếng Nhật với 3 cấu trúc quan trọng. 
+                Hãy luyện tập thường xuyên để phân biệt rõ ràng giữa "làm cho thay đổi" và "tự nhiên thay đổi"!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

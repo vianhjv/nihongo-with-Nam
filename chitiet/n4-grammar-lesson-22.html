@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngữ pháp N4 - Bài 22: Động từ phụ trợ て</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-mobile.css">
+    <style>
+        /* Màu sắc cho biến đổi ngữ pháp - Đặc biệt cho bài 22 */
+        .base {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .transform {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .added {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .result {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .note {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        
+        /* Màu cho て-form + みます (thử) */
+        .try-base {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .try-te-form {
+            color: #d35400;
+            font-weight: bold;
+        }
+        
+        .try-result {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Màu cho て-form + おきます (chuẩn bị/giữ nguyên) */
+        .prepare-base {
+            color: #8e44ad;
+            font-weight: bold;
+        }
+        
+        .prepare-te-form {
+            color: #7d3c98;
+            font-weight: bold;
+        }
+        
+        .prepare-result {
+            color: #16a085;
+            font-weight: bold;
+        }
+        
+        /* Màu cho て-form + しまいます (hoàn thành/nuối tiếc) */
+        .complete-base {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        .complete-te-form {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .complete-result {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        /* Màu cho contracted forms */
+        .contracted {
+            color: #f39c12;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        /* Highlight cho phần quan trọng trong câu ví dụ */
+        .highlight-try {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .highlight-prepare {
+            background-color: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .highlight-complete {
+            background-color: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        /* Nuance boxes */
+        .nuance-try {
+            background-color: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-prepare {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-complete {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇯🇵 NGỮ PHÁP N4 - BÀI 22 📚</h1>
+            <h2>Động từ phụ trợ て - て形 + 補助動詞</h2>
+        </div>
+
+        <!-- GIỚI THIỆU BÀI HỌC -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 Bài 22 - Động từ phụ trợ て</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">🎯 Chủ đề chính của bài học</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Khái niệm chung:</div>
+                        <strong>Động từ phụ trợ て</strong> (補助動詞 - ほじょどうし) là những động từ đặc biệt kết hợp với thể て để tạo ra những ý nghĩa mới.<br>
+                        Các động từ phụ trợ này giúp diễn tả các sắc thái tinh tế về hành động như: thử nghiệm, chuẩn bị, hoàn thành, v.v.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">🎯 Mục tiêu học:</div>
+                        • <strong>〜てみます</strong>: Thử làm gì đó (để xem kết quả, trải nghiệm)<br>
+                        • <strong>〜ておきます</strong>: Làm sẵn/chuẩn bị hoặc giữ nguyên trạng thái<br>
+                        • <strong>〜てしまいます</strong>: Hoàn thành hết hoặc lỡ làm (nuối tiếc)
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>🔑 Điểm quan trọng:</strong><br>
+                        Ba động từ phụ trợ này đều sử dụng <span class="pattern">thể て + động từ phụ trợ</span> và có thể rút gọn trong văn nói.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜てみます -->
+        <div class="lesson-section">
+            <div class="lesson-title">🧪 〜てみます</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜てみます - Thử làm gì đó</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Thử làm gì đó</strong> (để xem kết quả thế nào, để trải nghiệm)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả hành động thử làm một việc gì đó để xem thử kết quả, cảm giác ra sao, hoặc để có kinh nghiệm về việc đó.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Cách tạo:</strong><br>
+                            <span class="try-base">Động từ</span> <span class="try-te-form">thể て (て形)</span> + <span class="try-result">みます</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="try-base">食べる</span> (taberu) → <span class="try-base">食べ</span><span class="try-te-form">て</span> + <span class="try-result">みます</span> = <span class="try-te-form">食べて</span><span class="try-result">みます</span> (tabete mimasu)<br>
+                            • <span class="try-base">調べる</span> (shiraberu) → <span class="try-base">調べ</span><span class="try-te-form">て</span> + <span class="try-result">みます</span> = <span class="try-te-form">調べて</span><span class="try-result">みます</span> (shirabete mimasu)<br>
+                            • <span class="try-base">入る</span> (hairu) → <span class="try-base">入っ</span><span class="try-te-form">て</span> + <span class="try-result">みます</span> = <span class="try-te-form">入って</span><span class="try-result">みます</span> (haitte mimasu)
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">この新しいケーキを食べ<span class="highlight-try">てみて</span>ください。とてもおいしいですよ。</div>
+                        <div class="vietnamese">Kono atarashii keeki o tabe<strong>te mite</strong> kudasai. Totemo oishii desu yo.<br>
+                        (Bạn hãy ăn thử cái bánh mới này đi. Ngon lắm đấy.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">分からない言葉があったら、辞書で調べ<span class="highlight-try">てみましょう</span>。</div>
+                        <div class="vietnamese">Wakaranai kotoba ga attara, jisho de shirabe<strong>te mimashō</strong>.<br>
+                        (Nếu có từ không hiểu, chúng ta hãy thử tra từ điển xem sao.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">一度日本の温泉に入っ<span class="highlight-try">てみたい</span>です。</div>
+                        <div class="vietnamese">Ichido Nihon no onsen ni hait<strong>te mitai</strong> desu.<br>
+                        (Tôi muốn thử tắm suối nước nóng của Nhật một lần.)</div>
+                    </div>
+                    
+                    <div class="nuance-try">
+                        <strong>📌 Đặc điểm của 〜てみます:</strong><br>
+                        • Nhấn mạnh vào việc "thử nghiệm", "trải nghiệm" chứ không phải là một hành động thực hiện thường xuyên hay đã quen thuộc<br>
+                        • Thường dùng khi muốn thử một món ăn mới, một phương pháp mới, sử dụng một đồ vật mới, hoặc trải nghiệm một hoạt động mới<br>
+                        • Động từ みます ở đây không có nghĩa là "nhìn", mà là một động từ phụ trợ có nghĩa "thử"<br>
+                        • Có thể chia động từ みます ở các thể khác nhau: 〜てみたい (muốn thử), 〜てみよう (hãy thử), 〜てみてください (xin hãy thử)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜ておきます -->
+        <div class="lesson-section">
+            <div class="lesson-title">📋 〜ておきます</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜ておきます - Làm sẵn hoặc giữ nguyên</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        1. <strong>Làm sẵn, làm trước</strong> việc gì đó (để chuẩn bị cho việc sau)<br>
+                        2. <strong>Giữ nguyên</strong> một trạng thái nào đó (để nó như vậy)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Có hai ý nghĩa chính:<br>
+                        1. Thực hiện một hành động trước với mục đích chuẩn bị cho một sự việc hoặc tình huống trong tương lai<br>
+                        2. Duy trì một trạng thái hiện tại, không thay đổi nó
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Cách tạo:</strong><br>
+                            <span class="prepare-base">Động từ</span> <span class="prepare-te-form">thể て (て形)</span> + <span class="prepare-result">おきます</span><br>
+                            (Trong văn nói thân mật thường rút gọn thành <span class="contracted">〜ときます</span>)<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="prepare-base">予約する</span> (yoyaku suru) → <span class="prepare-base">予約し</span><span class="prepare-te-form">て</span> + <span class="prepare-result">おきます</span> = <span class="prepare-te-form">予約して</span><span class="prepare-result">おきます</span><br>
+                            &nbsp;&nbsp;(yoyaku shite okimasu) → <span class="contracted">予約しときます</span> (yoyaku shitokimasu)<br>
+                            • <span class="prepare-base">コピーする</span> (kopii suru) → <span class="prepare-te-form">コピーして</span><span class="prepare-result">おきます</span> → <span class="contracted">コピーしときます</span><br>
+                            • <span class="prepare-base">読む</span> (yomu) → <span class="prepare-base">読ん</span><span class="prepare-te-form">で</span> + <span class="prepare-result">おきます</span> = <span class="prepare-te-form">読んで</span><span class="prepare-result">おきます</span> → <span class="contracted">読んどきます</span>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">旅行の前に、ホテルを予約し<span class="highlight-prepare">ておきます</span>。</div>
+                        <div class="vietnamese">Ryokō no mae ni, hoteru o yoyaku shi<strong>te okimasu</strong>.<br>
+                        (Trước chuyến du lịch, tôi sẽ đặt trước khách sạn.)</div>
+                        <div class="note">→ <span class="contracted">予約しときます</span> (yoyaku shitokimasu) - dạng rút gọn</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">明日の会議で使うので、資料をコピーし<span class="highlight-prepare">ておいて</span>ください。</div>
+                        <div class="vietnamese">Ashita no kaigi de tsukau node, shiryō o kopii shi<strong>te oite</strong> kudasai.<br>
+                        (Vì sẽ dùng cho cuộc họp ngày mai nên xin hãy photo sẵn tài liệu.)</div>
+                        <div class="note">→ <span class="contracted">コピーしといて</span> (kopii shitoite) - dạng rút gọn</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">まだ使いますから、電気はつけたままにし<span class="highlight-prepare">ておいて</span>ください。</div>
+                        <div class="vietnamese">Mada tsukaimasu kara, denki wa tsuketa mama ni shi<strong>te oite</strong> kudasai.<br>
+                        (Vì tôi vẫn còn dùng nên xin hãy cứ để điện bật nguyên như vậy.)</div>
+                    </div>
+                    
+                    <div class="nuance-prepare">
+                        <strong>📌 Hai nghĩa của 〜ておきます:</strong><br>
+                        <strong>Nghĩa 1 (Chuẩn bị):</strong> Hành động được thực hiện với một mục đích chuẩn bị cho tương lai. Vế trước thường là hành động chuẩn bị, vế sau (ngầm hiểu hoặc được nêu rõ) là mục đích<br>
+                        <strong>Nghĩa 2 (Giữ nguyên):</strong> Thường đi với そのまま (cứ để nguyên như thế). Yêu cầu hoặc hành động giữ một trạng thái không thay đổi<br><br>
+                        <strong>Dạng rút gọn trong văn nói:</strong><br>
+                        • Vておきます → Vときます (例: 買っておきます → 買っときます)<br>
+                        • Vでおきます → Vどきます (例: 読んでおきます → 読んどきます)<br>
+                        • Vておいて → Vといて (例: 食べておいて → 食べといて)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜てしまいます -->
+        <div class="lesson-section">
+            <div class="lesson-title">😔 〜てしまいます</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">3. 〜てしまいます - Hoàn thành hết hoặc lỡ làm</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        1. <strong>Làm xong hết, hoàn thành</strong> (một việc gì đó một cách trọn vẹn)<br>
+                        2. <strong>Lỡ làm gì đó</strong> (thường mang ý nuối tiếc, không mong muốn, hoặc việc đã xảy ra ngoài ý muốn và không thể thay đổi được)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả sự hoàn tất trọn vẹn của một hành động, hoặc một hành động đã xảy ra mang sắc thái nuối tiếc, thất vọng, hoặc ngoài dự kiến và không thể đảo ngược.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Cách tạo:</strong><br>
+                            <span class="complete-base">Động từ</span> <span class="complete-te-form">thể て (て形)</span> + <span class="complete-result">しまいます</span><br>
+                            (Trong văn nói thân mật thường rút gọn thành <span class="contracted">〜ちゃいます/〜じゃいます</span>)<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="complete-base">読む</span> (yomu) → <span class="complete-base">読ん</span><span class="complete-te-form">で</span> + <span class="complete-result">しまいます</span> = <span class="complete-te-form">読んで</span><span class="complete-result">しまいます</span><br>
+                            &nbsp;&nbsp;(yonde shimaimasu) → <span class="contracted">読んじゃいます</span> (yonjaimasu)<br>
+                            • <span class="complete-base">捨てる</span> (suteru) → <span class="complete-te-form">捨てて</span><span class="complete-result">しまいます</span> → <span class="contracted">捨てちゃいます</span><br>
+                            • <span class="complete-base">忘れる</span> (wasureru) → <span class="complete-te-form">忘れて</span><span class="complete-result">しまいます</span> → <span class="contracted">忘れちゃいます</span>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">長い小説でしたが、やっと全部読ん<span class="highlight-complete">でしまいました</span>。</div>
+                        <div class="vietnamese">Nagai shōsetsu deshita ga, yatto zenbu yon<strong>de shimaimashita</strong>.<br>
+                        (Dù là một cuốn tiểu thuyết dài nhưng cuối cùng tôi cũng đã đọc xong hết rồi.) <em>(Hoàn thành)</em></div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">うっかりして、大切な書類を捨て<span class="highlight-complete">てしまいました</span>。</div>
+                        <div class="vietnamese">Ukkari shite, taisetsu na shorui o sute<strong>te shimaimashita</strong>.<br>
+                        (Do bất cẩn, tôi đã lỡ vứt mất tài liệu quan trọng rồi.) <em>(Lỡ làm, nuối tiếc)</em></div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">電車の中に傘を忘れ<span class="highlight-complete">てしまった</span>。</div>
+                        <div class="vietnamese">Densha no naka ni kasa o wasure<strong>te shimatta</strong>.<br>
+                        (Tôi đã lỡ để quên ô trên tàu điện mất rồi.) <em>(Thể thông thường - Lỡ làm)</em></div>
+                    </div>
+                    
+                    <div class="nuance-complete">
+                        <strong>📌 Hai nghĩa của 〜てしまいます:</strong><br>
+                        <strong>Nghĩa 1 (Hoàn thành):</strong> Nhấn mạnh sự hoàn tất trọn vẹn của hành động, đôi khi có thể mang ý nghĩa đã giải quyết xong một việc gì đó<br>
+                        <strong>Nghĩa 2 (Nuối tiếc/Ngoài ý muốn):</strong> Đây là nghĩa phổ biến hơn ở trình độ N4. Hành động đã xảy ra và người nói cảm thấy tiếc nuối, thất vọng, hoặc đó là điều không mong muốn và không thể làm gì khác được<br><br>
+                        <strong>Dạng rút gọn trong văn nói:</strong><br>
+                        • Vてしまいます → Vちゃいます (例: 食べてしまいます → 食べちゃいます)<br>
+                        • Vでしまいます → Vじゃいます (例: 飲んでしまいます → 飲んじゃいます)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SO SÁNH TẤT CẢ -->
+        <div class="lesson-section">
+            <div class="lesson-title">🆚 So sánh ba động từ phụ trợ</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">So sánh 〜てみます vs 〜ておきます vs 〜てしまいます</div>
+                <div class="grammar-content">
+                    <div class="comparison-note">
+                        <strong>📊 Bảng so sánh chi tiết:</strong><br><br>
+                        
+                        <table>
+                            <tr>
+                                <th>Ngữ pháp</th>
+                                <th>Ý nghĩa chính</th>
+                                <th>Sắc thái</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                            <tr>
+                                <td><strong>〜てみます</strong></td>
+                                <td>Thử làm</td>
+                                <td>🧪 Trải nghiệm<br>🔍 Tò mò</td>
+                                <td><span class="japanese">食べてみます</span><br>
+                                (Thử ăn xem)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>〜ておきます</strong></td>
+                                <td>Chuẩn bị/Giữ nguyên</td>
+                                <td>📋 Lên kế hoạch<br>🔒 Duy trì trạng thái</td>
+                                <td><span class="japanese">買っておきます</span><br>
+                                (Mua sẵn)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>〜てしまいます</strong></td>
+                                <td>Hoàn thành/Lỡ làm</td>
+                                <td>✅ Trọn vẹn<br>😔 Nuối tiếc</td>
+                                <td><span class="japanese">忘れてしまいました</span><br>
+                                (Đã lỡ quên mất rồi)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>💡 Mẹo phân biệt:</strong><br>
+                        • <strong>〜てみます:</strong> "Thử xem..." (tò mò, muốn biết kết quả)<br>
+                        • <strong>〜ておきます:</strong> "Làm sẵn..." hoặc "Để nguyên..." (chuẩn bị)<br>
+                        • <strong>〜てしまいます:</strong> "Đã...rồi" (hoàn thành) hoặc "Lỡ...mất rồi" (nuối tiếc)<br><br>
+                        
+                        <strong>Ví dụ với cùng một động từ:</strong><br>
+                        • <span class="japanese">食べてみます</span> → Thử ăn xem (chưa ăn, muốn thử)<br>
+                        • <span class="japanese">食べておきます</span> → Ăn sẵn (ăn trước để chuẩn bị)<br>
+                        • <span class="japanese">食べてしまいます</span> → Ăn hết rồi (đã ăn xong hoặc lỡ ăn mất)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VÍ DỤ BỔ SUNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🌟 Ví dụ bổ sung</div>
+            
+            <div class="examples-section">
+                <h3>🧪 〜てみます (Thử)</h3>
+                
+                <p>
+                    <span class="japanese">新しいアプリを使ってみたいです。</span><br>
+                    <span class="vietnamese">Atarashii apuri o tsukatte mitai desu.<br>
+                    (Tôi muốn thử sử dụng ứng dụng mới.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">日本語で手紙を書いてみました。</span><br>
+                    <span class="vietnamese">Nihongo de tegami o kaite mimashita.<br>
+                    (Tôi đã thử viết thư bằng tiếng Nhật.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">この靴を履いてみてもいいですか。</span><br>
+                    <span class="vietnamese">Kono kutsu o haite mite mo ii desu ka.<br>
+                    (Tôi có thể thử đi đôi giày này không?)</span>
+                </p>
+            </div>
+            
+            <div class="examples-section">
+                <h3>📋 〜ておきます (Chuẩn bị/Giữ nguyên)</h3>
+                
+                <p>
+                    <span class="japanese">パーティーの前に、部屋を掃除しておきます。</span><br>
+                    <span class="vietnamese">Paatii no mae ni, heya o souji shite okimasu.<br>
+                    (Trước bữa tiệc, tôi sẽ dọn dẹp phòng sẵn.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">電話番号をメモしておいてください。</span><br>
+                    <span class="vietnamese">Denwa bangou o memo shite oite kudasai.<br>
+                    (Xin hãy ghi chú số điện thoại sẵn.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">窓は開けたままにしておきます。</span><br>
+                    <span class="vietnamese">Mado wa aketa mama ni shite okimasu.<br>
+                    (Tôi sẽ để cửa sổ mở nguyên như vậy.)</span>
+                </p>
+            </div>
+            
+            <div class="examples-section">
+                <h3>😔 〜てしまいます (Hoàn thành/Nuối tiếc)</h3>
+                
+                <p>
+                    <span class="japanese">宿題を全部やってしまいました。</span><br>
+                    <span class="vietnamese">Shukudai o zenbu yatte shimaimashita.<br>
+                    (Tôi đã làm xong hết bài tập về nhà rồi.) <em>(Hoàn thành)</em></span>
+                </p>
+                
+                <p>
+                    <span class="japanese">携帯電話を落としてしまいました。</span><br>
+                    <span class="vietnamese">Keitai denwa o otoshite shimaimashita.<br>
+                    (Tôi đã lỡ làm rơi điện thoại rồi.) <em>(Nuối tiếc)</em></span>
+                </p>
+                
+                <p>
+                    <span class="japanese">もう夜中になってしまった。</span><br>
+                    <span class="vietnamese">Mou yonaka ni natte shimatta.<br>
+                    (Đã trở thành nửa đêm rồi.) <em>(Ngoài ý muốn)</em></span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BÀI LUYỆN TẬP -->
+        <div class="lesson-section">
+            <div class="lesson-title">🏋️‍♂️ Luyện tập</div>
+            
+            <div class="practice-section">
+                <div class="question">📝 Câu hỏi 1</div>
+                <p>Chia động từ "見る" theo ba cách: てみます, ておきます, てしまいます</p>
+                
+                <div class="answer">
+                    <span class="japanese">見る → 見てみます (thử xem)<br>
+                    見る → 見ておきます (xem sẵn/để nguyên đang xem)<br>
+                    見る → 見てしまいます (xem xong hết/lỡ xem mất)</span><br>
+                    <span class="vietnamese">miru → mite mimasu / mite okimasu / mite shimaimasu</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 2</div>
+                <p>Dịch: "Tôi muốn thử ăn sushi một lần." (Dùng てみます)</p>
+                
+                <div class="answer">
+                    <span class="japanese">一度寿司を食べてみたいです。</span><br>
+                    <span class="vietnamese">Ichido sushi o tabete mitai desu.</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 3</div>
+                <p>Chọn đúng: "Tôi sẽ mua sẵn vé trước chuyến đi." - Dùng ngữ pháp nào?</p>
+                
+                <div class="answer">
+                    <span class="japanese">旅行の前に切符を買っておきます。</span><br>
+                    <span class="vietnamese">Ryokou no mae ni kippu o katte okimasu.<br>
+                    → Dùng ておきます vì đây là hành động chuẩn bị</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 4</div>
+                <p>Phân biệt nghĩa: A. 本を読んでみます B. 本を読んでしまいました</p>
+                
+                <div class="answer">
+                    <span class="japanese">A: Tôi thử đọc sách xem (chưa đọc, muốn thử)<br>
+                    B: Tôi đã đọc xong sách rồi (đã hoàn thành)</span><br>
+                    <strong>→ てみます = thử, てしまいます = hoàn thành</strong>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 5</div>
+                <p>Viết dạng rút gọn của: 食べておきます, 読んでしまいます</p>
+                
+                <div class="answer">
+                    <span class="japanese">食べておきます → 食べときます (tabetokimasu)<br>
+                    読んでしまいます → 読んじゃいます (yonjaimasu)</span><br>
+                    <span class="vietnamese">ておきます → ときます, でしまいます → じゃいます</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 6</div>
+                <p>Giải thích sự khác biệt: "電気をつけておきます" vs "電気をつけてしまいます"</p>
+                
+                <div class="answer">
+                    <span class="japanese">電気をつけておきます: Để đèn sáng sẵn (chuẩn bị hoặc giữ nguyên)<br>
+                    電気をつけてしまいます: Đã bật đèn rồi (hoàn thành) hoặc lỡ bật đèn (ngoài ý muốn)</span><br>
+                    <strong>→ ておきます = có chủ ý, てしまいます = đã xong hoặc ngoài ý muốn</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỪ VỰNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔑 Từ vựng quan trọng</div>
+            
+            <div class="vocab-section">
+                <h3>📝 Từ vựng liên quan đến động từ phụ trợ</h3>
+                
+                <div class="vocab-item">
+                    <span class="vocab-jp">新しい (あたらしい / atarashii)</span>
+                    <span class="vocab-vn">- Mới</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">ケーキ (keeki)</span>
+                    <span class="vocab-vn">- Bánh ngọt</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">言葉 (ことば / kotoba)</span>
+                    <span class="vocab-vn">- Từ ngữ, lời nói</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">辞書 (じしょ / jisho)</span>
+                    <span class="vocab-vn">- Từ điển</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">調べる (しらべる / shiraberu)</span>
+                    <span class="vocab-vn">- Tra cứu, điều tra</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">温泉 (おんせん / onsen)</span>
+                    <span class="vocab-vn">- Suối nước nóng</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">旅行 (りょこう / ryokou)</span>
+                    <span class="vocab-vn">- Du lịch</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">予約 (よやく / yoyaku)</span>
+                    <span class="vocab-vn">- Đặt trước</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">会議 (かいぎ / kaigi)</span>
+                    <span class="vocab-vn">- Cuộc họp</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">資料 (しりょう / shiryou)</span>
+                    <span class="vocab-vn">- Tài liệu</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">コピー (kopii)</span>
+                    <span class="vocab-vn">- Sao chép, photo</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">電気 (でんき / denki)</span>
+                    <span class="vocab-vn">- Điện</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">小説 (しょうせつ / shousetsu)</span>
+                    <span class="vocab-vn">- Tiểu thuyết</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">うっかり (ukkari)</span>
+                    <span class="vocab-vn">- Bất cẩn, vô ý</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">大切 (たいせつ / taisetsu)</span>
+                    <span class="vocab-vn">- Quan trọng, quý giá</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">書類 (しょるい / shorui)</span>
+                    <span class="vocab-vn">- Giấy tờ, tài liệu</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">捨てる (すてる / suteru)</span>
+                    <span class="vocab-vn">- Vứt bỏ</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">電車 (でんしゃ / densha)</span>
+                    <span class="vocab-vn">- Tàu điện</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">傘 (かさ / kasa)</span>
+                    <span class="vocab-vn">- Ô, dù</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">忘れる (わすれる / wasureru)</span>
+                    <span class="vocab-vn">- Quên</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỔNG KẾT BÀI 22 -->
+        <div class="lesson-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="lesson-title" style="color: white;">🎯 Tổng kết Bài 22</div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #FFE082; margin-top: 0;">💡 Điểm chính cần nhớ:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜てみます:</strong> Thử làm gì đó (trải nghiệm, tò mò)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜ておきます:</strong> Làm sẵn/chuẩn bị hoặc giữ nguyên trạng thái</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜てしまいます:</strong> Hoàn thành hết hoặc lỡ làm (nuối tiếc)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Cấu trúc:</strong> て形 + 補助動詞 (động từ phụ trợ)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Có thể rút gọn</strong> trong văn nói thân mật</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="color: #FFE082; margin-top: 0;">📚 Dạng rút gọn quan trọng:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">✅ <strong>〜ておきます → 〜ときます:</strong> 買っておきます → 買っときます</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>〜でおきます → 〜どきます:</strong> 読んでおきます → 読んどきます</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>〜てしまいます → 〜ちゃいます:</strong> 食べてしまいます → 食べちゃいます</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>〜でしまいます → 〜じゃいます:</strong> 飲んでしまいます → 飲んじゃいます</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Mức độ:</strong> Rút gọn = thân mật, đầy đủ = lịch sự</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #FFE082; margin-top: 0;">🚀 Hoàn thành:</h4>
+                <p style="margin-bottom: 0;">Bài 22 đã hoàn thành! Bạn đã học được 3 động từ phụ trợ quan trọng với <strong>thể て</strong>. 
+                Những ngữ pháp này rất thường dùng trong giao tiếp hàng ngày và giúp diễn đạt các sắc thái tinh tế của hành động!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngữ pháp N4 - Bài 23: Động từ cho nhận</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-mobile.css">
+    <style>
+        /* HỆ THỐNG MÀU THỐNG NHẤT CHO TẤT CẢ NGỮ PHÁP */
+        
+        /* Màu gốc - xanh dương */
+        .base {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        /* Màu bị thay đổi/bỏ đi - đỏ gạch ngang */
+        .transform {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        /* Màu được thêm vào - xanh lá */
+        .added {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Màu đặc biệt - cam (particles, contracted forms) */
+        .special {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        /* Màu kết quả cuối cùng - xanh lá đậm */
+        .result {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Highlight cho phần quan trọng trong câu ví dụ */
+        .highlight-give {
+            background-color: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .highlight-receive {
+            background-color: #e3f2fd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .highlight-get {
+            background-color: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        /* Direction arrows */
+        .direction-arrow {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        /* Nuance boxes */
+        .nuance-give {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-receive {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-get {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        /* Direction diagram */
+        .direction-diagram {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .person {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 10px;
+            font-weight: bold;
+        }
+        
+        .person.me {
+            background: #f39c12;
+        }
+        
+        .person.other {
+            background: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇯🇵 NGỮ PHÁP N4 - BÀI 23 📚</h1>
+            <h2>Động từ cho nhận - 授受動詞</h2>
+        </div>
+
+        <!-- GIỚI THIỆU BÀI HỌC -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 Bài 23 - Động từ cho nhận</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">🎯 Chủ đề chính của bài học</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Khái niệm chung:</div>
+                        <strong>Động từ cho nhận</strong> (授受動詞 - じゅじゅどうし) là nhóm động từ đặc biệt diễn tả hành động cho và nhận.<br>
+                        Tiếng Nhật phân biệt rất rõ ràng hướng của hành động: từ ai đến ai, ai là người cho, ai là người nhận.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">🎯 Mục tiêu học:</div>
+                        • <strong>あげます・〜てあげます</strong>: Cho đi (từ tôi/phía tôi → người khác)<br>
+                        • <strong>くれます・〜てくれます</strong>: Cho tôi (từ người khác → tôi/phía tôi)<br>
+                        • <strong>もらいます・〜てもらいます</strong>: Nhận từ (người khác → tôi/phía tôi, chủ ngữ là tôi)
+                    </div>
+                    
+                    <div class="direction-diagram">
+                        <h4>🔄 Hướng của hành động</h4>
+                        <div>
+                            <div class="person me">私 (Tôi)</div>
+                            <span class="direction-arrow">あげます →</span>
+                            <div class="person other">人 (Người khác)</div>
+                        </div>
+                        <div>
+                            <div class="person other">人 (Người khác)</div>
+                            <span class="direction-arrow">くれます →</span>
+                            <div class="person me">私 (Tôi)</div>
+                        </div>
+                        <div>
+                            <div class="person me">私 (Tôi)</div>
+                            <span class="direction-arrow">← もらいます</span>
+                            <div class="person other">人 (Người khác)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>🔑 Điểm quan trọng:</strong><br>
+                        Ba động từ này thể hiện <span class="pattern">cùng một hành động</span> nhưng khác <span class="pattern">góc nhìn và hướng</span>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- あげます・〜てあげます -->
+        <div class="lesson-section">
+            <div class="lesson-title">🎁 あげます・〜てあげます</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">1. あげます・〜てあげます - Cho đi</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        • <strong>あげます:</strong> Cho (ai đó cái gì đó) (hành động từ người nói/người phía người nói hướng ra người khác)<br>
+                        • <strong>〜てあげます:</strong> Làm gì đó cho (ai đó) (hành động từ người nói/người phía người nói hướng ra người khác)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng / Hướng của hành động:</div>
+                        Dùng khi người nói (hoặc người thuộc nhóm của người nói) làm một việc gì đó cho người khác (người ngoài nhóm). Hành động hướng ra ngoài.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi / Cấu trúc:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Cho đồ vật:</strong><br>
+                            <span class="base">私／私側の人</span> <span class="special">は</span> <span class="base">人</span> <span class="special">に</span> <span class="base">物</span> <span class="special">を</span> <span class="added">あげます</span><br>
+                            (Người cho) は (Người nhận) に (Vật) を あげます<br><br>
+                            
+                            <strong>📋 Làm gì cho ai:</strong><br>
+                            <span class="base">私／私側の人</span> <span class="special">は</span> <span class="base">人</span> <span class="special">に</span> <span class="base">動詞</span><span class="added">て形</span> + <span class="added">あげます</span><br>
+                            (Người làm) は (Người được làm cho) に Vてあげます<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="base">手伝う</span> (tetsudau) → <span class="base">手伝っ</span><span class="added">て</span> + <span class="added">あげます</span> = <span class="result">手伝ってあげます</span><br>
+                            • <span class="base">編む</span> (amu) → <span class="base">編ん</span><span class="added">で</span> + <span class="added">あげます</span> = <span class="result">編んであげます</span>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は妹に誕生日プレゼントを<span class="highlight-give">あげました</span>。</div>
+                        <div class="vietnamese">Watashi wa imōto ni tanjōbi purezento o <strong>agemashita</strong>.<br>
+                        (Tôi đã tặng quà sinh nhật cho em gái.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は友達の引っ越しを手伝って<span class="highlight-give">あげました</span>。</div>
+                        <div class="vietnamese">Watashi wa tomodachi no hikkoshi o tetsudatte <strong>agemashita</strong>.<br>
+                        (Tôi đã giúp bạn tôi chuyển nhà.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">母は弟にセーターを編んで<span class="highlight-give">あげました</span>。</div>
+                        <div class="vietnamese">Haha wa otōto ni sētā o ande <strong>agemashita</strong>.<br>
+                        (Mẹ tôi đã đan áo len cho em trai tôi.)</div>
+                    </div>
+                    
+                    <div class="nuance-give">
+                        <strong>📌 Lưu ý quan trọng về あげます:</strong><br>
+                        • あげます và 〜てあげます không nên dùng khi người nhận là người trên (cấp trên, thầy cô giáo, người lớn tuổi hơn nhiều) vì có thể bị coi là thất lễ, hàm ý ban ơn. Trong trường hợp này, dùng さしあげます (khiêm nhường ngữ) hoặc các cách diễn đạt khác<br>
+                        • Không dùng あげます cho chính bản thân mình hoặc người trong gia đình mình khi nói chuyện với người ngoài (khi người trong gia đình là người nhận)<br>
+                        • Khi nói về việc người khác (không phải mình) cho một người khác nữa (cũng không phải mình hay người nhà mình), vẫn dùng あげます<br>
+                        • Ví dụ: 山田さんは木村さんに花をあげました。(Anh Yamada đã tặng hoa cho chị Kimura.)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- くれます・〜てくれます -->
+        <div class="lesson-section">
+            <div class="lesson-title">💝 くれます・〜てくれます</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">2. くれます・〜てくれます - Cho tôi</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        • <strong>くれます:</strong> (Ai đó) cho tôi/người phía tôi (cái gì đó) (hành động từ người khác hướng vào người nói/người phía người nói)<br>
+                        • <strong>〜てくれます:</strong> (Ai đó) làm gì đó cho tôi/người phía tôi (hành động từ người khác hướng vào người nói/người phía người nói)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng / Hướng của hành động:</div>
+                        Dùng khi người khác làm một việc gì đó cho người nói hoặc người thuộc nhóm của người nói (gia đình, bạn thân). Hành động hướng vào trong.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi / Cấu trúc:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Cho đồ vật:</strong><br>
+                            <span class="base">人</span> <span class="special">は</span> <span class="base">私／私側の人</span> <span class="special">に</span> <span class="base">物</span> <span class="special">を</span> <span class="added">くれます</span><br>
+                            (Người cho) は (Người nhận) に (Vật) を くれます<br><br>
+                            
+                            <strong>📋 Làm gì cho ai:</strong><br>
+                            <span class="base">人</span> <span class="special">は</span> <span class="base">私／私側の人</span> <span class="special">に</span> <span class="base">動詞</span><span class="added">て形</span> + <span class="added">くれます</span><br>
+                            (Người làm) は (Người được làm cho) に Vてくれます<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="base">送る</span> (okuru) → <span class="base">送っ</span><span class="added">て</span> + <span class="added">くれます</span> = <span class="result">送ってくれます</span><br>
+                            • <span class="base">教える</span> (oshieru) → <span class="base">教え</span><span class="added">て</span> + <span class="added">くれます</span> = <span class="result">教えてくれます</span>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">佐藤さんは私に日本のお菓子を<span class="highlight-receive">くれました</span>。</div>
+                        <div class="vietnamese">Satō-san wa watashi ni Nihon no okashi o <strong>kuremashita</strong>.<br>
+                        (Chị Sato đã cho tôi bánh kẹo Nhật Bản.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">友達が空港まで送って<span class="highlight-receive">くれました</span>。</div>
+                        <div class="vietnamese">Tomodachi ga kūkō made okutte <strong>kuremashita</strong>.<br>
+                        (Bạn tôi đã (làm cho tôi việc) tiễn tôi ra sân bay.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">先生が難しい漢字の読み方を教えて<span class="highlight-receive">くださいました</span>。</div>
+                        <div class="vietnamese">Sensei ga muzukashii kanji no yomikata o oshiete <strong>kudasaimashita</strong>.<br>
+                        (Thầy giáo đã (làm cho tôi việc) chỉ cho tôi cách đọc chữ Hán khó.)</div>
+                        <div class="note">※ くださいます là kính ngữ của くれます</div>
+                    </div>
+                    
+                    <div class="nuance-receive">
+                        <strong>📌 Lưu ý quan trọng về くれます:</strong><br>
+                        • くれます và 〜てくれます dùng khi người nhận là người nói hoặc người trong nhóm của người nói<br>
+                        • Khi người cho là người trên, dùng kính ngữ くださいます (cho tôi/phía tôi) hoặc 〜てくださいます (làm cho tôi/phía tôi)<br>
+                        • Chủ ngữ của くれます/〜てくれます luôn là người khác, không phải bản thân người nói<br>
+                        • Thể hiện sự biết ơn và cảm kích đối với hành động của người khác
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- もらいます・〜てもらいます -->
+        <div class="lesson-section">
+            <div class="lesson-title">🤲 もらいます・〜てもらいます</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">3. もらいます・〜てもらいます - Nhận từ</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        • <strong>もらいます:</strong> Nhận (cái gì đó) từ (ai đó) (hành động nhận về phía người nói/người phía người nói)<br>
+                        • <strong>〜てもらいます:</strong> Được (ai đó) làm gì cho (hành động nhận về phía người nói/người phía người nói, với sự biết ơn)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng / Hướng của hành động:</div>
+                        Dùng khi người nói (hoặc người thuộc nhóm của người nói) nhận được một vật gì đó hoặc một hành động/sự giúp đỡ từ người khác. Hành động hướng vào trong (nhưng chủ thể là người nhận).
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi / Cấu trúc:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Nhận đồ vật:</strong><br>
+                            <span class="base">私／私側の人</span> <span class="special">は</span> <span class="base">人</span> <span class="special">に／から</span> <span class="base">物</span> <span class="special">を</span> <span class="added">もらいます</span><br>
+                            (Người nhận) は (Người cho) に／から (Vật) を もらいます<br><br>
+                            
+                            <strong>📋 Được ai làm gì cho:</strong><br>
+                            <span class="base">私／私側の人</span> <span class="special">は</span> <span class="base">人</span> <span class="special">に</span> <span class="base">動詞</span><span class="added">て形</span> + <span class="added">もらいます</span><br>
+                            (Người được làm cho) は (Người làm) に Vてもらいます<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="base">教える</span> (oshieru) → <span class="base">教え</span><span class="added">て</span> + <span class="added">もらいます</span> = <span class="result">教えてもらいます</span><br>
+                            • <span class="base">手伝う</span> (tetsudau) → <span class="base">手伝っ</span><span class="added">て</span> + <span class="added">もらいます</span> = <span class="result">手伝ってもらいます</span>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は父に時計を<span class="highlight-get">もらいました</span>。</div>
+                        <div class="vietnamese">Watashi wa chichi ni tokei o <strong>moraimashita</strong>.<br>
+                        (Tôi đã nhận được đồng hồ từ bố tôi.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は田中さんに日本語を教えて<span class="highlight-get">もらいました</span>。</div>
+                        <div class="vietnamese">Watashi wa Tanaka-san ni Nihongo o oshiete <strong>moraimashita</strong>.<br>
+                        (Tôi đã được anh Tanaka dạy tiếng Nhật cho.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">社長に仕事を手伝って<span class="highlight-get">いただきました</span>。</div>
+                        <div class="vietnamese">Shachō ni shigoto o tetsudatte <strong>itadakimashita</strong>.<br>
+                        (Tôi đã được giám đốc giúp đỡ công việc.)</div>
+                        <div class="note">※ いただきます là khiêm nhường ngữ của もらいます</div>
+                    </div>
+                    
+                    <div class="nuance-get">
+                        <strong>📌 Lưu ý quan trọng về もらいます:</strong><br>
+                        • もらいます và 〜てもらいます dùng khi người nói là người nhận hành động hoặc vật<br>
+                        • Người thực hiện hành động (người cho) được đánh dấu bằng trợ từ に (hoặc から khi nhận đồ vật)<br>
+                        • Khi người làm cho mình là người trên, dùng khiêm nhường ngữ いただきます (nhận) hoặc 〜ていただきます (được làm cho)<br>
+                        • 〜てもらいます thường bao hàm ý nghĩa biết ơn, cảm kích sự giúp đỡ của người khác<br>
+                        • 〜てもらいます thường thể hiện sự chủ động nhờ vả hoặc sự biết ơn rõ ràng hơn so với 〜てくれます
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SO SÁNH CHI TIẾT -->
+        <div class="lesson-section">
+            <div class="lesson-title">🆚 So sánh chi tiết</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">So sánh あげます vs くれます vs もらいます</div>
+                <div class="grammar-content">
+                    <div class="comparison-note">
+                        <strong>📊 Bảng so sánh chi tiết:</strong><br><br>
+                        
+                        <table>
+                            <tr>
+                                <th>Ngữ pháp</th>
+                                <th>Hướng hành động</th>
+                                <th>Chủ ngữ</th>
+                                <th>Ý nghĩa</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                            <tr>
+                                <td><strong>あげます</strong></td>
+                                <td>🎁 Tôi → Người khác</td>
+                                <td>Tôi/Phía tôi</td>
+                                <td>Cho đi</td>
+                                <td><span class="japanese">私は友達にプレゼントをあげます</span><br>
+                                (Tôi tặng quà cho bạn)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>くれます</strong></td>
+                                <td>🎁 Người khác → Tôi</td>
+                                <td>Người khác</td>
+                                <td>Cho tôi</td>
+                                <td><span class="japanese">友達が私にプレゼントをくれます</span><br>
+                                (Bạn tặng quà cho tôi)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>もらいます</strong></td>
+                                <td>🤲 Người khác → Tôi</td>
+                                <td>Tôi/Phía tôi</td>
+                                <td>Nhận từ</td>
+                                <td><span class="japanese">私は友達にプレゼントをもらいます</span><br>
+                                (Tôi nhận quà từ bạn)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>💡 So sánh 〜てくれます vs 〜てもらいます:</strong><br>
+                        Cả hai đều diễn tả việc người khác làm gì đó cho mình, nhưng:<br><br>
+                        
+                        <strong>〜てくれます:</strong> Chủ ngữ là người làm<br>
+                        • <span class="japanese">友達が手伝ってくれました。</span><br>
+                        &nbsp;&nbsp;→ Bạn tôi đã giúp tôi. (nhấn mạnh vào việc bạn làm)<br><br>
+                        
+                        <strong>〜てもらいます:</strong> Chủ ngữ là người nhận sự giúp đỡ<br>
+                        • <span class="japanese">私は友達に手伝ってもらいました。</span><br>
+                        &nbsp;&nbsp;→ Tôi đã được bạn giúp đỡ. (nhấn mạnh vào việc tôi được giúp)<br><br>
+                        
+                        <strong>Sắc thái:</strong> 〜てもらいます thường thể hiện sự chủ động nhờ vả hoặc sự biết ơn rõ ràng hơn.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VÍ DỤ BỔ SUNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🌟 Ví dụ bổ sung</div>
+            
+            <div class="examples-section">
+                <h3>🎁 あげます・〜てあげます (Cho đi)</h3>
+                
+                <p>
+                    <span class="japanese">弟に新しいゲームをあげました。</span><br>
+                    <span class="vietnamese">Otōto ni atarashii gēmu o agemashita.<br>
+                    (Tôi đã tặng game mới cho em trai.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">お年寄りに道を教えてあげました。</span><br>
+                    <span class="vietnamese">Otoshiyori ni michi o oshiete agemashita.<br>
+                    (Tôi đã chỉ đường cho người cao tuổi.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">友達の宿題を手伝ってあげます。</span><br>
+                    <span class="vietnamese">Tomodachi no shukudai o tetsudatte agemasu.<br>
+                    (Tôi sẽ giúp bạn làm bài tập về nhà.)</span>
+                </p>
+            </div>
+            
+            <div class="examples-section">
+                <h3>💝 くれます・〜てくれます (Cho tôi)</h3>
+                
+                <p>
+                    <span class="japanese">姉が美味しいケーキを作ってくれました。</span><br>
+                    <span class="vietnamese">Ane ga oishii kēki o tsukutte kuremashita.<br>
+                    (Chị gái đã làm bánh ngon cho tôi.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">隣の人が重い荷物を運んでくれた。</span><br>
+                    <span class="vietnamese">Tonari no hito ga omoi nimotsu o hakonde kureta.<br>
+                    (Người hàng xóm đã giúp tôi mang hành lý nặng.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">先生が分からない問題を説明してくださいました。</span><br>
+                    <span class="vietnamese">Sensei ga wakaranai mondai o setsumei shite kudasaimashita.<br>
+                    (Thầy giáo đã giải thích cho tôi bài không hiểu.)</span>
+                </p>
+            </div>
+            
+            <div class="examples-section">
+                <h3>🤲 もらいます・〜てもらいます (Nhận từ)</h3>
+                
+                <p>
+                    <span class="japanese">誕生日に両親から時計をもらいました。</span><br>
+                    <span class="vietnamese">Tanjōbi ni ryōshin kara tokei o moraimashita.<br>
+                    (Tôi đã nhận được đồng hồ từ bố mẹ trong ngày sinh nhật.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">日本人の友達に日本語を教えてもらっています。</span><br>
+                    <span class="vietnamese">Nihonjin no tomodachi ni Nihongo o oshiete moratte imasu.<br>
+                    (Tôi đang được bạn người Nhật dạy tiếng Nhật.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">部長に推薦状を書いていただきました。</span><br>
+                    <span class="vietnamese">Buchō ni suisenjō o kaite itadakimashita.<br>
+                    (Tôi đã được trưởng phòng viết thư giới thiệu cho.)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BÀI LUYỆN TẬP -->
+        <div class="lesson-section">
+            <div class="lesson-title">🏋️‍♂️ Luyện tập</div>
+            
+            <div class="practice-section">
+                <div class="question">📝 Câu hỏi 1</div>
+                <p>Chọn động từ đúng: "Tôi tặng sách cho em gái." - Dùng あげます, くれます hay もらいます?</p>
+                
+                <div class="answer">
+                    <span class="japanese">私は妹に本をあげます。</span><br>
+                    <span class="vietnamese">Watashi wa imōto ni hon o agemasu.<br>
+                    → Dùng あげます vì tôi là người cho (hành động hướng ra ngoài)</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 2</div>
+                <p>Dịch: "Bạn tôi đã dạy tiếng Anh cho tôi." (Dùng てくれます)</p>
+                
+                <div class="answer">
+                    <span class="japanese">友達が私に英語を教えてくれました。</span><br>
+                    <span class="vietnamese">Tomodachi ga watashi ni Eigo o oshiete kuremashita.<br>
+                    → Chủ ngữ là "友達" (người làm), dùng てくれます</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 3</div>
+                <p>Phân biệt nghĩa: A. 手伝ってくれました B. 手伝ってもらいました</p>
+                
+                <div class="answer">
+                    <span class="japanese">A: (Ai đó) đã giúp tôi (nhấn mạnh người giúp)<br>
+                    B: Tôi đã được (ai đó) giúp (nhấn mạnh việc được giúp)</span><br>
+                    <strong>→ くれます = người khác làm chủ ngữ, もらいます = tôi làm chủ ngữ</strong>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 4</div>
+                <p>Chia động từ "買う" theo ba cách: てあげます, てくれます, てもらいます</p>
+                
+                <div class="answer">
+                    <span class="japanese">買う → 買って<br>
+                    買ってあげます (tôi mua cho ai đó)<br>
+                    買ってくれます (ai đó mua cho tôi)<br>
+                    買ってもらいます (tôi được ai đó mua cho)</span><br>
+                    <span class="vietnamese">kau → katte + agemasu/kuremasu/moraimasu</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 5</div>
+                <p>Khi nào dùng くださいます và いただきます?</p>
+                
+                <div class="answer">
+                    <span class="japanese">くださいます: Kính ngữ của くれます (người trên cho tôi)<br>
+                    いただきます: Khiêm nhường ngữ của もらいます (tôi nhận từ người trên)</span><br>
+                    <strong>→ Dùng khi người kia có địa vị cao hơn (thầy giáo, sếp, người lớn tuổi)</strong>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 6</div>
+                <p>Sửa lỗi câu sau: "私は先生に本をあげました。"</p>
+                
+                <div class="answer">
+                    <span class="japanese">❌ 私は先生に本をあげました。<br>
+                    ✅ 私は先生に本を差し上げました。</span><br>
+                    <span class="vietnamese">→ Không dùng あげます với người trên, phải dùng さしあげます (khiêm nhường ngữ)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỪ VỰNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔑 Từ vựng quan trọng</div>
+            
+            <div class="vocab-section">
+                <h3>📝 Từ vựng liên quan đến cho nhận</h3>
+                
+                <div class="vocab-item">
+                    <span class="vocab-jp">誕生日 (たんじょうび / tanjōbi)</span>
+                    <span class="vocab-vn">- Sinh nhật</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">プレゼント (purezento)</span>
+                    <span class="vocab-vn">- Quà tặng</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">引っ越し (ひっこし / hikkoshi)</span>
+                    <span class="vocab-vn">- Chuyển nhà</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">手伝う (てつだう / tetsudau)</span>
+                    <span class="vocab-vn">- Giúp đỡ</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">セーター (sētā)</span>
+                    <span class="vocab-vn">- Áo len</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">編む (あむ / amu)</span>
+                    <span class="vocab-vn">- Đan (len)</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">お菓子 (おかし / okashi)</span>
+                    <span class="vocab-vn">- Bánh kẹo</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">空港 (くうこう / kūkō)</span>
+                    <span class="vocab-vn">- Sân bay</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">送る (おくる / okuru)</span>
+                    <span class="vocab-vn">- Tiễn, gửi</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">漢字 (かんじ / kanji)</span>
+                    <span class="vocab-vn">- Chữ Hán</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">読み方 (よみかた / yomikata)</span>
+                    <span class="vocab-vn">- Cách đọc</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">教える (おしえる / oshieru)</span>
+                    <span class="vocab-vn">- Dạy, chỉ bảo</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">時計 (とけい / tokei)</span>
+                    <span class="vocab-vn">- Đồng hồ</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">社長 (しゃちょう / shachō)</span>
+                    <span class="vocab-vn">- Giám đốc</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">仕事 (しごと / shigoto)</span>
+                    <span class="vocab-vn">- Công việc</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">お年寄り (おとしより / otoshiyori)</span>
+                    <span class="vocab-vn">- Người cao tuổi</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">道 (みち / michi)</span>
+                    <span class="vocab-vn">- Đường</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">宿題 (しゅくだい / shukudai)</span>
+                    <span class="vocab-vn">- Bài tập về nhà</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">荷物 (にもつ / nimotsu)</span>
+                    <span class="vocab-vn">- Hành lý</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">運ぶ (はこぶ / hakobu)</span>
+                    <span class="vocab-vn">- Mang, vận chuyển</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỔNG KẾT BÀI 23 -->
+        <div class="lesson-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="lesson-title" style="color: white;">🎯 Tổng kết Bài 23</div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #FFE082; margin-top: 0;">💡 Điểm chính cần nhớ:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">🔹 <strong>あげます・〜てあげます:</strong> Cho đi (Tôi → Người khác)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>くれます・〜てくれます:</strong> Cho tôi (Người khác → Tôi)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>もらいます・〜てもらいます:</strong> Nhận từ (Người khác → Tôi, tôi làm chủ ngữ)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Hướng hành động:</strong> Rất quan trọng trong việc chọn động từ đúng</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Kính ngữ:</strong> くださいます (くれます), いただきます (もらいます)</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="color: #FFE082; margin-top: 0;">📚 Hướng hành động:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">✅ <strong>あげます:</strong> 私 🎁→ 人 (Tôi cho người khác)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>くれます:</strong> 人 🎁→ 私 (Người khác cho tôi)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>もらいます:</strong> 私 ←🎁 人 (Tôi nhận từ người khác)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Trợ từ:</strong> に (người nhận), から (người cho - với もらいます)</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Lịch sự:</strong> Không dùng あげます với người trên</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #FFE082; margin-top: 0;">🚀 Hoàn thành:</h4>
+                <p style="margin-bottom: 0;">Bài 23 đã hoàn thành! Bạn đã học được cách sử dụng <strong>động từ cho nhận</strong> - một trong những điểm ngữ pháp quan trọng nhất của tiếng Nhật. 
+                Hiểu rõ hướng hành động sẽ giúp bạn giao tiếp một cách tự nhiên và lịch sự!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

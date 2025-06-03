@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngữ pháp N4 - Bài 21: Quyết định và Được quyết định</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile-specific optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px !important;
+                margin: 0 !important;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem !important;
+                margin-bottom: 10px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .header h2 {
+                font-size: 1.4rem !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .lesson-section {
+                margin-bottom: 20px !important;
+                padding: 15px !important;
+            }
+            
+            .lesson-title {
+                font-size: 1.3rem !important;
+                margin-bottom: 15px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .grammar-item {
+                margin-bottom: 15px !important;
+                padding: 12px !important;
+            }
+            
+            .grammar-header {
+                font-size: 1.1rem !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .section-label {
+                font-size: 1rem !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .japanese {
+                font-size: 18px !important;
+                line-height: 1.8 !important;
+                word-break: break-all !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .vietnamese {
+                font-size: 15px !important;
+                margin-bottom: 15px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .key-point, .comparison-note {
+                padding: 12px !important;
+                margin: 10px 0 !important;
+                font-size: 14px !important;
+            }
+            
+            .example {
+                padding: 12px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .examples-section h3 {
+                font-size: 1.2rem !important;
+                margin: 15px 0 10px 0 !important;
+            }
+            
+            .practice-section {
+                padding: 12px !important;
+            }
+            
+            .question {
+                font-size: 16px !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .answer {
+                padding: 12px !important;
+                margin: 10px 0 20px 0 !important;
+                font-size: 14px !important;
+            }
+            
+            .vocab-section {
+                padding: 12px !important;
+            }
+            
+            .vocab-item {
+                margin-bottom: 8px !important;
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+                padding: 8px !important;
+            }
+            
+            .vocab-jp {
+                font-size: 16px !important;
+                display: block !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .vocab-vn {
+                font-size: 14px !important;
+            }
+            
+            /* Table responsive for mobile */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                font-size: 12px !important;
+                margin: 10px 0 !important;
+            }
+            
+            th, td {
+                padding: 6px !important;
+                min-width: 120px !important;
+            }
+            
+            /* Touch-friendly spacing */
+            ul, ol {
+                padding-left: 20px !important;
+            }
+            
+            li {
+                margin-bottom: 8px !important;
+                line-height: 1.6 !important;
+            }
+        }
+        
+        /* Very small screens (phones in portrait) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 8px !important;
+            }
+            
+            .header h1 {
+                font-size: 1.6rem !important;
+            }
+            
+            .header h2 {
+                font-size: 1.2rem !important;
+            }
+            
+            .japanese {
+                font-size: 17px !important;
+            }
+            
+            .lesson-section {
+                padding: 12px !important;
+            }
+            
+            .grammar-item {
+                padding: 10px !important;
+            }
+            
+            table {
+                font-size: 11px !important;
+            }
+            
+            th, td {
+                padding: 4px !important;
+                min-width: 100px !important;
+            }
+        }
+
+        /* Màu sắc cho biến đổi ngữ pháp - Đặc biệt cho bài 21 */
+        .base {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .transform {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .added {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .result {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .note {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        
+        /* Màu cho noun + にします (quyết định chọn) */
+        .noun-choice-base {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .noun-choice-result {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Màu cho verb + ことにします (tự quyết định) */
+        .self-decision-base {
+            color: #8e44ad;
+            font-weight: bold;
+        }
+        
+        .self-decision-transform {
+            color: #7d3c98;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        .self-decision-result {
+            color: #16a085;
+            font-weight: bold;
+        }
+        
+        /* Màu cho verb + ことになります (được quyết định) */
+        .external-decision-base {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        .external-decision-result {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        /* Màu cho verb thể ない */
+        .negative-verb {
+            color: #34495e;
+            font-weight: bold;
+        }
+        
+        /* Highlight cho phần quan trọng trong câu ví dụ */
+        .highlight-decision {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇯🇵 NGỮ PHÁP N4 - BÀI 21 📚</h1>
+            <h2>Quyết định và Được quyết định - 決定と決められること</h2>
+        </div>
+
+        <!-- GIỚI THIỆU BÀI HỌC -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 Bài 21 - Quyết định và Được quyết định</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">🎯 Chủ đề chính của bài học</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Khái niệm chung:</div>
+                        <strong>Quyết định và Được quyết định</strong> là cách phân biệt rõ ràng giữa những quyết định do bản thân đưa ra và những quyết định đến từ bên ngoài.<br>
+                        Tiếng Nhật rất tinh tế trong việc thể hiện ai là người đưa ra quyết định và tính chủ động hay bị động của hành động.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">🎯 Mục tiêu học:</div>
+                        • <strong>〜にします・〜ことにします</strong>: Tự mình quyết định (chủ động)<br>
+                        • <strong>〜になります・〜ことになります</strong>: Được quyết định (bị động, khách quan)<br>
+                        • <strong>Phân biệt rõ ràng</strong> giữa quyết định chủ quan và khách quan
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>🔑 Điểm quan trọng:</strong><br>
+                        <span class="pattern">〜します</span> = TÔI quyết định (chủ động) vs 
+                        <span class="pattern">〜なります</span> = ĐƯỢC quyết định (bị động, khách quan).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜にします・〜ことにします -->
+        <div class="lesson-section">
+            <div class="lesson-title">🙋‍♂️ 〜にします・〜ことにします</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">1. 〜にします・〜ことにします - Tự mình quyết định</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        • <strong>〜にします (với Danh từ):</strong> Quyết định chọn (Danh từ)<br>
+                        • <strong>〜ことにします:</strong> Quyết định làm gì / Quyết định không làm gì (do bản thân người nói tự quyết định)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả một quyết định được đưa ra bởi ý chí của bản thân người nói sau khi đã suy nghĩ, cân nhắc.
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Quyết định chọn Danh từ (名詞):</strong><br>
+                            <span class="noun-choice-base">Danh từ</span> + <span class="noun-choice-result">にします</span><br>
+                            (Như đã học ở Bài 20)<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="noun-choice-base">コーヒー</span> (koohii) → <span class="noun-choice-base">コーヒー</span><span class="noun-choice-result">にします</span> (koohii ni shimasu)<br>
+                            • <span class="noun-choice-base">ラーメン</span> (raamen) → <span class="noun-choice-base">ラーメン</span><span class="noun-choice-result">にします</span> (raamen ni shimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Quyết định làm/không làm Động từ:</strong><br>
+                            <span class="self-decision-base">Động từ thể từ điển (辞書形)</span> + <span class="self-decision-result">ことにします</span><br>
+                            <span class="self-decision-base">Động từ thể</span> <span class="self-decision-transform">ない</span> + <span class="self-decision-result">ことにします</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="self-decision-base">ジョギングする</span> (jogingu suru) → <span class="self-decision-base">ジョギングする</span><span class="self-decision-result">ことにします</span><br>
+                            &nbsp;&nbsp;(jogingu suru koto ni shimasu)<br>
+                            • <span class="self-decision-base">食べ</span><span class="self-decision-transform">ない</span> (tabenai) → <span class="self-decision-base">食べない</span><span class="self-decision-result">ことにします</span><br>
+                            &nbsp;&nbsp;(tabenai koto ni shimasu)
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">昼ごはんはラーメン<span class="highlight-decision">に</span>します。</div>
+                        <div class="vietnamese">Hirugohan wa raamen <strong>ni</strong> shimasu.<br>
+                        (Bữa trưa tôi quyết định (chọn) mì ramen.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">明日から毎朝ジョギングする<span class="highlight-decision">ことに</span>します。</div>
+                        <div class="vietnamese">Ashita kara maiasa jogingu suru <strong>koto ni</strong> shimasu.<br>
+                        (Tôi quyết định từ ngày mai sẽ chạy bộ mỗi sáng.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">健康のために、もう甘い物は食べない<span class="highlight-decision">ことに</span>しました。</div>
+                        <div class="vietnamese">Kenkou no tame ni, mou amai mono wa tabenai <strong>koto ni</strong> shimashita.<br>
+                        (Vì sức khỏe, tôi đã quyết định sẽ không ăn đồ ngọt nữa.)</div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>📌 Lưu ý / So sánh:</strong><br>
+                        • 〜ことにします nhấn mạnh vào việc người nói đã <strong>tự mình</strong> đưa ra quyết định sau khi suy nghĩ, cân nhắc<br>
+                        • Diễn tả một quyết định mang tính chủ động của người nói<br>
+                        • Động từ します ở cuối có thể chia ở các thì khác nhau (例: 〜ことにしました - đã quyết định, 〜ことにしようと思います - định sẽ quyết định)<br>
+                        • 〜ことにします: Quyết định do <strong>bản thân</strong> người nói
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 〜になります・〜ことになります -->
+        <div class="lesson-section">
+            <div class="lesson-title">🏢 〜になります・〜ことになります</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">2. 〜になります・〜ことになります - Được quyết định</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        • <strong>〜になります (với Danh từ):</strong> (Sự việc) trở thành (Danh từ), được quyết định là (Danh từ)<br>
+                        • <strong>〜ことになります:</strong> (Sự việc) được quyết định là sẽ làm gì / sẽ không làm gì (thường do yếu tố bên ngoài, không phải do ý chí của người nói)
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả một quyết định, một sự sắp xếp hoặc một kết quả đã được định sẵn, thường không phụ thuộc vào ý muốn chủ quan của người nói mà do một yếu tố khách quan (quy tắc, lịch trình, quyết định của tổ chức...).
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Cách biến đổi:</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Trở thành/Được quyết định là Danh từ (名詞):</strong><br>
+                            <span class="noun-choice-base">Danh từ</span> + <span class="external-decision-result">になります</span><br>
+                            (Như đã học ở Bài 20)<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="noun-choice-base">来年２０歳</span> (rainen hatachi) → <span class="noun-choice-base">来年２０歳</span><span class="external-decision-result">になります</span><br>
+                            &nbsp;&nbsp;(rainen hatachi ni narimasu)
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Được quyết định làm/không làm Động từ:</strong><br>
+                            <span class="external-decision-base">Động từ thể từ điển (辞書形)</span> + <span class="external-decision-result">ことになります</span><br>
+                            <span class="external-decision-base">Động từ thể</span> <span class="transform">ない</span> + <span class="external-decision-result">ことになります</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="external-decision-base">転勤する</span> (tenkin suru) → <span class="external-decision-base">転勤する</span><span class="external-decision-result">ことになります</span><br>
+                            &nbsp;&nbsp;(tenkin suru koto ni narimasu)<br>
+                            • <span class="external-decision-base">駐車でき</span><span class="transform">ない</span> (chuusha dekinai) → <span class="external-decision-base">駐車できない</span><span class="external-decision-result">ことになります</span><br>
+                            &nbsp;&nbsp;(chuusha dekinai koto ni narimasu)
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">来月から大阪支社に転勤する<span class="highlight-decision">ことに</span>なりました。</div>
+                        <div class="vietnamese">Raigetsu kara Oosaka shisha ni tenkin suru <strong>koto ni</strong> narimashita.<br>
+                        ((Tôi) đã được quyết định là sẽ chuyển công tác đến chi nhánh Osaka từ tháng sau.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">法律により、明日からこの地域では駐車できなくなる<span class="highlight-decision">ことに</span>なります。</div>
+                        <div class="vietnamese">Houritsu ni yori, ashita kara kono chiiki dewa chuusha dekinaku naru <strong>koto ni</strong> narimasu.<br>
+                        (Theo luật, từ ngày mai (việc) sẽ không thể đỗ xe ở khu vực này được nữa.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">ルールで、会議には必ず出席する<span class="highlight-decision">ことに</span>なっています。</div>
+                        <div class="vietnamese">Ruuru de, kaigi ni wa kanarazu shusseki suru <strong>koto ni</strong> natte imasu.<br>
+                        (Theo quy định, (việc) bắt buộc phải tham dự cuộc họp.)</div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>📌 Lưu ý / So sánh:</strong><br>
+                        • Diễn tả một kết quả, một sự sắp đặt, một quy định mà người nói không trực tiếp quyết định, mà nó "trở thành như vậy" hoặc "được định là như vậy"<br>
+                        • Thường ám chỉ quyết định đến từ cấp trên, công ty, trường học, quy tắc chung, hoặc một tình huống khách quan<br>
+                        • 〜ことになっています (thể tiếp diễn) thường dùng để nói về những quy tắc, luật lệ, lịch trình đã được định sẵn và đang có hiệu lực<br>
+                        • 〜ことになります: Việc được quyết định bởi <strong>người khác, hoàn cảnh, quy tắc</strong> (không phải ý muốn chủ quan của người nói)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SO SÁNH CHI TIẾT -->
+        <div class="lesson-section">
+            <div class="lesson-title">🆚 So sánh chi tiết</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">So sánh 〜ことにします vs 〜ことになります</div>
+                <div class="grammar-content">
+                    <div class="comparison-note">
+                        <strong>📊 Bảng so sánh chi tiết:</strong><br><br>
+                        
+                        <table>
+                            <tr>
+                                <th>Điểm so sánh</th>
+                                <th>〜ことにします</th>
+                                <th>〜ことになります</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Ai quyết định</strong></td>
+                                <td>🙋‍♂️ Bản thân người nói</td>
+                                <td>🏢 Người khác/Tổ chức/Quy tắc</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tính chất</strong></td>
+                                <td>🎯 Chủ động, có ý chí</td>
+                                <td>📋 Bị động, khách quan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sắc thái</strong></td>
+                                <td>"Tôi quyết định..."</td>
+                                <td>"Được quyết định là..."</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ví dụ</strong></td>
+                                <td><span class="japanese">毎日運動することにします</span><br>
+                                Maiasa undou suru koto ni shimasu<br>
+                                (Tôi quyết định tập thể dục mỗi ngày)</td>
+                                <td><span class="japanese">転勤することになりました</span><br>
+                                Tenkin suru koto ni narimashita<br>
+                                (Tôi được quyết định là sẽ chuyển công tác)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>💡 Mẹo phân biệt:</strong><br>
+                        • <strong>〜ことにします:</strong> "Tôi tự quyết định..." (chủ động)<br>
+                        • <strong>〜ことになります:</strong> "Tôi được quyết định..." (bị động)<br><br>
+                        
+                        <strong>Ví dụ minh họa:</strong><br>
+                        • <span class="japanese">禁煙することにしました。</span><br>
+                        &nbsp;&nbsp;Kin'en suru koto ni shimashita. → Tôi đã quyết định bỏ hút thuốc (tự quyết định)<br>
+                        • <span class="japanese">禁煙することになりました。</span><br>
+                        &nbsp;&nbsp;Kin'en suru koto ni narimashita. → Tôi được quyết định là phải bỏ hút thuốc (bác sĩ/vợ bắt buộc)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VÍ DỤ BỔ SUNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🌟 Ví dụ bổ sung</div>
+            
+            <div class="examples-section">
+                <h3>🙋‍♂️ 〜ことにします (Tự quyết định)</h3>
+                
+                <p>
+                    <span class="japanese">来年から日本語を勉強することにしました。</span><br>
+                    <span class="vietnamese">Rainen kara Nihongo o benkyou suru koto ni shimashita.<br>
+                    (Tôi đã quyết định từ năm sau sẽ học tiếng Nhật.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">お酒は飲まないことにしています。</span><br>
+                    <span class="vietnamese">Osake wa nomanai koto ni shite imasu.<br>
+                    (Tôi đã quyết định không uống rượu.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">今日は早く帰ることにします。</span><br>
+                    <span class="vietnamese">Kyou wa hayaku kaeru koto ni shimasu.<br>
+                    (Hôm nay tôi quyết định về sớm.)</span>
+                </p>
+            </div>
+            
+            <div class="examples-section">
+                <h3>🏢 〜ことになります (Được quyết định)</h3>
+                
+                <p>
+                    <span class="japanese">来月から新しいプロジェクトを担当することになりました。</span><br>
+                    <span class="vietnamese">Raigetsu kara atarashii purojekuto o tantou suru koto ni narimashita.<br>
+                    (Từ tháng sau tôi được quyết định là sẽ phụ trách dự án mới.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">規則で、９時までに帰ることになっています。</span><br>
+                    <span class="vietnamese">Kisoku de, kuji made ni kaeru koto ni natte imasu.<br>
+                    (Theo quy tắc, (được quy định là) phải về trước 9 giờ.)</span>
+                </p>
+                
+                <p>
+                    <span class="japanese">急に出張することになってしまいました。</span><br>
+                    <span class="vietnamese">Kyuu ni shutchou suru koto ni natte shimaimashita.<br>
+                    (Đột nhiên tôi được quyết định là phải đi công tác.)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BÀI LUYỆN TẬP -->
+        <div class="lesson-section">
+            <div class="lesson-title">🏋️‍♂️ Luyện tập</div>
+            
+            <div class="practice-section">
+                <div class="question">📝 Câu hỏi 1</div>
+                <p>Chọn đúng: "Tôi quyết định học piano." - Dùng ことにします hay ことになります?</p>
+                
+                <div class="answer">
+                    <span class="japanese">ピアノを習うことにします。</span><br>
+                    <span class="vietnamese">Piano o narau koto ni shimasu.<br>
+                    → Dùng ことにします vì đây là quyết định của bản thân</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 2</div>
+                <p>Dịch: "Công ty quyết định tôi phải làm việc ở Tokyo." (Dùng ことになります)</p>
+                
+                <div class="answer">
+                    <span class="japanese">東京で働くことになりました。</span><br>
+                    <span class="vietnamese">Toukyou de hataraku koto ni narimashita.<br>
+                    → Dùng ことになります vì công ty quyết định, không phải bản thân</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 3</div>
+                <p>Chia động từ "食べる" theo cả hai cách: ことにします và ことになります</p>
+                
+                <div class="answer">
+                    <span class="japanese">食べる → 食べることにします (tôi quyết định ăn)<br>
+                    食べる → 食べることになります (được quyết định là sẽ ăn)</span><br>
+                    <span class="vietnamese">taberu → taberu koto ni shimasu / taberu koto ni narimasu</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 4</div>
+                <p>Phân biệt nghĩa: A. 結婚することにしました B. 結婚することになりました</p>
+                
+                <div class="answer">
+                    <span class="japanese">A: Tôi đã quyết định kết hôn (tự quyết định)<br>
+                    B: Tôi được quyết định là sẽ kết hôn (gia đình sắp xếp, v.v.)</span><br>
+                    <strong>→ します = chủ động, なります = bị động</strong>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 5</div>
+                <p>Tạo câu với にします: "Tôi chọn cà phê."</p>
+                
+                <div class="answer">
+                    <span class="japanese">コーヒーにします。</span><br>
+                    <span class="vietnamese">Koohii ni shimasu.<br>
+                    (Danh từ + にします = quyết định chọn)</span>
+                </div>
+                
+                <div class="question">📝 Câu hỏi 6</div>
+                <p>Phân biệt: 〜ことになっています vs 〜ことになります</p>
+                
+                <div class="answer">
+                    <span class="japanese">〜ことになっています: Quy tắc/lịch trình đã có sẵn và đang có hiệu lực<br>
+                    〜ことになります: Quyết định/sự việc vừa được thông báo</span><br>
+                    <strong>Ví dụ:</strong><br>
+                    <span class="japanese">毎日9時に来ることになっています。</span> (quy định có sẵn)<br>
+                    <span class="japanese">明日から9時に来ることになりました。</span> (quyết định mới)
+                </div>
+            </div>
+        </div>
+
+        <!-- TỪ VỰNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔑 Từ vựng quan trọng</div>
+            
+            <div class="vocab-section">
+                <h3>📝 Từ vựng liên quan đến quyết định</h3>
+                
+                <div class="vocab-item">
+                    <span class="vocab-jp">昼ごはん (ひるごはん / hirugohan)</span>
+                    <span class="vocab-vn">- Bữa trưa</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">毎朝 (まいあさ / maiasa)</span>
+                    <span class="vocab-vn">- Mỗi sáng</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">ジョギング (jogingu)</span>
+                    <span class="vocab-vn">- Chạy bộ</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">健康 (けんこう / kenkou)</span>
+                    <span class="vocab-vn">- Sức khỏe</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">甘い物 (あまいもの / amai mono)</span>
+                    <span class="vocab-vn">- Đồ ngọt</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">転勤 (てんきん / tenkin)</span>
+                    <span class="vocab-vn">- Chuyển công tác</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">支社 (ししゃ / shisha)</span>
+                    <span class="vocab-vn">- Chi nhánh</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">法律 (ほうりつ / houritsu)</span>
+                    <span class="vocab-vn">- Luật pháp</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">地域 (ちいき / chiiki)</span>
+                    <span class="vocab-vn">- Khu vực</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">駐車 (ちゅうしゃ / chuusha)</span>
+                    <span class="vocab-vn">- Đỗ xe</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">ルール (ruuru)</span>
+                    <span class="vocab-vn">- Quy tắc</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">会議 (かいぎ / kaigi)</span>
+                    <span class="vocab-vn">- Cuộc họp</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">出席 (しゅっせき / shusseki)</span>
+                    <span class="vocab-vn">- Tham dự, có mặt</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">担当 (たんとう / tantou)</span>
+                    <span class="vocab-vn">- Phụ trách</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">プロジェクト (purojekuto)</span>
+                    <span class="vocab-vn">- Dự án</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-jp">出張 (しゅっちょう / shutchou)</span>
+                    <span class="vocab-vn">- Công tác</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỔNG KẾT BÀI 21 -->
+        <div class="lesson-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="lesson-title" style="color: white;">🎯 Tổng kết Bài 21</div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #FFE082; margin-top: 0;">💡 Điểm chính cần nhớ:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜にします・〜ことにします:</strong> Tự mình quyết định (chủ động)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜になります・〜ことになります:</strong> Được quyết định (bị động)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Noun + にします:</strong> Quyết định chọn (gọi món, lựa chọn)</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>Verb + ことに:</strong> Quyết định làm/không làm việc gì</li>
+                    <li style="margin-bottom: 10px;">🔹 <strong>〜ことになっています:</strong> Quy tắc đã có sẵn</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="color: #FFE082; margin-top: 0;">📚 Phân biệt quan trọng:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">✅ <strong>します vs なります:</strong> Chủ động vs Bị động</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Ai quyết định:</strong> Tôi vs Người khác/Tổ chức</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Sắc thái:</strong> "Tôi quyết định" vs "Được quyết định"</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Tình huống:</strong> Cá nhân vs Công việc/Quy tắc</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Cách nhớ:</strong> します = "Tôi làm", なります = "Nó thành"</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #FFE082; margin-top: 0;">🚀 Hoàn thành:</h4>
+                <p style="margin-bottom: 0;">Bài 21 đã hoàn thành! Bạn đã học được cách phân biệt rõ ràng giữa <strong>"tự quyết định"</strong> và <strong>"được quyết định"</strong> trong tiếng Nhật. 
+                Đây là điểm rất quan trọng để thể hiện đúng ý nghĩa và tránh hiểu lầm trong giao tiếp!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

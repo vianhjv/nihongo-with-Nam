@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngữ pháp N4 - Bài 24: Thể bị động</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-mobile.css">
+    <style>
+        /* HỆ THỐNG MÀU THỐNG NHẤT CHO TẤT CẢ NGỮ PHÁP */
+        
+        /* Màu gốc - xanh dương */
+        .base {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        /* Màu bị thay đổi/bỏ đi - đỏ gạch ngang */
+        .transform {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+        
+        /* Màu được thêm vào - xanh lá */
+        .added {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Màu đặc biệt - cam (particles, contracted forms) */
+        .special {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        /* Màu kết quả cuối cùng - xanh lá đậm */
+        .result {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* CSS đặc biệt cho thể bị động */
+        .passive-highlight {
+            background-color: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .agent-highlight {
+            background-color: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .object-highlight {
+            background-color: #e3f2fd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        /* Passive form diagram */
+        .passive-diagram {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #e9ecef;
+        }
+        
+        .verb-group {
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 10px 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .verb-group.group1 {
+            background: #e74c3c;
+        }
+        
+        .verb-group.group2 {
+            background: #27ae60;
+        }
+        
+        .verb-group.group3 {
+            background: #f39c12;
+        }
+        
+        /* Nuance boxes for different types of passive */
+        .nuance-direct {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-indirect {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-event {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .nuance-respectful {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        /* Comparison table styling */
+        .comparison-passive {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        /* Arrow for transformation */
+        .transform-arrow {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇯🇵 NGỮ PHÁP N4 - BÀI 24 📚</h1>
+            <h2>Thể bị động - 受身形</h2>
+        </div>
+
+        <!-- GIỚI THIỆU BÀI HỌC -->
+        <div class="lesson-section">
+            <div class="lesson-title">📖 Bài 24 - Thể bị động (受身形 - うけみけい)</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">🎯 Chủ đề chính của bài học</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Khái niệm chung:</div>
+                        <strong>Thể bị động</strong> (受身形 - うけみけい) diễn tả hành động mà chủ ngữ là đối tượng bị tác động bởi một người hoặc yếu tố khác.<br>
+                        Tiếng Nhật có nhiều cách dùng thể bị động phong phú hơn tiếng Việt, bao gồm cả ý nghĩa tôn kính.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">🎯 Các cách dùng chính:</div>
+                        • <strong>Bị động trực tiếp:</strong> Bị/Được (ai đó) làm gì<br>
+                        • <strong>Bị động gián tiếp:</strong> (Đồ vật của tôi) bị (người khác) làm gì<br>
+                        • <strong>Bị động sự kiện:</strong> Sự việc được tổ chức/thực hiện<br>
+                        • <strong>Thể hiện tôn kính:</strong> (Người trên) làm gì (ít dùng ở N4)
+                    </div>
+                    
+                    <div class="passive-diagram">
+                        <h4>🔄 Cách chia thể bị động theo nhóm động từ</h4>
+                        <div>
+                            <div class="verb-group group1">Nhóm 1: う → あ + れる</div>
+                            <div class="verb-group group2">Nhóm 2: る → られる</div>
+                            <div class="verb-group group3">Nhóm 3: Bất quy tắc</div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>🔑 Điểm quan trọng:</strong><br>
+                        Thể bị động thường mang <span class="pattern">ý nghĩa tiêu cực</span> (bị làm phiền, chịu ảnh hưởng không mong muốn), nhưng cũng có thể <span class="pattern">trung tính hoặc tích cực</span>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CÁCH BIẾN ĐỔI -->
+        <div class="lesson-section">
+            <div class="lesson-title">🔄 Cách biến đổi thể bị động</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">Cách chia 〜（ら）れます theo nhóm động từ</div>
+                <div class="grammar-content">
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Động từ nhóm 1 (Iグループ):</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Quy tắc:</strong><br>
+                            Đuôi <span class="base">「う」</span> cuối cùng của thể từ điển chuyển sang <span class="transform">「あ」</span> rồi thêm <span class="added">「れる」</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="base">書</span><span class="transform">く</span> (kaku) → <span class="base">書</span><span class="added">かれる</span> (kakareru)<br>
+                            • <span class="base">呼</span><span class="transform">ぶ</span> (yobu) → <span class="base">呼</span><span class="added">ばれる</span> (yobareru)<br>
+                            • <span class="base">買</span><span class="transform">う</span> (kau) → <span class="base">買</span><span class="added">われる</span> (kawareru)<br>
+                            • <span class="base">読</span><span class="transform">む</span> (yomu) → <span class="base">読</span><span class="added">まれる</span> (yomareru)<br>
+                            • <span class="base">作</span><span class="transform">る</span> (tsukuru) → <span class="base">作</span><span class="added">られる</span> (tsukurareru)
+                        </div>
+                        
+                        <div class="comparison-passive">
+                            <strong>⚠️ Lưu ý đặc biệt:</strong><br>
+                            Nếu động từ kết thúc bằng <span class="base">「う」</span> (ví dụ: 買う), thì chuyển thành <span class="added">「わ」</span> rồi thêm <span class="added">「れる」</span> → 買われる
+                        </div>
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Động từ nhóm 2 (IIグループ):</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Quy tắc:</strong><br>
+                            Bỏ <span class="transform">「る」</span> ở cuối thể từ điển và thêm <span class="added">「られる」</span><br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="base">食べ</span><span class="transform">る</span> (taberu) → <span class="base">食べ</span><span class="added">られる</span> (taberareru)<br>
+                            • <span class="base">見</span><span class="transform">る</span> (miru) → <span class="base">見</span><span class="added">られる</span> (mirareru)<br>
+                            • <span class="base">起き</span><span class="transform">る</span> (okiru) → <span class="base">起き</span><span class="added">られる</span> (okirareru)<br>
+                            • <span class="base">教え</span><span class="transform">る</span> (oshieru) → <span class="base">教え</span><span class="added">られる</span> (oshierareru)
+                        </div>
+                        
+                        <div class="comparison-passive">
+                            <strong>⚠️ Cần phân biệt:</strong><br>
+                            Động từ nhóm 2 ở thể bị động (V-られる) có hình thức giống hệt thể khả năng (V-られる). Cần dựa vào ngữ cảnh để phân biệt!
+                        </div>
+                    </div>
+                    
+                    <div class="conjugation">
+                        <div class="section-label">🔄 Động từ nhóm 3 (IIIグループ - Bất quy tắc):</div>
+                        
+                        <div class="key-point">
+                            <strong>📋 Quy tắc:</strong><br>
+                            <span class="base">する</span> → <span class="result">される</span><br>
+                            <span class="base">来(く)る</span> (kuru) → <span class="result">来(こ)られる</span> (korareru)<br><br>
+                            
+                            <strong>Ví dụ cụ thể:</strong><br>
+                            • <span class="base">勉強する</span> (benkyou suru) → <span class="result">勉強される</span> (benkyou sareru)<br>
+                            • <span class="base">来る</span> (kuru) → <span class="result">来られる</span> (korareru)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BỊ ĐỘNG TRỰC TIẾP -->
+        <div class="lesson-section">
+            <div class="lesson-title">😔 Bị động trực tiếp</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">1. Bị động trực tiếp - Bị/Được làm gì</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Bị/Được (ai đó) làm gì</strong> - Hành động tác động trực tiếp lên người, thường mang ý nghĩa bị làm phiền hoặc chịu ảnh hưởng.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cấu trúc câu:</div>
+                        <span class="base">[Người/Vật bị tác động]</span> <span class="special">は／が</span> <span class="base">[Người thực hiện]</span> <span class="special">に</span> <span class="added">[Động từ bị động]</span>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は先生に<span class="passive-highlight">褒められました</span>。</div>
+                        <div class="vietnamese">Watashi wa sensei ni <strong>homeraremashita</strong>.<br>
+                        (Tôi đã được giáo viên khen.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">弟は犬に手を<span class="passive-highlight">噛まれました</span>。</div>
+                        <div class="vietnamese">Otōto wa inu ni te o <strong>kamaremashita</strong>.<br>
+                        (Em trai tôi đã bị chó cắn vào tay.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">学生は先生に<span class="passive-highlight">叱られました</span>。</div>
+                        <div class="vietnamese">Gakusei wa sensei ni <strong>shikararemashita</strong>.<br>
+                        (Học sinh đã bị giáo viên mắng.)</div>
+                    </div>
+                    
+                    <div class="nuance-direct">
+                        <strong>📌 Đặc điểm của bị động trực tiếp:</strong><br>
+                        • Chủ ngữ là người/vật trực tiếp bị tác động<br>
+                        • Thường mang ý nghĩa tiêu cực (bị làm phiền) nhưng cũng có thể tích cực (được khen)<br>
+                        • Người thực hiện hành động được đánh dấu bằng に<br>
+                        • Có thể lược bỏ người thực hiện nếu không quan trọng hoặc không rõ
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BỊ ĐỘNG GIÁN TIẾP -->
+        <div class="lesson-section">
+            <div class="lesson-title">😤 Bị động gián tiếp</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">2. Bị động gián tiếp - Đồ vật của tôi bị làm gì</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>(Cái gì đó của tôi/ai đó) bị (người khác) làm gì</strong> - Diễn tả việc đồ vật thuộc sở hữu của chủ ngữ bị người khác tác động.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cấu trúc câu:</div>
+                        <span class="base">[Người sở hữu]</span> <span class="special">は</span> <span class="base">[Người thực hiện]</span> <span class="special">に</span> <span class="base">[Đồ vật]</span> <span class="special">を</span> <span class="added">[Động từ bị động]</span>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は誰かに足を<span class="passive-highlight">踏まれました</span>。</div>
+                        <div class="vietnamese">Watashi wa dareka ni ashi o <strong>fumaremashita</strong>.<br>
+                        (Tôi đã bị ai đó dẫm vào chân.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">私は弟にパソコンを<span class="passive-highlight">壊されました</span>。</div>
+                        <div class="vietnamese">Watashi wa otōto ni pasokon o <strong>kowasaremashita</strong>.<br>
+                        (Tôi đã bị em trai làm hỏng máy tính.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">母は泥棒に財布を<span class="passive-highlight">盗まれました</span>。</div>
+                        <div class="vietnamese">Haha wa dorobō ni saifu o <strong>nusumaremashita</strong>.<br>
+                        (Mẹ tôi đã bị kẻ trộm lấy mất ví.)</div>
+                    </div>
+                    
+                    <div class="nuance-indirect">
+                        <strong>📌 Đặc điểm của bị động gián tiếp:</strong><br>
+                        • Chủ ngữ là người sở hữu đồ vật bị tác động<br>
+                        • Thường mang ý nghĩa tiêu cực, gây khó chịu cho chủ ngữ<br>
+                        • Đồ vật bị tác động được đánh dấu bằng を<br>
+                        • Đây là đặc trưng riêng của tiếng Nhật, không có trong tiếng Việt
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BỊ ĐỘNG SỰ KIỆN -->
+        <div class="lesson-section">
+            <div class="lesson-title">🎪 Bị động của sự kiện</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">3. Bị động của tự động từ/Sự kiện được tổ chức</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>Diễn tả sự việc xảy ra một cách tự nhiên hoặc được tổ chức</strong> - Thường dùng với các sự kiện, phát minh, hoạt động được thực hiện.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Diễn tả một sự kiện được tổ chức, một phát minh được tạo ra, hoặc một hoạt động được thực hiện bởi nhiều người.
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">この本は多くの人に<span class="passive-highlight">読まれています</span>。</div>
+                        <div class="vietnamese">Kono hon wa ooku no hito ni <strong>yomarete imasu</strong>.<br>
+                        (Cuốn sách này được nhiều người đọc.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">オリンピックは４年に一度<span class="passive-highlight">開かれます</span>。</div>
+                        <div class="vietnamese">Orinpikku wa yo-nen ni ichido <strong>hirakaremasu</strong>.<br>
+                        (Thế vận hội Olympic được tổ chức 4 năm một lần.)</div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">この建物は１００年前に<span class="passive-highlight">建てられました</span>。</div>
+                        <div class="vietnamese">Kono tatemono wa hyaku-nen mae ni <strong>tateraremashita</strong>.<br>
+                        (Tòa nhà này được xây dựng từ 100 năm trước.)</div>
+                    </div>
+                    
+                    <div class="nuance-event">
+                        <strong>📌 Đặc điểm của bị động sự kiện:</strong><br>
+                        • Mang ý nghĩa trung tính, không có sắc thái tiêu cực<br>
+                        • Thường dùng để nói về các sự kiện công cộng, phát minh, công trình<br>
+                        • Người thực hiện thường không quan trọng hoặc không cụ thể<br>
+                        • Tương đương với câu bị động trong tiếng Việt
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THỂ HIỆN TÔN KÍNH -->
+        <div class="lesson-section">
+            <div class="lesson-title">🙇‍♂️ Thể hiện tôn kính (ít dùng ở N4)</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">4. Thể hiện sự tôn kính - (Người trên) làm gì</div>
+                <div class="grammar-content">
+                    <div class="meaning">
+                        <div class="section-label">💭 Ý nghĩa:</div>
+                        <strong>(Người trên) làm gì</strong> - Một số động từ khi chia ở dạng này có thể mang ý tôn kính người thực hiện hành động.
+                    </div>
+                    
+                    <div class="usage">
+                        <div class="section-label">📝 Cách dùng:</div>
+                        Ở N4, cách dùng này không phải là trọng tâm chính và có thể gây nhầm lẫn với thể khả năng/bị động. Các cấu trúc tôn kính chuyên biệt khác thường được ưu tiên.
+                    </div>
+                    
+                    <div class="example">
+                        <div class="japanese">社長は何時ごろ会社に<span class="passive-highlight">来られますか</span>。</div>
+                        <div class="vietnamese">Shachō wa nanji goro kaisha ni <strong>koraremasu ka</strong>.<br>
+                        (Khoảng mấy giờ thì giám đốc sẽ đến công ty ạ?)</div>
+                        <div class="note">※ Có thể hiểu là "có thể đến" (khả năng) hoặc "sẽ đến" (tôn kính)</div>
+                    </div>
+                    
+                    <div class="nuance-respectful">
+                        <strong>📌 Lưu ý về cách dùng tôn kính:</strong><br>
+                        • Ở N4, các cấu trúc tôn kính chuyên biệt như おVになります, Vなさいます thường được nhấn mạnh hơn<br>
+                        • Dạng 〜（ら）れます để diễn tả sự tôn kính tuy có nhưng không phải là trọng tâm chính<br>
+                        • Có thể gây nhầm lẫn với thể khả năng/bị động nếu không nắm rõ ngữ cảnh<br>
+                        • Nên tập trung vào 3 cách dùng bị động chính trước
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SO SÁNH VỚI THỂ KHẢ NĂNG -->
+        <div class="lesson-section">
+            <div class="lesson-title">🆚 Phân biệt thể bị động và thể khả năng</div>
+            
+            <div class="grammar-item">
+                <div class="grammar-header">So sánh 〜られる (Bị động) vs 〜られる (Khả năng)</div>
+                <div class="grammar-content">
+                    <div class="comparison-note">
+                        <strong>📊 Bảng so sánh chi tiết:</strong><br><br>
+                        
+                        <table>
+                            <tr>
+                                <th>Tiêu chí</th>
+                                <th>Thể bị động</th>
+                                <th>Thể khả năng</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Ý nghĩa</strong></td>
+                                <td>Bị/Được làm gì</td>
+                                <td>Có thể làm gì</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chủ ngữ</strong></td>
+                                <td>Đối tượng bị tác động</td>
+                                <td>Người có khả năng</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trợ từ</strong></td>
+                                <td>に (người thực hiện)</td>
+                                <td>が (đối tượng khả năng)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ví dụ</strong></td>
+                                <td><span class="japanese">魚が猫に食べられる</span><br>
+                                (Cá bị mèo ăn)</td>
+                                <td><span class="japanese
