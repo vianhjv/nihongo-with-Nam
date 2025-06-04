@@ -1,0 +1,687 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header h2 {
+    margin: 10px 0 0 0;
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+.lesson-section {
+    margin-bottom: 50px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    border-left: 6px solid #667eea;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.lesson-title {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.grammar-item {
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.grammar-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.grammar-header {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.grammar-content {
+    padding: 25px;
+}
+
+.meaning {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4CAF50;
+}
+
+.usage {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff9800;
+}
+
+.conjugation {
+    background: #f3e5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #9c27b0;
+}
+
+.example {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #2196f3;
+}
+
+.japanese {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.vietnamese {
+    color: #388e3c;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.pattern {
+    color: #1976d2;
+    font-weight: bold;
+    background: #e3f2fd;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.verb {
+    color: #2e7d32;
+    font-weight: bold;
+    background: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.particle {
+    color: #7b1fa2;
+    font-weight: bold;
+    background: #f3e5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.adjective {
+    color: #f57c00;
+    font-weight: bold;
+    background: #fff3e0;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.noun {
+    color: #c2185b;
+    font-weight: bold;
+    background: #fce4ec;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.section-label {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.conjugation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.conjugation-list li {
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 5px;
+    border-left: 3px solid #9c27b0;
+}
+
+.level-indicator {
+    display: inline-block;
+    background: #ff5722;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.key-point {
+    background: #fff8e1;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.key-point::before {
+    content: "💡 ";
+    font-size: 1.2em;
+}
+
+.comparison-note {
+    background: #f0f4f8;
+    border: 2px solid #90a4ae;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.comparison-note::before {
+    content: "📝 ";
+    font-size: 1.2em;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: #f0f4f8;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #f0f8ff;
+}
+
+/* Animation for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .lesson-title {
+        font-size: 1.5em;
+    }
+    
+    .grammar-header {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+}
+
+
+
+/* ===== CSS BỔ SUNG CHO BẢNG KANJI - THÊM VÀO CUỐI FILE STYLES.CSS ===== */
+
+
+/* ===== CSS BỔ SUNG CHO BẢNG KANJI - THÊM VÀO CUỐI FILE STYLES.CSS ===== */
+
+/* Stats box cho thống kê */
+.stats-box {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.stats-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Search box */
+.search-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.search-input {
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 300px;
+    max-width: 100%;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #667eea;
+}
+
+/* Bảng bộ thủ */
+.radical-table {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.responsive-table {
+    overflow-x: auto;
+}
+
+.radical-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.radical-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.radical-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+.radical-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.radical-table tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+/* Ký tự bộ thủ */
+.radical-char {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d32f2f;
+    text-align: center;
+    background-color: #ffebee;
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 60px;
+}
+
+/* Tên bộ thủ */
+.radical-name {
+    font-weight: bold;
+    color: #1976d2;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.radical-reading {
+    color: #666;
+    font-style: italic;
+    font-size: 13px;
+}
+
+/* Ý nghĩa */
+.meaning {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Ví dụ Kanji */
+.examples {
+    color: #333;
+}
+
+.kanji-example {
+    display: inline-block;
+    background-color: #f3e5f5;
+    padding: 4px 8px;
+    margin: 2px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #7b1fa2;
+    border: 1px solid #e1bee7;
+}
+
+/* Header phân loại */
+.category-header td {
+    background: linear-gradient(45deg, #ff6b6b, #ffa726) !important;
+    color: white !important;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Subtitle cho header */
+.subtitle {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    color: #666;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .radical-table table, 
+    .radical-table th, 
+    .radical-table td {
+        font-size: 12px;
+    }
+    
+    .radical-char {
+        font-size: 20px;
+        min-width: 50px;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+    
+    .stats-number {
+        font-size: 2em;
+    }
+}
+
+
+/* ===== CSS STYLES CHO BÀI 25: THỂ SAI KHIẾN & BỊ ĐỘNG SAI KHIẾN ===== */
+
+/* Base styles - có thể merge với CSS hiện tại của bạn */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+.header {
+    color: #8e44ad;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: #8e44ad;
+}
+
+h2 {
+    color: #2980b9;
+    border-left: 5px solid #2980b9;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #16a085;
+}
+
+/* Grammar boxes */
+.grammar-goals {
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.grammar-point {
+    background-color: #fff8e1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #ff9800;
+}
+
+.examples {
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.practice {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px dashed #4caf50;
+    margin-bottom: 20px;
+}
+
+/* Text colors for Japanese, Romaji, Vietnamese */
+.japanese {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.romaji {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.vietnamese {
+    color: #27ae60;
+}
+
+/* ===== TRANSFORMATION COLORS - NGUYÊN TẮC MÀU SẮC LOGIC ===== */
+/* Phần không đổi (base) */
+.base {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Phần bị thay thế (gạch ngang + màu đỏ) */
+.transform {
+    color: #e74c3c;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+/* Phần trung gian (nếu cần) */
+.middle {
+    color: #d35400;
+    font-weight: bold;
+}
+
+/* Phần thêm vào mới (màu xanh) */
+.added {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Kết quả cuối cùng (màu xanh dương) */
+.result {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Ghi chú quan trọng */
+.note {
+    color: #9b59b6;
+    font-weight: bold;
+}
+
+/* ===== LAYOUT BOXES ===== */
+.separator {
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+/* Box cho các bước biến đổi */
+.transformation-box {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Từng bước biến đổi */
+.transformation-step {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+    border-left: 3px solid #28a745;
+}
+
+/* Nhóm động từ */
+.verb-group {
+    background-color: #e9ecef;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+}
+
+/* Highlight cấu trúc */
+.structure-highlight {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Box ý nghĩa */
+.meaning-box {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* ===== TABLES ===== */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* ===== MEANING HIGHLIGHTS ===== */
+/* Nghĩa "bắt làm" - màu đỏ */
+.highlight-force {
+    background-color: #ffebee;
+    border-left: 3px solid #f44336;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+/* Nghĩa "cho phép làm" - màu xanh */
+.highlight-permission {
+    background-color: #e8f5e9;
+    border-left: 3px solid #4caf50;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+/* ===== DESKTOP STYLES ONLY ===== */
+/* Mobile styles được tách riêng vào mobile-styles.css */

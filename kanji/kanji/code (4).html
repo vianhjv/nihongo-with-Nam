@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS từ file kanji_radicals_table-fixed.html -->
+    <style>
+        body { /* Giả sử đây là CSS chung từ styles.css hoặc bạn muốn nó ở đây */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 15px;
+            background-color: #e0e7ff; /* Màu nền chung */
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.4em;
+            font-weight: 700;
+            color: #fef9f3 !important; /* Giống file bộ thủ */
+        }
+        .header h1 .icon {
+            font-size: 0.8em;
+            margin: 0 10px;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            margin-top: 8px;
+            color: #fef9f3 !important; /* Giống file bộ thủ */
+            font-weight: 300;
+        }
+
+        .stats-box { /* Style cho hộp thống kê giống file bộ thủ */
+            background-color: #4caf50; /* Màu xanh lá */
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .stats-box .stats-number {
+            font-size: 3em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+
+        .intro, .note {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .intro h3 { /* Sẽ bị ghi đè bởi style h1,h3 ở trên nếu không cụ thể hơn */
+            color: #5a67d8 !important; /* Ưu tiên màu này cho intro */
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+         .intro p, .intro ul li { /* Màu chữ cho phần intro */
+            color: #333;
+        }
+
+        .intro ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .intro ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        .intro ul li::before { /* Giữ icon ngôi sao cho phần này */
+            content: '🌟';
+            color: #ecc94b;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .note strong {
+            color: #c53030;
+        }
+        .note p { /* Màu chữ cho phần note */
+             color: #333;
+        }
+
+
+        .search-box { /* Style cho search box giống file bộ thủ */
+            margin: 20px 0;
+            text-align: center;
+        }
+        .search-input { /* Đổi tên class này để đồng nhất với file bộ thủ */
+            width: 80%;
+            max-width: 500px;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 1.05em;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .search-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            outline: none;
+        }
+
+        /* CSS cho bảng Kanji (điều chỉnh từ bảng bộ thủ) */
+        .kanji-table-custom { /* Đổi tên class để tránh xung đột nếu có nhiều bảng */
+            overflow-x: auto;
+        }
+
+        .kanji-table-custom table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 0.95em;
+            border-radius: 10px; /* Giữ bo góc cho cả bảng */
+        }
+
+        .kanji-table-custom th, .kanji-table-custom td {
+            border: none;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 0 0 1px #eef2f7;
+        }
+        /* Bo góc cho các cell ở góc bảng */
+        .kanji-table-custom tr:first-child th:first-child { border-top-left-radius: 10px; }
+        .kanji-table-custom tr:first-child th:last-child { border-top-right-radius: 10px; }
+        /* Cần tbody:last-child để áp dụng cho dòng cuối cùng của dữ liệu */
+        .kanji-table-custom #kanjiN4TableData > tr:last-child > td:first-child { border-bottom-left-radius: 10px; }
+        .kanji-table-custom #kanjiN4TableData > tr:last-child > td:last-child { border-bottom-right-radius: 10px; }
+
+
+        .kanji-table-custom th {
+            background-color: #6a5acd; /* Màu tím đậm cho header cột giống file bộ thủ */
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .kanji-table-custom th small { /* Chữ nhỏ trong header cột */
+             color: #e0e7ff;
+        }
+
+
+        /* Màu sắc cho từng cột (ví dụ) */
+        .kanji-table-custom td:nth-child(1) { background-color: #fdfdff; }
+        .kanji-table-custom td:nth-child(2) { background-color: #f9faff; }
+        .kanji-table-custom td:nth-child(3) { background-color: #f7f8fc; }
+        .kanji-table-custom td:nth-child(4) { background-color: #f5f7fa; }
+
+
+        .kanji-char-hv {
+            font-size: 2.2em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 3px;
+            color: #d9534f; /* Màu đỏ cho chữ Kanji */
+            text-align: center;
+        }
+        .han-viet {
+            font-size: 0.8em;
+            color: #718096;
+            text-align: center;
+            display: block;
+        }
+        .reading { font-size: 0.9em; }
+        .reading .onyomi { color: #c53030; font-weight: 500; display: block; margin-bottom: 4px;}
+        .reading .kunyomi { color: #2f855a; font-weight: 500; display: block; }
+        .meaning-usage { color: #4a5568; }
+
+        .example-sentence { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+        .example-sentence:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+        .example-sentence em { color: #718096; font-size: 0.9em; display: block; margin-top: 3px; }
+
+        .category-header-kanji td { /* Đổi tên class */
+            background: linear-gradient(to right, #ff8c00, #ffaf50); /* Màu cam cho category Kanji */
+            font-weight: bold;
+            font-size: 1.25em;
+            text-align: center !important;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px !important;
+            margin-bottom: 5px !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .category-header-kanji { display: table-row-group; }
+        .category-header-kanji td { display: block; margin-top: 15px; margin-bottom: 5px; }
+
+
+        .no-results { text-align: center; padding: 25px; font-style: italic; color: #718096; background-color: #fff; border-radius: 8px; }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #fff;
+            color: #4a5568;
+            border-radius: 12px;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+        }
+        .footer h3 { /* Sẽ bị ghi đè bởi style h1,h3 ở trên nếu không cụ thể hơn */
+            color: #5a67d8 !important; /* Ưu tiên màu này cho footer */
+        }
+         .footer p, .footer ul li { /* Màu chữ cho phần footer */
+            color: #333;
+        }
+
+
+         ruby rt { font-size: 0.65em; color: #667eea; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .container { padding: 10px; }
+            .header h1 { font-size: 1.8em; }
+            .header .subtitle { font-size: 0.9em; }
+            .kanji-table-custom th, .kanji-table-custom td { padding: 8px 10px; font-size: 0.9em; }
+            .kanji-char-hv { font-size: 1.8em; }
+            .search-input { font-size: 0.95em; padding: 10px 12px; }
+            .intro h3, .footer h3 { font-size: 1.2em; }
+            .category-header-kanji td { font-size: 1.1em; padding: 10px; }
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><span class="icon">📖</span> Bảng Kanji N4 Cơ Bản <span class="icon">📖</span></h1>
+        <div class="subtitle">Học Kanji theo chủ đề với ví dụ chi tiết</div>
+    </div>
+
+    <!-- Hộp thống kê (Giống file bộ thủ) -->
+    <div class="stats-box">
+        <div class="stats-number">350+</div> <!-- Số lượng Kanji N4 -->
+        <div>Tổng số Kanji N4 cơ bản được trình bày</div>
+    </div>
+
+    <div class="intro">
+        <h3>🌟 Tại sao nên học Kanji theo chủ đề?</h3>
+        <p>Học Kanji theo từng nhóm chủ đề giúp bạn:</p>
+        <ul>
+            <li>Liên kết ý nghĩa dễ dàng hơn</li>
+            <li>Ghi nhớ từ vựng liên quan hiệu quả</li>
+            <li>Xây dựng nền tảng vững chắc cho các cấp độ cao hơn</li>
+        </ul>
+    </div>
+
+    <div class="note">
+        <p><strong>📝 Lưu ý:</strong> Cách đọc On'yomi thường được viết bằng Katakana, Kun'yomi bằng Hiragana. Một số Kanji có nhiều cách đọc, bảng này ưu tiên cách đọc phổ biến.</p>
+    </div>
+
+    <!-- Ô tìm kiếm (Giống file bộ thủ) -->
+    <div class="search-box">
+        <input type="text" id="searchInputKanji" class="search-input" placeholder="🔍 Tìm kiếm Kanji, Âm Hán Việt, Cách đọc, Nghĩa..." onkeyup="searchKanjiTable()">
+    </div>
+
+    <div class="kanji-table-custom"> <!-- Đổi tên class -->
+        <table id="kanjiN4Table"> <!-- Đổi id table nếu cần -->
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Kanji (Âm Hán Việt)</th>
+                    <th style="width: 25%;">Cách đọc<br><small>(On'yomi / Kun'yomi)</small></th>
+                    <th style="width: 25%;">Ý nghĩa - Cách dùng</th>
+                    <th style="width: 35%;">Câu ví dụ (Furigana) & Dịch</th>
+                </tr>
+            </thead>
+            <tbody id="kanjiN4TableData"> <!-- Thêm ID cho tbody chứa dữ liệu để JS dễ target hơn -->
+                <!-- I. Số đếm & Đơn vị -->
+                <tr class="category-header-kanji"> <!-- Đổi tên class -->
+                    <td colspan="4">I. 🔢 Số đếm & Đơn vị (20 chữ)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="kanji-char-hv">一</div>
+                        <div class="han-viet">(NHẤT)</div>
+                    </td>
+                    <td class="reading">
+                        <div class="onyomi">イチ (ichi)</div>
+                        <div class="kunyomi">ひと(つ) (hito(tsu))</div>
+                    </td>
+                    <td class="meaning-usage">Một, số một. Dùng để đếm, chỉ sự khởi đầu.</td>
+                    <td>
+                        <div class="example-sentence">これが<ruby>一番<rt>いちばん</rt></ruby>いいです。<br><em>(Kore ga ichiban ii desu.)</em> - Cái này là tốt nhất.</div>
+                        <div class="example-sentence"><ruby>一人<rt>ひとり</rt></ruby>で<ruby>旅行<rt>りょこう</rt></ruby>します。<br><em>(Hitori de ryokou shimasu.)</em> - Tôi đi du lịch một mình.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="kanji-char-hv">二</div>
+                        <div class="han-viet">(NHỊ)</div>
+                    </td>
+                    <td class="reading">
+                        <div class="onyomi">ニ (ni)</div>
+                        <div class="kunyomi">ふた(つ) (futa(tsu))</div>
+                    </td>
+                    <td class="meaning-usage">Hai, số hai.</td>
+                    <td>
+                        <div class="example-sentence"><ruby>二月<rt>にがつ</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>いです。<br><em>(Nigatsu wa samui desu.)</em> - Tháng Hai thì lạnh.</div>
+                        <div class="example-sentence">りんごを<ruby>二<rt>ふた</rt></ruby>つください。<br><em>(Ringo o futatsu kudasai.)</em> - Cho tôi hai quả táo.</div>
+                    </td>
+                </tr>
+                <!-- ... (Thêm các Kanji còn lại của nhóm I vào đây) ... -->
+
+                <!-- II. Thời gian & Lịch -->
+                <tr class="category-header-kanji"> <!-- Đổi tên class -->
+                    <td colspan="4">II. ⏰ Thời gian & Lịch (32 chữ)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="kanji-char-hv">日</div>
+                        <div class="han-viet">(NHẬT)</div>
+                    </td>
+                    <td class="reading">
+                        <div class="onyomi">ニチ、ジツ (nichi, jitsu)</div>
+                        <div class="kunyomi">ひ、-か、-び (hi, -ka, -bi)</div>
+                    </td>
+                    <td class="meaning-usage">Ngày, mặt trời, Chủ Nhật.</td>
+                    <td>
+                        <div class="example-sentence"><ruby>毎日<rt>まいにち</rt></ruby>、<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。<br><em>(Mainichi, shinbun o yomimasu.)</em> - Hàng ngày tôi đọc báo.</div>
+                        <div class="example-sentence"><ruby>今日<rt>きょう</rt></ruby>は<ruby>日曜日<rt>にちようび</rt></ruby>です。<br><em>(Kyou wa nichiyoubi desu.)</em> - Hôm nay là Chủ Nhật.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="kanji-char-hv">月</div>
+                        <div class="han-viet">(NGUYỆT)</div>
+                    </td>
+                    <td class="reading">
+                        <div class="onyomi">ゲツ、ガツ (getsu, gatsu)</div>
+                        <div class="kunyomi">つき (tsuki)</div>
+                    </td>
+                    <td class="meaning-usage">Tháng, mặt trăng, thứ Hai.</td>
+                    <td>
+                        <div class="example-sentence"><ruby>来月<rt>らいげつ</rt></ruby>、<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。<br><em>(Raigetsu, ryokou ni ikimasu.)</em> - Tháng sau tôi sẽ đi du lịch.</div>
+                        <div class="example-sentence"><ruby>月<rt>つき</rt></ruby>がとてもきれいです。<br><em>(Tsuki ga totemo kirei desu.)</em> - Trăng rất đẹp.</div>
+                    </td>
+                </tr>
+                <!-- ... (Thêm các Kanji còn lại của nhóm II và các nhóm khác vào đây) ... -->
+            </tbody>
+             <tbody id="noResultsRowKanji" style="display: none;"> <!-- Đổi ID cho dòng no results -->
+                <tr>
+                    <td colspan="4" class="no-results">Không tìm thấy kết quả phù hợp.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <h3>🎉 Chúc bạn học Kanji N4 hiệu quả! 🎉</h3>
+        <div style="margin-top: 20px;">
+            <strong>💡 Mẹo học Kanji hiệu quả:</strong>
+            <ul style="text-align: left; margin-top: 10px;">
+                <li>🔄 Ôn tập thường xuyên bằng flashcards.</li>
+                <li>📝 Tập viết các Kanji thường xuyên.</li>
+                <li>📖 Đọc nhiều tài liệu tiếng Nhật có chứa Kanji.</li>
+                <li>🧩 Phân tích bộ thủ để hiểu cấu tạo và ý nghĩa.</li>
+            </ul>
+        </div>
+    </div>
+</div> <!-- Hết thẻ .container -->
+
+<script>
+    function searchKanjiTable() { // Đổi tên hàm
+        const input = document.getElementById('searchInputKanji'); // Đảm bảo ID này khớp với input
+        const filter = input.value.toUpperCase();
+        const table = document.getElementById('kanjiN4Table');    // Đảm bảo ID này khớp với table
+        const tbodyData = document.getElementById('kanjiN4TableData'); // Target tbody chứa dữ liệu
+        const tr = tbodyData.getElementsByTagName('tr');
+        const noResultsRow = document.getElementById('noResultsRowKanji'); // Đảm bảo ID này khớp
+        let categoryVisible = {}; 
+        let hasVisibleRows = false;
+
+        for (let i = 0; i < tr.length; i++) {
+            if (tr[i].classList.contains('category-header-kanji')) continue; // Sử dụng class mới
+
+            const tdCells = tr[i].getElementsByTagName('td');
+            let textToSearch = "";
+            if (tdCells[0]) textToSearch += (tdCells[0].textContent || tdCells[0].innerText).toUpperCase();
+            if (tdCells[1]) textToSearch += (tdCells[1].textContent || tdCells[1].innerText).toUpperCase();
+            if (tdCells[2]) textToSearch += (tdCells[2].textContent || tdCells[2].innerText).toUpperCase();
+            // if (tdCells[3]) textToSearch += (tdCells[3].textContent || tdCells[3].innerText).toUpperCase();
+
+            if (textToSearch.indexOf(filter) > -1) {
+                let currentElement = tr[i];
+                while(currentElement.previousElementSibling) {
+                    currentElement = currentElement.previousElementSibling;
+                    if (currentElement.classList.contains('category-header-kanji')) { // Sử dụng class mới
+                        categoryVisible[currentElement.innerText.trim()] = true; 
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // Hiển thị/ẩn các dòng và category header
+        const allRowsInTbody = tbodyData.getElementsByTagName('tr'); // Lấy lại tất cả các dòng trong tbody data để xử lý header
+        for (let i = 0; i < allRowsInTbody.length; i++) {
+             let currentRow = allRowsInTbody[i];
+            if (currentRow.classList.contains('category-header-kanji')) { // Sử dụng class mới
+                if (filter === "" || categoryVisible[currentRow.innerText.trim()]) {
+                    currentRow.style.display = '';
+                    if (filter === "") hasVisibleRows = true; 
+                } else {
+                    currentRow.style.display = 'none';
+                }
+            } else { // Đây là dòng dữ liệu Kanji
+                const tdCells = currentRow.getElementsByTagName('td');
+                let textToSearch = "";
+                if (tdCells[0]) textToSearch += (tdCells[0].textContent || tdCells[0].innerText).toUpperCase();
+                if (tdCells[1]) textToSearch += (tdCells[1].textContent || tdCells[1].innerText).toUpperCase();
+                if (tdCells[2]) textToSearch += (tdCells[2].textContent || tdCells[2].innerText).toUpperCase();
+
+                if (textToSearch.indexOf(filter) > -1) {
+                    currentRow.style.display = '';
+                    hasVisibleRows = true;
+                } else {
+                    currentRow.style.display = 'none';
+                }
+            }
+        }
+
+        if (!hasVisibleRows && filter !== "") {
+            noResultsRow.style.display = ''; 
+        } else {
+            noResultsRow.style.display = 'none'; 
+        }
+    }
+</script>
+</body>
+</html>
