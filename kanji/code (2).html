@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Kanji N4 Cơ Bản</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Giả sử bạn dùng chung file styles.css -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #4a5568; /* Darker blue-gray */
+            color: white;
+            border-radius: 8px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            margin-top: 5px;
+            color: #e2e8f0; /* Lighter text for subtitle */
+        }
+        .intro, .note {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4299e1; /* Blue accent */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .intro h3, .footer h3 {
+            color: #2c5282; /* Darker blue */
+            margin-top: 0;
+        }
+        .intro ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .intro ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .intro ul li::before {
+            content: '✓'; /* Checkmark icon */
+            color: #38a169; /* Green */
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .kanji-table table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 0.95em;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden; /* For rounded corners on table */
+        }
+        .kanji-table th, .kanji-table td {
+            border: 1px solid #e2e8f0; /* Lighter border */
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .kanji-table th {
+            background-color: #edf2f7; /* Light gray-blue */
+            font-weight: bold;
+            color: #2d3748; /* Dark gray */
+        }
+        .kanji-char-hv {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #2c5282; /* Dark blue for Kanji */
+        }
+        .han-viet {
+            font-size: 0.85em;
+            color: #718096; /* Medium gray */
+        }
+        .reading {
+            font-size: 0.9em;
+        }
+        .reading .onyomi {
+            color: #c53030; /* Red for On'yomi */
+            font-weight: 500;
+        }
+        .reading .kunyomi {
+            color: #2f855a; /* Green for Kun'yomi */
+            font-weight: 500;
+        }
+        .meaning-usage {
+            color: #4a5568; /* Darker blue-gray */
+        }
+        .example-sentence {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e0; /* Lighter dashed border */
+        }
+        .example-sentence:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .example-sentence em { /* Style for Romaji */
+            color: #718096;
+            font-size: 0.9em;
+            display: block; /* Romaji on new line */
+            margin-top: 3px;
+        }
+        .category-header td {
+            background-color: #4a5568; /* Darker blue-gray for category */
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center !important;
+            color: white;
+            padding: 10px;
+        }
+        .search-input-kanji {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 12px;
+            margin: 0 auto 20px auto; /* Center search box */
+            display: block;
+            border: 1px solid #cbd5e0; /* Lighter border */
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: #718096;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #edf2f7;
+            color: #4a5568;
+            border-radius: 8px;
+        }
+         ruby rt {
+            font-size: 0.7em; /* Smaller Furigana */
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📖 Bảng Kanji N4 Cơ Bản 📖</h1>
+        <div class="subtitle">Học Kanji theo chủ đề với ví dụ chi tiết</div>
+    </div>
+
+    <div class="intro">
+        <h3>🌟 Tại sao nên học Kanji theo chủ đề?</h3>
+        <p>Học Kanji theo từng nhóm chủ đề giúp bạn:</p>
+        <ul>
+            <li>🔗 <strong>Liên kết ý nghĩa dễ dàng hơn</strong></li>
+            <li>🧠 <strong>Ghi nhớ từ vựng liên quan hiệu quả</strong></li>
+            <li>📈 <strong>Xây dựng nền tảng vững chắc cho các cấp độ cao hơn</strong></li>
+        </ul>
+    </div>
+
+    <div class="note">
+        <strong>📝 Lưu ý:</strong> Cách đọc On'yomi thường được viết bằng Katakana, Kun'yomi bằng Hiragana. Một số Kanji có nhiều cách đọc, bảng này ưu tiên cách đọc phổ biến.
+    </div>
+
+    <input type="text" id="searchInputKanji" class="search-input-kanji" placeholder="🔍 Tìm kiếm Kanji, Âm Hán Việt, Cách đọc, Nghĩa..." onkeyup="searchKanjiTable()">
+
+    <div class="kanji-table">
+        <div class="responsive-table">
+            <table id="kanjiTableN4">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Kanji (Âm Hán Việt)</th>
+                        <th style="width: 25%;">Cách đọc<br><small>(On'yomi / Kun'yomi)</small></th>
+                        <th style="width: 25%;">Ý nghĩa - Cách dùng</th>
+                        <th style="width: 35%;">Câu ví dụ (Furigana) & Dịch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- I. Số đếm & Đơn vị -->
+                    <tr class="category-header">
+                        <td colspan="4">I. 🔢 Số đếm & Đơn vị (20 chữ)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">一</div>
+                            <div class="han-viet">(NHẤT)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">イチ (ichi)</div>
+                            <div class="kunyomi">ひと(つ) (hito(tsu))</div>
+                        </td>
+                        <td class="meaning-usage">Một, số một. Dùng để đếm, chỉ sự khởi đầu.</td>
+                        <td>
+                            <div class="example-sentence">これが<ruby>一番<rt>いちばん</rt></ruby>いいです。<br><em>(Kore ga ichiban ii desu.)</em> - Cái này là tốt nhất.</div>
+                            <div class="example-sentence"><ruby>一人<rt>ひとり</rt></ruby>で<ruby>旅行<rt>りょこう</rt></ruby>します。<br><em>(Hitori de ryokou shimasu.)</em> - Tôi đi du lịch một mình.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">二</div>
+                            <div class="han-viet">(NHỊ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ニ (ni)</div>
+                            <div class="kunyomi">ふた(つ) (futa(tsu))</div>
+                        </td>
+                        <td class="meaning-usage">Hai, số hai.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>二月<rt>にがつ</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>いです。<br><em>(Nigatsu wa samui desu.)</em> - Tháng Hai thì lạnh.</div>
+                            <div class="example-sentence">りんごを<ruby>二<rt>ふた</rt></ruby>つください。<br><em>(Ringo o futatsu kudasai.)</em> - Cho tôi hai quả táo.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">三</div>
+                            <div class="han-viet">(TAM)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">サン (san)</div>
+                            <div class="kunyomi">み(っつ) (mi(ttsu))</div>
+                        </td>
+                        <td class="meaning-usage">Ba, số ba.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>三回<rt>さんかい</rt></ruby><ruby>言<rt>い</rt></ruby>いました。<br><em>(Sankai iimashita.)</em> - Tôi đã nói ba lần.</div>
+                             <div class="example-sentence"><ruby>三角形<rt>さんかくけい</rt></ruby>を<ruby>描<rt>か</rt></ruby>いてください。<br><em>(Sankakukei o kaite kudasai.)</em> - Hãy vẽ một hình tam giác.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">四</div>
+                            <div class="han-viet">(TỨ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">シ (shi)</div>
+                            <div class="kunyomi">よん、よ(っつ) (yon, yo(ttsu))</div>
+                        </td>
+                        <td class="meaning-usage">Bốn, số bốn. (Lưu ý "shi" có thể đồng âm với "chết" nên "yon" thường được dùng hơn).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>四<rt>よん</rt>人<rt>にん</rt></ruby>の<ruby>学生<rt>がくせい</rt></ruby>がいます。<br><em>(Yo-nin no gakusei ga imasu.)</em> - Có bốn học sinh.</div>
+                            <div class="example-sentence"><ruby>四季<rt>しき</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>春<rt>はる</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。<br><em>(Shiki no naka de haru ga suki desu.)</em> - Trong bốn mùa tôi thích mùa xuân.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">五</div>
+                            <div class="han-viet">(NGŨ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ゴ (go)</div>
+                            <div class="kunyomi">いつ(つ) (itsu(tsu))</div>
+                        </td>
+                        <td class="meaning-usage">Năm, số năm.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>五<rt>ご</rt>時<rt>じ</rt></ruby>に<ruby>起<rt>お</rt></ruby>きます。<br><em>(Go-ji ni okimasu.)</em> - Tôi thức dậy lúc 5 giờ.</div>
+                            <div class="example-sentence">ここに<ruby>花<rt>はな</rt></ruby>が<ruby>五<rt>いつ</rt></ruby>つあります。<br><em>(Koko ni hana ga itsutsu arimasu.)</em> - Ở đây có năm bông hoa.</div>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <div class="kanji-char-hv">六</div>
+                            <div class="han-viet">(LỤC)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ロク (roku)</div>
+                            <div class="kunyomi">む(っつ) (mu(ttsu))</div>
+                        </td>
+                        <td class="meaning-usage">Sáu, số sáu.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>六月<rt>ろくがつ</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いです。<br><em>(Rokugatsu wa ame ga ooi desu.)</em> - Tháng Sáu mưa nhiều.</div>
+                            <div class="example-sentence"><ruby>鉛筆<rt>えんぴつ</rt></ruby>を<ruby>六<rt>むっ</rt>つ</ruby><ruby>買<rt>か</rt></ruby>いました。<br><em>(Enpitsu o muttsu kaimashita.)</em> - Tôi đã mua sáu cây bút chì.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">七</div>
+                            <div class="han-viet">(THẤT)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">シチ (shichi)</div>
+                            <div class="kunyomi">なな(つ) (nana(tsu))</div>
+                        </td>
+                        <td class="meaning-usage">Bảy, số bảy.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>七<rt>しち</rt>時<rt>じ</rt></ruby>に<ruby>朝<rt>あさ</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby>べます。<br><em>(Shichi-ji ni asagohan o tabemasu.)</em> - Tôi ăn sáng lúc 7 giờ.</div>
+                            <div class="example-sentence"><ruby>七夕<rt>たなばた</rt></ruby>の<ruby>祭<rt>まつ</rt></ruby>りがあります。<br><em>(Tanabata no matsuri ga arimasu.)</em> - Có lễ hội Tanabata (Thất Tịch).</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">八</div>
+                            <div class="han-viet">(BÁT)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ハチ (hachi)</div>
+                            <div class="kunyomi">や(っつ) (ya(ttsu))</div>
+                        </td>
+                        <td class="meaning-usage">Tám, số tám.</td>
+                        <td>
+                            <div class="example-sentence">この<ruby>犬<rt>いぬ</rt></ruby>は<ruby>八歳<rt>はっさい</rt></ruby>です。<br><em>(Kono inu wa hassai desu.)</em> - Con chó này 8 tuổi.</div>
+                            <div class="example-sentence"><ruby>八百屋<rt>やおや</rt></ruby>で<ruby>果物<rt>くだもの</rt></ruby>を<ruby>買<rt>か</rt></ruby>います。<br><em>(Yaoya de kudamono o kaimasu.)</em> - Tôi mua trái cây ở cửa hàng rau quả.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">九</div>
+                            <div class="han-viet">(CỬU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">キュウ、ク (kyuu, ku)</div>
+                            <div class="kunyomi">ここの(つ) (kokono(tsu))</div>
+                        </td>
+                        <td class="meaning-usage">Chín, số chín.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>九月<rt>くがつ</rt></ruby>に<ruby>学校<rt>がっこう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まります。<br><em>(Kugatsu ni gakkou ga hajimarimasu.)</em> - Tháng Chín trường học bắt đầu.</div>
+                            <div class="example-sentence"><ruby>部屋<rt>へや</rt></ruby>に<ruby>九<rt>ここの</rt></ruby>つの<ruby>窓<rt>まど</rt></ruby>があります。<br><em>(Heya ni kokonotsu no mado ga arimasu.)</em> - Trong phòng có chín cái cửa sổ.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">十</div>
+                            <div class="han-viet">(THẬP)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ジュウ (juu)</div>
+                            <div class="kunyomi">とお (too)</div>
+                        </td>
+                        <td class="meaning-usage">Mười, số mười.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>十<rt>じゅう</rt>分<rt>ぷん</rt></ruby><ruby>間<rt>かん</rt></ruby><ruby>待<rt>ま</rt></ruby>ってください。<br><em>(Juppunkan matte kudasai.)</em> - Xin hãy đợi 10 phút.</div>
+                            <div class="example-sentence"><ruby>十分<rt>じゅうぶん</rt></ruby><ruby>気<rt>き</rt></ruby>をつけてください。<br><em>(Juubun ki o tsukete kudasai.)</em> - Xin hãy chú ý đầy đủ/cẩn thận.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">百</div>
+                            <div class="han-viet">(BÁCH)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ヒャク (hyaku)</div>
+                            <div class="kunyomi">もも (momo - cổ)</div>
+                        </td>
+                        <td class="meaning-usage">Trăm (100).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>百<rt>ひゃく</rt>円<rt>えん</rt></ruby>ショップで<ruby>買<rt>か</rt></ruby>いました。<br><em>(Hyaku en shoppu de kaimashita.)</em> - Tôi đã mua ở cửa hàng 100 Yên.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">千</div>
+                            <div class="han-viet">(THIÊN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">セン (sen)</div>
+                            <div class="kunyomi">ち (chi)</div>
+                        </td>
+                        <td class="meaning-usage">Nghìn (1000).</td>
+                        <td>
+                            <div class="example-sentence">このかばんは<ruby>三千<rt>さんぜん</rt>円<rt>えん</rt></ruby>です。<br><em>(Kono kaban wa sanzen en desu.)</em> - Cái cặp này giá 3000 Yên.</div>
+                             <div class="example-sentence"><ruby>千葉県<rt>ちばけん</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。<br><em>(Chiba-ken ni sunde imasu.)</em> - Tôi đang sống ở tỉnh Chiba.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">万</div>
+                            <div class="han-viet">(VẠN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">マン、バン (man, ban)</div>
+                            <div class="kunyomi">よろず (yorozu - cổ)</div>
+                        </td>
+                        <td class="meaning-usage">Mười nghìn (10,000), vô số.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>一<rt>いち</rt>万<rt>まん</rt>円<rt>えん</rt></ruby><ruby>貸<rt>か</rt></ruby>してください。<br><em>(Ichi-man en kashite kudasai.)</em> - Hãy cho tôi vay 1 vạn Yên.</div>
+                            <div class="example-sentence"><ruby>万<rt>ばん</rt>国<rt>こく</rt>博覧会<rt>はくらんかい</rt></ruby>が<ruby>開<rt>ひら</rt></ruby>かれました。<br><em>(Bankoku hakurankai ga hirakaremashita.)</em> - Triển lãm quốc tế đã được tổ chức.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">円</div>
+                            <div class="han-viet">(VIÊN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">エン (en)</div>
+                            <div class="kunyomi">まる(い) (maru(i))</div>
+                        </td>
+                        <td class="meaning-usage">Yên (tiền tệ), hình tròn.</td>
+                        <td>
+                            <div class="example-sentence">これは<ruby>日本<rt>にほん</rt></ruby>の<ruby>円<rt>えん</rt></ruby>です。<br><em>(Kore wa Nihon no en desu.)</em> - Đây là tiền Yên của Nhật.</div>
+                            <div class="example-sentence"><ruby>円<rt>えん</rt></ruby>を<ruby>描<rt>えが</rt></ruby>いてください。<br><em>(En o egaite kudasai.)</em> - Hãy vẽ một hình tròn.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">度</div>
+                            <div class="han-viet">(ĐỘ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ド、ト (do, to)</div>
+                            <div class="kunyomi">たび (tabi)</div>
+                        </td>
+                        <td class="meaning-usage">Lần, mức độ, nhiệt độ.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今度<rt>こんど</rt></ruby>の日曜日<rt>にちようび</rt></ruby>、<ruby>遊<rt>あそ</rt></ruby>びませんか。<br><em>(Kondo no nichiyoubi, asobimasen ka.)</em> - Chủ nhật tới đi chơi không?</div>
+                            <div class="example-sentence"><ruby>温度<rt>おんど</rt></ruby>は<ruby>何度<rt>なんど</rt></ruby>ですか。<br><em>(Ondo wa nando desu ka.)</em> - Nhiệt độ là bao nhiêu độ?</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">回</div>
+                            <div class="han-viet">(HỒI)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">カイ、エ (kai, e)</div>
+                            <div class="kunyomi">まわ(る)、まわ(す) (mawa(ru), mawa(su))</div>
+                        </td>
+                        <td class="meaning-usage">Lần (số lần lặp lại), xoay, quay.</td>
+                        <td>
+                            <div class="example-sentence">この<ruby>映画<rt>えいが</rt></ruby>を<ruby>二<rt>に</rt>回<rt>かい</rt></ruby><ruby>見<rt>み</rt></ruby>ました。<br><em>(Kono eiga o ni-kai mimashita.)</em> - Tôi đã xem bộ phim này hai lần.</div>
+                            <div class="example-sentence">ハンドルを<ruby>右<rt>みぎ</rt></ruby>に<ruby>回<rt>まわ</rt></ruby>してください。<br><em>(Handoru o migi ni mawashite kudasai.)</em> - Xin hãy xoay vô lăng sang phải.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">番</div>
+                            <div class="han-viet">(PHIÊN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">バン (ban)</div>
+                            <div class="kunyomi">つが(い) (tsuga(i) - cặp)</div>
+                        </td>
+                        <td class="meaning-usage">Số thứ tự, lượt, trông coi.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>私<rt>わたし</rt></ruby>の<ruby>番号<rt>ばんごう</rt></ruby>は<ruby>何番<rt>なんばん</rt></ruby>ですか。<br><em>(Watashi no bangou wa nanban desu ka.)</em> - Số của tôi là số mấy?</div>
+                            <div class="example-sentence"><ruby>交番<rt>こうばん</rt></ruby>で<ruby>道<rt>みち</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きました。<br><em>(Kouban de michi o kikimashita.)</em> - Tôi đã hỏi đường ở đồn cảnh sát.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">号</div>
+                            <div class="han-viet">(HIỆU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ゴウ (gou)</div>
+                            <div class="kunyomi">さけ(ぶ) (sake(bu) - hét)</div>
+                        </td>
+                        <td class="meaning-usage">Số hiệu, tên hiệu, ký hiệu.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>電話<rt>でんわ</rt>番号<rt>ばんごう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。<br><em>(Denwa bangou o oshiete kudasai.)</em> - Xin hãy cho tôi biết số điện thoại.</div>
+                            <div class="example-sentence"><ruby>信号<rt>しんごう</rt></ruby>が<ruby>青<rt>あお</rt></ruby>に<ruby>変<rt>か</rt></ruby>わりました。<br><em>(Shingou ga ao ni kawarimashita.)</em> - Đèn tín hiệu đã chuyển sang màu xanh.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">才・歳</div>
+                            <div class="han-viet">(TÀI/TUẾ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">サイ、セイ (sai, sei)</div>
+                            <div class="kunyomi">とし (toshi)</div>
+                        </td>
+                        <td class="meaning-usage">Tuổi (歳 thường dùng cho tuổi người), tài năng (才).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>十<rt>じゅっ</rt>歳<rt>さい</rt></ruby>です。<br><em>(Kanojo wa jussai desu.)</em> - Cô ấy 10 tuổi.</div>
+                            <div class="example-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>音楽<rt>おんがく</rt></ruby>の<ruby>才能<rt>さいのう</rt></ruby>があります。<br><em>(Kare wa ongaku no sainou ga arimasu.)</em> - Anh ấy có tài năng về âm nhạc.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">個</div>
+                            <div class="han-viet">(CÁ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">コ (ko)</div>
+                            <div class="kunyomi">-</div>
+                        </td>
+                        <td class="meaning-usage">Cái, chiếc (đơn vị đếm vật nhỏ, thường là tròn).</td>
+                        <td>
+                            <div class="example-sentence">りんごを<ruby>三<rt>さん</rt>個<rt>こ</rt></ruby><ruby>食<rt>た</rt></ruby>べました。<br><em>(Ringo o sanko tabemashita.)</em> - Tôi đã ăn ba quả táo.</div>
+                            <div class="example-sentence"><ruby>個人<rt>こじん</rt></ruby>の<ruby>情報<rt>じょうほう</rt></ruby>は<ruby>大切<rt>たいせつ</rt></ruby>です。<br><em>(Kojin no jouhou wa taisetsu desu.)</em> - Thông tin cá nhân rất quan trọng.</div>
+                        </td>
+                    </tr>
+
+                    <!-- II. Thời gian & Lịch -->
+                    <tr class="category-header">
+                        <td colspan="4">II. ⏰ Thời gian & Lịch (32 chữ)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">日</div>
+                            <div class="han-viet">(NHẬT)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ニチ、ジツ (nichi, jitsu)</div>
+                            <div class="kunyomi">ひ、-か、-び (hi, -ka, -bi)</div>
+                        </td>
+                        <td class="meaning-usage">Ngày, mặt trời, Chủ Nhật.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>毎日<rt>まいにち</rt></ruby>、<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。<br><em>(Mainichi, shinbun o yomimasu.)</em> - Hàng ngày tôi đọc báo.</div>
+                            <div class="example-sentence"><ruby>今日<rt>きょう</rt></ruby>は<ruby>日曜日<rt>にちようび</rt></ruby>です。<br><em>(Kyou wa nichiyoubi desu.)</em> - Hôm nay là Chủ Nhật.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">月</div>
+                            <div class="han-viet">(NGUYỆT)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ゲツ、ガツ (getsu, gatsu)</div>
+                            <div class="kunyomi">つき (tsuki)</div>
+                        </td>
+                        <td class="meaning-usage">Tháng, mặt trăng, thứ Hai.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>来月<rt>らいげつ</rt></ruby>、<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。<br><em>(Raigetsu, ryokou ni ikimasu.)</em> - Tháng sau tôi sẽ đi du lịch.</div>
+                            <div class="example-sentence"><ruby>月<rt>つき</rt></ruby>がとてもきれいです。<br><em>(Tsuki ga totemo kirei desu.)</em> - Trăng rất đẹp.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">火</div>
+                            <div class="han-viet">(HỎA)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">カ (ka)</div>
+                            <div class="kunyomi">ひ、ほ (hi, ho)</div>
+                        </td>
+                        <td class="meaning-usage">Lửa, thứ Ba.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>火曜日<rt>かようび</rt></ruby>に<ruby>会議<rt>かいぎ</rt></ruby>があります。<br><em>(Kayoubi ni kaigi ga arimasu.)</em> - Thứ Ba có cuộc họp.</div>
+                            <div class="example-sentence"><ruby>火山<rt>かざん</rt></ruby>が<ruby>噴火<rt>ふんか</rt></ruby>しました。<br><em>(Kazan ga funka shimashita.)</em> - Núi lửa đã phun trào.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">水</div>
+                            <div class="han-viet">(THỦY)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">スイ (sui)</div>
+                            <div class="kunyomi">みず (mizu)</div>
+                        </td>
+                        <td class="meaning-usage">Nước, thứ Tư.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>水<rt>みず</rt></ruby>を<ruby>一杯<rt>いっぱい</rt></ruby>ください。<br><em>(Mizu o ippai kudasai.)</em> - Cho tôi một cốc nước.</div>
+                            <div class="example-sentence"><ruby>水道<rt>すいどう</rt></ruby>の<ruby>水<rt>みず</rt></ruby>は<ruby>飲<rt>の</rt></ruby>めますか。<br><em>(Suidou no mizu wa nomemasu ka.)</em> - Nước máy có uống được không?</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">木</div>
+                            <div class="han-viet">(MỘC)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">モク、ボク (moku, boku)</div>
+                            <div class="kunyomi">き、こ (ki, ko)</div>
+                        </td>
+                        <td class="meaning-usage">Cây, gỗ, thứ Năm.</td>
+                        <td>
+                            <div class="example-sentence">この<ruby>机<rt>つくえ</rt></ruby>は<ruby>木<rt>き</rt></ruby>でできています。<br><em>(Kono tsukue wa ki de dekite imasu.)</em> - Cái bàn này làm bằng gỗ.</div>
+                            <div class="example-sentence"><ruby>木曜日<rt>もくようび</rt></ruby>は<ruby>忙<rt>いそが</rt></ruby>しいです。<br><em>(Mokuyoubi wa isogashii desu.)</em> - Thứ Năm tôi bận.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">金</div>
+                            <div class="han-viet">(KIM)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">キン、コン (kin, kon)</div>
+                            <div class="kunyomi">かね、かな (kane, kana)</div>
+                        </td>
+                        <td class="meaning-usage">Vàng, tiền, thứ Sáu.</td>
+                        <td>
+                            <div class="example-sentence">お<ruby>金<rt>かね</rt></ruby>がありません。<br><em>(Okane ga arimasen.)</em> - Tôi không có tiền.</div>
+                            <div class="example-sentence"><ruby>金曜日<rt>きんようび</rt></ruby>に<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ましょう。<br><em>(Kin'youbi ni eiga o mimashou.)</em> - Thứ Sáu chúng ta xem phim nhé.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">土</div>
+                            <div class="han-viet">(THỔ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ド、ト (do, to)</div>
+                            <div class="kunyomi">つち (tsuchi)</div>
+                        </td>
+                        <td class="meaning-usage">Đất, thứ Bảy.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>庭<rt>にわ</rt></ruby>の<ruby>土<rt>つち</rt></ruby>を<ruby>入<rt>い</rt></ruby>れ<ruby>替<rt>か</rt></ruby>えます。<br><em>(Niwa no tsuchi o irekaemasu.)</em> - Tôi sẽ thay đất trong vườn.</div>
+                            <div class="example-sentence"><ruby>土曜日<rt>どようび</rt></ruby>に<ruby>休<rt>やす</rt></ruby>みます。<br><em>(Doyoubi ni yasumimasu.)</em> - Thứ Bảy tôi nghỉ.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">年</div>
+                            <div class="han-viet">(NIÊN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ネン (nen)</div>
+                            <div class="kunyomi">とし (toshi)</div>
+                        </td>
+                        <td class="meaning-usage">Năm, tuổi.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今年<rt>ことし</rt></ruby>は<ruby>良<rt>よ</rt></ruby>い<ruby>年<rt>とし</rt></ruby>でした。<br><em>(Kotoshi wa yoi toshi deshita.)</em> - Năm nay là một năm tốt lành.</div>
+                            <div class="example-sentence">2024<ruby>年<rt>ねん</rt></ruby>に<ruby>オリンピック<rt>おりんぴっく</rt></ruby>があります。<br><em>(Nisen nijuuyo-nen ni orinpikku ga arimasu.)</em> - Năm 2024 có Olympic.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">時</div>
+                            <div class="han-viet">(THỜI)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ジ (ji)</div>
+                            <div class="kunyomi">とき (toki)</div>
+                        </td>
+                        <td class="meaning-usage">Giờ, thời gian, lúc.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今<rt>いま</rt></ruby>、<ruby>何<rt>なん</rt>時<rt>じ</rt></ruby>ですか。<br><em>(Ima, nan-ji desu ka.)</em> - Bây giờ là mấy giờ?</div>
+                            <div class="example-sentence"><ruby>食事<rt>しょくじ</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>です。<br><em>(Shokuji no jikan desu.)</em> - Đến giờ ăn rồi.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">分</div>
+                            <div class="han-viet">(PHÂN, PHẬN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">フン、ブン、プン (fun, bun, pun)</div>
+                            <div class="kunyomi">わ(かる)、わ(ける) (wa(karu), wa(keru))</div>
+                        </td>
+                        <td class="meaning-usage">Phút, phần, hiểu, chia.</td>
+                        <td>
+                            <div class="example-sentence">あと<ruby>五<rt>ご</rt>分<rt>ふん</rt></ruby>で<ruby>始<rt>はじ</rt></ruby>まります。<br><em>(Ato go-fun de hajimarimasu.)</em> - 5 phút nữa sẽ bắt đầu.</div>
+                            <div class="example-sentence">この<ruby>意味<rt>いみ</rt></ruby>が<ruby>分<rt>わ</rt></ruby>かりますか。<br><em>(Kono imi ga wakarimasu ka.)</em> - Bạn có hiểu ý nghĩa này không?</div>
+                             <div class="example-sentence">ケーキを<ruby>半分<rt>はんぶん</rt></ruby>に<ruby>分<rt>わ</rt></ruby>けましょう。<br><em>(Keeki o hanbun ni wakemashou.)</em> - Hãy chia cái bánh ra làm một nửa.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">半</div>
+                            <div class="han-viet">(BÁN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ハン (han)</div>
+                            <div class="kunyomi">なか(ば) (naka(ba))</div>
+                        </td>
+                        <td class="meaning-usage">Một nửa.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>一時<rt>いちじ</rt>半<rt>はん</rt></ruby>に<ruby>出発<rt>しゅっぱつ</rt></ruby>します。<br><em>(Ichiji-han ni shuppatsu shimasu.)</em> - Chúng ta sẽ xuất phát lúc 1 giờ rưỡi.</div>
+                             <div class="example-sentence"><ruby>半分<rt>はんぶん</rt></ruby>だけ<ruby>食<rt>た</rt></ruby>べました。<br><em>(Hanbun dake tabemashita.)</em> - Tôi chỉ ăn một nửa.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">今</div>
+                            <div class="han-viet">(KIM)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">コン、キン (kon, kin)</div>
+                            <div class="kunyomi">いま (ima)</div>
+                        </td>
+                        <td class="meaning-usage">Bây giờ, hiện tại.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今<rt>いま</rt></ruby>、<ruby>何<rt>なに</rt></ruby>をしていますか。<br><em>(Ima, nani o shite imasu ka.)</em> - Bây giờ bạn đang làm gì?</div>
+                            <div class="example-sentence"><ruby>今日<rt>きょう</rt></ruby>は<ruby>天気<rt>てんき</rt></ruby>がいい。<br><em>(Kyou wa tenki ga ii.)</em> - Hôm nay thời tiết đẹp.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">週</div>
+                            <div class="han-viet">(CHU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">シュウ (shuu)</div>
+                            <div class="kunyomi">-</div>
+                        </td>
+                        <td class="meaning-usage">Tuần.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今週<rt>こんしゅう</rt></ruby>の<ruby>週末<rt>しゅうまつ</rt></ruby>、<ruby>何<rt>なに</rt></ruby>をしますか。<br><em>(Konshuu no shuumatsu, nani o shimasu ka.)</em> - Cuối tuần này bạn làm gì?</div>
+                            <div class="example-sentence"><ruby>一<rt>いっ</rt>週間<rt>しゅうかん</rt></ruby>に<ruby>三<rt>さん</rt>回<rt>かい</rt></ruby>、<ruby>運動<rt>うんどう</rt></ruby>します。<br><em>(Isshuukan ni sankai, undou shimasu.)</em> - Tôi tập thể dục ba lần một tuần.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">先</div>
+                            <div class="han-viet">(TIÊN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">セン (sen)</div>
+                            <div class="kunyomi">さき (saki)</div>
+                        </td>
+                        <td class="meaning-usage">Trước (thời gian, thứ tự), đầu, tiên.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>先<rt>さき</rt></ruby>に<ruby>行<rt>い</rt></ruby>ってください。<br><em>(Saki ni itte kudasai.)</em> - Xin mời đi trước.</div>
+                            <div class="example-sentence"><ruby>先生<rt>せんせい</rt></ruby>に<ruby>質問<rt>しつもん</rt></ruby>があります。<br><em>(Sensei ni shitsumon ga arimasu.)</em> - Tôi có câu hỏi cho giáo viên.</div>
+                             <div class="example-sentence"><ruby>先月<rt>せんげつ</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>に<ruby>来<rt>き</rt></ruby>ました。<br><em>(Sengetsu, Nihon ni kimashita.)</em> - Tháng trước tôi đã đến Nhật.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">間</div>
+                            <div class="han-viet">(GIAN, GIÁN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">カン、ケン (kan, ken)</div>
+                            <div class="kunyomi">あいだ、ま (aida, ma)</div>
+                        </td>
+                        <td class="meaning-usage">Khoảng thời gian, ở giữa, phòng.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>二<rt>に</rt>時間<rt>じかん</rt></ruby>ぐらい<ruby>勉強<rt>べんきょう</rt></ruby>しました。<br><em>(Ni-jikan gurai benkyou shimashita.)</em> - Tôi đã học khoảng 2 tiếng.</div>
+                            <div class="example-sentence"><ruby>駅<rt>えき</rt></ruby>と<ruby>学校<rt>がっこう</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>に<ruby>公園<rt>こうえん</rt></ruby>があります。<br><em>(Eki to gakkou no aida ni kouen ga arimasu.)</em> - Giữa nhà ga và trường học có công viên.</div>
+                            <div class="example-sentence"><ruby>間<rt>ま</rt></ruby>もなく<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>到着<rt>とうちゃく</rt></ruby>します。<br><em>(Ma mo naku densha ga touchaku shimasu.)</em> - Tàu sắp đến nơi.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">朝</div>
+                            <div class="han-viet">(TRIỀU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">チョウ (chou)</div>
+                            <div class="kunyomi">あさ (asa)</div>
+                        </td>
+                        <td class="meaning-usage">Buổi sáng.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きます。<br><em>(Maiasa, hayaku okimasu.)</em> - Mỗi sáng tôi dậy sớm.</div>
+                            <div class="example-sentence"><ruby>朝食<rt>ちょうしょく</rt></ruby>はパンを<ruby>食<rt>た</rt></ruby>べます。<br><em>(Choushoku wa pan o tabemasu.)</em> - Bữa sáng tôi ăn bánh mì.</div>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <div class="kanji-char-hv">昼</div>
+                            <div class="han-viet">(TRÚ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">チュウ (chuu)</div>
+                            <div class="kunyomi">ひる (hiru)</div>
+                        </td>
+                        <td class="meaning-usage">Buổi trưa.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>昼<rt>ひる</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べに行<rt>い</rt></ruby>きましょう。<br><em>(Hirugohan o tabe ni ikimashou.)</em> - Chúng ta đi ăn trưa nào.</div>
+                            <div class="example-sentence"><ruby>昼休<rt>ひるやす</rt></ruby>みは<ruby>一<rt>いち</rt>時間<rt>じかん</rt></ruby>です。<br><em>(Hiruyasumi wa ichi-jikan desu.)</em> - Giờ nghỉ trưa là một tiếng.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">晩</div>
+                            <div class="han-viet">(VÃN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">バン (ban)</div>
+                            <div class="kunyomi">-</div>
+                        </td>
+                        <td class="meaning-usage">Buổi tối.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今晩<rt>こんばん</rt></ruby>、<ruby>何<rt>なに</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいですか。<br><em>(Konban, nani o tabetai desu ka.)</em> - Tối nay bạn muốn ăn gì?</div>
+                            <div class="example-sentence"><ruby>晩<rt>ばん</rt>ご飯<rt>はん</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>ですよ。<br><em>(Bangohan no jikan desu yo.)</em> - Đến giờ ăn tối rồi đó.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">夜</div>
+                            <div class="han-viet">(DẠ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ヤ (ya)</div>
+                            <div class="kunyomi">よる、よ (yoru, yo)</div>
+                        </td>
+                        <td class="meaning-usage">Ban đêm.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>夜<rt>よる</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かです。<br><em>(Yoru wa shizuka desu.)</em> - Ban đêm thì yên tĩnh.</div>
+                            <div class="example-sentence"><ruby>今夜<rt>こんや</rt></ruby>は<ruby>星<rt>ほし</rt></ruby>がたくさん<ruby>見<rt>み</rt></ruby>えます。<br><em>(Konya wa hoshi ga takusan miemasu.)</em> - Tối nay nhìn thấy nhiều sao.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">午</div>
+                            <div class="han-viet">(NGỌ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ゴ (go)</div>
+                            <div class="kunyomi">うま (uma - cổ, con ngựa)</div>
+                        </td>
+                        <td class="meaning-usage">Ngọ (buổi trưa), thường dùng trong 午前 (buổi sáng), 午後 (buổi chiều).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>午前<rt>ごぜん</rt></ruby><ruby>九<rt>く</rt>時<rt>じ</rt></ruby>に<ruby>授業<rt>じゅぎょう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まります。<br><em>(Gozen ku-ji ni jugyou ga hajimarimasu.)</em> - Buổi học bắt đầu lúc 9 giờ sáng.</div>
+                            <div class="example-sentence"><ruby>午後<rt>ごご</rt></ruby>は<ruby>図書館<rt>としょかん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。<br><em>(Gogo wa toshokan e ikimasu.)</em> - Buổi chiều tôi sẽ đi thư viện.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">前</div>
+                            <div class="han-viet">(TIỀN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ゼン (zen)</div>
+                            <div class="kunyomi">まえ (mae)</div>
+                        </td>
+                        <td class="meaning-usage">Trước (thời gian, không gian, thứ tự).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>で<ruby>待<rt>ま</rt></ruby>っています。<br><em>(Eki no mae de matte imasu.)</em> - Tôi đang đợi ở trước nhà ga.</div>
+                            <div class="example-sentence"><ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いてください。<br><em>(Namae o kaite kudasai.)</em> - Xin hãy viết tên.</div>
+                            <div class="example-sentence"><ruby>三年<rt>さんねん</rt>前<rt>まえ</rt></ruby>に<ruby>卒業<rt>そつぎょう</rt></ruby>しました。<br><em>(San-nen mae ni sotsugyou shimashita.)</em> - Tôi đã tốt nghiệp 3 năm trước.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">後</div>
+                            <div class="han-viet">(HẬU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ゴ、コウ (go, kou)</div>
+                            <div class="kunyomi">あと、うし(ろ)、のち (ato, ushi(ro), nochi)</div>
+                        </td>
+                        <td class="meaning-usage">Sau (thời gian, không gian, thứ tự), phía sau.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>食<rt>しょく</rt>事<rt>じ</rt></ruby>の<ruby>後<rt>あと</rt></ruby>で、コーヒーを<ruby>飲<rt>の</rt></ruby>みます。<br><em>(Shokuji no ato de, koohii o nomimasu.)</em> - Sau bữa ăn, tôi uống cà phê.</div>
+                            <div class="example-sentence"><ruby>家<rt>いえ</rt></ruby>の<ruby>後<rt>うし</rt>ろ</rt></ruby>に<ruby>庭<rt>にわ</rt></ruby>があります。<br><em>(Ie no ushiro ni niwa ga arimasu.)</em> - Phía sau nhà có vườn.</div>
+                             <div class="example-sentence"><ruby>午後<rt>ごご</rt></ruby><ruby>三<rt>さん</rt>時<rt>じ</rt></ruby>に<ruby>来<rt>き</rt></ruby>てください。<br><em>(Gogo san-ji ni kite kudasai.)</em> - Hãy đến vào lúc 3 giờ chiều.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">去</div>
+                            <div class="han-viet">(KHỨ, KHỬ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">キョ、コ (kyo, ko)</div>
+                            <div class="kunyomi">さ(る) (sa(ru))</div>
+                        </td>
+                        <td class="meaning-usage">Quá khứ, rời đi, loại bỏ.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>去年<rt>きょねん</rt></ruby>、<ruby>北海道<rt>ほっかいどう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。<br><em>(Kyonen, Hokkaidoo e ikimashita.)</em> - Năm ngoái tôi đã đi Hokkaido.</div>
+                            <div class="example-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>昨日<rt>きのう</rt></ruby>ここを<ruby>去<rt>さ</rt></ruby>りました。<br><em>(Kare wa kinou koko o sarimashita.)</em> - Anh ấy đã rời khỏi đây hôm qua.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">毎</div>
+                            <div class="han-viet">(MỖI)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">マイ (mai)</div>
+                            <div class="kunyomi">ごと (goto)</div>
+                        </td>
+                        <td class="meaning-usage">Mỗi.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>毎日<rt>まいにち</rt></ruby>、<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。<br><em>(Mainichi, nihongo o benkyou shimasu.)</em> - Hàng ngày tôi học tiếng Nhật.</div>
+                            <div class="example-sentence"><ruby>毎週<rt>まいしゅう</rt></ruby>、<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。<br><em>(Maishuu, eiga o mimasu.)</em> - Hàng tuần tôi xem phim.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">曜</div>
+                            <div class="han-viet">(DIỆU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">ヨウ (you)</div>
+                            <div class="kunyomi">-</div>
+                        </td>
+                        <td class="meaning-usage">Ngày trong tuần (Thứ).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>今日<rt>きょう</rt></ruby>は<ruby>何<rt>なん</rt>曜日<rt>ようび</rt></ruby>ですか。<br><em>(Kyou wa nan'youbi desu ka.)</em> - Hôm nay là thứ mấy?</div>
+                            <div class="example-sentence"><ruby>日曜日<rt>にちようび</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みです。<br><em>(Nichiyoubi wa yasumi desu.)</em> - Chủ nhật là ngày nghỉ.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">昔</div>
+                            <div class="han-viet">(TÍCH)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">セキ、シャク (seki, shaku)</div>
+                            <div class="kunyomi">むかし (mukashi)</div>
+                        </td>
+                        <td class="meaning-usage">Ngày xưa, cổ xưa.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>昔<rt>むかし</rt></ruby>、ここに<ruby>大<rt>おお</rt></ruby>きな<ruby>木<rt>き</rt></ruby>がありました。<br><em>(Mukashi, koko ni ookina ki ga arimashita.)</em> - Ngày xưa, ở đây có một cái cây lớn.</div>
+                            <div class="example-sentence">これは<ruby>昔話<rt>むかしばなし</rt></ruby>です。<br><em>(Kore wa mukashibanashi desu.)</em> - Đây là một câu chuyện cổ tích.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">季</div>
+                            <div class="han-viet">(QUÝ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">キ (ki)</div>
+                            <div class="kunyomi">-</div>
+                        </td>
+                        <td class="meaning-usage">Mùa (trong năm).</td>
+                        <td>
+                            <div class="example-sentence"><ruby>日本<rt>にほん</rt></ruby>には<ruby>四季<rt>しき</rt></ruby>があります。<br><em>(Nihon ni wa shiki ga arimasu.)</em> - Nhật Bản có bốn mùa.</div>
+                            <div class="example-sentence"><ruby>季節<rt>きせつ</rt></ruby>の<ruby>変<rt>か</rt></ruby>わり<ruby>目<rt>め</rt></ruby>は<ruby>風邪<rt>かぜ</rt></ruby>をひきやすいです。<br><em>(Kisetsu no kawarime wa kaze o hikiyasui desu.)</em> - Lúc giao mùa dễ bị cảm lạnh.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">節</div>
+                            <div class="han-viet">(TIẾT)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">セツ、セチ (setsu, sechi)</div>
+                            <div class="kunyomi">ふし (fushi)</div>
+                        </td>
+                        <td class="meaning-usage">Tiết (mùa, thời tiết), đốt (tre), dịp.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>季節<rt>きせつ</rt></ruby>が<ruby>変<rt>か</rt></ruby>わりました。<br><em>(Kisetsu ga kawarimashita.)</em> - Mùa đã thay đổi.</div>
+                            <div class="example-sentence"><ruby>竹<rt>たけ</rt></ruby>の<ruby>節<rt>ふし</rt></ruby>は<ruby>固<rt>かた</rt></ruby>いです。<br><em>(Take no fushi wa katai desu.)</em> - Đốt tre thì cứng.</div>
+                             <div class="example-sentence"><ruby>お正月<rt>しょうがつ</rt></ruby>は<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>節句<rt>せっく</rt></ruby>です。<br><em>(Oshougatsu wa taisetsu na sekku desu.)</em> - Tết là một dịp lễ quan trọng.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">春</div>
+                            <div class="han-viet">(XUÂN)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">シュン (shun)</div>
+                            <div class="kunyomi">はる (haru)</div>
+                        </td>
+                        <td class="meaning-usage">Mùa xuân.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>春<rt>はる</rt></ruby>になると<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>きます。<br><em>(Haru ni naru to sakura ga sakimasu.)</em> - Khi mùa xuân đến, hoa anh đào nở.</div>
+                            <div class="example-sentence"><ruby>青春<rt>せいしゅん</rt></ruby><ruby>時代<rt>じだい</rt></ruby>は<ruby>楽<rt>たの</rt></ruby>しかった。<br><em>(Seishun jidai wa tanoshikatta.)</em> - Thời thanh xuân thật vui.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">夏</div>
+                            <div class="han-viet">(HẠ)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">カ、ゲ (ka, ge)</div>
+                            <div class="kunyomi">なつ (natsu)</div>
+                        </td>
+                        <td class="meaning-usage">Mùa hè.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>夏<rt>なつ</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きたいです。<br><em>(Natsu wa umi e ikitai desu.)</em> - Mùa hè tôi muốn đi biển.</div>
+                            <div class="example-sentence"><ruby>夏休<rt>なつやす</rt></ruby>みに<ruby>旅行<rt>りょこう</rt></ruby>する<ruby>予定<rt>よてい</rt></ruby>です。<br><em>(Natsuyasumi ni ryokou suru yotei desu.)</em> - Tôi dự định đi du lịch vào kỳ nghỉ hè.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">秋</div>
+                            <div class="han-viet">(THU)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">シュウ (shuu)</div>
+                            <div class="kunyomi">あき (aki)</div>
+                        </td>
+                        <td class="meaning-usage">Mùa thu.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>秋<rt>あき</rt></ruby>は<ruby>紅葉<rt>こうよう</rt></ruby>がきれいです。<br><em>(Aki wa kouyou ga kirei desu.)</em> - Mùa thu lá đỏ rất đẹp.</div>
+                            <div class="example-sentence"><ruby>読書<rt>どくしょ</rt></ruby>の<ruby>秋<rt>あき</rt></ruby>と<ruby>言<rt>い</rt></ruby>われます。<br><em>(Dokusho no aki to iwaremasu.)</em> - Người ta nói mùa thu là mùa đọc sách.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="kanji-char-hv">冬</div>
+                            <div class="han-viet">(ĐÔNG)</div>
+                        </td>
+                        <td class="reading">
+                            <div class="onyomi">トウ (tou)</div>
+                            <div class="kunyomi">ふゆ (fuyu)</div>
+                        </td>
+                        <td class="meaning-usage">Mùa đông.</td>
+                        <td>
+                            <div class="example-sentence"><ruby>冬<rt>ふゆ</rt></ruby>は<ruby>雪<rt>ゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ります。<br><em>(Fuyu wa yuki ga furimasu.)</em> - Mùa đông tuyết rơi.</div>
+                            <div class="example-sentence"><ruby>冬休<rt>ふゆやす</rt></ruby>みにスキーに<ruby>行<rt>い</rt></ruby>きます。<br><em>(Fuyuyasumi ni sukii ni ikimasu.)</em> - Kỳ nghỉ đông tôi sẽ đi trượt tuyết.</div>
+                        </td>
+                    </tr>
+                 </tbody>
+                 <tbody id="noResultsRow" style="display: none;">
+                    <tr>
+                        <td colspan="4" class="no-results">Không tìm thấy kết quả phù hợp.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Chúc bạn học Kanji N4 hiệu quả! 🎉</p>
+    </div>
+
+    <script>
+        function searchKanjiTable() {
+            const input = document.getElementById('searchInputKanji');
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById('kanjiTableN4');
+            const tbodyData = table.getElementsByTagName('tbody')[0]; // tbody chứa dữ liệu Kanji
+            const tr = tbodyData.getElementsByTagName('tr');
+            const noResultsRow = document.getElementById('noResultsRow');
+            let categoryVisible = {}; 
+            let hasVisibleRows = false;
+
+            // Bước 1: Xác định các category header nào nên hiển thị
+            for (let i = 0; i < tr.length; i++) {
+                if (tr[i].classList.contains('category-header')) continue;
+
+                const tdCells = tr[i].getElementsByTagName('td');
+                let textToSearch = "";
+                if (tdCells[0]) textToSearch += (tdCells[0].textContent || tdCells[0].innerText).toUpperCase();
+                if (tdCells[1]) textToSearch += (tdCells[1].textContent || tdCells[1].innerText).toUpperCase();
+                if (tdCells[2]) textToSearch += (tdCells[2].textContent || tdCells[2].innerText).toUpperCase();
+                 // if (tdCells[3]) textToSearch += (tdCells[3].textContent || tdCells[3].innerText).toUpperCase(); // Tìm trong ví dụ
+
+                if (textToSearch.indexOf(filter) > -1) {
+                    let currentElement = tr[i];
+                    while(currentElement.previousElementSibling) {
+                        currentElement = currentElement.previousElementSibling;
+                        if (currentElement.classList.contains('category-header')) {
+                            categoryVisible[currentElement.innerText.trim()] = true; // Dùng text của header làm key
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            // Bước 2: Hiển thị/ẩn các dòng và category header
+            for (let i = 0; i < tr.length; i++) {
+                if (tr[i].classList.contains('category-header')) {
+                    if (filter === "" || categoryVisible[tr[i].innerText.trim()]) {
+                        tr[i].style.display = '';
+                        if (filter === "") hasVisibleRows = true; // Nếu filter rỗng, luôn có dòng hiển thị
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                } else {
+                    const tdCells = tr[i].getElementsByTagName('td');
+                    let textToSearch = "";
+                    if (tdCells[0]) textToSearch += (tdCells[0].textContent || tdCells[0].innerText).toUpperCase();
+                    if (tdCells[1]) textToSearch += (tdCells[1].textContent || tdCells[1].innerText).toUpperCase();
+                    if (tdCells[2]) textToSearch += (tdCells[2].textContent || tdCells[2].innerText).toUpperCase();
+
+                    if (textToSearch.indexOf(filter) > -1) {
+                        tr[i].style.display = '';
+                        hasVisibleRows = true;
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }
+
+            if (!hasVisibleRows && filter !== "") {
+                noResultsRow.style.display = ''; 
+            } else {
+                noResultsRow.style.display = 'none'; 
+            }
+        }
+    </script>
+</body>
+</html>
