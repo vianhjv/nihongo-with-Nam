@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Bảng Kanji N4 (Nhóm XV) Theo Chủ Đề</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- HOẶC styles.css.css tùy theo tên file của bạn -->
+</head>
+<body>
+    <div class="header">
+        <h1>📚 Bảng Kanji N4: Nhóm XV 📚</h1>
+        <div class="subtitle">Kanji về Khái niệm & Từ nối</div>
+    </div>
+
+    <div class="stats-box">
+        <div class="stats-number">~22</div>
+        <div>Tổng số Kanji (Nhóm XV) được trình bày</div>
+    </div>
+
+    <div class="intro">
+        <h3>🎯 Giới thiệu: Lợi ích học Kanji theo chủ đề</h3>
+        <p>Học chữ Kanji theo nhóm theo chủ đề sẽ có những lợi thế sau: </p>
+        <ul>
+            <li>✨ <strong>Liên kết ý nghĩa dễ dàng hơn:</strong> Não bộ dễ tạo liên kết ngữ nghĩa giữa các Kanji cùng chủ đề.</li>
+            <li>✨ <strong>Mở rộng từ vựng hiệu quả:</strong> Học Kanji kèm từ vựng liên quan đến chủ đề.</li>
+            <li>✨ <strong>Hệ thống hóa kiến thức:</strong> Có cái nhìn tổng quan, ôn tập theo từng chủ đề.</li>
+            <li>✨ <strong>Nhận diện cấu tạo:</strong> Dễ dàng nhận ra các bộ thủ chung hoặc mối liên hệ cấu tạo.</li>
+        </ul>
+    </div>
+
+    <div class="mobile-note">
+        📱 <strong>Mẹo xem trên điện thoại:</strong> Vuốt ngang để xem đầy đủ bảng nếu nội dung bị tràn.
+    </div>
+
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="🔍 Tìm kiếm Kanji, Âm Hán Việt, Cách đọc, Nghĩa..." onkeyup="searchTable()">
+    </div>
+
+    <div class="kanji-table-container">
+        <table id="kanjiTable">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Kanji (Âm Hán Việt)</th>
+                    <th style="width: 25%;">Cách đọc (On'yomi, Kun'yomi)</th>
+                    <th style="width: 20%;">Ý nghĩa và cách dùng</th>
+                    <th style="width: 40%;">Câu Ví dụ (Furigana) - Dịch nghĩa tiếng Việt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- BẮT ĐẦU NHÓM XV: Khái niệm & Từ nối (22 chữ) -->
+                <tr class="category-header">
+                    <td colspan="4"> XV. Khái niệm & Từ nối (22 chữ) </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">何<span class="hanviet">(HÀ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カ (ka)</div>
+                        <div><strong>KUN:</strong> なに (nani), なん (nan)</div>
+                    </td>
+                    <td class="meaning-cell">Cái gì, mấy.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">これは<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>ですか。</div>
+                        <div class="vietnamese-translation">(Đây là cái gì?)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">語<span class="hanviet">(NGỮ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ゴ (go)</div>
+                        <div><strong>KUN:</strong> かた(る) (kata-ru), かた(らう) (kata-rau)</div>
+                    </td>
+                    <td class="meaning-cell">Ngôn ngữ, từ, kể chuyện.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>日本語<rp>(</rp><rt>にほんご</rt><rp>)</rp></ruby>を<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>しています。</div>
+                        <div class="vietnamese-translation">(Tôi đang học tiếng Nhật. [単語 tango - từ vựng])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">国<span class="hanviet">(QUỐC)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> コク (koku)</div>
+                        <div><strong>KUN:</strong> くに (kuni)</div>
+                    </td>
+                    <td class="meaning-cell">Đất nước, quốc gia.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">あなたの<ruby>国<rp>(</rp><rt>くに</rt><rp>)</rp></ruby>はどこですか。</div>
+                        <div class="vietnamese-translation">(Đất nước của bạn ở đâu? [外国 gaikoku - nước ngoài])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">用<span class="hanviet">(DỤNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ヨウ (you)</div>
+                        <div><strong>KUN:</strong> もち(いる) (mochi-iru)</div>
+                    </td>
+                    <td class="meaning-cell">Dùng, việc, sự cần thiết.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>特別<rp>(</rp><rt>とくべつ</rt><rp>)</rp></ruby>な<ruby>用事<rp>(</rp><rt>ようじ</rt><rp>)</rp></ruby>があります。</div>
+                        <div class="vietnamese-translation">(Hôm nay tôi có việc đặc biệt. [利用 riyou - sử dụng])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">心<span class="hanviet">(TÂM)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シン (shin)</div>
+                        <div><strong>KUN:</strong> こころ (kokoro), -ごころ (-gokoro)</div>
+                    </td>
+                    <td class="meaning-cell">Tim, tâm hồn, tấm lòng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>安心<rp>(</rp><rt>あんしん</rt><rp>)</rp></ruby>してください。</div>
+                        <div class="vietnamese-translation">(Xin hãy yên tâm. [中心 chuushin - trung tâm])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">配<span class="hanviet">(PHỐI)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ハイ (hai)</div>
+                        <div><strong>KUN:</strong> くば(る) (kuba-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Phân phối, lo lắng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>親<rp>(</rp><rt>おや</rt><rp>)</rp></ruby>は<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>のことをいつも<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>しています。</div>
+                        <div class="vietnamese-translation">(Cha mẹ luôn lo lắng cho con cái. [配達 haitatsu - giao hàng])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">全<span class="hanviet">(TOÀN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ゼン (zen)</div>
+                        <div><strong>KUN:</strong> まった(く) (matta-ku), すべ(て) (sube-te)</div>
+                    </td>
+                    <td class="meaning-cell">Toàn bộ, tất cả.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>全部<rp>(</rp><rt>ぜんぶ</rt><rp>)</rp></ruby>でいくらですか。</div>
+                        <div class="vietnamese-translation">(Tổng cộng hết bao nhiêu? [安全 anzen - an toàn])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">部<span class="hanviet">(BỘ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ブ (bu)</div>
+                        <div><strong>KUN:</strong> -べ (-be)</div>
+                    </td>
+                    <td class="meaning-cell">Bộ phận, phòng ban, câu lạc bộ.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby>は<ruby>三<rp>(</rp><rt>さん</rt><rp>)</rp></ruby>つの<ruby>部分<rp>(</rp><rt>ぶぶん</rt><rp>)</rp></ruby>に<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>かれています。</div>
+                        <div class="vietnamese-translation">(Quyển sách này được chia làm ba phần. [部屋 heya - căn phòng])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">的<span class="hanviet">(ĐÍCH)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> テキ (teki)</div>
+                        <div><strong>KUN:</strong> まと (mato)</div>
+                    </td>
+                    <td class="meaning-cell">Đích, mang tính (hậu tố tạo tính từ).</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>の<ruby>目的<rp>(</rp><rt>もくてき</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>ですか。</div>
+                        <div class="vietnamese-translation">(Mục đích của chuyến du lịch là gì? [具体的 gutaiteki - cụ thể])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">世<span class="hanviet">(THẾ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セイ (sei), セ (se)</div>
+                        <div><strong>KUN:</strong> よ (yo)</div>
+                    </td>
+                    <td class="meaning-cell">Thế giới, đời, thời đại.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>世界<rp>(</rp><rt>せかい</rt><rp>)</rp></ruby>にはたくさんの<ruby>国<rp>(</rp><rt>くに</rt><rp>)</rp></ruby>があります。</div>
+                        <div class="vietnamese-translation">(Trên thế giới có rất nhiều quốc gia. [世話 sewa - chăm sóc])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">界<span class="hanviet">(GIỚI)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カイ (kai)</div>
+                        <div><strong>KUN:</strong> -</div>
+                    </td>
+                    <td class="meaning-cell">Giới, ranh giới, thế giới.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>動物<rp>(</rp><rt>どうぶつ</rt><rp>)</rp></ruby>の<ruby>世界<rp>(</rp><rt>せかい</rt><rp>)</rp></ruby>は<ruby>不思議<rp>(</rp><rt>ふしぎ</rt><rp>)</rp></ruby>がいっぱいです。</div>
+                        <div class="vietnamese-translation">(Thế giới động vật đầy những điều kỳ diệu. [境界 kyoukai - biên giới])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">発<span class="hanviet">(PHÁT)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ハツ (hatsu), ホツ (hotsu)</div>
+                        <div><strong>KUN:</strong> た(つ) (ta-tsu), あば(く) (aba-ku), おこ(る) (oko-ru), つか(わす) (tsuka-wasu), はな(つ) (hana-tsu)</div>
+                    </td>
+                    <td class="meaning-cell">Phát, khởi hành, phát minh, phát biểu.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>電車<rp>(</rp><rt>でんしゃ</rt><rp>)</rp></ruby>は<ruby>午前<rp>(</rp><rt>ごぜん</rt><rp>)</rp></ruby>９<ruby>時<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>に<ruby>出発<rp>(</rp><rt>しゅっぱつ</rt><rp>)</rp></ruby>します。</div>
+                        <div class="vietnamese-translation">(Tàu điện khởi hành lúc 9 giờ sáng. [発見 hakken - phát hiện])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">無<span class="hanviet">(VÔ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ム (mu), ブ (bu)</div>
+                        <div><strong>KUN:</strong> な(い) (na-i)</div>
+                    </td>
+                    <td class="meaning-cell">Không, vô (tiền tố phủ định).</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>公園<rp>(</rp><rt>こうえん</rt><rp>)</rp></ruby>は<ruby>入場料<rp>(</rp><rt>にゅうじょうりょう</rt><rp>)</rp></ruby>が<ruby>無料<rp>(</rp><rt>むりょう</rt><rp>)</rp></ruby>です。</div>
+                        <div class="vietnamese-translation">(Công viên này vào cửa miễn phí. [無理 muri - không thể, vô lý])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">実<span class="hanviet">(THỰC)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ジツ (jitsu), シツ (shitsu)</div>
+                        <div><strong>KUN:</strong> み (mi), みの(る) (mino-ru), まこと (makoto), まことに (makotoni), みち(る) (michi-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Thực, sự thật, quả (trái cây).</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>実<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby>は、<ruby>昨日<rp>(</rp><rt>きのう</rt><rp>)</rp></ruby>から<ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby>をひいています。</div>
+                        <div class="vietnamese-translation">(Thực ra thì, tôi bị cảm từ hôm qua. [果実 kajitsu - hoa quả])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">相<span class="hanviet">(TƯƠNG/TƯỚNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ソウ (sou), ショウ (shou)</div>
+                        <div><strong>KUN:</strong> あい- (ai-)</div>
+                    </td>
+                    <td class="meaning-cell">Tương, lẫn nhau, tướng (diện mạo), bộ trưởng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>と<ruby>将来<rp>(</rp><rt>しょうらい</rt><rp>)</rp></ruby>について<ruby>相談<rp>(</rp><rt>そうだん</rt><rp>)</rp></ruby>しました。</div>
+                        <div class="vietnamese-translation">(Tôi đã thảo luận với bạn về tương lai. [相手 aite - đối phương])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">談<span class="hanviet">(ĐÀM)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ダン (dan)</div>
+                        <div><strong>KUN:</strong> -</div>
+                    </td>
+                    <td class="meaning-cell">Đàm, nói chuyện, thảo luận.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>会議<rp>(</rp><rt>かいぎ</rt><rp>)</rp></ruby>で<ruby>重要<rp>(</rp><rt>じゅうよう</rt><rp>)</rp></ruby>な<ruby>問題<rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby>について<ruby>会談<rp>(</rp><rt>かいだん</rt><rp>)</rp></ruby>しました。(会談 thường dùng cho cấp cao) <br> <ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>冗談<rp>(</rp><rt>じょうだん</rt><rp>)</rp></ruby>でみんな<ruby>笑<rp>(</rp><rt>わら</rt><rp>)</rp></ruby>った。</div>
+                        <div class="vietnamese-translation">(Mọi người đã cười vì câu nói đùa của anh ấy.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">必<span class="hanviet">(TẤT)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ヒツ (hitsu)</div>
+                        <div><strong>KUN:</strong> かなら(ず) (kanara-zu)</div>
+                    </td>
+                    <td class="meaning-cell">Tất, nhất định, cần thiết.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>試験<rp>(</rp><rt>しけん</rt><rp>)</rp></ruby>に<ruby>合格<rp>(</rp><rt>ごうかく</rt><rp>)</rp></ruby>するには<ruby>努力<rp>(</rp><rt>どりょく</rt><rp>)</rp></ruby>が<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>です。</div>
+                        <div class="vietnamese-translation">(Để đỗ kỳ thi thì sự nỗ lực là cần thiết. [必ず kanarazu - nhất định])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">続<span class="hanviet">(TỤC)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ゾク (zoku), ショク (shoku), コウ (kou), キョウ (kyou)</div>
+                        <div><strong>KUN:</strong> つづ(く) (tsudzu-ku), つづ(ける) (tsudzu-keru), つぐ(ない) (tsugu-nai)</div>
+                    </td>
+                    <td class="meaning-cell">Tục, tiếp tục, kế tục.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">このドラマの<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>きが<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>たいです。</div>
+                        <div class="vietnamese-translation">(Tôi muốn xem phần tiếp theo của bộ phim này. [手続 tetsuzuki - thủ tục])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">選<span class="hanviet">(TUYỂN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セン (sen)</div>
+                        <div><strong>KUN:</strong> えら(ぶ) (era-bu), え(る) (e-ru), よ(る) (yo-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Tuyển, chọn lựa.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">どちらの<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>がいいか<ruby>選<rp>(</rp><rt>えら</rt><rp>)</rp></ruby>んでください。</div>
+                        <div class="vietnamese-translation">(Hãy chọn xem màu nào tốt hơn. [選手 senshu - tuyển thủ])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">返<span class="hanviet">(PHẢN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ヘン (hen)</div>
+                        <div><strong>KUN:</strong> かえ(す) (kae-su), -かえ(す) (-kae-su), かえ(る) (kae-ru), -かえ(る) (-kae-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Phản, trả lại, đáp lại.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>借<rp>(</rp><rt>か</rt><rp>)</rp></ruby>りた<ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby>を<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby><ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>します。</div>
+                        <div class="vietnamese-translation">(Tôi sẽ trả lại quyển sách đã mượn vào ngày mai. [返事 henji - trả lời])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">式<span class="hanviet">(THỨC)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シキ (shiki)</div>
+                        <div><strong>KUN:</strong> -</div>
+                    </td>
+                    <td class="meaning-cell">Thức, lễ, kiểu, công thức.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>結婚式<rp>(</rp><rt>けっこんしき</rt><rp>)</rp></ruby>に<ruby>招待<rp>(</rp><rt>しょうたい</rt><rp>)</rp></ruby>されました。</div>
+                        <div class="vietnamese-translation">(Tôi đã được mời đến lễ cưới. [正式 seishiki - chính thức])</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">和<span class="hanviet">(HÒA)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ワ (wa), オ (o), カ (ka)</div>
+                        <div><strong>KUN:</strong> やわ(らぐ) (yawa-ragu), やわ(らげる) (yawa-rageru), なご(む) (nago-mu), なご(やか) (nago-yaka), あ(える) (a-eru)</div>
+                    </td>
+                    <td class="meaning-cell">Hòa, Nhật Bản, yên bình.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>和食<rp>(</rp><rt>わしょく</rt><rp>)</rp></ruby>のレストランへ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きましょう。</div>
+                        <div class="vietnamese-translation">(Chúng ta hãy đến nhà hàng món Nhật. [平和 heiwa - hòa bình])</div>
+                    </td>
+                </tr>
+                <!-- KẾT THÚC NHÓM XV -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <h3>🎉 Chúc mừng bạn đã hoàn thành các nhóm Kanji N4 cơ bản! 🎉</h3>
+        <p>Đây là một bước tiến lớn trong hành trình học tiếng Nhật của bạn. Hãy tiếp tục ôn tập và vận dụng những Kanji này vào thực tế nhé!</p>
+        <div style="margin-top: 20px;">
+            <strong>💡 Mẹo học Kanji hiệu quả:</strong>
+            <ul style="text-align: left; margin-top: 10px;">
+                <li>🔄 Ôn tập thường xuyên mỗi ngày với flashcards.</li>
+                <li>📝 Tập viết các Kanji và từ vựng liên quan.</li>
+                <li>🎯 Đặt mục tiêu nhỏ và hoàn thành từng bước.</li>
+                <li>🤝 Tìm bạn học cùng hoặc tham gia cộng đồng để có thêm động lực.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Liên kết tới file JS bên ngoài -->
+</body>
+</html>
