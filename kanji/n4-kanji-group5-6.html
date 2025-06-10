@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<style>
+    /* Styles from your original template - slightly adjusted for Kanji table */
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background-color: #2c3e50; /* Dark blue-gray background */
+        color: #ecf0f1; /* Light gray text for contrast */
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    .header {
+        background-color: #34495e; /* Slightly lighter blue-gray */
+        color: #fef9f3; /* Off-white for header text */
+        padding: 30px 20px;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #FAFAD2; /* Màu gold nhạt cho tiêu đề chính */
+    }
+    .subtitle {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #bdc3c7;
+    }
+    .stats-box {
+        background-color: #34495e;
+        color: #ecf0f1;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .stats-number {
+        font-size: 3.5em;
+        font-weight: bold;
+        color: #1abc9c;
+        line-height: 1;
+    }
+    .stats-box div:last-child {
+        font-size: 1em;
+        color: #bdc3c7;
+        margin-top: 8px;
+    }
+    .intro, .footer {
+        background-color: #34495e;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .note { /* Ẩn phần này như file group 9-10 */
+        display: none;
+    }
+    .intro h3, .footer h3 {
+        color: #1abc9c;
+        margin-top: 0;
+        border-bottom: 2px solid #2c3e50;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+    .intro ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .intro ul li {
+        padding: 10px 0;
+        border-bottom: 1px dashed #2c3e50;
+        font-size: 1.05em;
+    }
+    .intro ul li strong {
+        color: #f1c40f;
+    }
+    .intro ul li:last-child {
+        border-bottom: none;
+    }
+    .mobile-note strong {
+        color: #e74c3c;
+    }
+    .mobile-note {
+        background-color: #4a6179;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #2c3e50;
+        text-align: center;
+        font-size: 0.95em;
+    }
+    .search-box {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .search-input {
+        width: 70%;
+        max-width: 600px;
+        padding: 15px 20px;
+        border: none;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        border-radius: 8px;
+        font-size: 1.1em;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .search-input::placeholder {
+        color: #95a5a6;
+    }
+    .kanji-table-container {
+        overflow-x: auto;
+        background-color: #34495e;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        padding: 10px;
+    }
+    #kanjiTable {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 1em;
+    }
+    #kanjiTable th, #kanjiTable td {
+        border: 1px solid #2c3e50;
+        padding: 15px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+    #kanjiTable th {
+        background-color: #2c3e50;
+        color: #1abc9c;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        font-size: 1.1em;
+    }
+    #kanjiTable th:first-child { border-top-left-radius: 8px; }
+    #kanjiTable th:last-child { border-top-right-radius: 8px; }
+
+    #kanjiTable tr:nth-child(even) td {
+        background-color: #3b5168;
+    }
+    #kanjiTable tr:hover td {
+        background-color: #4a6179;
+    }
+    .category-header td {
+        background-color: #16a085; /* Teal đậm hơn cho category header */
+        color: #fef9f3;
+        font-weight: bold;
+        font-size: 1.3em;
+        text-align: center !important;
+        padding: 18px 12px !important;
+        letter-spacing: 0.5px;
+    }
+    .kanji-char-cell {
+        font-size: 3.2em;
+        font-weight: bold;
+        text-align: center;
+        color: #f1c40f; /* Màu vàng cho Kanji */
+        vertical-align: middle;
+        min-width: 100px;
+    }
+    .kanji-char-cell .hanviet {
+        font-size: 0.4em;
+        display: block;
+        color: #bdc3c7; /* Xám nhạt cho âm Hán Việt */
+        font-weight: normal;
+        margin-top: 6px;
+    }
+    .reading-cell div {
+        margin-bottom: 6px;
+    }
+    .reading-cell strong {
+        color: #3498db; /* Màu xanh dương cho ON/KUN label */
+        font-weight: bold;
+    }
+    .meaning-cell {
+        font-size: 0.95em;
+    }
+    .example-cell .japanese-example {
+        font-size: 1.15em;
+        margin-bottom: 6px;
+        display: block;
+        color: #ecf0f1;
+    }
+    .example-cell .vietnamese-translation {
+        font-style: italic;
+        color: #95a5a6; /* Xám cho dịch nghĩa tiếng Việt */
+        font-size: 0.9em;
+    }
+    #kanjiTable tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+    #kanjiTable tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+    .footer {
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 40px;
+        border-top: 1px solid #2c3e50;
+    }
+    .footer ul {
+        display: inline-block;
+        text-align: left;
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    .footer ul li {
+        padding: 6px 0;
+        color: #bdc3c7;
+    }
+    .footer ul li strong {
+        color: #1abc9c;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+        .header h1 {
+            font-size: 2em;
+        }
+        .subtitle {
+            font-size: 1.1em;
+        }
+        #kanjiTable th, #kanjiTable td {
+            padding: 10px 8px;
+            font-size: 0.9em;
+        }
+        .kanji-char-cell {
+            font-size: 2.5em;
+        }
+        .kanji-char-cell .hanviet {
+            font-size: 0.4em;
+        }
+        .example-cell .japanese-example {
+            font-size: 1.05em;
+        }
+        .search-input {
+            width: 90%;
+            font-size: 1em;
+            padding: 12px 15px;
+        }
+        .category-header td {
+            font-size: 1.1em;
+            padding: 15px 10px !important;
+        }
+    }
+</style>
+    <title>Bảng Kanji N4 (Nhóm V & VI) Theo Chủ Đề</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="header">
+        <h1>📚 Bảng Kanji N4: Nhóm V & VI 📚</h1>
+        <div class="subtitle">Kanji về Phương hướng, Vị trí, Thiên nhiên & Môi trường</div>
+    </div>
+
+    <div class="stats-box">
+        <div class="stats-number">~40</div>
+        <div>Tổng số Kanji (Nhóm V & VI) được trình bày</div>
+    </div>
+
+    <div class="intro">
+        <h3>🎯 Giới thiệu: Lợi ích học Kanji theo chủ đề</h3>
+        <p>Học chữ Kanji theo nhóm theo chủ đề sẽ có những lợi thế sau: </p>
+        <ul>
+            <li>✨ <strong>Liên kết ý nghĩa dễ dàng hơn:</strong> Não bộ dễ tạo liên kết ngữ nghĩa giữa các Kanji cùng chủ đề.</li>
+            <li>✨ <strong>Mở rộng từ vựng hiệu quả:</strong> Học Kanji kèm từ vựng liên quan đến chủ đề.</li>
+            <li>✨ <strong>Hệ thống hóa kiến thức:</strong> Có cái nhìn tổng quan, ôn tập theo từng chủ đề.</li>
+            <li>✨ <strong>Nhận diện cấu tạo:</strong> Dễ dàng nhận ra các bộ thủ chung hoặc mối liên hệ cấu tạo.</li>
+        </ul>
+    </div>
+
+    <div class="mobile-note">
+        📱 <strong>Mẹo xem trên điện thoại:</strong> Vuốt ngang để xem đầy đủ bảng nếu nội dung bị tràn.
+    </div>
+
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="🔍 Tìm kiếm Kanji, Âm Hán Việt, Cách đọc, Nghĩa..." onkeyup="searchTable()">
+    </div>
+
+    <div class="kanji-table-container">
+        <table id="kanjiTable">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Kanji (Âm Hán Việt)</th>
+                    <th style="width: 25%;">Cách đọc (On'yomi, Kun'yomi)</th>
+                    <th style="width: 20%;">Ý nghĩa và cách dùng</th>
+                    <th style="width: 40%;">Câu Ví dụ (Furigana) - Dịch nghĩa tiếng Việt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- BẮT ĐẦU NHÓM V: Phương hướng & Vị trí (20 chữ) -->
+                <tr class="category-header">
+                    <td colspan="4"> V. Phương hướng & Vị trí (20 chữ) </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">上<span class="hanviet">(THƯỢNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ジョウ (jou), ショウ (shou)</div>
+                        <div><strong>KUN:</strong> うえ (ue), あ(がる) (a-garu), あ(げる) (a-geru), のぼ(る) (nobo-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Trên, lên.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>机<rp>(</rp><rt>つくえ</rt><rp>)</rp></ruby>の<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に<ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby>があります。</div>
+                        <div class="vietnamese-translation">(Trên bàn có quyển sách.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">下<span class="hanviet">(HẠ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カ (ka), ゲ (ge)</div>
+                        <div><strong>KUN:</strong> した (shita), しも (shimo), もと (moto), さ(がる) (sa-garu), さ(げる) (sa-geru), くだ(る) (kuda-ru), お(りる) (o-riru), お(ろす) (o-rosu)</div>
+                    </td>
+                    <td class="meaning-cell">Dưới, xuống.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>はテーブルの<ruby>下<rp>(</rp><rt>した</rt><rp>)</rp></ruby>で<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>ています。</div>
+                        <div class="vietnamese-translation">(Con mèo đang ngủ dưới gầm bàn.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">中<span class="hanviet">(TRUNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> チュウ (chuu)</div>
+                        <div><strong>KUN:</strong> なか (naka), うち (uchi), あた(る) (ata-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Trong, giữa, trung tâm.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>箱<rp>(</rp><rt>はこ</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>に<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>がありますか。</div>
+                        <div class="vietnamese-translation">(Bên trong hộp có gì vậy?)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">外<span class="hanviet">(NGOẠI)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ガイ (gai), ゲ (ge)</div>
+                        <div><strong>KUN:</strong> そと (soto), ほか (hoka), はず(す) (hazu-su), はず(れる) (hazu-reru)</div>
+                    </td>
+                    <td class="meaning-cell">Ngoài, bên ngoài.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>寒<rp>(</rp><rt>さむ</rt><rp>)</rp></ruby>いので、<ruby>外<rp>(</rp><rt>そと</rt><rp>)</rp></ruby>に<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>たくないです。</div>
+                        <div class="vietnamese-translation">(Vì lạnh nên tôi không muốn ra ngoài.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">右<span class="hanviet">(HỮU)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ウ (u), ユウ (yuu)</div>
+                        <div><strong>KUN:</strong> みぎ (migi)</div>
+                    </td>
+                    <td class="meaning-cell">Bên phải.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">コンビニは<ruby>駅<rp>(</rp><rt>えき</rt><rp>)</rp></ruby>の<ruby>右<rp>(</rp><rt>みぎ</rt><rp>)</rp></ruby><ruby>側<rp>(</rp><rt>がわ</rt><rp>)</rp></ruby>にあります。</div>
+                        <div class="vietnamese-translation">(Cửa hàng tiện lợi ở phía bên phải nhà ga.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">左<span class="hanviet">(TẢ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> サ (sa), シャ (sha)</div>
+                        <div><strong>KUN:</strong> ひだり (hidari)</div>
+                    </td>
+                    <td class="meaning-cell">Bên trái.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>郵便局<rp>(</rp><rt>ゆうびんきょく</rt><rp>)</rp></ruby>はあの<ruby>信号<rp>(</rp><rt>しんごう</rt><rp>)</rp></ruby>を<ruby>左<rp>(</rp><rt>ひだり</rt><rp>)</rp></ruby>に<ruby>曲<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>がったところにあります。</div>
+                        <div class="vietnamese-translation">(Bưu điện ở chỗ rẽ trái ở đèn tín hiệu kia.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">東<span class="hanviet">(ĐÔNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> トウ (tou)</div>
+                        <div><strong>KUN:</strong> ひがし (higashi)</div>
+                    </td>
+                    <td class="meaning-cell">Phía Đông.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>太陽<rp>(</rp><rt>たいよう</rt><rp>)</rp></ruby>は<ruby>東<rp>(</rp><rt>ひがし</rt><rp>)</rp></ruby>からのぼります。</div>
+                        <div class="vietnamese-translation">(Mặt trời mọc từ phía Đông.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">西<span class="hanviet">(TÂY)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セイ (sei), サイ (sai)</div>
+                        <div><strong>KUN:</strong> にし (nishi)</div>
+                    </td>
+                    <td class="meaning-cell">Phía Tây.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>は<ruby>駅<rp>(</rp><rt>えき</rt><rp>)</rp></ruby>の<ruby>西口<rp>(</rp><rt>にしぐち</rt><rp>)</rp></ruby>の<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>くにあります。</div>
+                        <div class="vietnamese-translation">(Nhà tôi ở gần cửa Tây của nhà ga.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">南<span class="hanviet">(NAM)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ナン (nan), ナ (na)</div>
+                        <div><strong>KUN:</strong> みなみ (minami)</div>
+                    </td>
+                    <td class="meaning-cell">Phía Nam.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>は<ruby>南向<rp>(</rp><rt>みなみむ</rt><rp>)</rp></ruby>きなので、とても<ruby>明<rp>(</rp><rt>あか</rt><rp>)</rp></ruby>るいです。</div>
+                        <div class="vietnamese-translation">(Căn phòng này hướng Nam nên rất sáng sủa.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">北<span class="hanviet">(BẮC)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ホク (hoku)</div>
+                        <div><strong>KUN:</strong> きた (kita)</div>
+                    </td>
+                    <td class="meaning-cell">Phía Bắc.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>北海道<rp>(</rp><rt>ほっかいどう</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>北<rp>(</rp><rt>きた</rt><rp>)</rp></ruby>にあります。</div>
+                        <div class="vietnamese-translation">(Hokkaido nằm ở phía Bắc Nhật Bản.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">前<span class="hanviet">(TIỀN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ゼン (zen)</div>
+                        <div><strong>KUN:</strong> まえ (mae)</div>
+                    </td>
+                    <td class="meaning-cell">Trước, phía trước.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>食事<rp>(</rp><rt>しょくじ</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>を<ruby>洗<rp>(</rp><rt>あら</rt><rp>)</rp></ruby>いましょう。</div>
+                        <div class="vietnamese-translation">(Hãy rửa tay trước khi ăn.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">後<span class="hanviet">(HẬU)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ゴ (go), コウ (kou)</div>
+                        <div><strong>KUN:</strong> のち (nochi), うし(ろ) (ushi-ro), あと (ato), おく(れる) (oku-reru)</div>
+                    </td>
+                    <td class="meaning-cell">Sau, phía sau.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>授業<rp>(</rp><rt>じゅぎょう</rt><rp>)</rp></ruby>の<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>で、<ruby>図書館<rp>(</rp><rt>としょかん</rt><rp>)</rp></ruby>へ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きます。</div>
+                        <div class="vietnamese-translation">(Sau giờ học, tôi sẽ đến thư viện.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">高<span class="hanviet">(CAO)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> コウ (kou)</div>
+                        <div><strong>KUN:</strong> たか(い) (taka-i), たか (taka), たか(まる) (taka-maru), たか(める) (taka-meru)</div>
+                    </td>
+                    <td class="meaning-cell">Cao, đắt.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">このビルはとても<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>いです。</div>
+                        <div class="vietnamese-translation">(Tòa nhà này rất cao.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">長<span class="hanviet">(TRƯỜNG/TRƯỞNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> チョウ (chou)</div>
+                        <div><strong>KUN:</strong> なが(い) (naga-i), おさ (osa)</div>
+                    </td>
+                    <td class="meaning-cell">Dài, trưởng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>夏<rp>(</rp><rt>なつ</rt><rp>)</rp></ruby>は<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>が<ruby>長<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>いです。</div>
+                        <div class="vietnamese-translation">(Mùa hè ngày dài.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">近<span class="hanviet">(CẬN/CẤN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> キン (kin), コン (kon)</div>
+                        <div><strong>KUN:</strong> ちか(い) (chika-i)</div>
+                    </td>
+                    <td class="meaning-cell">Gần.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>から<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby>まで<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>いです。</div>
+                        <div class="vietnamese-translation">(Từ nhà đến trường gần.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">遠<span class="hanviet">(VIỄN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> エン (en), オン (on)</div>
+                        <div><strong>KUN:</strong> とお(い) (too-i)</div>
+                    </td>
+                    <td class="meaning-cell">Xa.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>空港<rp>(</rp><rt>くうこう</rt><rp>)</rp></ruby>はここからかなり<ruby>遠<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>いです。</div>
+                        <div class="vietnamese-translation">(Sân bay khá xa từ đây.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">広<span class="hanviet">(QUẢNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> コウ (kou)</div>
+                        <div><strong>KUN:</strong> ひろ(い) (hiro-i), ひろ(まる) (hiro-maru), ひろ(める) (hiro-meru), ひろ(がる) (hiro-garu), ひろ(げる) (hiro-geru)</div>
+                    </td>
+                    <td class="meaning-cell">Rộng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>公園<rp>(</rp><rt>こうえん</rt><rp>)</rp></ruby>はとても<ruby>広<rp>(</rp><rt>ひろ</rt><rp>)</rp></ruby>くて<ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちがいいです。</div>
+                        <div class="vietnamese-translation">(Công viên này rất rộng và dễ chịu.)</div>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="kanji-char-cell">内<span class="hanviet">(NỘI)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ナイ (nai), ダイ (dai)</div>
+                        <div><strong>KUN:</strong> うち (uchi)</div>
+                    </td>
+                    <td class="meaning-cell">Bên trong, nội bộ.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>の<ruby>内<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>で<ruby>騒<rp>(</rp><rt>さわ</rt><rp>)</rp></ruby>がないでください。(<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby> thường dùng hơn <ruby>内<rp>(</rp><rt>うち</rt><rp>)</rp></ruby> cho "bên trong")</div>
+                        <div class="vietnamese-translation">(Xin đừng làm ồn bên trong nhà.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">横<span class="hanviet">(HOÀNH)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> オウ (ou)</div>
+                        <div><strong>KUN:</strong> よこ (yoko)</div>
+                    </td>
+                    <td class="meaning-cell">Ngang, bên cạnh.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>銀行<rp>(</rp><rt>ぎんこう</rt><rp>)</rp></ruby>の<ruby>横<rp>(</rp><rt>よこ</rt><rp>)</rp></ruby>にパン<ruby>屋<rp>(</rp><rt>や</rt><rp>)</rp></ruby>があります。</div>
+                        <div class="vietnamese-translation">(Bên cạnh ngân hàng có một tiệm bánh mì.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">向<span class="hanviet">(HƯỚNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> コウ (kou)</div>
+                        <div><strong>KUN:</strong> む(く) (mu-ku), む(い) (mu-i), -む(き) (-mu-ki), む(かう) (mu-kau), む(ける) (mu-keru), むこ(う) (muko-u)</div>
+                    </td>
+                    <td class="meaning-cell">Hướng, đối diện.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>窓<rp>(</rp><rt>まど</rt><rp>)</rp></ruby>は<ruby>南<rp>(</rp><rt>みなみ</rt><rp>)</rp></ruby>に<ruby>向<rp>(</rp><rt>む</rt><rp>)</rp></ruby>いています。</div>
+                        <div class="vietnamese-translation">(Cửa sổ này hướng về phía Nam.)</div>
+                    </td>
+                </tr>
+                <!-- KẾT THÚC NHÓM V -->
+
+                <!-- BẮT ĐẦU NHÓM VI: Thiên nhiên & Môi trường (20 chữ) -->
+                <tr class="category-header">
+                    <td colspan="4"> VI. Thiên nhiên & Môi trường (20 chữ) </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">山<span class="hanviet">(SƠN/SAN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> サン (san), セン (sen)</div>
+                        <div><strong>KUN:</strong> やま (yama)</div>
+                    </td>
+                    <td class="meaning-cell">Núi.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>富士山<rp>(</rp><rt>ふじさん</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>で<ruby>一番<rp>(</rp><rt>いちばん</rt><rp>)</rp></ruby><ruby>有名<rp>(</rp><rt>ゆうめい</rt><rp>)</rp></ruby>な<ruby>山<rp>(</rp><rt>やま</rt><rp>)</rp></ruby>です。</div>
+                        <div class="vietnamese-translation">(Núi Phú Sĩ là ngọn núi nổi tiếng nhất Nhật Bản.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">川<span class="hanviet">(XUYÊN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セン (sen)</div>
+                        <div><strong>KUN:</strong> かわ (kawa)</div>
+                    </td>
+                    <td class="meaning-cell">Sông.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>川<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>ではたくさんの<ruby>魚<rp>(</rp><rt>さかな</rt><rp>)</rp></ruby>が<ruby>釣<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>れます。</div>
+                        <div class="vietnamese-translation">(Ở con sông này có thể câu được nhiều cá.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">田<span class="hanviet">(ĐIỀN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> デン (den)</div>
+                        <div><strong>KUN:</strong> た (ta)</div>
+                    </td>
+                    <td class="meaning-cell">Ruộng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>田中<rp>(</rp><rt>たなか</rt><rp>)</rp></ruby>さんの<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>の<ruby>周<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>りには<ruby>広<rp>(</rp><rt>ひろ</rt><rp>)</rp></ruby>い<ruby>田<rp>(</rp><rt>た</rt><rp>)</rp></ruby>んぼが<ruby>広<rp>(</rp><rt>ひろ</rt><rp>)</rp></ruby>がっています。</div>
+                        <div class="vietnamese-translation">(Xung quanh nhà anh Tanaka là những cánh đồng rộng lớn.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">天<span class="hanviet">(THIÊN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> テン (ten)</div>
+                        <div><strong>KUN:</strong> あめ (ame), あま (ama)</div>
+                    </td>
+                    <td class="meaning-cell">Trời, thiên đường.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>天気<rp>(</rp><rt>てんき</rt><rp>)</rp></ruby>がいいですね。</div>
+                        <div class="vietnamese-translation">(Hôm nay thời tiết đẹp nhỉ.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">気<span class="hanviet">(KHÍ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> キ (ki), ケ (ke)</div>
+                        <div><strong>KUN:</strong> いき (iki)</div>
+                    </td>
+                    <td class="meaning-cell">Khí, không khí, tinh thần, cảm giác.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>病気<rp>(</rp><rt>びょうき</rt><rp>)</rp></ruby>なので、あまり<ruby>元気<rp>(</rp><rt>げんき</rt><rp>)</rp></ruby>がありません。</div>
+                        <div class="vietnamese-translation">(Vì bị bệnh nên tôi không được khỏe lắm.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">雨<span class="hanviet">(VŨ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ウ (u)</div>
+                        <div><strong>KUN:</strong> あめ (ame), あま- (ama-)</div>
+                    </td>
+                    <td class="meaning-cell">Mưa.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>は<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>るそうです。</div>
+                        <div class="vietnamese-translation">(Nghe nói ngày mai trời sẽ mưa.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">雪<span class="hanviet">(TUYẾT)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セツ (setsu)</div>
+                        <div><strong>KUN:</strong> ゆき (yuki)</div>
+                    </td>
+                    <td class="meaning-cell">Tuyết.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>冬<rp>(</rp><rt>ふゆ</rt><rp>)</rp></ruby>になると、この<ruby>町<rp>(</rp><rt>まち</rt><rp>)</rp></ruby>ではたくさん<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>ります。</div>
+                        <div class="vietnamese-translation">(Vào mùa đông, thị trấn này có rất nhiều tuyết rơi.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">電<span class="hanviet">(ĐIỆN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> デン (den)</div>
+                        <div><strong>KUN:</strong> - </div>
+                    </td>
+                    <td class="meaning-cell">Điện.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>停電<rp>(</rp><rt>ていでん</rt><rp>)</rp></ruby>で<ruby>電気<rp>(</rp><rt>でんき</rt><rp>)</rp></ruby>がつきません。</div>
+                        <div class="vietnamese-translation">(Vì mất điện nên điện không sáng.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">空<span class="hanviet">(KHÔNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> クウ (kuu)</div>
+                        <div><strong>KUN:</strong> そら (sora), あ(く) (a-ku), あ(き) (a-ki), あ(ける) (a-keru), から (kara), す(く) (su-ku), す(かす) (su-kasu), むな(しい) (muna-shii)</div>
+                    </td>
+                    <td class="meaning-cell">Bầu trời, trống rỗng, không khí.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>の<ruby>空<rp>(</rp><rt>そら</rt><rp>)</rp></ruby>はとても<ruby>青<rp>(</rp><rt>あお</rt><rp>)</rp></ruby>くてきれいです。</div>
+                        <div class="vietnamese-translation">(Bầu trời hôm nay rất xanh và đẹp.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">海<span class="hanviet">(HẢI)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カイ (kai)</div>
+                        <div><strong>KUN:</strong> うみ (umi)</div>
+                    </td>
+                    <td class="meaning-cell">Biển.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>夏休<rp>(</rp><rt>なつやす</rt><rp>)</rp></ruby>みに<ruby>家族<rp>(</rp><rt>かぞく</rt><rp>)</rp></ruby>と<ruby>海<rp>(</rp><rt>うみ</rt><rp>)</rp></ruby>へ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きました。</div>
+                        <div class="vietnamese-translation">(Kỳ nghỉ hè tôi đã đi biển cùng gia đình.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">池<span class="hanviet">(TRÌ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> チ (chi)</div>
+                        <div><strong>KUN:</strong> いけ (ike)</div>
+                    </td>
+                    <td class="meaning-cell">Ao.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>公園<rp>(</rp><rt>こうえん</rt><rp>)</rp></ruby>の<ruby>池<rp>(</rp><rt>いけ</rt><rp>)</rp></ruby>には<ruby>鯉<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>がたくさんいます。</div>
+                        <div class="vietnamese-translation">(Trong ao của công viên có rất nhiều cá chép.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">林<span class="hanviet">(LÂM)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> リン (rin)</div>
+                        <div><strong>KUN:</strong> はやし (hayashi)</div>
+                    </td>
+                    <td class="meaning-cell">Rừng thưa.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>小<rp>(</rp><rt>ちい</rt><rp>)</rp></ruby>さい<ruby>頃<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>、よくこの<ruby>林<rp>(</rp><rt>はやし</rt><rp>)</rp></ruby>で<ruby>遊<rp>(</rp><rt>あそ</rt><rp>)</rp></ruby>びました。</div>
+                        <div class="vietnamese-translation">(Hồi nhỏ tôi thường chơi ở khu rừng thưa này.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">森<span class="hanviet">(SÂM)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シン (shin)</div>
+                        <div><strong>KUN:</strong> もり (mori)</div>
+                    </td>
+                    <td class="meaning-cell">Rừng rậm.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>深<rp>(</rp><rt>ふか</rt><rp>)</rp></ruby>い<ruby>森<rp>(</rp><rt>もり</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>ると、<ruby>迷<rp>(</rp><rt>まよ</rt><rp>)</rp></ruby>いやすいです。</div>
+                        <div class="vietnamese-translation">(Nếu vào sâu trong rừng rậm thì dễ bị lạc.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">花<span class="hanviet">(HOA)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カ (ka), ケ (ke)</div>
+                        <div><strong>KUN:</strong> はな (hana)</div>
+                    </td>
+                    <td class="meaning-cell">Hoa.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>庭<rp>(</rp><rt>にわ</rt><rp>)</rp></ruby>にきれいな<ruby>花<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>がたくさん<ruby>咲<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>いています。</div>
+                        <div class="vietnamese-translation">(Trong vườn có nhiều hoa đẹp đang nở.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">草<span class="hanviet">(THẢO)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ソウ (sou)</div>
+                        <div><strong>KUN:</strong> くさ (kusa), くさ- (-gusa)</div>
+                    </td>
+                    <td class="meaning-cell">Cỏ.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>公園<rp>(</rp><rt>こうえん</rt><rp>)</rp></ruby>で<ruby>草<rp>(</rp><rt>くさ</rt><rp>)</rp></ruby>の<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に<ruby>座<rp>(</rp><rt>すわ</rt><rp>)</rp></ruby>って<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みました。</div>
+                        <div class="vietnamese-translation">(Tôi đã ngồi nghỉ trên cỏ ở công viên.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">石<span class="hanviet">(THẠCH)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セキ (seki), シャク (shaku), コク (koku)</div>
+                        <div><strong>KUN:</strong> いし (ishi)</div>
+                    </td>
+                    <td class="meaning-cell">Đá.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example">この<ruby>石<rp>(</rp><rt>いし</rt><rp>)</rp></ruby>の<ruby>ネックレス<rp>(</rp><rt>ねっくれす</rt><rp>)</rp></ruby>は<ruby>母<rp>(</rp><rt>はは</rt><rp>)</rp></ruby>からのプレゼントです。</div>
+                        <div class="vietnamese-translation">(Chiếc vòng cổ bằng đá này là quà từ mẹ tôi.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">光<span class="hanviet">(QUANG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> コウ (kou)</div>
+                        <div><strong>KUN:</strong> ひかり (hikari), ひか(る) (hika-ru)</div>
+                    </td>
+                    <td class="meaning-cell">Ánh sáng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>太陽<rp>(</rp><rt>たいよう</rt><rp>)</rp></ruby>の<ruby>光<rp>(</rp><rt>ひかり</rt><rp>)</rp></ruby>が<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>まで<ruby>届<rp>(</rp><rt>とど</rt><rp>)</rp></ruby>いています。</div>
+                        <div class="vietnamese-translation">(Ánh sáng mặt trời chiếu vào tận trong phòng.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">風<span class="hanviet">(PHONG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> フウ (fuu), フ (fu)</div>
+                        <div><strong>KUN:</strong> かぜ (kaze), かざ- (kaza-)</div>
+                    </td>
+                    <td class="meaning-cell">Gió, phong tục, cảm cúm.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>風<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby>が<ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>いので、<ruby>洗濯物<rp>(</rp><rt>せんたくもの</rt><rp>)</rp></ruby>が<ruby>飛<rp>(</rp><rt>と</rt><rp>)</rp></ruby>ばされないように<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>をつけてください。</div>
+                        <div class="vietnamese-translation">(Hôm nay gió mạnh nên hãy cẩn thận để đồ giặt không bị bay.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">晴<span class="hanviet">(TÌNH)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> セイ (sei)</div>
+                        <div><strong>KUN:</strong> は(れる) (ha-reru), は(れ) (ha-re), は(らす) (ha-rasu)</div>
+                    </td>
+                    <td class="meaning-cell">Nắng, quang đãng.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>はきっと<ruby>晴<rp>(</rp><rt>は</rt><rp>)</rp></ruby>れるでしょう。</div>
+                        <div class="vietnamese-translation">(Ngày mai chắc chắn trời sẽ nắng.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kanji-char-cell">雲<span class="hanviet">(VÂN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ウン (un)</div>
+                        <div><strong>KUN:</strong> くも (kumo), -ぐも (-gumo)</div>
+                    </td>
+                    <td class="meaning-cell">Mây.</td>
+                    <td class="example-cell">
+                        <div class="japanese-example"><ruby>空<rp>(</rp><rt>そら</rt><rp>)</rp></ruby>には<ruby>白<rp>(</rp><rt>しろ</rt><rp>)</rp></ruby>い<ruby>雲<rp>(</rp><rt>くも</rt><rp>)</rp></ruby>がたくさん<ruby>浮<rp>(</rp><rt>う</rt><rp>)</rp></ruby>かんでいます。</div>
+                        <div class="vietnamese-translation">(Trên trời có rất nhiều mây trắng trôi.)</div>
+                    </td>
+                </tr>
+                <!-- KẾT THÚC NHÓM VI -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <h3>🎉 Tiếp tục hành trình chinh phục Kanji! 🎉</h3>
+        <p>Hãy kiên trì luyện tập hàng ngày để ghi nhớ và sử dụng thành thạo các chữ Kanji N4 này!</p>
+        <div style="margin-top: 20px;">
+            <strong>💡 Mẹo học Kanji hiệu quả:</strong>
+            <ul style="text-align: left; margin-top: 10px;">
+                <li>🔄 Ôn tập thường xuyên mỗi ngày với flashcards.</li>
+                <li>📝 Tập viết các Kanji và từ vựng liên quan.</li>
+                <li>🎯 Đặt mục tiêu nhỏ và hoàn thành từng bước.</li>
+                <li>🤝 Tìm bạn học cùng hoặc tham gia cộng đồng để có thêm động lực.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function searchTable() {
+            const input = document.querySelector('.search-input');
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById('kanjiTable');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 0; i < tr.length; i++) {
+                if (tr[i].classList.contains('category-header')) {
+                    // Xử lý logic ẩn/hiện category header dựa trên các hàng con
+                    let categoryShouldBeVisible = false;
+                    let nextSibling = tr[i].nextElementSibling;
+                    while(nextSibling && !nextSibling.classList.contains('category-header')) {
+                        // Kiểm tra xem hàng con có đang hiển thị không
+                        if (window.getComputedStyle(nextSibling).display !== 'none' && nextSibling.getElementsByTagName('td').length > 0) {
+                            categoryShouldBeVisible = true;
+                            break;
+                        }
+                        nextSibling = nextSibling.nextElementSibling;
+                    }
+                     // Nếu filter rỗng, luôn hiển thị category header
+                    if (filter === "") {
+                        tr[i].style.display = '';
+                    } else if (categoryShouldBeVisible) {
+                        tr[i].style.display = ''; // Hiển thị nếu có hàng con khớp
+                    } else {
+                        // Nếu không có hàng con nào khớp, thử khớp với chính category header
+                        let headerText = tr[i].textContent || tr[i].innerText;
+                         if (headerText.toUpperCase().indexOf(filter) > -1) {
+                             tr[i].style.display = '';
+                         } else {
+                            tr[i].style.display = 'none';
+                         }
+                    }
+                } else { 
+                    // Xử lý các hàng dữ liệu Kanji
+                    const tdCells = tr[i].getElementsByTagName('td');
+                    let foundInRow = false;
+                    if (tdCells.length > 0) {
+                        for (let j = 0; j < tdCells.length; j++) {
+                            if (tdCells[j]) {
+                                const txtValue = tdCells[j].textContent || tdCells[j].innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    foundInRow = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (foundInRow || filter === "") { 
+                        tr[i].style.display = '';
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }
+
+            // Chạy lại một lượt nữa để đảm bảo category header được cập nhật đúng sau khi các hàng con đã được xử lý
+            for (let i = 0; i < tr.length; i++) {
+                if (tr[i].classList.contains('category-header')) {
+                    let categoryShouldBeVisible = false;
+                    let nextSibling = tr[i].nextElementSibling;
+                    while(nextSibling && !nextSibling.classList.contains('category-header')) {
+                        if (window.getComputedStyle(nextSibling).display !== 'none') { // Chỉ kiểm tra những hàng đang được hiển thị
+                            categoryShouldBeVisible = true;
+                            break;
+                        }
+                        nextSibling = nextSibling.nextElementSibling;
+                    }
+
+                    if (filter === "" || categoryShouldBeVisible) {
+                        tr[i].style.display = '';
+                    } else {
+                         let headerText = tr[i].textContent || tr[i].innerText;
+                         if (headerText.toUpperCase().indexOf(filter) > -1) {
+                             tr[i].style.display = '';
+                         } else {
+                            tr[i].style.display = 'none';
+                         }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
