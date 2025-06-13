@@ -1,456 +1,687 @@
-/* ========== CORE STYLES ========== */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #2c3e50; /* Nền chính: Xanh-xám đậm */
-    color: #ecf0f1; /* Màu chữ chính: Trắng xám, độ tương phản tốt */
-    margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
 }
 
-/* ========== GENERAL TEXT STYLES ========== */
-p { /* Áp dụng màu chữ chung cho đoạn văn */
-    color: #bdc3c7; /* Màu chữ cho <p>: Xám nhạt theo style-guide */
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-strong { /* Màu nhấn mạnh chung */
-    color: #f1c40f; /* Vàng theo style-guide */
-}
-
-code { /* Style cho thẻ code theo style-guide */
-    background-color: #2c3e50;
-    color: #e67e22; /* Orange */
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-}
-
-
-/* ========== HEADER SECTION ========== */
 .header {
-    background-color: #34495e; /* Nền header: Xanh-xám nhạt hơn */
-    color: #fef9f3; /* Màu chữ header: Trắng ngà */
-    padding: 30px 20px;
     text-align: center;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Đổ bóng nhẹ */
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .header h1 {
     margin: 0;
     font-size: 2.5em;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #f1c40f; /* Màu tiêu đề chính: Vàng theo style-guide */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.subtitle {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #bdc3c7; /* Màu phụ đề: Xám nhạt */
+.header h2 {
+    margin: 10px 0 0 0;
+    font-size: 1.3em;
+    opacity: 0.9;
 }
 
-/* ========== STATS BOX SECTION ========== */
-.stats-box {
-    background-color: #34495e; /* Nền hộp thống kê: Giống header */
-    color: #ecf0f1;
+.lesson-section {
+    margin-bottom: 50px;
+    background: #f8f9fa;
+    border-radius: 15px;
     padding: 25px;
-    border-radius: 12px;
+    border-left: 6px solid #667eea;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.lesson-title {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 25px;
     text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.grammar-item {
+    background: white;
     margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Đổ bóng nhẹ */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.grammar-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.grammar-header {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.grammar-content {
+    padding: 25px;
+}
+
+.meaning {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4CAF50;
+}
+
+.usage {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff9800;
+}
+
+.conjugation {
+    background: #f3e5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #9c27b0;
+}
+
+.example {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #2196f3;
+}
+
+.japanese {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.vietnamese {
+    color: #388e3c;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.pattern {
+    color: #1976d2;
+    font-weight: bold;
+    background: #e3f2fd;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.verb {
+    color: #2e7d32;
+    font-weight: bold;
+    background: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.particle {
+    color: #7b1fa2;
+    font-weight: bold;
+    background: #f3e5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.adjective {
+    color: #f57c00;
+    font-weight: bold;
+    background: #fff3e0;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.noun {
+    color: #c2185b;
+    font-weight: bold;
+    background: #fce4ec;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.section-label {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.conjugation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.conjugation-list li {
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 5px;
+    border-left: 3px solid #9c27b0;
+}
+
+.level-indicator {
+    display: inline-block;
+    background: #ff5722;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.key-point {
+    background: #fff8e1;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.key-point::before {
+    content: "💡 ";
+    font-size: 1.2em;
+}
+
+.comparison-note {
+    background: #f0f4f8;
+    border: 2px solid #90a4ae;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.comparison-note::before {
+    content: "📝 ";
+    font-size: 1.2em;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: #f0f4f8;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #f0f8ff;
+}
+
+/* Animation for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .lesson-title {
+        font-size: 1.5em;
+    }
+    
+    .grammar-header {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+}
+
+
+
+/* ===== CSS BỔ SUNG CHO BẢNG KANJI - THÊM VÀO CUỐI FILE STYLES.CSS ===== */
+
+
+/* ===== CSS BỔ SUNG CHO BẢNG KANJI - THÊM VÀO CUỐI FILE STYLES.CSS ===== */
+
+/* Stats box cho thống kê */
+.stats-box {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .stats-number {
-    font-size: 3.5em;
+    font-size: 2.5em;
     font-weight: bold;
-    color: #1abc9c; /* Màu số thống kê: Xanh ngọc (Teal) */
-    line-height: 1;
+    margin-bottom: 5px;
 }
 
-.stats-box div:last-child {
-    font-size: 1em;
-    color: #bdc3c7; /* Màu chữ phụ hộp thống kê: Xám nhạt */
-    margin-top: 8px;
-}
-
-/* ========== GUIDE SECTION (Dùng cho ví dụ ngữ pháp) ========== */
-.guide-section {
-    background-color: #34495e;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-.guide-section h2 { /* Style cho h2 nếu có trong guide-section */
-    color: #1abc9c; /* Teal */
-    font-size: 1.8em;
-    margin-top: 0;
-    border-bottom: 2px solid #2c3e50;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-/* ========== FOOTER SECTION ========== */
-.footer {
-    background-color: #34495e; /* Nền khối chân trang: Giống header */
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Đổ bóng nhẹ */
-}
-
-.footer h3 {
-    color: #1abc9c; /* Màu tiêu đề phụ: Xanh ngọc (Teal) */
-    margin-top: 0;
-    border-bottom: 2px solid #2c3e50; /* Đường kẻ dưới tiêu đề phụ */
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.footer ul { /* Áp dụng cho danh sách trong .footer */
-    display: inline-block; /* Để căn giữa danh sách */
-    text-align: left;
-    margin-top: 10px;
-    padding-left: 20px; /* Thụt lề cho dấu đầu dòng */
-}
-
-.footer ul li {
-    padding: 6px 0;
-    color: #bdc3c7; /* Màu chữ mục trong danh sách: Xám nhạt */
-}
-
-.footer ul li strong { /* Ghi đè strong chung để có màu Teal */
-    color: #1abc9c; 
-}
-
-/* ========== MOBILE NOTE SECTION ========== */
-.mobile-note strong { 
-    color: #e74c3c; /* Màu chữ cảnh báo/lưu ý: Đỏ */
-}
-
-.mobile-note {
-    background-color: #4a6179; /* Nền thông báo điện thoại: Xanh xám trung bình */
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    border: 1px solid #2c3e50; /* Viền nhẹ */
-    text-align: center;
-    font-size: 0.95em;
-}
-
-/* ========== SEARCH BOX SECTION ========== */
+/* Search box */
 .search-box {
-    margin-bottom: 25px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
 }
 
 .search-input {
-    width: 70%;
-    max-width: 600px;
-    padding: 15px 20px;
-    border: none;
-    background-color: #2c3e50; /* Nền ô tìm kiếm: Giống nền body */
-    color: #ecf0f1; /* Màu chữ nhập: Trắng xám */
-    border-radius: 8px;
-    font-size: 1.1em;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Đổ bóng vào trong */
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 300px;
+    max-width: 100%;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.search-input::placeholder {
-    color: #95a5a6; /* Màu chữ placeholder: Xám xanh nhạt */
+.search-input:focus {
+    border-color: #667eea;
 }
 
-/* ========== KANJI TABLE STYLES ========== */
-.kanji-table-container {
-    overflow-x: auto; /* Cho phép cuộn ngang trên thiết bị nhỏ */
-    background-color: #34495e; /* Nền container bảng: Giống header */
+/* Bảng bộ thủ */
+.radical-table {
+    background-color: white;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Đổ bóng */
-    padding: 10px; /* Khoảng đệm nhỏ xung quanh bảng */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
-#kanjiTable {
+.responsive-table {
+    overflow-x: auto;
+}
+
+.radical-table table {
     width: 100%;
-    border-collapse: separate; /* Cho phép bo góc trên cell */
-    border-spacing: 0; /* Bỏ khoảng cách giữa các cell */
-    font-size: 1em;
+    border-collapse: collapse;
+    font-size: 14px;
 }
 
-#kanjiTable th, 
-#kanjiTable td {
-    border: 1px solid #2c3e50; /* Viền cho các ô: Màu nền body */
-    padding: 15px 12px; /* Khoảng đệm trong ô */
-    text-align: left;
-    vertical-align: top; /* Căn nội dung ô lên trên */
-}
-
-#kanjiTable th {
-    background-color: #2c3e50; /* Nền tiêu đề cột: Màu nền body */
-    color: #1abc9c; /* Màu chữ tiêu đề cột: Xanh ngọc (Teal) */
-    font-weight: bold;
-    position: sticky; /* Giữ tiêu đề cột khi cuộn */
-    top: 0;
-    z-index: 10;
-    font-size: 1.1em;
-}
-
-/* Bo góc cho tiêu đề cột đầu và cuối */
-#kanjiTable th:first-child { border-top-left-radius: 8px; }
-#kanjiTable th:last-child { border-top-right-radius: 8px; }
-
-/* Nền cho các hàng chẵn (tạo hiệu ứng zebra) */
-#kanjiTable tr:nth-child(even) td {
-    background-color: #3b5168; /* Màu nền hàng chẵn: Xanh xám đậm hơn một chút */
-}
-
-/* Hiệu ứng hover cho các hàng */
-#kanjiTable tr:hover td {
-    background-color: #4a6179; /* Màu nền khi hover: Xanh xám trung bình */
-}
-
-/* Tiêu đề phân loại nhóm Kanji */
-.category-header td {
-    background-color: #16a085; /* Nền tiêu đề nhóm: Xanh ngọc đậm hơn */
-    color: #fef9f3; /* Màu chữ tiêu đề nhóm: Trắng ngà */
-    font-weight: bold;
-    font-size: 1.3em;
-    text-align: center !important; /* Luôn căn giữa */
-    padding: 18px 12px !important; /* Tăng khoảng đệm */
-    letter-spacing: 0.5px;
-}
-
-/* Ô chứa chữ Kanji */
-.kanji-char-cell {
-    font-size: 3.2em; /* Kích thước chữ Kanji lớn */
-    font-weight: bold;
+.radical-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 10px;
     text-align: center;
-    color: #f1c40f; /* Màu chữ Kanji: Vàng */
-    vertical-align: middle; /* Căn giữa theo chiều dọc */
-    min-width: 100px; /* Chiều rộng tối thiểu */
-}
-
-/* Âm Hán Việt đi kèm Kanji */
-.kanji-char-cell .hanviet {
-    font-size: 0.4em; /* Kích thước nhỏ hơn */
-    display: block;
-    color: #bdc3c7; /* Màu âm Hán Việt: Xám nhạt */
-    font-weight: normal;
-    margin-top: 6px;
-}
-
-/* Ô chứa cách đọc */
-.reading-cell div {
-    margin-bottom: 6px; /* Khoảng cách giữa các dòng On/Kun */
-}
-
-.reading-cell strong { /* Ghi đè strong chung cho label ON/KUN */
-    color: #3498db; 
     font-weight: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Ô chứa ý nghĩa */
-.meaning-cell {
-    font-size: 0.95em;
-}
-.meaning-cell p { /* Đảm bảo <p> trong meaning-cell cũng có màu đúng */
-    color: #bdc3c7;
+.radical-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
 }
 
-
-/* Ô chứa ví dụ */
-.example-cell .japanese-example {
-    font-size: 1.15em;
-    margin-bottom: 6px;
-    display: block;
-    color: #ecf0f1; /* Màu câu tiếng Nhật: Trắng xám */
+.radical-table tr:nth-child(even) {
+    background-color: #f8f9fa;
 }
 
-.example-cell .vietnamese-translation {
-    font-style: italic;
-    color: #95a5a6; /* Màu dịch tiếng Việt: Xám xanh nhạt */
-    font-size: 0.9em;
+.radical-table tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
 }
 
-/* Bo góc cho ô cuối cùng của bảng */
-#kanjiTable tr:last-child td:first-child { border-bottom-left-radius: 8px; }
-#kanjiTable tr:last-child td:last-child { border-bottom-right-radius: 8px; }
-
-/* ========== GRAMMAR BOX STYLES (Dựa trên style-guide) ========== */
-.component-preview { /* Lớp bọc cho component preview */
-    border: 2px dashed #4a6179;
-    padding: 20px;
+/* Ký tự bộ thủ */
+.radical-char {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d32f2f;
+    text-align: center;
+    background-color: #ffebee;
     border-radius: 8px;
-    margin-top: 15px;
+    padding: 8px;
+    min-width: 60px;
 }
 
-.grammar-box {
-    background-color: #34495e; /* Nền box: Xanh-xám nhạt */
-    padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid #1abc9c; /* Viền trái Teal */
-}
-.grammar-box h3 {
-    color: #f1c40f; /* Tiêu đề ngữ pháp: Vàng */
-    font-size: 1.8em; 
-    margin-top: 0; 
+/* Tên bộ thủ */
+.radical-name {
+    font-weight: bold;
+    color: #1976d2;
+    font-size: 15px;
     margin-bottom: 5px;
 }
-.grammar-box .meaning {
-    color: #bdc3c7; /* Màu ý nghĩa: Xám nhạt */
-    font-size: 1.1em; 
-    font-style: italic; 
+
+.radical-reading {
+    color: #666;
+    font-style: italic;
+    font-size: 13px;
+}
+
+/* Ý nghĩa */
+.meaning {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Ví dụ Kanji */
+.examples {
+    color: #333;
+}
+
+.kanji-example {
+    display: inline-block;
+    background-color: #f3e5f5;
+    padding: 4px 8px;
+    margin: 2px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #7b1fa2;
+    border: 1px solid #e1bee7;
+}
+
+/* Header phân loại */
+.category-header td {
+    background: linear-gradient(45deg, #ff6b6b, #ffa726) !important;
+    color: white !important;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Subtitle cho header */
+.subtitle {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    color: #666;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .radical-table table, 
+    .radical-table th, 
+    .radical-table td {
+        font-size: 12px;
+    }
+    
+    .radical-char {
+        font-size: 20px;
+        min-width: 50px;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+    
+    .stats-number {
+        font-size: 2em;
+    }
+}
+
+
+/* ===== CSS STYLES CHO BÀI 25: THỂ SAI KHIẾN & BỊ ĐỘNG SAI KHIẾN ===== */
+
+/* Base styles - có thể merge với CSS hiện tại của bạn */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+.header {
+    color: #8e44ad;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: #8e44ad;
+}
+
+h2 {
+    color: #2980b9;
+    border-left: 5px solid #2980b9;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #16a085;
+}
+
+/* Grammar boxes */
+.grammar-goals {
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 5px;
     margin-bottom: 20px;
 }
-.grammar-section-title {
-    color: #1abc9c; /* Tiêu đề phần nhỏ: Teal */
-    font-weight: bold; 
-    font-size: 1.2em; 
-    margin-top: 25px;
-    margin-bottom: 10px; 
-    border-bottom: 1px dashed #4a6179; 
-    padding-bottom: 8px;
-}
-.grammar-formula {
-    background-color: #2c3e50; /* Nền công thức: Xanh-xám đậm */
-    padding: 15px 20px; 
-    border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace; 
-    font-size: 1.1em; 
-    color: #ecf0f1; /* Chữ trong công thức: Trắng xám */
+
+.grammar-point {
+    background-color: #fff8e1;
+    padding: 15px;
     margin-bottom: 15px;
-}
-/* Màu cho các thành phần trong công thức theo style-guide */
-.grammar-formula .noun { color: #3498db; } /* Xanh dương */
-.grammar-formula .verb { color: #2ecc71; } /* Xanh lá */
-.grammar-formula .particle { color: #e74c3c; } /* Đỏ */
-.grammar-formula .grammar-point { color: #f1c40f; font-weight: bold; } /* Vàng */
-
-.example-list { 
-    list-style-type: none; 
-    padding-left: 0; 
-}
-.example-list li {
-    background-color: #4a617933; /* Nền ví dụ: Xanh xám trung bình trong suốt nhẹ */
-    padding: 15px; 
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-.example-list .japanese-sentence {
-    font-size: 1.2em; 
-    margin-bottom: 8px; 
-    color: #fef9f3; /* Chữ câu tiếng Nhật: Trắng ngà */
-}
-.example-list .vietnamese-meaning {
-    font-size: 0.95em; 
-    color: #bdc3c7; /* Chữ dịch nghĩa: Xám nhạt */
-    font-style: italic;
+    border-radius: 5px;
+    border-left: 4px solid #ff9800;
 }
 
-/* ========== VERB CONJUGATION HIGHLIGHT ========== */
-.verb-conjugation p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    background-color: #2c3e50; /* Nền giống grammar-formula */
-    padding: 10px 15px;
-    border-radius: 8px;
-    color: #ecf0f1; /* Màu chữ chung cho phần này */
-}
-.verb-conjugation p ruby, .verb-conjugation p rt, .verb-conjugation p rp {
-    color: #ecf0f1; /* Đảm bảo ruby text cũng có màu đúng */
+.examples {
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
+.practice {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px dashed #4caf50;
+    margin-bottom: 20px;
+}
 
-.verb-conjugation .arrow {
-    margin: 0 10px;
-    color: #1abc9c; /* Teal cho mũi tên */
+/* Text colors for Japanese, Romaji, Vietnamese */
+.japanese {
+    color: #c0392b;
     font-weight: bold;
 }
 
-/* Phần đuôi gốc của động từ */
-.verb-ending-original,
-.verb-ending-original-romaji {
-    /* color: #5dade2; */ /* Nếu muốn màu xanh dương nhạt */
-    /* Hoặc giữ màu thừa hưởng từ .verb-conjugation p */
-}
-.verb-ending-original ruby, .verb-ending-original rt, .verb-ending-original rp {
-     /* color: #5dade2; */ /* Đồng bộ màu cho ruby nếu có màu riêng */
-}
-
-
-/* Phần đuôi đã biến đổi - NỔI BẬT */
-.verb-ending-changed,
-.verb-ending-changed-romaji {
-    color: #e67e22 !important; /* ORANGE - Màu cam để làm nổi bật phần biến đổi (dùng !important nếu bị ghi đè) */
-    font-weight: bold;
-}
-/* Đảm bảo ruby bên trong phần biến đổi cũng được tô màu */
-.verb-ending-changed ruby, .verb-ending-changed rt, .verb-ending-changed rp,
-.verb-ending-changed-romaji {
-    color: #e67e22 !important;
-}
-
-
-/* Ghi chú cho trường hợp đặc biệt */
-.verb-conjugation .note-special-case {
-    font-size: 0.9em;
-    color: #bdc3c7; /* Xám nhạt cho ghi chú */
-    margin-left: 10px;
+.romaji {
+    color: #7f8c8d;
     font-style: italic;
 }
 
-
-/* ========== RESPONSIVE ADJUSTMENTS ========== */
-@media (max-width: 768px) {
-    body {
-        padding: 10px; /* Giảm padding trên thiết bị nhỏ */
-    }
-    .header h1 {
-        font-size: 2em; /* Giảm kích thước tiêu đề chính */
-    }
-    .subtitle {
-        font-size: 1.1em; /* Giảm kích thước phụ đề */
-    }
-    #kanjiTable th, 
-    #kanjiTable td {
-        padding: 10px 8px; /* Giảm padding ô bảng */
-        font-size: 0.9em; /* Giảm kích thước chữ trong bảng */
-    }
-    .kanji-char-cell {
-        font-size: 2.5em; /* Giảm kích thước chữ Kanji */
-    }
-    .kanji-char-cell .hanviet {
-        font-size: 0.4em; /* Giữ nguyên hoặc điều chỉnh nhỏ */
-    }
-    .example-cell .japanese-example {
-        font-size: 1.05em; /* Giảm kích thước câu ví dụ */
-    }
-    .search-input {
-        width: 90%; /* Tăng chiều rộng ô tìm kiếm */
-        font-size: 1em;
-        padding: 12px 15px;
-    }
-    .category-header td {
-        font-size: 1.1em; /* Giảm kích thước tiêu đề nhóm */
-        padding: 15px 10px !important;
-    }
-
-    /* Responsive cho phần giải thích ngữ pháp */
-    .grammar-box h3 {
-        font-size: 1.6em;
-    }
-    .grammar-formula {
-        font-size: 1em;
-        padding: 10px 15px;
-    }
-    .verb-conjugation p {
-        font-size: 1em; 
-        padding: 8px 12px;
-    }
-    .example-list .japanese-sentence {
-        font-size: 1.1em;
-    }
+.vietnamese {
+    color: #27ae60;
 }
+
+/* ===== TRANSFORMATION COLORS - NGUYÊN TẮC MÀU SẮC LOGIC ===== */
+/* Phần không đổi (base) */
+.base {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Phần bị thay thế (gạch ngang + màu đỏ) */
+.transform {
+    color: #e74c3c;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+/* Phần trung gian (nếu cần) */
+.middle {
+    color: #d35400;
+    font-weight: bold;
+}
+
+/* Phần thêm vào mới (màu xanh) */
+.added {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Kết quả cuối cùng (màu xanh dương) */
+.result {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Ghi chú quan trọng */
+.note {
+    color: #9b59b6;
+    font-weight: bold;
+}
+
+/* ===== LAYOUT BOXES ===== */
+.separator {
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+/* Box cho các bước biến đổi */
+.transformation-box {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Từng bước biến đổi */
+.transformation-step {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+    border-left: 3px solid #28a745;
+}
+
+/* Nhóm động từ */
+.verb-group {
+    background-color: #e9ecef;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+}
+
+/* Highlight cấu trúc */
+.structure-highlight {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Box ý nghĩa */
+.meaning-box {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* ===== TABLES ===== */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* ===== MEANING HIGHLIGHTS ===== */
+/* Nghĩa "bắt làm" - màu đỏ */
+.highlight-force {
+    background-color: #ffebee;
+    border-left: 3px solid #f44336;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+/* Nghĩa "cho phép làm" - màu xanh */
+.highlight-permission {
+    background-color: #e8f5e9;
+    border-left: 3px solid #4caf50;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+/* ===== DESKTOP STYLES ONLY ===== */
+/* Mobile styles được tách riêng vào mobile-styles.css */
