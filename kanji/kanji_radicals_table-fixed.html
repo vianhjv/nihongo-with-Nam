@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .subtitle {
+        color: #fef9f3 !important;
+    }
+</style>
+
+<style>
+    .header .subtitle {
+        color: #fef9f3;
+    }
+</style>
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Bảng Bộ Thủ Kanji N4</title> <!-- Thêm title cho trang -->
+    <meta charset="UTF-8"> <!-- Đảm bảo hiển thị tiếng Việt đúng -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cho responsive -->
+</head>
+<body>
+    <div class="header">
+        <h1>📚 Bảng Các Bộ Thủ Kanji Cơ Bản Cho N4 📚</h1>
+        <div class="subtitle">Hệ thống phân loại theo ý nghĩa và cách đọc</div>
+    </div>
+    
+    <div class="stats-box">
+        <div class="stats-number">214</div> <!-- Con số này có thể cần điều chỉnh lại cho chính xác với số bộ bạn liệt kê -->
+        <div>Tổng số bộ thủ Kanji cơ bản được trình bày</div>
+    </div>
+    
+    <div class="intro">
+        <h3>🎯 Giới thiệu về Bộ thủ Kanji</h3>
+        <p>Bộ thủ (部首 - ぶしゅ) là thành phần cơ bản tạo nên chữ Kanji. Hiểu được bộ thủ sẽ giúp bạn:</p>
+        <ul>
+            <li>✨ <strong>Tra từ điển dễ dàng hơn</strong></li>
+            <li>✨ <strong>Đoán nghĩa của Kanji mới</strong></li>
+            <li>✨ <strong>Ghi nhớ Kanji hiệu quả hơn</strong></li>
+            <li>✨ <strong>Hiểu cấu trúc của chữ Hán</strong></li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <strong>📝 Lưu ý quan trọng:</strong> Một số bộ thủ có thể có nhiều hơn một ý nghĩa tùy theo ngữ cảnh. Bảng này sẽ tập trung vào ý nghĩa phổ biến nhất. Tên bộ thủ bằng tiếng Nhật và Hán Việt cũng được cung cấp để bạn làm quen.
+    </div>
+    
+    <div class="mobile-note">
+        📱 <strong>Mẹo xem trên điện thoại:</strong> Vuốt ngang để xem đầy đủ bảng. Cột "Tên tiếng Nhật" bị ẩn để tiết kiệm không gian (nếu bạn có CSS ẩn).
+    </div>
+    
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="🔍 Tìm kiếm bộ thủ hoặc Kanji..." onkeyup="searchTable()">
+    </div>
+    
+    <div class="radical-table">
+        <div class="responsive-table">
+            <table id="radicalTable">
+                <thead>
+                    <tr>
+                        <th style="width: 8%;">Bộ thủ</th>
+                        <th style="width: 25%;">Tên tiếng Nhật (Hán Việt)<br><small>(Cách gọi phổ biến)</small></th>
+                        <th style="width: 17%;">Ý nghĩa chính</th>
+                        <th style="width: 50%;">Ví dụ Kanji (N4/N5) có chứa bộ thủ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- NGƯỜI VÀ HOẠT ĐỘNG CON NGƯỜI -->
+                    <tr class="category-header">
+                        <td colspan="4">👥 NGƯỜI VÀ HOẠT ĐỘNG CON NGƯỜI</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">亻</td>
+                        <td>
+                            <div class="radical-name">にんべん (Nhân)</div>
+                            <div class="radical-reading">(ninben)</div>
+                        </td>
+                        <td class="meaning">Người</td>
+                        <td class="examples">
+                            <span class="kanji-example">休</span> (nghỉ), <span class="kanji-example">体</span> (cơ thể), <span class="kanji-example">住</span> (sống), <span class="kanji-example">作</span> (làm), <span class="kanji-example">仕</span> (việc), <span class="kanji-example">使</span> (dùng), <span class="kanji-example">待</span> (đợi), <span class="kanji-example">借</span> (vay), <span class="kanji-example">何</span> (gì)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">人</td>
+                        <td>
+                            <div class="radical-name">ひと, ひとやね (Nhân)</div>
+                            <div class="radical-reading">(hito, hitoyane)</div>
+                        </td>
+                        <td class="meaning">Người (khi ở vị trí khác nhau)</td>
+                        <td class="examples">
+                            <span class="kanji-example">今</span> (bây giờ), <span class="kanji-example">会</span> (gặp), <span class="kanji-example">全</span> (toàn bộ)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">儿</td>
+                        <td>
+                            <div class="radical-name">ひとあし, にんにょう (Nhân đi)</div>
+                            <div class="radical-reading">(hitoashi, ninnyou)</div>
+                        </td>
+                        <td class="meaning">Chân người (đi)</td>
+                        <td class="examples">
+                            <span class="kanji-example">先</span> (trước), <span class="kanji-example">元</span> (gốc, khỏe), <span class="kanji-example">見</span> (nhìn)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">入</td>
+                        <td>
+                            <div class="radical-name">いる, いりがしら (Nhập)</div>
+                            <div class="radical-reading">(iru, irigashira)</div>
+                        </td>
+                        <td class="meaning">Vào</td>
+                        <td class="examples">
+                            <span class="kanji-example">入</span> (vào)
+                        </td>
+                    </tr>
+                    
+                    <!-- SỨC MẠNH VÀ CÔNG CỤ -->
+                    <tr class="category-header">
+                        <td colspan="4">💪 SỨC MẠNH VÀ CÔNG CỤ</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">力</td>
+                        <td>
+                            <div class="radical-name">ちから (Lực)</div>
+                            <div class="radical-reading">(chikara)</div>
+                        </td>
+                        <td class="meaning">Sức mạnh, lực</td>
+                        <td class="examples">
+                            <span class="kanji-example">男</span> (nam), <span class="kanji-example">勉</span> (cố gắng), <span class="kanji-example">助</span> (giúp)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">刀 (刂)</td>
+                        <td>
+                            <div class="radical-name">かたな, りっとう (Đao)</div>
+                            <div class="radical-reading">(katana, rittou)</div>
+                        </td>
+                        <td class="meaning">Đao, kiếm (hành động cắt, chia)</td>
+                        <td class="examples">
+                            <span class="kanji-example">切</span> (cắt), <span class="kanji-example">分</span> (chia, phút), <span class="kanji-example">別</span> (khác, biệt), <span class="kanji-example">利</span> (lợi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">又</td>
+                        <td>
+                            <div class="radical-name">また (Hựu)</div>
+                            <div class="radical-reading">(mata)</div>
+                        </td>
+                        <td class="meaning">Lại, một lần nữa, bàn tay phải</td>
+                        <td class="examples">
+                            <span class="kanji-example">友</span> (bạn), <span class="kanji-example">取</span> (lấy)
+                        </td>
+                    </tr>
+                    
+                    <!-- CƠ QUAN CƠ THỂ -->
+                    <tr class="category-header">
+                        <td colspan="4">👄 CƠ QUAN CƠ THỂ</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">口</td>
+                        <td>
+                            <div class="radical-name">くち, くちへん (Khẩu)</div>
+                            <div class="radical-reading">(kuchi, kuchihen)</div>
+                        </td>
+                        <td class="meaning">Miệng, lời nói, lối vào</td>
+                        <td class="examples">
+                            <span class="kanji-example">右</span> (phải), <span class="kanji-example">古</span> (cũ), <span class="kanji-example">名</span> (tên), <span class="kanji-example">員</span> (nhân viên)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">目</td>
+                        <td>
+                            <div class="radical-name">め, めへん (Mục)</div>
+                            <div class="radical-reading">(me, mehen)</div>
+                        </td>
+                        <td class="meaning">Mắt, nhìn</td>
+                        <td class="examples">
+                            <span class="kanji-example">見</span> (nhìn), <span class="kanji-example">相</span> (tương, tướng), <span class="kanji-example">省</span> (tỉnh, lược bỏ), <span class="kanji-example">看</span> (nhìn, trông), <span class="kanji-example">眠</span> (ngủ), <span class="kanji-example">眼</span> (mắt)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">耳</td>
+                        <td>
+                            <div class="radical-name">みみ, みみへん (Nhĩ)</div>
+                            <div class="radical-reading">(mimi, mimihen)</div>
+                        </td>
+                        <td class="meaning">Tai, nghe</td>
+                        <td class="examples">
+                            <span class="kanji-example">聞</span> (nghe), <span class="kanji-example">取</span> (lấy), <span class="kanji-example">職</span> (chức), <span class="kanji-example">聖</span> (thánh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">手 (扌)</td>
+                        <td>
+                            <div class="radical-name">て, てへん (Thủ)</div>
+                            <div class="radical-reading">(te, tehen)</div>
+                        </td>
+                        <td class="meaning">Tay, hành động bằng tay</td>
+                        <td class="examples">
+                            <span class="kanji-example">持</span> (cầm), <span class="kanji-example">技</span> (kỹ thuật), <span class="kanji-example">投</span> (ném), <span class="kanji-example">招</span> (mời), <span class="kanji-example">授</span> (trao), <span class="kanji-example">探</span> (tìm kiếm), <span class="kanji-example">払</span> (trả tiền)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">足 (疋)</td>
+                        <td>
+                            <div class="radical-name">あし, あしへん (Túc)</div>
+                            <div class="radical-reading">(ashi, ashihen)</div>
+                        </td>
+                        <td class="meaning">Chân, đủ</td>
+                        <td class="examples">
+                            <span class="kanji-example">跑</span> (chạy - ít dùng), <span class="kanji-example">促</span> (thúc giục), <span class="kanji-example">距</span> (cự ly), <span class="kanji-example">路</span> (đường)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">心 (忄,⺗)</td>
+                        <td>
+                            <div class="radical-name">こころ, りっしんべん (Tâm)</div>
+                            <div class="radical-reading">(kokoro, risshinben)</div>
+                        </td>
+                        <td class="meaning">Trái tim, tâm trí, tình cảm</td>
+                        <td class="examples">
+                            <span class="kanji-example">思</span> (nghĩ), <span class="kanji-example">忘</span> (quên), <span class="kanji-example">忙</span> (bận), <span class="kanji-example">急</span> (vội), <span class="kanji-example">悪</span> (xấu), <span class="kanji-example">感</span> (cảm giác), <span class="kanji-example">恋</span> (yêu), <span class="kanji-example">悲</span> (buồn)
+                        </td>
+                    </tr>
+                    
+                    <!-- THIÊN NHIÊN VÀ ĐỊA LÝ -->
+                    <tr class="category-header">
+                        <td colspan="4">🌍 THIÊN NHIÊN VÀ ĐỊA LÝ</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">囗</td>
+                        <td>
+                            <div class="radical-name">くにがまえ (Vi)</div>
+                            <div class="radical-reading">(kunigamae)</div>
+                        </td>
+                        <td class="meaning">Vây quanh, quốc gia</td>
+                        <td class="examples">
+                            <span class="kanji-example">国</span> (nước), <span class="kanji-example">園</span> (vườn), <span class="kanji-example">図</span> (bản đồ), <span class="kanji-example">固</span> (cứng)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">土</td>
+                        <td>
+                            <div class="radical-name">つち, つちへん (Thổ)</div>
+                            <div class="radical-reading">(tsuchi, tsuchihen)</div>
+                        </td>
+                        <td class="meaning">Đất</td>
+                        <td class="examples">
+                            <span class="kanji-example">地</span> (đất), <span class="kanji-example">在</span> (tại), <span class="kanji-example">場</span> (nơi), <span class="kanji-example">坂</span> (dốc)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">山</td>
+                        <td>
+                            <div class="radical-name">やま, やまへん (Sơn)</div>
+                            <div class="radical-reading">(yama, yamahen)</div>
+                        </td>
+                        <td class="meaning">Núi</td>
+                        <td class="examples">
+                            <span class="kanji-example">島</span> (đảo), <span class="kanji-example">岸</span> (bờ), <span class="kanji-example">炭</span> (than)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">川 (巛)</td>
+                        <td>
+                            <div class="radical-name">かわ, まがりかわ (Xuyên)</div>
+                            <div class="radical-reading">(kawa, magarikawa)</div>
+                        </td>
+                        <td class="meaning">Sông</td>
+                        <td class="examples">
+                            <span class="kanji-example">州</span> (châu), <span class="kanji-example">順</span> (thuận lợi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">水 (氵, 氺)</td>
+                        <td>
+                            <div class="radical-name">みず, さんずい (Thủy)</div>
+                            <div class="radical-reading">(mizu, sanzui)</div>
+                        </td>
+                        <td class="meaning">Nước, chất lỏng</td>
+                        <td class="examples">
+                            <span class="kanji-example">泳</span> (bơi), <span class="kanji-example">池</span> (ao), <span class="kanji-example">海</span> (biển), <span class="kanji-example">活</span> (sống), <span class="kanji-example">消</span> (tắt, xóa), <span class="kanji-example">決</span> (quyết định), <span class="kanji-example">泣</span> (khóc), <span class="kanji-example">洗</span> (rửa)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">火 (灬)</td>
+                        <td>
+                            <div class="radical-name">ひ, ひへん, れんが (Hỏa)</div>
+                            <div class="radical-reading">(hi, hihen, renga)</div>
+                        </td>
+                        <td class="meaning">Lửa, nhiệt</td>
+                        <td class="examples">
+                            <span class="kanji-example">灯</span> (đèn), <span class="kanji-example">焼</span> (nướng), <span class="kanji-example">然</span> (tự nhiên), <span class="kanji-example">熱</span> (nóng), <span class="kanji-example">照</span> (chiếu sáng)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">石</td>
+                        <td>
+                            <div class="radical-name">いし, いしへん (Thạch)</div>
+                            <div class="radical-reading">(ishi, ishihen)</div>
+                        </td>
+                        <td class="meaning">Đá</td>
+                        <td class="examples">
+                            <span class="kanji-example">研</span> (nghiên cứu), <span class="kanji-example">砂</span> (cát), <span class="kanji-example">破</span> (phá), <span class="kanji-example">確</span> (xác thực)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">雨</td>
+                        <td>
+                            <div class="radical-name">あめ, あめかんむり (Vũ)</div>
+                            <div class="radical-reading">(ame, amekanmuri)</div>
+                        </td>
+                        <td class="meaning">Mưa, thời tiết</td>
+                        <td class="examples">
+                            <span class="kanji-example">雪</span> (tuyết), <span class="kanji-example">雲</span> (mây), <span class="kanji-example">電</span> (điện), <span class="kanji-example">露</span> (sương), <span class="kanji-example">霜</span> (sương giá)
+                        </td>
+                    </tr>
+                    
+                    <!-- THỜI GIAN -->
+                    <tr class="category-header">
+                        <td colspan="4">⏰ THỜI GIAN</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">日</td>
+                        <td>
+                            <div class="radical-name">ひ, ひへん, にち (Nhật)</div>
+                            <div class="radical-reading">(hi, hihen, nichi)</div>
+                        </td>
+                        <td class="meaning">Ngày, mặt trời</td>
+                        <td class="examples">
+                            <span class="kanji-example">明</span> (sáng), <span class="kanji-example">時</span> (giờ), <span class="kanji-example">晴</span> (nắng), <span class="kanji-example">映</span> (chiếu), <span class="kanji-example">曜</span> (thứ), <span class="kanji-example">昨</span> (hôm qua), <span class="kanji-example">晩</span> (tối), <span class="kanji-example">暑</span> (nóng), <span class="kanji-example">暖</span> (ấm)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">月 (⺝)</td>
+                        <td>
+                            <div class="radical-name">つき, つきへん, にくづき (Nguyệt, Nhục)</div>
+                            <div class="radical-reading">(tsuki, tsukihen, nikuzuki)</div>
+                        </td>
+                        <td class="meaning">Mặt trăng, tháng, thịt (bộ phận cơ thể)</td>
+                        <td class="examples">
+                            <span class="kanji-example">明</span> (sáng), <span class="kanji-example">有</span> (có), <span class="kanji-example">服</span> (quần áo), <span class="kanji-example">期</span> (kỳ), <span class="kanji-example">朝</span> (sáng), <span class="kanji-example">育</span> (nuôi dưỡng), <span class="kanji-example">胃</span> (dạ dày), <span class="kanji-example">腕</span> (cánh tay)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">夕</td>
+                        <td>
+                            <div class="radical-name">ゆうべ, た (Tịch)</div>
+                            <div class="radical-reading">(yuube, ta)</div>
+                        </td>
+                        <td class="meaning">Buổi chiều tối</td>
+                        <td class="examples">
+                            <span class="kanji-example">多</span> (nhiều), <span class="kanji-example">名</span> (tên), <span class="kanji-example">外</span> (ngoài), <span class="kanji-example">夜</span> (đêm)
+                        </td>
+                    </tr>
+                    
+                    <!-- GIA ĐÌNH VÀ XÃ HỘI -->
+                    <tr class="category-header">
+                        <td colspan="4">👨‍👩‍👧‍👦 GIA ĐÌNH VÀ XÃ HỘI</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">大</td>
+                        <td>
+                            <div class="radical-name">だい, だいかんむり (Đại)</div>
+                            <div class="radical-reading">(dai, daikanmuri)</div>
+                        </td>
+                        <td class="meaning">To, lớn</td>
+                        <td class="examples">
+                            <span class="kanji-example">天</span> (trời), <span class="kanji-example">夫</span> (chồng), <span class="kanji-example">太</span> (béo), <span class="kanji-example">央</span> (trung ương), <span class="kanji-example">失</span> (mất)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">女</td>
+                        <td>
+                            <div class="radical-name">おんな, おんなへん (Nữ)</div>
+                            <div class="radical-reading">(onna, onnahen)</div>
+                        </td>
+                        <td class="meaning">Phụ nữ, con gái</td>
+                        <td class="examples">
+                            <span class="kanji-example">好</span> (thích), <span class="kanji-example">安</span> (an, rẻ), <span class="kanji-example">妹</span> (em gái), <span class="kanji-example">姉</span> (chị gái), <span class="kanji-example">始</span> (bắt đầu), <span class="kanji-example">婦</span> (phụ nữ), <span class="kanji-example">婚</span> (kết hôn)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">子</td>
+                        <td>
+                            <div class="radical-name">こ, こへん (Tử)</div>
+                            <div class="radical-reading">(ko, kohen)</div>
+                        </td>
+                        <td class="meaning">Trẻ con, con cái</td>
+                        <td class="examples">
+                            <span class="kanji-example">学</span> (học), <span class="kanji-example">字</span> (chữ), <span class="kanji-example">存</span> (tồn tại), <span class="kanji-example">季</span> (mùa)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">父</td>
+                        <td>
+                            <div class="radical-name">ちち (Phụ)</div>
+                            <div class="radical-reading">(chichi)</div>
+                        </td>
+                        <td class="meaning">Cha</td>
+                        <td class="examples">
+                            <span class="kanji-example">交</span> (giao lưu)
+                        </td>
+                    </tr>
+                    
+                    <!-- NHÀ CỬA VÀ KIẾN TRÚC -->
+                    <tr class="category-header">
+                        <td colspan="4">🏠 NHÀ CỬA VÀ KIẾN TRÚC</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">宀</td>
+                        <td>
+                            <div class="radical-name">うかんむり (Miên)</div>
+                            <div class="radical-reading">(ukanmuri)</div>
+                        </td>
+                        <td class="meaning">Mái nhà, che chở</td>
+                        <td class="examples">
+                            <span class="kanji-example">安</span> (an, rẻ), <span class="kanji-example">字</span> (chữ), <span class="kanji-example">家</span> (nhà), <span class="kanji-example">室</span> (phòng), <span class="kanji-example">宿</span> (trọ, bài tập), <span class="kanji-example">守</span> (bảo vệ), <span class="kanji-example">完</span> (hoàn thành)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">广</td>
+                        <td>
+                            <div class="radical-name">まだれ (Nghiễm)</div>
+                            <div class="radical-reading">(madare)</div>
+                        </td>
+                        <td class="meaning">Mái hiên, nhà</td>
+                        <td class="examples">
+                            <span class="kanji-example">店</span> (cửa hàng), <span class="kanji-example">度</span> (lần, độ), <span class="kanji-example">座</span> (chỗ ngồi), <span class="kanji-example">庭</span> (sân vườn), <span class="kanji-example">庫</span> (kho), <span class="kanji-example">庁</span> (cơ quan)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">門</td>
+                        <td>
+                            <div class="radical-name">もん, もんがまえ (Môn)</div>
+                            <div class="radical-reading">(mon, mongamae)</div>
+                        </td>
+                        <td class="meaning">Cổng, cửa</td>
+                        <td class="examples">
+                            <span class="kanji-example">間</span> (giữa), <span class="kanji-example">開</span> (mở), <span class="kanji-example">閉</span> (đóng), <span class="kanji-example">問</span> (hỏi), <span class="kanji-example">聞</span> (nghe), <span class="kanji-example">関</span> (quan)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">穴</td>
+                        <td>
+                            <div class="radical-name">あな, あなかんむり (Huyệt)</div>
+                            <div class="radical-reading">(ana, anakanmuri)</div>
+                        </td>
+                        <td class="meaning">Hang, lỗ</td>
+                        <td class="examples">
+                            <span class="kanji-example">空</span> (trống, trời), <span class="kanji-example">究</span> (nghiên cứu), <span class="kanji-example">窓</span> (cửa sổ), <span class="kanji-example">突</span> (đột nhiên)
+                        </td>
+                    </tr>
+                    
+                    <!-- CÔNG VIỆC VÀ NGHỀ NGHIỆP -->
+                    <tr class="category-header">
+                        <td colspan="4">🔨 CÔNG VIỆC VÀ NGHỀ NGHIỆP</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">工</td>
+                        <td>
+                            <div class="radical-name">こう, たくみへん (Công)</div>
+                            <div class="radical-reading">(kou, takumihen)</div>
+                        </td>
+                        <td class="meaning">Công việc, thợ</td>
+                        <td class="examples">
+                            <span class="kanji-example">左</span> (trái), <span class="kanji-example">功</span> (công lao)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">士</td>
+                        <td>
+                            <div class="radical-name">さむらい (Sĩ)</div>
+                            <div class="radical-reading">(samurai)</div>
+                        </td>
+                        <td class="meaning">Kẻ sĩ, học trò</td>
+                        <td class="examples">
+                            <span class="kanji-example">声</span> (tiếng nói)
+                        </td>
+                    </tr>
+                    
+                    <!-- VẬT PHẨM VÀ VẬT LIỆU -->
+                    <tr class="category-header">
+                        <td colspan="4">🧵 VẬT PHẨM VÀ VẬT LIỆU</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">巾</td>
+                        <td>
+                            <div class="radical-name">はば, はばへん (Cân)</div>
+                            <div class="radical-reading">(haba, habahen)</div>
+                        </td>
+                        <td class="meaning">Khăn, vải</td>
+                        <td class="examples">
+                            <span class="kanji-example">市</span> (thành phố, chợ), <span class="kanji-example">布</span> (vải), <span class="kanji-example">帆</span> (buồm), <span class="kanji-example">希</span> (hy vọng), <span class="kanji-example">帯</span> (đai)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">糸 (糹)</td>
+                        <td>
+                            <div class="radical-name">いと, いとへん (Mịch)</div>
+                            <div class="radical-reading">(ito, itohen)</div>
+                        </td>
+                        <td class="meaning">Sợi tơ, dây</td>
+                        <td class="examples">
+                            <span class="kanji-example">紙</span> (giấy), <span class="kanji-example">細</span> (nhỏ), <span class="kanji-example">組</span> (tổ), <span class="kanji-example">終</span> (kết thúc), <span class="kanji-example">結</span> (kết), <span class="kanji-example">緑</span> (xanh lá), <span class="kanji-example">線</span> (đường kẻ), <span class="kanji-example">練</span> (luyện)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">衣 (衤)</td>
+                        <td>
+                            <div class="radical-name">ころも, ころもへん (Y)</div>
+                            <div class="radical-reading">(koromo, koromohen)</div>
+                        </td>
+                        <td class="meaning">Quần áo</td>
+                        <td class="examples">
+                            <span class="kanji-example">初</span> (đầu tiên), <span class="kanji-example">被</span> (bị), <span class="kanji-example">装</span> (trang), <span class="kanji-example">製</span> (chế tạo)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">金 (釒)</td>
+                        <td>
+                            <div class="radical-name">かね, かねへん (Kim)</div>
+                            <div class="radical-reading">(kane, kanehen)</div>
+                        </td>
+                        <td class="meaning">Kim loại, vàng, tiền</td>
+                        <td class="examples">
+                            <span class="kanji-example">銀</span> (bạc), <span class="kanji-example">鉄</span> (sắt), <span class="kanji-example">銅</span> (đồng), <span class="kanji-example">鉛</span> (chì), <span class="kanji-example">録</span> (ghi âm), <span class="kanji-example">針</span> (kim), <span class="kanji-example">鈍</span> (cùn), <span class="kanji-example">鏡</span> (gương)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">缶</td>
+                        <td>
+                            <div class="radical-name">ほとぎ, かま, 缶 (Phẫu)</div>
+                            <div class="radical-reading">(hotogi, kama, kan)</div>
+                        </td>
+                        <td class="meaning">Đồ đựng bằng đất nung, lon</td>
+                        <td class="examples">
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- ĐỘNG VẬT -->
+                    <tr class="category-header">
+                        <td colspan="4">🐕 ĐỘNG VẬT</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">牛 (牜)</td>
+                        <td>
+                            <div class="radical-name">うし, うしへん (Ngưu)</div>
+                            <div class="radical-reading">(ushi, ushihen)</div>
+                        </td>
+                        <td class="meaning">Trâu, bò</td>
+                        <td class="examples">
+                            <span class="kanji-example">物</span> (đồ vật), <span class="kanji-example">特</span> (đặc biệt), <span class="kanji-example">牧</span> (chăn nuôi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">犬 (犭)</td>
+                        <td>
+                            <div class="radical-name">いぬ, けものへん (Khuyển)</div>
+                            <div class="radical-reading">(inu, kemonohen)</div>
+                        </td>
+                        <td class="meaning">Chó, động vật</td>
+                        <td class="examples">
+                            <span class="kanji-example">猫</span> (mèo), <span class="kanji-example">独</span> (độc), <span class="kanji-example">狙</span> (nhắm)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">馬</td>
+                        <td>
+                            <div class="radical-name">うま, うまへん (Mã)</div>
+                            <div class="radical-reading">(uma, umahen)</div>
+                        </td>
+                        <td class="meaning">Ngựa</td>
+                        <td class="examples">
+                            <span class="kanji-example">駅</span> (ga), <span class="kanji-example">験</span> (nghiệm), <span class="kanji-example">駐</span> (đỗ xe)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">魚</td>
+                        <td>
+                            <div class="radical-name">うお, うおへん, さかな (Ngư)</div>
+                            <div class="radical-reading">(uo, uohen, sakana)</div>
+                        </td>
+                        <td class="meaning">Cá</td>
+                        <td class="examples">
+                            <span class="kanji-example">鮮</span> (tươi), <span class="kanji-example">鯨</span> (cá voi), <span class="kanji-example">鯉</span> (cá chép)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">鳥</td>
+                        <td>
+                            <div class="radical-name">とり, とりへん (Điểu)</div>
+                            <div class="radical-reading">(tori, torihen)</div>
+                        </td>
+                        <td class="meaning">Chim</td>
+                        <td class="examples">
+                            <span class="kanji-example">鳴</span> (kêu, hót), <span class="kanji-example">鶏</span> (gà), <span class="kanji-example">鴨</span> (vịt), <span class="kanji-example">鷹</span> (chim ưng)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">虫</td>
+                        <td>
+                            <div class="radical-name">むし, むしへん (Trùng)</div>
+                            <div class="radical-reading">(mushi, mushihen)</div>
+                        </td>
+                        <td class="meaning">Côn trùng, sâu bọ</td>
+                        <td class="examples">
+                            <span class="kanji-example">蚊</span> (muỗi), <span class="kanji-example">蚕</span> (tằm), <span class="kanji-example">蛇</span> (rắn), <span class="kanji-example">虹</span> (cầu vồng)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">豕</td>
+                        <td>
+                            <div class="radical-name">いのこ, いのこへん (Thỉ)</div>
+                            <div class="radical-reading">(inoko, inokohen)</div>
+                        </td>
+                        <td class="meaning">Lợn</td>
+                        <td class="examples">
+                            <span class="kanji-example">家</span> (nhà)
+                        </td>
+                    </tr>
+                    
+                    <!-- THỰC VẬT -->
+                    <tr class="category-header">
+                        <td colspan="4">🌱 THỰC VẬT</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">木</td>
+                        <td>
+                            <div class="radical-name">き, きへん (Mộc)</div>
+                            <div class="radical-reading">(ki, kihen)</div>
+                        </td>
+                        <td class="meaning">Cây, gỗ</td>
+                        <td class="examples">
+                            <span class="kanji-example">林</span> (rừng thưa), <span class="kanji-example">森</span> (rừng rậm), <span class="kanji-example">机</span> (bàn), <span class="kanji-example">村</span> (làng), <span class="kanji-example">板</span> (tấm ván), <span class="kanji-example">橋</span> (cầu), <span class="kanji-example">植</span> (trồng cây)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">艸 (艹)</td>
+                        <td>
+                            <div class="radical-name">くさ, くさかんむり (Thảo)</div>
+                            <div class="radical-reading">(kusa, kusakanmuri)</div>
+                        </td>
+                        <td class="meaning">Cỏ, thực vật</td>
+                        <td class="examples">
+                            <span class="kanji-example">花</span> (hoa), <span class="kanji-example">茶</span> (trà), <span class="kanji-example">若</span> (trẻ), <span class="kanji-example">薬</span> (thuốc), <span class="kanji-example">葉</span> (lá), <span class="kanji-example">菜</span> (rau), <span class="kanji-example">草</span> (cỏ)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">竹 (⺮)</td>
+                        <td>
+                            <div class="radical-name">たけ, たけかんむり (Trúc)</div>
+                            <div class="radical-reading">(take, takekanmuri)</div>
+                        </td>
+                        <td class="meaning">Tre, trúc</td>
+                        <td class="examples">
+                            <span class="kanji-example">笑</span> (cười), <span class="kanji-example">答</span> (trả lời), <span class="kanji-example">笛</span> (sáo), <span class="kanji-example">箱</span> (hộp), <span class="kanji-example">等</span> (v.v.)
+                        </td>
+                    </tr>
+                    
+                    <!-- THỰC PHẨM VÀ NÔNG NGHIỆP -->
+                    <tr class="category-header">
+                        <td colspan="4">🌾 THỰC PHẨM VÀ NÔNG NGHIỆP</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">田</td>
+                        <td>
+                            <div class="radical-name">た, たへん (Điền)</div>
+                            <div class="radical-reading">(ta, tahen)</div>
+                        </td>
+                        <td class="meaning">Ruộng</td>
+                        <td class="examples">
+                            <span class="kanji-example">町</span> (phố), <span class="kanji-example">男</span> (nam), <span class="kanji-example">畑</span> (ruộng khô), <span class="kanji-example">画</span> (vẽ, phim), <span class="kanji-example">界</span> (giới)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">禾</td>
+                        <td>
+                            <div class="radical-name">のぎ, のぎへん (Hòa)</div>
+                            <div class="radical-reading">(nogi, nogihen)</div>
+                        </td>
+                        <td class="meaning">Lúa, cây lương thực</td>
+                        <td class="examples">
+                            <span class="kanji-example">私</span> (tôi), <span class="kanji-example">秋</span> (mùa thu), <span class="kanji-example">科</span> (khoa), <span class="kanji-example">税</span> (thuế), <span class="kanji-example">程</span> (trình độ)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">米</td>
+                        <td>
+                            <div class="radical-name">こめ, こめへん (Mễ)</div>
+                            <div class="radical-reading">(kome, komehen)</div>
+                        </td>
+                        <td class="meaning">Gạo</td>
+                        <td class="examples">
+                            <span class="kanji-example">料</span> (nguyên liệu, phí), <span class="kanji-example">粉</span> (bột), <span class="kanji-example">類</span> (loại), <span class="kanji-example">精</span> (tinh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">豆</td>
+                        <td>
+                            <div class="radical-name">まめ, まめへん (Đậu)</div>
+                            <div class="radical-reading">(mame, mamehen)</div>
+                        </td>
+                        <td class="meaning">Đậu</td>
+                        <td class="examples">
+                            <span class="kanji-example">頭</span> (đầu), <span class="kanji-example">豊</span> (phong phú)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">食 (飠)</td>
+                        <td>
+                            <div class="radical-name">しょく, しょくへん (Thực)</div>
+                            <div class="radical-reading">(shoku, shokuhen)</div>
+                        </td>
+                        <td class="meaning">Ăn, thực phẩm</td>
+                        <td class="examples">
+                            <span class="kanji-example">飲</span> (uống), <span class="kanji-example">飯</span> (cơm), <span class="kanji-example">飼</span> (nuôi), <span class="kanji-example">館</span> (quán), <span class="kanji-example">養</span> (dưỡng)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">酉</td>
+                        <td>
+                            <div class="radical-name">とり, ひよみのとり (Dậu)</div>
+                            <div class="radical-reading">(tori, hiyominotori)</div>
+                        </td>
+                        <td class="meaning">Gà, rượu (liên quan đến lên men, rượu)</td>
+                        <td class="examples">
+                            <span class="kanji-example">酒</span> (rượu), <span class="kanji-example">配</span> (phân phối), <span class="kanji-example">酢</span> (giấm), <span class="kanji-example">酔</span> (say), <span class="kanji-example">酌</span> (rót rượu)
+                        </td>
+                    </tr>
+                    
+                    <!-- HOẠT ĐỘNG VÀ CHUYỂN ĐỘNG -->
+                    <tr class="category-header">
+                        <td colspan="4">🚶 HOẠT ĐỘNG VÀ CHUYỂN ĐỘNG</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">弓</td>
+                        <td>
+                            <div class="radical-name">ゆみ, ゆみへん (Cung)</div>
+                            <div class="radical-reading">(yumi, yumihen)</div>
+                        </td>
+                        <td class="meaning">Cung tên</td>
+                        <td class="examples">
+                            <span class="kanji-example">引</span> (kéo), <span class="kanji-example">弟</span> (em trai), <span class="kanji-example">強</span> (mạnh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">彳</td>
+                        <td>
+                            <div class="radical-name">ぎょうにんべん (Sách, Xích)</div>
+                            <div class="radical-reading">(gyouninben)</div>
+                        </td>
+                        <td class="meaning">Bước chân trái (liên quan đến đi lại, đường sá)</td>
+                        <td class="examples">
+                            <span class="kanji-example">行</span> (đi), <span class="kanji-example">待</span> (đợi), <span class="kanji-example">彼</span> (anh ấy), <span class="kanji-example">役</span> (vai trò), <span class="kanji-example">往</span> (đi), <span class="kanji-example">径</span> (đường kính)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">止</td>
+                        <td>
+                            <div class="radical-name">とまる, とめる (Chỉ)</div>
+                            <div class="radical-reading">(tomaru, tomeru)</div>
+                        </td>
+                        <td class="meaning">Dừng lại</td>
+                        <td class="examples">
+                            <span class="kanji-example">歩</span> (đi bộ), <span class="kanji-example">正</span> (chính), <span class="kanji-example">此</span> (này), <span class="kanji-example">歳</span> (tuổi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">走</td>
+                        <td>
+                            <div class="radical-name">はしる, そうにょう (Tẩu)</div>
+                            <div class="radical-reading">(hashiru, sounyou)</div>
+                        </td>
+                        <td class="meaning">Chạy</td>
+                        <td class="examples">
+                            <span class="kanji-example">起</span> (thức dậy), <span class="kanji-example">越</span> (vượt qua), <span class="kanji-example">超</span> (siêu)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">車</td>
+                        <td>
+                            <div class="radical-name">くるま, くるまへん (Xa)</div>
+                            <div class="radical-reading">(kuruma, kurumahen)</div>
+                        </td>
+                        <td class="meaning">Xe</td>
+                        <td class="examples">
+                            <span class="kanji-example">転</span> (chuyển), <span class="kanji-example">軽</span> (nhẹ), <span class="kanji-example">輸</span> (vận chuyển), <span class="kanji-example">輪</span> (bánh xe)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">舟</td>
+                        <td>
+                            <div class="radical-name">ふね, ふねへん (Chu)</div>
+                            <div class="radical-reading">(fune, funehen)</div>
+                        </td>
+                        <td class="meaning">Thuyền</td>
+                        <td class="examples">
+                            <span class="kanji-example">船</span> (thuyền), <span class="kanji-example">般</span> (chung), <span class="kanji-example">航</span> (hàng hải)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">行</td>
+                        <td>
+                            <div class="radical-name">ゆきがまえ, ぎょうがまえ (Hành, Hàng)</div>
+                            <div class="radical-reading">(yukigamae, gyougamae)</div>
+                        </td>
+                        <td class="meaning">Đi, thực hiện (khi là bộ bao ngoài)</td>
+                        <td class="examples">
+                            <span class="kanji-example">街</span> (phố)
+                        </td>
+                    </tr>
+                    
+                    <!-- ĐƠN VỊ ĐO LƯỜNG -->
+                    <tr class="category-header">
+                        <td colspan="4">📏 ĐƠN VỊ ĐO LƯỜNG</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">寸</td>
+                        <td>
+                            <div class="radical-name">すん (Thốn)</div>
+                            <div class="radical-reading">(sun)</div>
+                        </td>
+                        <td class="meaning">Thốn (đơn vị đo), một chút</td>
+                        <td class="examples">
+                            <span class="kanji-example">対</span> (đối), <span class="kanji-example">寺</span> (chùa), <span class="kanji-example">封</span> (phong bì), <span class="kanji-example">専</span> (chuyên)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">小</td>
+                        <td>
+                            <div class="radical-name">しょう, ちいさい (Tiểu)</div>
+                            <div class="radical-reading">(shou, chiisai)</div>
+                        </td>
+                        <td class="meaning">Nhỏ, bé</td>
+                        <td class="examples">
+                            <span class="kanji-example">少</span> (ít), <span class="kanji-example">省</span> (tỉnh, lược bỏ)
+                        </td>
+                    </tr>
+                    
+                    <!-- THẦN THÁNH VÀ TÔN GIÁO -->
+                    <tr class="category-header">
+                        <td colspan="4">⛩️ THẦN THÁNH VÀ TÔN GIÁO</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">示 (礻)</td>
+                        <td>
+                            <div class="radical-name">しめす, しめすへん (Thị, Kỳ)</div>
+                            <div class="radical-reading">(shimesu, shimesuhen)</div>
+                        </td>
+                        <td class="meaning">Chỉ thị, thần thánh, lễ nghi</td>
+                        <td class="examples">
+                            <span class="kanji-example">社</span> (công ty, đền), <span class="kanji-example">礼</span> (lễ), <span class="kanji-example">祝</span> (chúc), <span class="kanji-example">福</span> (phúc), <span class="kanji-example">禁</span> (cấm), <span class="kanji-example">祭</span> (lễ hội)
+                        </td>
+                    </tr>
+                    
+                    <!-- CHẤT LƯỢNG VÀ GIẤY TỜ -->
+                    <tr class="category-header">
+                        <td colspan="4">📃 CHẤT LƯỢNG VÀ GIẤY TỜ</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">立</td>
+                        <td>
+                            <div class="radical-name">たつ, たつへん (Lập)</div>
+                            <div class="radical-reading">(tatsu, tatsuhen)</div>
+                        </td>
+                        <td class="meaning">Đứng</td>
+                        <td class="examples">
+                            <span class="kanji-example">音</span> (âm thanh), <span class="kanji-example">意</span> (ý), <span class="kanji-example">章</span> (chương), <span class="kanji-example">競</span> (cạnh tranh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">文</td>
+                        <td>
+                            <div class="radical-name">ぶん, ぶんにょう (Văn)</div>
+                            <div class="radical-reading">(bun, bunnyou)</div>
+                        </td>
+                        <td class="meaning">Văn chương, chữ viết</td>
+                        <td class="examples">
+                            <span class="kanji-example">対</span> (đối)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">言 (訁)</td>
+                        <td>
+                            <div class="radical-name">ことば, ごんべん (Ngôn)</div>
+                            <div class="radical-reading">(kotoba, gonben)</div>
+                        </td>
+                        <td class="meaning">Lời nói, ngôn ngữ</td>
+                        <td class="examples">
+                            <span class="kanji-example">話</span> (nói chuyện), <span class="kanji-example">語</span> (ngôn ngữ), <span class="kanji-example">計</span> (kế hoạch), <span class="kanji-example">記</span> (ghi), <span class="kanji-example">試</span> (thử), <span class="kanji-example">説</span> (thuyết), <span class="kanji-example">読</span> (đọc), <span class="kanji-example">警</span> (cảnh)
+                        </td>
+                    </tr>
+                    
+                    <!-- GIÁ TRỊ VÀ TRAO ĐỔI -->
+                    <tr class="category-header">
+                        <td colspan="4">💰 GIÁ TRỊ VÀ TRAO ĐỔI</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">玉 (王)</td>
+                        <td>
+                            <div class="radical-name">たま, たまへん, おう (Ngọc, Vương)</div>
+                            <div class="radical-reading">(tama, tamahen, ou)</div>
+                        </td>
+                        <td class="meaning">Ngọc, vua (liên quan đến quý giá)</td>
+                        <td class="examples">
+                            <span class="kanji-example">現</span> (hiện), <span class="kanji-example">球</span> (quả cầu), <span class="kanji-example">理</span> (lý), <span class="kanji-example">珍</span> (quý hiếm)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">貝</td>
+                        <td>
+                            <div class="radical-name">かい, かいへん (Bối)</div>
+                            <div class="radical-reading">(kai, kaihen)</div>
+                        </td>
+                        <td class="meaning">Vỏ sò (liên quan đến tiền bạc, giá trị)</td>
+                        <td class="examples">
+                            <span class="kanji-example">買</span> (mua), <span class="kanji-example">売</span> (bán), <span class="kanji-example">員</span> (nhân viên), <span class="kanji-example">貸</span> (cho vay), <span class="kanji-example">負</span> (thua), <span class="kanji-example">財</span> (tài sản), <span class="kanji-example">貨</span> (hàng hóa)
+                        </td>
+                    </tr>
+                    
+                    <!-- ĐỊA DANH VÀ HÀNH CHÍNH -->
+                    <tr class="category-header">
+                        <td colspan="4">🏛️ ĐỊA DANH VÀ HÀNH CHÍNH</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">阜 (阝 bên trái)</td>
+                        <td>
+                            <div class="radical-name">こざとへん (Phụ)</div>
+                            <div class="radical-reading">(kozatohen)</div>
+                        </td>
+                        <td class="meaning">Đồi, gò đất (liên quan đến địa hình, trở ngại)</td>
+                        <td class="examples">
+                            <span class="kanji-example">防</span> (phòng), <span class="kanji-example">阪</span> (dốc), <span class="kanji-example">院</span> (viện), <span class="kanji-example">陸</span> (lục địa), <span class="kanji-example">階</span> (tầng), <span class="kanji-example">陽</span> (dương), <span class="kanji-example">陰</span> (âm)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">邑 (阝bên phải)</td>
+                        <td>
+                            <div class="radical-name">おおざと (Ấp)</div>
+                            <div class="radical-reading">(oozato)</div>
+                        </td>
+                        <td class="meaning">Ấp, vùng đất (liên quan đến địa danh, quốc gia)</td>
+                        <td class="examples">
+                            <span class="kanji-example">郡</span> (quận), <span class="kanji-example">郊</span> (ngoại ô), <span class="kanji-example">都</span> (thủ đô), <span class="kanji-example">邦</span> (nước), <span class="kanji-example">郵</span> (bưu điện)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">里</td>
+                        <td>
+                            <div class="radical-name">さと, さとへん (Lý)</div>
+                            <div class="radical-reading">(sato, satohen)</div>
+                        </td>
+                        <td class="meaning">Làng, dặm</td>
+                        <td class="examples">
+                            <span class="kanji-example">量</span> (lượng), <span class="kanji-example">野</span> (đồng ruộng), <span class="kanji-example">重</span> (nặng)
+                        </td>
+                    </tr>
+                    
+                    <!-- CHIẾN TRANH VÀ VŨ KHÍ -->
+                    <tr class="category-header">
+                        <td colspan="4">⚔️ CHIẾN TRANH VÀ VŨ KHÍ</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">戈</td>
+                        <td>
+                            <div class="radical-name">ほこ, ほこづくり (Qua)</div>
+                            <div class="radical-reading">(hoko, hokozukuri)</div>
+                        </td>
+                        <td class="meaning">Qua (vũ khí), chiến tranh</td>
+                        <td class="examples">
+                            <span class="kanji-example">我</span> (tôi), <span class="kanji-example">成</span> (thành), <span class="kanji-example">戦</span> (chiến đấu)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">斤</td>
+                        <td>
+                            <div class="radical-name">おの, おのづくり (Cân)</div> <!-- Sửa từ Cân thành Cân (rìu) hoặc Phủ để rõ nghĩa hơn nếu muốn -->
+                            <div class="radical-reading">(ono, onozukuri)</div>
+                        </td>
+                        <td class="meaning">Rìu (cắt, chia)</td>
+                        <td class="examples">
+                            <span class="kanji-example">新</span> (mới), <span class="kanji-example">近</span> (gần), <span class="kanji-example">所</span> (nơi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">歹 (殘)</td>
+                        <td>
+                            <div class="radical-name">がつへん, しかばね (Đãi, Ngạt)</div>
+                            <div class="radical-reading">(gatsuhen, shikabane)</div>
+                        </td>
+                        <td class="meaning">Xương cốt, chết chóc</td>
+                        <td class="examples">
+                            <span class="kanji-example">死</span> (chết), <span class="kanji-example">列</span> (hàng)
+                        </td>
+                    </tr>
+                    
+                    <!-- PHƯƠNG HƯỚNG VÀ CHUYỂN ĐỔI -->
+                    <tr class="category-header">
+                        <td colspan="4">🧭 PHƯƠNG HƯỚNG VÀ CHUYỂN ĐỔI</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">方</td>
+                        <td>
+                            <div class="radical-name">ほう, かた (Phương)</div>
+                            <div class="radical-reading">(hou, kata)</div>
+                        </td>
+                        <td class="meaning">Phương hướng, cách thức</td>
+                        <td class="examples">
+                            <span class="kanji-example">旅</span> (du lịch), <span class="kanji-example">族</span> (gia tộc), <span class="kanji-example">施</span> (thực thi)
+                        </td>
+                    </tr>
+                    
+                    <!-- CÁC BỘ THỦ KHÁC -->
+                    <tr class="category-header">
+                        <td colspan="4">🔍 CÁC BỘ THỦ KHÁC</td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">欠</td>
+                        <td>
+                            <div class="radical-name">あくび, かける (Khiếm)</div>
+                            <div class="radical-reading">(akubi, kakeru)</div>
+                        </td>
+                        <td class="meaning">Thiếu, ngáp</td>
+                        <td class="examples">
+                            <span class="kanji-example">次</span> (tiếp theo), <span class="kanji-example">歌</span> (hát), <span class="kanji-example">飲</span> (uống), <span class="kanji-example">吹</span> (thổi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">爪 (爫)</td>
+                        <td>
+                            <div class="radical-name">つめ, つめかんむり (Trảo)</div>
+                            <div class="radical-reading">(tsume, tsumekanmuri)</div>
+                        </td>
+                        <td class="meaning">Móng vuốt</td>
+                        <td class="examples">
+                            <span class="kanji-example">為</span> (làm, vì), <span class="kanji-example">愛</span> (yêu)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">肉 (月)</td>
+                        <td>
+                            <div class="radical-name">にく, にくづき (Nhục)</div>
+                            <div class="radical-reading">(niku, nikuzuki)</div>
+                        </td>
+                        <td class="meaning">Thịt (thường chỉ bộ phận cơ thể khi viết 月)</td>
+                        <td class="examples">
+                            <span class="kanji-example">育</span> (nuôi dưỡng), <span class="kanji-example">胃</span> (dạ dày), <span class="kanji-example">腕</span> (cánh tay), <span class="kanji-example">脳</span> (não), <span class="kanji-example">腰</span> (eo), <span class="kanji-example">脚</span> (chân)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">谷</td>
+                        <td>
+                            <div class="radical-name">たに, たにへん (Cốc)</div>
+                            <div class="radical-reading">(tani, tanihen)</div>
+                        </td>
+                        <td class="meaning">Thung lũng</td>
+                        <td class="examples">
+                            <span class="kanji-example">欲</span> (muốn)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="radical-char">釆</td>
+                        <td>
+                            <div class="radical-name">のごめ, のごめへん (Biện)</div>
+                            <div class="radical-reading">(nogome, nogomehen)</div>
+                        </td>
+                        <td class="meaning">Phân biệt</td>
+                        <td class="examples">
+                            <span class="kanji-example">釈</span> (giải thích), <span class="kanji-example">番</span> (số, lượt)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>🎉 Hoàn thành bảng bộ thủ Kanji! 🎉</h3>
+        <p>Chúc mừng! Bạn đã xem qua tất cả các bộ thủ Kanji cơ bản cho N4. Hãy tiếp tục luyện tập để thành thạo!</p>
+        <div style="margin-top: 20px;">
+            <strong>💡 Mẹo học bộ thủ hiệu quả:</strong>
+            <ul style="text-align: left; margin-top: 10px;">
+                <li>🔄 Ôn tập thường xuyên mỗi ngày</li>
+                <li>📝 Tập viết các Kanji có cùng bộ thủ</li>
+                <li>🎯 Tập trung vào các bộ thủ xuất hiện nhiều nhất</li>
+                <li>🤝 Học nhóm các Kanji cùng ý nghĩa</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function searchTable() {
+            const input = document.querySelector('.search-input');
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById('radicalTable');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) { // Bắt đầu từ 1 để bỏ qua a
+                if (tr[i].classList.contains('category-header')) {
+                    // Kiểm tra xem có dòng nào trong category này khớp không
+                    let categoryMatch = false;
+                    let nextSibling = tr[i].nextElementSibling;
+                    while(nextSibling && !nextSibling.classList.contains('category-header')) {
+                        const td_sibling = nextSibling.getElementsByTagName('td');
+                        let found_in_sibling = false;
+                        for (let k = 0; k < td_sibling.length; k++) {
+                            if (td_sibling[k]) {
+                                const txtValue_sibling = td_sibling[k].textContent || td_sibling[k].innerText;
+                                if (txtValue_sibling.toUpperCase().indexOf(filter) > -1) {
+                                    found_in_sibling = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if(found_in_sibling) {
+                            categoryMatch = true;
+                            break;
+                        }
+                        nextSibling = nextSibling.nextElementSibling;
+                    }
+                     tr[i].style.display = categoryMatch || filter === "" ? '' : 'none'; // Hiển thị category nếu có dòng con khớp hoặc ô tìm kiếm rỗng
+                    continue;
+                }
+
+                const td = tr[i].getElementsByTagName('td');
+                let found = false;
+                
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        const txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                
+                tr[i].style.display = found ? '' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>
