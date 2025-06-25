@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Kanji N4 - Bài 5 & 6 (Trang 22, 24)</title>
+    <!-- Liên kết tới file CSS của bạn -->
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Khóa học Kanji JLPT N4</h1>
+        <p class="subtitle">Học theo sách Soumatome - Bài 5 & 6</p>
+    </header>
+
+    <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" onkeyup="searchTable()" placeholder="🔍 Tìm kiếm Kanji, Âm Hán Việt, Cách đọc, Nghĩa...">
+    </div>
+    
+    <div class="mobile-note">
+        <p><strong>Lưu ý:</strong> Trên điện thoại, bạn có thể cuộn bảng sang ngang để xem đầy đủ nội dung.</p>
+    </div>
+
+    <div class="kanji-table-container">
+        <table id="kanjiTable">
+            <thead>
+                <tr>
+                    <th>Trang</th>
+                    <th>Kanji / Âm Hán Việt</th>
+                    <th>Cách đọc</th>
+                    <th>Ý nghĩa & Cách dùng</th>
+                    <th>Ví dụ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ==================== BÀI 5: TRANG 22 ==================== -->
+                <tr class="category-header">
+                    <td colspan="5">Bài 5: Các Kanji Trang 22</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">民<span class="hanviet">(DÂN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ミン</div>
+                        <div><strong>KUN:</strong> たみ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Dân chúng, nhân dân.</p>
+                        <p><strong>Dùng trong:</strong> 国民 (quốc dân), 市民 (dân thành phố), 民主主義 (chủ nghĩa dân chủ).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>政府<rt>せいふ</rt></ruby>は<ruby>国民<rt>こくみん</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>をもっと<ruby>聞<rt>き</rt></ruby>くべきです。</p>
+                        <p class="vietnamese-translation">Chính phủ nên lắng nghe ý kiến của người dân nhiều hơn.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">医<span class="hanviet">(Y)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> イ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Y học.</p>
+                        <p><strong>Dùng trong:</strong> 医者 (bác sĩ), 医学 (y học), 医院 (phòng khám).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>彼<rt>かれ</rt></ruby>は<ruby>子供<rt>こども</rt></ruby>のころから<ruby>医者<rt>いしゃ</rt></ruby>になるのが<ruby>夢<rt>ゆめ</rt></ruby>でした。</p>
+                        <p class="vietnamese-translation">Từ khi còn nhỏ, ước mơ của anh ấy là trở thành bác sĩ.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">者<span class="hanviet">(GIẢ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シャ</div>
+                        <div><strong>KUN:</strong> もの</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Người (thường dùng trong từ ghép để chỉ nghề nghiệp hoặc một nhóm người).</p>
+                        <p><strong>Dùng trong:</strong> 若者 (người trẻ), 学者 (học giả), 関係者 (người liên quan).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example">この<ruby>事件<rt>じけん</rt></ruby>の<ruby>関係者<rt>かんけいしゃ</rt></ruby>は、<ruby>警察<rt>けいさつ</rt></ruby>に<ruby>呼<rt>よ</rt></ruby>ばれました。</p>
+                        <p class="vietnamese-translation">Những người liên quan đến vụ án này đã bị cảnh sát triệu tập.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">真<span class="hanviet">(CHÂN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シン</div>
+                        <div><strong>KUN:</strong> ま / まこと</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Thật, đúng, chính giữa.</p>
+                        <p><strong>Dùng trong:</strong> 写真 (ảnh), 真実 (sự thật), 真面目 (chăm chỉ), 真っ直ぐ (thẳng tắp).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>彼<rt>かれ</rt></ruby>の<ruby>言<rt>い</rt></ruby>っていることは、<ruby>果<rt>はた</rt></ruby>して<ruby>真実<rt>しんじつ</rt></ruby>なのでしょうか。</p>
+                        <p class="vietnamese-translation">Những gì anh ấy nói liệu có phải là sự thật không?</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">転<span class="hanviet">(CHUYỂN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> テン</div>
+                        <div><strong>KUN:</strong> ころ・がる / ころ・ぶ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Xoay, chuyển, ngã.</p>
+                        <p><strong>Dùng trong:</strong> 自転車 (xe đạp), 運転 (lái xe), 転ぶ (ngã).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>雨<rt>あめ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>は<ruby>道<rt>みち</rt></ruby>が<ruby>滑<rt>すべ</rt></ruby>りやすいので、<ruby>転<rt>ころ</rt></ruby>ばないように<ruby>気<rt>き</rt></ruby>をつけてください。</p>
+                        <p class="vietnamese-translation">Ngày mưa đường dễ trơn trượt nên hãy cẩn thận để không bị ngã.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">運<span class="hanviet">(VẬN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ウン</div>
+                        <div><strong>KUN:</strong> はこ・ぶ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Vận chuyển; vận mệnh, may mắn.</p>
+                        <p><strong>Dùng trong:</strong> 運動 (vận động), 運ぶ (vận chuyển), 幸運 (may mắn).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example">この<ruby>重<rt>おも</rt></ruby>い<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>一人<rt>ひとり</rt></ruby>で<ruby>運<rt>はこ</rt></ruby>ぶのは<ruby>大変<rt>たいへん</rt></ruby>です。</p>
+                        <p class="vietnamese-translation">Việc một mình vận chuyển hành lý nặng này rất vất vả.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="kanji-char-cell">歌<span class="hanviet">(CA)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カ</div>
+                        <div><strong>KUN:</strong> うた / うた・う</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Bài hát; hát.</p>
+                        <p><strong>Dùng trong:</strong> 歌手 (ca sĩ), 歌う (hát), 国歌 (quốc ca).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>歌<rt>うた</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>なので、よくカラオケに<ruby>誘<rt>さそ</rt></ruby>われます。</p>
+                        <p class="vietnamese-translation">Cô ấy hát hay nên thường được rủ đi karaoke.</p>
+                    </td>
+                </tr>
+
+                <!-- ==================== BÀI 6: TRANG 24 ==================== -->
+                <tr class="category-header">
+                    <td colspan="5">Bài 6: Các Kanji Trang 24</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">冬<span class="hanviet">(ĐÔNG)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> トウ</div>
+                        <div><strong>KUN:</strong> ふゆ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Mùa đông.</p>
+                        <p><strong>Dùng trong:</strong> 冬休み (nghỉ đông), 冬眠 (ngủ đông).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>今年<rt>ことし</rt></ruby>の<ruby>冬<rt>ふゆ</rt></ruby>は<ruby>例年<rt>れいねん</rt></ruby>より<ruby>寒<rt>さむ</rt></ruby>くなるそうです。</p>
+                        <p class="vietnamese-translation">Nghe nói mùa đông năm nay sẽ lạnh hơn mọi năm.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">町<span class="hanviet">(ĐINH)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> チョウ</div>
+                        <div><strong>KUN:</strong> まち</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Phố, thị trấn.</p>
+                        <p><strong>Dùng trong:</strong> 町長 (thị trưởng), 下町 (khu phố cổ).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>私<rt>わたし</rt></ruby>が<ruby>住<rt>す</rt></ruby>んでいる<ruby>町<rt>まち</rt></ruby>は、<ruby>静<rt>しず</rt></ruby>かで<ruby>住<rt>す</rt></ruby>みやすいところです。</p>
+                        <p class="vietnamese-translation">Thị trấn nơi tôi sống là một nơi yên tĩnh và dễ sống.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">屋<span class="hanviet">(ỐC)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> オク</div>
+                        <div><strong>KUN:</strong> や</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Cửa hàng; mái nhà.</p>
+                        <p><strong>Dùng trong:</strong> 本屋 (hiệu sách), 屋根 (mái nhà), 部屋 (phòng).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>新<rt>あたら</rt></ruby>しいパン<ruby>屋<rt>や</rt></ruby>ができたので、<ruby>行<rt>い</rt></ruby>ってみませんか。</p>
+                        <p class="vietnamese-translation">Trước ga có một tiệm bánh mì mới mở, chúng ta đi thử không?</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">春<span class="hanviet">(XUÂN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シュン</div>
+                        <div><strong>KUN:</strong> はる</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Mùa xuân.</p>
+                        <p><strong>Dùng trong:</strong> 春休み (nghỉ xuân), 青春 (thanh xuân).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>春<rt>はる</rt></ruby>になると、<ruby>公園<rt>こうえん</rt></ruby>にはたくさんの<ruby>花<rt>はな</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>き、とてもきれいです。</p>
+                        <p class="vietnamese-translation">Khi mùa xuân đến, công viên có rất nhiều hoa nở, rất đẹp.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">秋<span class="hanviet">(THU)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> シュウ</div>
+                        <div><strong>KUN:</strong> あき</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Mùa thu.</p>
+                        <p><strong>Dùng trong:</strong> 秋学期 (học kỳ mùa thu), 紅葉 (lá đỏ mùa thu).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>秋<rt>あき</rt></ruby>は<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>がおいしい<ruby>季節<rt>きせつ</rt></ruby>なので、<ruby>食<rt>た</rt></ruby>べ<ruby>過<rt>す</rt></ruby>ぎないように<ruby>気<rt>き</rt></ruby>をつけなければなりません。</p>
+                        <p class="vietnamese-translation">Mùa thu là mùa đồ ăn ngon nên phải cẩn thận để không ăn quá nhiều.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">県<span class="hanviet">(HUYỆN)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ケン</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Tỉnh (đơn vị hành chính của Nhật).</p>
+                        <p><strong>Dùng trong:</strong> 県庁 (ủy ban tỉnh), 県立 (do tỉnh lập).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>私<rt>わたし</rt></ruby>の<ruby>出身県<rt>しゅっしんけん</rt></ruby>は、<ruby>海<rt>うみ</rt></ruby>も<ruby>山<rt>やま</rt></ruby>もあって<ruby>自然<rt>しぜん</rt></ruby>が<ruby>豊<rt>ゆた</rt></ruby>かです。</p>
+                        <p class="vietnamese-translation">Tỉnh quê tôi có cả biển và núi, thiên nhiên rất phong phú.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">京<span class="hanviet">(KINH)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> キョウ / ケイ</div>
+                        <div><strong>KUN:</strong> みやこ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Kinh đô.</p>
+                        <p><strong>Dùng trong:</strong> 東京 (Tokyo), 京都 (Kyoto), 上京する (lên Tokyo).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>京都<rt>きょうと</rt></ruby>には<ruby>古<rt>ふる</rt></ruby>いお<ruby>寺<rt>てら</rt></ruby>や<ruby>神社<rt>じんじゃ</rt></ruby>がたくさん<ruby>残<rt>のこ</rt></ruby>っています。</p>
+                        <p class="vietnamese-translation">Ở Kyoto vẫn còn lại rất nhiều đền chùa cổ.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">府<span class="hanviet">(PHỦ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> フ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Phủ (đơn vị hành chính đặc biệt của Nhật, ví dụ: Osaka, Kyoto).</p>
+                        <p><strong>Dùng trong:</strong> 大阪府 (Phủ Osaka), 政府 (chính phủ).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>大阪府<rt>おおさかふ</rt></ruby>は、たこ<ruby>焼<rt>や</rt></ruby>きやお<ruby>好<rt>この</rt></ruby>み<ruby>焼<rt>や</rt></ruby>きなど、おいしいものがたくさんあることで<ruby>有名<rt>ゆうめい</rt></ruby>です。</p>
+                        <p class="vietnamese-translation">Phủ Osaka nổi tiếng với nhiều món ăn ngon như Takoyaki và Okonomiyaki.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">夏<span class="hanviet">(HẠ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> カ / ゲ</div>
+                        <div><strong>KUN:</strong> なつ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Mùa hè.</p>
+                        <p><strong>Dùng trong:</strong> 夏休み (nghỉ hè), 真夏 (giữa hè).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>今年<rt>ことし</rt></ruby>の<ruby>夏<rt>なつ</rt></ruby>は<ruby>特<rt>とく</rt></ruby>に<ruby>暑<rt>あつ</rt></ruby>いので、<ruby>熱中症<rt>ねっちゅうしょう</rt></ruby>に<ruby>気<rt>き</rt></ruby>をつけましょう。</p>
+                        <p class="vietnamese-translation">Mùa hè năm nay đặc biệt nóng nên chúng ta hãy cẩn thận với say nắng.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="kanji-char-cell">都<span class="hanviet">(ĐÔ)</span></td>
+                    <td class="reading-cell">
+                        <div><strong>ON:</strong> ト / ツ</div>
+                        <div><strong>KUN:</strong> みやこ</div>
+                    </td>
+                    <td class="meaning-cell">
+                        <p>Thủ đô; thành phố lớn.</p>
+                        <p><strong>Dùng trong:</strong> 都市 (đô thị), 都会 (thành phố lớn), 首都 (thủ đô).</p>
+                    </td>
+                    <td class="example-cell">
+                        <p class="japanese-example"><ruby>東京<rt>とうきょう</rt></ruby>のような<ruby>大都市<rt>だいとし</rt></ruby>では、<ruby>生活<rt>せいかつ</rt></ruby>するのに<ruby>便利<rt>べんり</rt></ruby>ですが、<ruby>物価<rt>ぶっか</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。</p>
+                        <p class="vietnamese-translation">Ở các thành phố lớn như Tokyo thì cuộc sống tiện lợi nhưng giá cả đắt đỏ.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Liên kết tới file JS của bạn -->
+    <script src="script2.js"></script>
+
+</body>
+</html>
