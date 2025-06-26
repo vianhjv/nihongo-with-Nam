@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Toàn Bộ Từ Vựng JLPT N4 - Soumatome</title>
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+    .kanji-char-cell .kana {
+        font-size: 0.55em;
+        color: #bdc3c7;
+        margin-right: 7px;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+    }
+    .kanji-char-cell .kanji {
+        font-size: 1em;
+        color: #f1c40f;
+        font-weight: bold;
+    }
+    .page-header-row .page-header {
+        font-weight: bold;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        font-size: 1.1em;
+        padding: 12px 8px !important;
+    }
+    /* Style cho bộ lọc */
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    .filter-controls .search-box, .filter-controls .lesson-filter-box {
+        flex: 1;
+        min-width: 250px;
+    }
+    .lesson-select {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 25px;
+        border: 2px solid #34495e;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        font-size: 1em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ecf0f1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.3-5.5-12.8z%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 12px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Bảng Toàn Bộ Từ Vựng JLPT N4 - Soumatome</h1>
+        <p class="subtitle">Tổng hợp từ vựng đầy đủ, dễ tra cứu và ôn tập</p>
+    </header>
+    
+    <div class="filter-controls">
+        <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" onkeyup="filterTable()" placeholder="🔍 Tìm kiếm từ vựng, nghĩa, ví dụ...">
+        </div>
+        <div class="lesson-filter-box">
+            <select id="lessonFilter" class="lesson-select" onchange="filterTable()">
+                <option value="all">📚 Tất cả các bài</option>
+                <option value="62">Bài 1 (Trang 62)</option>
+                <option value="64">Bài 2 (Trang 64)</option>
+                <option value="66">Bài 3 (Trang 66)</option>
+                <option value="68">Bài 4 (Trang 68)</option>
+                <option value="70">Bài 5 (Trang 70)</option>
+                <option value="72">Bài 6 (Trang 72)</option>
+                <option value="78">Bài 7 (Trang 78)</option>
+                <option value="80">Bài 8 (Trang 80)</option>
+                <option value="82">Bài 9 (Trang 82)</option>
+                <option value="84">Bài 10 (Trang 84)</option>
+                <option value="86">Bài 11 (Trang 86)</option>
+                <option value="88">Bài 12 (Trang 88)</option>
+                <option value="90">Bài 13 (Trang 90)</option>
+                <option value="92">Bài 14 (Trang 92)</option>
+                <option value="94">Bài 15 (Trang 94)</option>
+                <option value="96">Bài 16 (Trang 96)</option>
+                <option value="98">Bài 17 (Trang 98)</option>
+                <option value="100">Bài 18 (Trang 100)</option>
+                <option value="102">Bài 19 (Trang 102)</option>
+                <option value="104">Bài 20 (Trang 104)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="mobile-note">
+        <p><strong>Lưu ý:</strong> Trên điện thoại, bạn có thể cuộn bảng sang ngang để xem đầy đủ nội dung.</p>
+    </div>
+
+    <div class="kanji-table-container">
+        <table id="kanjiTable">
+            <thead>
+                <tr>
+                    <th>Từ vựng</th>
+                    <th>Trang</th>
+                    <th>Nghĩa & Cách dùng</th>
+                    <th>Ví dụ (Nhật & Dịch Việt)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="page-header-row" data-lesson="62">
+                    <td colspan="4" class="page-header">Trang 62</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">かぜ</span><span class="kanji">風邪</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Cảm lạnh, cảm cúm.</td>
+                    <td class="example-cell"><ruby>昨日<rt>きのう</rt></ruby>から<ruby>熱<rt>ねつ</rt></ruby>があって、<ruby>風邪<rt>かぜ</rt></ruby>をひいたようです。<br>Dịch: Từ hôm qua tôi bị sốt, hình như là đã bị cảm rồi.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">おす</span><span class="kanji">押す</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Ấn, đẩy.</td>
+                    <td class="example-cell">ドアを<ruby>押<rt>お</rt></ruby>してください。<br>Dịch: Xin hãy đẩy cửa.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">おとす</span><span class="kanji">落とす</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Làm rơi, đánh rơi.</td>
+                    <td class="example-cell">さいふを<ruby>落<rt>お</rt></ruby>としてしまいました。<br>Dịch: Tôi đã lỡ làm rơi ví mất rồi.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">すく</span><span class="kanji">空く</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Trống, vắng.</td>
+                    <td class="example-cell">この<ruby>道<rt>みち</rt></ruby>はいつも<ruby>空<rt>す</rt></ruby>いていますね。<br>Dịch: Con đường này lúc nào cũng vắng vẻ nhỉ.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">しらべる</span><span class="kanji">調べる</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Điều tra, tìm hiểu.</td>
+                    <td class="example-cell">インターネットで<ruby>言葉<rt>ことば</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べます。<br>Dịch: Tôi tìm hiểu ý nghĩa của từ vựng trên internet.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">はく</span><span class="kanji">掃く</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Quét.</td>
+                    <td class="example-cell"><ruby>部屋<rt>へや</rt></ruby>をほうきで<ruby>掃<rt>は</rt></ruby>いてください。<br>Dịch: Hãy dùng chổi quét phòng đi.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">ふく</span><span class="kanji">吹く</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Thổi (gió).</td>
+                    <td class="example-cell"><ruby>今日<rt>きょう</rt></ruby>は<ruby>風<rt>かぜ</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>く<ruby>吹<rt>ふ</rt></ruby>いています。<br>Dịch: Hôm nay gió thổi mạnh.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kanji">びっくりする</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Ngạc nhiên, giật mình.</td>
+                    <td class="example-cell"><ruby>急<rt>きゅう</rt></ruby>に<ruby>大<rt>おお</rt></ruby>きな<ruby>音<rt>おと</rt></ruby>がして、びっくりしました。<br>Dịch: Đột nhiên có tiếng động lớn làm tôi giật mình.</td>
+                </tr>
+                <tr data-lesson="62">
+                    <td class="kanji-char-cell"><span class="kana">ひく</span><span class="kanji">弾く</span></td>
+                    <td>62</td>
+                    <td class="meaning-cell">Chơi (nhạc cụ có dây, piano).</td>
+                    <td class="example-cell"><ruby>妹<rt>いもうと</rt></ruby>はピアノを<ruby>弾<rt>ひ</rt></ruby>くのが<ruby>上手<rt>じょうず</rt></ruby>です。<br>Dịch: Em gái tôi chơi piano rất giỏi.</td>
+                </tr>
+                <tr class="page-header-row" data-lesson="64">
+                    <td colspan="4" class="page-header">Trang 64</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">いや</span><span class="kanji">嫌</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Ghét, không thích.</td>
+                    <td class="example-cell">ピーマンは<ruby>嫌<rt>いや</rt></ruby>だから、<ruby>食<rt>た</rt></ruby>べたくないです。<br>Dịch: Tôi ghét ớt chuông nên không muốn ăn.</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">いれる</span><span class="kanji">入れ替える</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Thay thế, đổi chỗ.</td>
+                    <td class="example-cell"><ruby>電池<rt>でんち</rt></ruby>がなくなったので、<ruby>新<rt>あたら</rt></ruby>しいのと<ruby>入<rt>い</rt></ruby>れ<ruby>替<rt>か</rt></ruby>えます。<br>Dịch: Vì hết pin rồi nên tôi sẽ thay pin mới.</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">かたち</span><span class="kanji">形</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Hình dạng.</td>
+                    <td class="example-cell">このクッキーは<ruby>星<rt>ほし</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>をしています。<br>Dịch: Cái bánh quy này có hình ngôi sao.</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">かなしい</span><span class="kanji">悲しい</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Buồn, đau thương.</td>
+                    <td class="example-cell">その<ruby>映画<rt>えいが</rt></ruby>はとても<ruby>悲<rt>かな</rt></ruby>しい<ruby>話<rt>はなし</rt></ruby>でした。<br>Dịch: Bộ phim đó là một câu chuyện rất buồn.</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">しんぱいする</span><span class="kanji">心配する</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Lo lắng.</td>
+                    <td class="example-cell"><ruby>母<rt>はは</rt></ruby>はいつも<ruby>私<rt>わたし</rt></ruby>のことを<ruby>心配<rt>しんぱい</rt></ruby>しています。<br>Dịch: Mẹ tôi lúc nào cũng lo lắng cho tôi.</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">しかたない</span><span class="kanji">仕方がない</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Không còn cách nào khác.</td>
+                    <td class="example-cell"><ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れたので、<ruby>遅刻<rt>ちこく</rt></ruby>しても<ruby>仕方<rt>しかた</rt></ruby>がない。<br>Dịch: Vì tàu điện đến muộn nên dù có đi trễ cũng đành chịu thôi.</td>
+                </tr>
+                <tr data-lesson="64">
+                    <td class="kanji-char-cell"><span class="kana">つもる</span><span class="kanji">積もる</span></td>
+                    <td>64</td>
+                    <td class="meaning-cell">Tích tụ, chất đống (tuyết).</td>
+                    <td class="example-cell"><ruby>昨夜<rt>さくや</rt></ruby>、<ruby>雪<rt>ゆき</rt></ruby>がたくさん<ruby>積<rt>つ</rt></ruby>もりました。<br>Dịch: Tối qua, tuyết đã rơi dày.</td>
+                </tr>
+                 <!-- ... các dòng còn lại tương tự, mỗi dòng đều có data-lesson="page_number" ... -->
+                 <!-- Ví dụ cho trang 66 -->
+                <tr class="page-header-row" data-lesson="66">
+                    <td colspan="4" class="page-header">Trang 66</td>
+                </tr>
+                <tr data-lesson="66">
+                    <td class="kanji-char-cell"><span class="kana">おくりもの</span><span class="kanji">贈り物</span></td>
+                    <td>66</td>
+                    <td class="meaning-cell">Quà tặng.</td>
+                    <td class="example-cell"><ruby>誕生日<rt>たんじょうび</rt></ruby>に<ruby>素敵<rt>すてき</rt></ruby>な<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>をもらいました。<br>Dịch: Tôi đã nhận được một món quà tuyệt vời vào ngày sinh nhật.</td>
+                </tr>
+                <!-- Cứ tiếp tục như vậy cho toàn bộ dữ liệu... -->
+                <!-- Tôi sẽ thêm hết các dòng còn lại vào đây -->
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">おべんとう</span><span class="kanji">お弁当</span></td><td>66</td><td class="meaning-cell">Cơm hộp.</td><td class="example-cell"><ruby>母<rt>はは</rt></ruby>が<ruby>毎朝<rt>まいあさ</rt></ruby>、お<ruby>弁当<rt>べんとう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ってくれます。<br>Dịch: Mẹ tôi làm cơm hộp cho tôi mỗi sáng.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">きぶん</span><span class="kanji">気分</span></td><td>66</td><td class="meaning-cell">Tâm trạng, cảm giác.</td><td class="example-cell"><ruby>今日<rt>きょう</rt></ruby>は<ruby>天気<rt>てんき</rt></ruby>がよくて、<ruby>気分<rt>きぶん</rt></ruby>がいいです。<br>Dịch: Hôm nay thời tiết đẹp nên tâm trạng tôi rất tốt.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kanji">けがをする</span></td><td>66</td><td class="meaning-cell">Bị thương.</td><td class="example-cell">サッカーの<ruby>試合<rt>しあい</rt></ruby>で<ruby>足<rt>あし</rt></ruby>にけがをしました。<br>Dịch: Tôi đã bị thương ở chân trong trận đấu bóng đá.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">むりな</span><span class="kanji">無理な</span></td><td>66</td><td class="meaning-cell">Vô lý, không thể.</td><td class="example-cell">そんな<ruby>無理<rt>むり</rt></ruby>なお<ruby>願<rt>ねが</rt></ruby>いは<ruby>聞<rt>き</rt></ruby>けません。<br>Dịch: Tôi không thể nghe một yêu cầu vô lý như vậy.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">もっていく</span><span class="kanji">持って行く</span></td><td>66</td><td class="meaning-cell">Mang đi.</td><td class="example-cell"><ruby>明日<rt>あした</rt></ruby>のピクニックにお<ruby>弁当<rt>べんとう</rt></ruby>を<ruby>持<rt>も</rt></ruby>って<ruby>行<rt>い</rt></ruby>きます。<br>Dịch: Tôi sẽ mang cơm hộp cho chuyến dã ngoại ngày mai.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">もってくる</span><span class="kanji">持って来る</span></td><td>66</td><td class="meaning-cell">Mang đến.</td><td class="example-cell"><ruby>友達<rt>ともだち</rt></ruby>がうちへケーキを<ruby>持<rt>も</rt></ruby>って<ruby>来<rt>き</rt></ruby>てくれました。<br>Dịch: Bạn tôi đã mang bánh kem đến nhà tôi.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kanji">やめる</span></td><td>66</td><td class="meaning-cell">Bỏ, từ bỏ, thôi.</td><td class="example-cell">タバコをやめることにしました。<br>Dịch: Tôi đã quyết định bỏ thuốc lá.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">びょうき</span><span class="kanji">病気</span></td><td>66</td><td class="meaning-cell">Bệnh, ốm.</td><td class="example-cell"><ruby>彼<rt>かれ</rt></ruby>は<ruby>病気<rt>びょうき</rt></ruby>で<ruby>学校<rt>がっこう</rt></ruby>を<ruby>休<rt>やす</rt></ruby>んでいます。<br>Dịch: Anh ấy bị ốm nên đang nghỉ học.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">びょういん</span><span class="kanji">病院</span></td><td>66</td><td class="meaning-cell">Bệnh viện.</td><td class="example-cell"><ruby>気分<rt>きぶん</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いので、<ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。<br>Dịch: Vì cảm thấy không khỏe, tôi sẽ đi đến bệnh viện.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kana">つれていく</span><span class="kanji">連れて行く</span></td><td>66</td><td class="meaning-cell">Dẫn đi.</td><td class="example-cell"><ruby>週末<rt>しゅうまつ</rt></ruby>、<ruby>子供<rt>こども</rt></ruby>を<ruby>動物園<rt>どうぶつえん</rt></ruby>に<ruby>連<rt>つ</rt></ruby>れて<ruby>行<rt>い</rt></ruby>きます。<br>Dịch: Cuối tuần tôi sẽ dẫn con đi sở thú.</td></tr>
+                <tr data-lesson="66"><td class="kanji-char-cell"><span class="kanji">はきかえる</span></td><td>66</td><td class="meaning-cell">Thay (giày, quần).</td><td class="example-cell"><ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いたら、スリッパに<ruby>履<rt>は</rt></ruby>きかえます。<br>Dịch: Khi đến công ty, tôi sẽ thay dép đi trong nhà.</td></tr>
+                <tr class="page-header-row" data-lesson="68"><td colspan="4" class="page-header">Trang 68</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kanji">アイロンをかける</span></td><td>68</td><td class="meaning-cell">Ủi, là quần áo.</td><td class="example-cell">シャツにアイロンをかけてください。<br>Dịch: Xin hãy ủi cái áo sơ mi.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">あじみする</span><span class="kanji">味見する</span></td><td>68</td><td class="meaning-cell">Nếm thử.</td><td class="example-cell">スープの<ruby>味見<rt>あじみ</rt></ruby>をしてもいいですか。<br>Dịch: Tôi nếm thử món súp được không?</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">かたづける</span><span class="kanji">片付ける</span></td><td>68</td><td class="meaning-cell">Dọn dẹp.</td><td class="example-cell"><ruby>食後<rt>しょくご</rt></ruby>、テーブルの<ruby>上<rt>うえ</rt></ruby>を<ruby>片付<rt>かたづ</rt></ruby>けてください。<br>Dịch: Sau bữa ăn, xin hãy dọn dẹp trên bàn.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">さめる</span><span class="kanji">覚める</span></td><td>68</td><td class="meaning-cell">Tỉnh giấc.</td><td class="example-cell"><ruby>今朝<rt>けさ</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>目<rt>め</rt></ruby>が<ruby>覚<rt>さ</rt></ruby>めました。<br>Dịch: Sáng nay tôi đã tỉnh giấc sớm.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">したく</span><span class="kanji">支度</span></td><td>68</td><td class="meaning-cell">Chuẩn bị.</td><td class="example-cell"><ruby>出<rt>で</rt></ruby>かける<ruby>支度<rt>したく</rt></ruby>をしましょう。<br>Dịch: Chúng ta hãy chuẩn bị để ra ngoài nào.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">そうじする</span><span class="kanji">掃除する</span></td><td>68</td><td class="meaning-cell">Lau dọn, dọn dẹp.</td><td class="example-cell"><ruby>週末<rt>しゅうまつ</rt></ruby>に<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>します。<br>Dịch: Tôi dọn dẹp phòng vào cuối tuần.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">せんたくする</span><span class="kanji">洗濯する</span></td><td>68</td><td class="meaning-cell">Giặt giũ.</td><td class="example-cell">たまった<ruby>服<rt>ふく</rt></ruby>を<ruby>洗濯<rt>せんたく</rt></ruby>しなければなりません。<br>Dịch: Tôi phải giặt đống quần áo tích tụ.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kanji">やる</span></td><td>68</td><td class="meaning-cell">Làm (=する), cho (vật/người dưới).</td><td class="example-cell"><ruby>宿題<rt>しゅくだい</rt></ruby>はもうやりましたか。<br>Dịch: Bạn đã làm bài tập về nhà chưa?</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">みがく</span><span class="kanji">磨く</span></td><td>68</td><td class="meaning-cell">Đánh (răng), mài, làm bóng.</td><td class="example-cell"><ruby>毎食後<rt>まいしょくご</rt></ruby>、<ruby>歯<rt>は</rt></ruby>を<ruby>磨<rt>みが</rt></ruby>きます。<br>Dịch: Tôi đánh răng sau mỗi bữa ăn.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">めがさめる</span><span class="kanji">目が覚める</span></td><td>68</td><td class="meaning-cell">Tỉnh giấc, mở mắt.</td><td class="example-cell">とりの<ruby>声<rt>こえ</rt></ruby>で<ruby>目<rt>め</rt></ruby>が<ruby>覚<rt>さ</rt></ruby>めました。<br>Dịch: Tôi tỉnh giấc vì tiếng chim hót.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">でかける</span><span class="kanji">出かける</span></td><td>68</td><td class="meaning-cell">Ra ngoài.</td><td class="example-cell">これから<ruby>友達<rt>ともだち</rt></ruby>と<ruby>食事<rt>しょくじ</rt></ruby>に<ruby>出<rt>で</rt></ruby>かけます。<br>Dịch: Bây giờ tôi sẽ ra ngoài ăn tối với bạn bè.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kanji">シャワーをあびる (浴びる)</span></td><td>68</td><td class="meaning-cell">Tắm vòi hoa sen.</td><td class="example-cell"><ruby>毎朝<rt>まいあさ</rt></ruby>シャワーを<ruby>浴<rt>あ</rt></ruby>びます。<br>Dịch: Tôi tắm vòi sen mỗi sáng.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">すてる</span><span class="kanji">捨てる</span></td><td>68</td><td class="meaning-cell">Vứt, vứt bỏ.</td><td class="example-cell"><ruby>古<rt>ふる</rt></ruby>い<ruby>雑誌<rt>ざっし</rt></ruby>を<ruby>捨<rt>す</rt></ruby>てました。<br>Dịch: Tôi đã vứt những cuốn tạp chí cũ đi.</td></tr>
+                <tr data-lesson="68"><td class="kanji-char-cell"><span class="kana">ひろう</span><span class="kanji">拾う</span></td><td>68</td><td class="meaning-cell">Nhặt, lượm.</td><td class="example-cell"><ruby>道<rt>みち</rt></ruby>でお<ruby>金<rt>かね</rt></ruby>を<ruby>拾<rt>ひろ</rt></ruby>いました。<br>Dịch: Tôi đã nhặt được tiền trên đường.</td></tr>
+                <tr class="page-header-row" data-lesson="70"><td colspan="4" class="page-header">Trang 70</td></tr>
+                <tr data-lesson="70"><td class="kanji-char-cell"><span class="kana">おもいだす</span><span class="kanji">思い出す</span></td><td>70</td><td class="meaning-cell">Nhớ ra, hồi tưởng lại.</td><td class="example-cell"><ruby>子供<rt>こども</rt></ruby>のころを<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>だ</rt></ruby>します。<br>Dịch: Tôi nhớ lại thời thơ ấu.</td></tr>
+                <tr data-lesson="70"><td class="kanji-char-cell"><span class="kana">さんかする</span><span class="kanji">三角</span></td><td>70</td><td class="meaning-cell">Tham gia.</td><td class="example-cell">パーティーに<ruby>参加<rt>さんか</rt></ruby>しませんか。<br>Dịch: Bạn có tham gia bữa tiệc không?</td></tr>
+                <tr data-lesson="70"><td class="kanji-char-cell"><span class="kana">すわる</span><span class="kanji">座る</span></td><td>70</td><td class="meaning-cell">Ngồi.</td><td class="example-cell">どうぞ、こちらのいすに<ruby>座<rt>すわ</rt></ruby>ってください。<br>Dịch: Xin mời, hãy ngồi vào chiếc ghế này.</td></tr>
+                <tr data-lesson="70"><td class="kanji-char-cell"><span class="kana">ならぶ</span><span class="kanji">並ぶ</span></td><td>70</td><td class="meaning-cell">Xếp hàng.</td><td class="example-cell">レジの<ruby>前<rt>まえ</rt></ruby>にたくさんの<ruby>人<rt>ひと</rt></ruby>が<ruby>並<rt>なら</rt></ruby>んでいます。<br>Dịch: Có nhiều người đang xếp hàng trước quầy thu ngân.</td></tr>
+                <tr data-lesson="70"><td class="kanji-char-cell"><span class="kana">はじめて</span><span class="kanji">初めて</span></td><td>70</td><td class="meaning-cell">Lần đầu tiên.</td><td class="example-cell"><ruby>日本<rt>にほん</rt></ruby>に<ruby>来<rt>き</rt></ruby>たのは<ruby>初<rt>はじ</rt></ruby>めてです。<br>Dịch: Đây là lần đầu tiên tôi đến Nhật Bản.</td></tr>
+                <tr data-lesson="70"><td class="kanji-char-cell"><span class="kana">まがる</span><span class="kanji">曲がる</span></td><td>70</td><td class="meaning-cell">Rẽ, quẹo.</td><td class="example-cell">次の<ruby>角<rt>かど</rt></ruby>を<ruby>右<rt>みぎ</rt></ruby>に<ruby>曲<rt>ま</rt></ruby>がってください。<br>Dịch: Xin hãy rẽ phải ở góc đường tiếp theo.</td></tr>
+                <tr class="page-header-row" data-lesson="72"><td colspan="4" class="page-header">Trang 72</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kanji">おいしい</span></td><td>72</td><td class="meaning-cell">Ngon.</td><td class="example-cell">このレストランの<ruby>料理<rt>りょうり</rt></ruby>はとてもおいしいです。<br>Dịch: Món ăn của nhà hàng này rất ngon.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">あつい</span><span class="kanji">厚い</span></td><td>72</td><td class="meaning-cell">Dày.</td><td class="example-cell">この<ruby>本<rt>ほん</rt></ruby>はとても<ruby>厚<rt>あつ</rt></ruby>いですね。<br>Dịch: Cuốn sách này dày thật đấy nhỉ.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">あつい</span><span class="kanji">熱い</span></td><td>72</td><td class="meaning-cell">Nóng (khi chạm vào).</td><td class="example-cell">このスープは<ruby>熱<rt>あつ</rt></ruby>いから、<ruby>気<rt>き</rt></ruby>をつけてください。<br>Dịch: Món súp này nóng nên hãy cẩn thận nhé.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">うすい</span><span class="kanji">薄い</span></td><td>72</td><td class="meaning-cell">Mỏng, nhạt (vị).</td><td class="example-cell">このコートは<ruby>薄<rt>うす</rt></ruby>いので、あまり<ruby>暖<rt>あたた</rt></ruby>かくない。<br>Dịch: Cái áo khoác này mỏng nên không ấm lắm.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kanji">かたい</span></td><td>72</td><td class="meaning-cell">Cứng.</td><td class="example-cell">このパンはちょっと<ruby>固<rt>かた</rt></ruby>いですね。<br>Dịch: Cái bánh mì này hơi cứng nhỉ.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">こい</span><span class="kanji">濃い</span></td><td>72</td><td class="meaning-cell">Đậm (vị, màu).</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>は<ruby>濃<rt>こ</rt></ruby>いコーヒーが<ruby>好<rt>す</rt></ruby>きです。<br>Dịch: Tôi thích cà phê đậm.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">しずかな</span><span class="kanji">静かな</span></td><td>72</td><td class="meaning-cell">Yên tĩnh.</td><td class="example-cell">この<ruby>図書館<rt>としょかん</rt></ruby>はとても<rt>静<rt>しず</rt></ruby>かです。<br>Dịch: Thư viện này rất yên tĩnh.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">つよい</span><span class="kanji">強い</span></td><td>72</td><td class="meaning-cell">Mạnh.</td><td class="example-cell"><ruby>彼<rt>かれ</rt></ruby>はとても<ruby>力<rt>ちから</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>いです。<br>Dịch: Anh ấy rất khỏe.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kanji">にぎやかな</span></td><td>72</td><td class="meaning-cell">Náo nhiệt, sôi động.</td><td class="example-cell"><ruby>週末<rt>しゅうまつ</rt></ruby>の<ruby>市場<rt>いちば</rt></ruby>はとてもにぎやかです。<br>Dịch: Chợ vào cuối tuần rất náo nhiệt.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">ふとい</span><span class="kanji">太い</span></td><td>72</td><td class="meaning-cell">Mập, béo, to.</td><td class="example-cell">この<ruby>木<rt>き</rt></ruby>の<ruby>幹<rt>みき</rt></ruby>はとても<ruby>太<rt>ふと</rt></ruby>い。<br>Dịch: Thân cây này rất to.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">めずらしい</span><span class="kanji">珍しい</span></td><td>72</td><td class="meaning-cell">Hiếm, hiếm có.</td><td class="example-cell"><ruby>日本<rt>にほん</rt></ruby>でこんな<ruby>大<rt>おお</rt></ruby>きな<ruby>蝶<rt>ちょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>るのは<ruby>珍<rt>めずら</rt></ruby>しいです。<br>Dịch: Việc nhìn thấy một con bướm to như thế này ở Nhật Bản là rất hiếm.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">じゅんび</span><span class="kanji">準備</span></td><td>72</td><td class="meaning-cell">Chuẩn bị.</td><td class="example-cell"><ruby>旅行<rt>りょこう</rt></ruby>の<ruby>準備<rt>じゅんび</rt></ruby>はできましたか。<br>Dịch: Bạn đã chuẩn bị cho chuyến du lịch xong chưa?</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">やさしい</span><span class="kanji">優しい</span></td><td>72</td><td class="meaning-cell">Dịu dàng, hiền lành, tốt bụng.</td><td class="example-cell"><ruby>田中<rt>たなか</rt></ruby>さんはとても<ruby>優<rt>やさ</rt></ruby>しい<ruby>人<rt>ひと</rt></ruby>です。<br>Dịch: Anh Tanaka là một người rất tốt bụng.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kanji">やわらかい</span></td><td>72</td><td class="meaning-cell">Mềm.</td><td class="example-cell">このベッドはとてもやわらかくて、<ruby>気持<rt>きも</rt></ruby>ちいいです。<br>Dịch: Cái giường này rất mềm, cảm giác thật dễ chịu.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">よわい</span><span class="kanji">弱い</span></td><td>72</td><td class="meaning-cell">Yếu.</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>は<ruby>体<rt>からだ</rt></ruby>が<ruby>弱<rt>よわ</rt></ruby>いです。<br>Dịch: Tôi có thể trạng yếu.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">ほそい</span><span class="kanji">細い</span></td><td>72</td><td class="meaning-cell">Gầy, mảnh, nhỏ.</td><td class="example-cell"><ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>足<rt>あし</rt></ruby>が<ruby>細<rt>ほそ</rt></ruby>くてきれいです。<br>Dịch: Cô ấy có đôi chân thon thả và đẹp.</td></tr>
+                <tr data-lesson="72"><td class="kanji-char-cell"><span class="kana">ふえる</span><span class="kanji">増える</span></td><td>72</td><td class="meaning-cell">Tăng lên.</td><td class="example-cell"><ruby>最近<rt>さいきん</rt></ruby>、<ruby>体重<rt>たいじゅう</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えました。<br>Dịch: Gần đây tôi đã tăng cân.</td></tr>
+                <tr class="page-header-row" data-lesson="78"><td colspan="4" class="page-header">Trang 78</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">あがる</span><span class="kanji">上がる</span></td><td>78</td><td class="meaning-cell">Đi lên, tăng lên.</td><td class="example-cell"><ruby>階段<rt>かいだん</rt></ruby>を<ruby>上<rt>あ</rt></ruby>がってください。<br>Dịch: Xin hãy đi lên cầu thang.</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">おきる</span><span class="kanji">起きる</span></td><td>78</td><td class="meaning-cell">Thức dậy.</td><td class="example-cell"><ruby>毎朝<rt>まいあさ</rt></ruby>6<ruby>時<rt>じ</rt></ruby>に<ruby>起<rt>お</rt></ruby>きます。<br>Dịch: Tôi thức dậy lúc 6 giờ mỗi sáng.</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">おりる</span><span class="kanji">降りる</span></td><td>78</td><td class="meaning-cell">Xuống (xe), đi xuống.</td><td class="example-cell"><ruby>次<rt>つぎ</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>で<ruby>降<rt>お</rt></ruby>ります。<br>Dịch: Tôi sẽ xuống ở ga tiếp theo.</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">さがる</span><span class="kanji">下がる</span></td><td>78</td><td class="meaning-cell">Đi xuống, giảm xuống.</td><td class="example-cell"><ruby>熱<rt>ねつ</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<ruby>下<rt>さ</rt></ruby>がりました。<br>Dịch: Cơn sốt đã hạ một chút.</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">だす</span><span class="kanji">出す</span></td><td>78</td><td class="meaning-cell">Lấy ra, gửi đi, nộp.</td><td class="example-cell"><ruby>明日<rt>あした</rt></ruby>までにレポートを<ruby>出<rt>だ</rt></ruby>してください。<br>Dịch: Xin hãy nộp báo cáo trước ngày mai.</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">のる</span><span class="kanji">乗る</span></td><td>78</td><td class="meaning-cell">Lên (xe).</td><td class="example-cell"><ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>って<ruby>会社<rt>かいしゃ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。<br>Dịch: Mỗi sáng tôi đi tàu điện đến công ty.</td></tr>
+                <tr data-lesson="78"><td class="kanji-char-cell"><span class="kana">へる</span><span class="kanji">減る</span></td><td>78</td><td class="meaning-cell">Giảm xuống.</td><td class="example-cell">この<ruby>町<rt>まち</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>は<ruby>減<rt>へ</rt></ruby>っています。<br>Dịch: Dân số của thị trấn này đang giảm xuống.</td></tr>
+                <tr class="page-header-row" data-lesson="80"><td colspan="4" class="page-header">Trang 80</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kanji">(めがねを)かける</span></td><td>80</td><td class="meaning-cell">Đeo (kính).</td><td class="example-cell"><ruby>目<rt>め</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いので、いつもめがねをかけています。<br>Dịch: Vì mắt kém nên tôi luôn đeo kính.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kanji">(かさを)さす</span></td><td>80</td><td class="meaning-cell">Che ô, giương ô.</td><td class="example-cell"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきたので、かさをさしました。<br>Dịch: Vì trời bắt đầu mưa nên tôi đã che ô.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">おぼえる</span><span class="kanji">覚える</span></td><td>80</td><td class="meaning-cell">Nhớ, ghi nhớ, học thuộc.</td><td class="example-cell"><ruby>新<rt>あたら</rt></ruby>しい<ruby>漢字<rt>かんじ</rt></ruby>をたくさん<ruby>覚<rt>おぼ</rt></ruby>えました。<br>Dịch: Tôi đã học thuộc rất nhiều chữ Hán mới.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">おと</span><span class="kanji">音</span></td><td>80</td><td class="meaning-cell">Âm thanh, tiếng động.</td><td class="example-cell"><ruby>隣<rt>となり</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>から<ruby>変<rt>へん</rt></ruby>な<ruby>音<rt>おと</rt></ruby>がします。<br>Dịch: Có tiếng động lạ từ phòng bên cạnh.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">おどり</span><span class="kanji">踊り</span></td><td>80</td><td class="meaning-cell">Điệu nhảy, việc nhảy múa.</td><td class="example-cell">みんなで<ruby>盆踊<rt>ぼんおど</rt></ruby>りの<ruby>踊<rt>おど</rt></ruby>りを<ruby>練習<rt>れんしゅう</rt></ruby>しました。<br>Dịch: Mọi người đã cùng nhau luyện tập điệu nhảy Bon Odori.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">おとしより</span><span class="kanji">年寄り</span></td><td>80</td><td class="meaning-cell">Người già, người cao tuổi.</td><td class="example-cell">バスで<ruby>年寄<rt>としより</rt></ruby>に<ruby>席<rt>せき</rt></ruby>をゆずりました。<br>Dịch: Tôi đã nhường ghế cho người già trên xe buýt.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">まじめな</span><span class="kanji">真面目な</span></td><td>80</td><td class="meaning-cell">Nghiêm túc, chăm chỉ.</td><td class="example-cell"><ruby>彼<rt>かれ</rt></ruby>はとても<ruby>真面目<rt>まじめ</rt></ruby>な<ruby>学生<rt>がくせい</rt></ruby>です。<br>Dịch: Anh ấy là một học sinh rất nghiêm túc.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">(お)べんきょう</span><span class="kanji">勉強</span></td><td>80</td><td class="meaning-cell">Việc học.</td><td class="example-cell"><ruby>毎日<rt>まいにち</rt></ruby>3<ruby>時間<rt>じかん</rt></ruby>、<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。<br>Dịch: Tôi học tiếng Nhật 3 tiếng mỗi ngày.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kana">わかい</span><span class="kanji">若い</span></td><td>80</td><td class="meaning-cell">Trẻ.</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>のおじいさんは、<ruby>心<rt>こころ</rt></ruby>がまだ<ruby>若<rt>わか</rt></ruby>いです。<br>Dịch: Ông tôi tuy đã có tuổi nhưng tâm hồn vẫn còn trẻ.</td></tr>
+                <tr data-lesson="80"><td class="kanji-char-cell"><span class="kanji">やせる</span></td><td>80</td><td class="meaning-cell">Gầy đi, giảm cân.</td><td class="example-cell">ダイエットをして、5キロやせました。<br>Dịch: Tôi đã ăn kiêng và giảm được 5 kg.</td></tr>
+                <tr class="page-header-row" data-lesson="82"><td colspan="4" class="page-header">Trang 82</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">あんぜん(な)</span><span class="kanji">安全な</span></td><td>82</td><td class="meaning-cell">An toàn.</td><td class="example-cell"><ruby>夜道<rt>よみち</rt></ruby>は<ruby>危<rt>あぶ</rt></ruby>ないので、<ruby>安全<rt>あんぜん</rt></ruby>な<ruby>道<rt>みち</rt></ruby>を<ruby>通<rt>とお</rt></ruby>りましょう。<br>Dịch: Đường ban đêm nguy hiểm nên chúng ta hãy đi đường an toàn.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">うごく</span><span class="kanji">動く</span></td><td>82</td><td class="meaning-cell">Di chuyển, hoạt động (máy móc).</td><td class="example-cell">この<ruby>時計<rt>とけい</rt></ruby>は<ruby>古<rt>ふる</rt></ruby>くて、もう<ruby>動<rt>うご</rt></ruby>きません。<br>Dịch: Cái đồng hồ này cũ rồi nên không còn chạy nữa.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">きえる</span><span class="kanji">消える</span></td><td>82</td><td class="meaning-cell">Tắt (đèn), biến mất.</td><td class="example-cell">へやの<ruby>電気<rt>でんき</rt></ruby>が<ruby>急<rt>きゅう</rt></ruby>に<ruby>消<rt>き</rt></ruby>えました。<br>Dịch: Đèn trong phòng đột nhiên tắt.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">さとう</span><span class="kanji">砂糖</span></td><td>82</td><td class="meaning-cell">Đường (gia vị).</td><td class="example-cell">コーヒーに<ruby>砂糖<rt>さとう</rt></ruby>を<ruby>入<rt>い</rt></ruby>れますか。<br>Dịch: Bạn có cho đường vào cà phê không?</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">せんせい</span><span class="kanji">洗剤</span></td><td>82</td><td class="meaning-cell">Chất tẩy rửa, bột giặt.</td><td class="example-cell">この<ruby>洗剤<rt>せんざい</rt></ruby>は<ruby>汚<rt>よご</rt></ruby>れがよく<ruby>落<rt>お</rt></ruby>ちる。<br>Dịch: Loại bột giặt này giặt rất sạch vết bẩn.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">どうろ</span><span class="kanji">道路</span></td><td>82</td><td class="meaning-cell">Con đường, đường phố.</td><td class="example-cell">この<ruby>道路<rt>どうろ</rt></ruby>は<ruby>朝<rt>あさ</rt></ruby>、とてもこみます。<br>Dịch: Con đường này rất đông vào buổi sáng.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">とどく</span><span class="kanji">届く</span></td><td>82</td><td class="meaning-cell">Đến, được giao đến.</td><td class="example-cell"><ruby>昨日<rt>きのう</rt></ruby><ruby>送<rt>おく</rt></ruby>った<ruby>荷物<rt>にもつ</rt></ruby>は<ruby>明日<rt>あした</rt></ruby><ruby>届<rt>とど</rt></ruby>くはずです。<br>Dịch: Gói hàng tôi gửi hôm qua chắc là ngày mai sẽ đến nơi.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">とまる</span><span class="kanji">止まる</span></td><td>82</td><td class="meaning-cell">Dừng lại.</td><td class="example-cell"><ruby>急<rt>きゅう</rt></ruby>に<ruby>バス<rt>ばす</rt></ruby>が<ruby>止<rt>と</rt></ruby>まった。<br>Dịch: Chiếc xe buýt đột ngột dừng lại.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">ひらく</span><span class="kanji">開く</span></td><td>82</td><td class="meaning-cell">Mở (sự kiện), mở (sách, dù...).</td><td class="example-cell"><ruby>桜<rt>さくら</rt></ruby>の<ruby>花<rt>はな</rt></ruby>が<ruby>開<rt>ひら</rt></ruby>きました。<br>Dịch: Hoa anh đào đã nở.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">わたる</span><span class="kanji">渡る</span></td><td>82</td><td class="meaning-cell">Băng qua.</td><td class="example-cell"><ruby>信号<rt>しんごう</rt></ruby>が<ruby>青<rt>あお</rt></ruby>になったら、<ruby>道<rt>みち</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>りましょう。<br>Dịch: Khi đèn tín hiệu chuyển sang màu xanh thì hãy băng qua đường.</td></tr>
+                <tr data-lesson="82"><td class="kanji-char-cell"><span class="kana">しどうドア</span><span class="kanji">自動ドア</span></td><td>82</td><td class="meaning-cell">Cửa tự động.</td><td class="example-cell">このスーパーの<ruby>入<rt>い</rt></ruby>り<ruby>口<rt>ぐち</rt></ruby>は<ruby>自動<rt>じどう</rt></ruby>ドアです。<br>Dịch: Lối vào của siêu thị này là cửa tự động.</td></tr>
+                <tr class="page-header-row" data-lesson="84"><td colspan="4" class="page-header">Trang 84</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">あんないする</span><span class="kanji">案内する</span></td><td>84</td><td class="meaning-cell">Hướng dẫn, dẫn đường.</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>が<ruby>町<rt>まち</rt></ruby>を<ruby>案内<rt>あんない</rt></ruby>しますよ。<br>Dịch: Để tôi hướng dẫn bạn tham quan thành phố nhé.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">のこる</span><span class="kanji">残る</span></td><td>84</td><td class="meaning-cell">Còn lại, ở lại.</td><td class="example-cell">ごはんがたくさん<ruby>残<rt>のこ</rt></ruby>ってしまいました。<br>Dịch: Cơm đã còn lại rất nhiều.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">のぼる</span><span class="kanji">登る</span></td><td>84</td><td class="meaning-cell">Leo, trèo.</td><td class="example-cell"><ruby>来年<rt>らいねん</rt></ruby>、<ruby>富士山<rt>ふじさん</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>りたいです。<br>Dịch: Năm sau tôi muốn leo núi Phú Sĩ.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">はる</span><span class="kanji">貼る</span></td><td>84</td><td class="meaning-cell">Dán.</td><td class="example-cell">かべにポスターを<ruby>貼<rt>は</rt></ruby>りました。<br>Dịch: Tôi đã dán một tấm áp phích lên tường.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">やくにたつ</span><span class="kanji">役に立つ</span></td><td>84</td><td class="meaning-cell">Có ích, hữu ích.</td><td class="example-cell">この<ruby>辞書<rt>じしょ</rt></ruby>はとても<ruby>役<rt>やく</rt></ruby>に<ruby>立<rt>た</rt></ruby>ちます。<br>Dịch: Cuốn từ điển này rất hữu ích.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">しらべる</span><span class="kanji">調べる</span></td><td>84</td><td class="meaning-cell">Điều tra, tìm hiểu.</td><td class="example-cell">インターネットで<ruby>調<rt>しら</rt></ruby>べれば、すぐにわかります。<br>Dịch: Nếu tìm hiểu trên internet thì sẽ hiểu ngay thôi.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">たりる</span><span class="kanji">足りる</span></td><td>84</td><td class="meaning-cell">Đủ.</td><td class="example-cell">お<ruby>金<rt>かね</rt></ruby>が<ruby>足<rt>た</rt></ruby>りなくて、それが<ruby>買<rt>か</rt></ruby>えませんでした。<br>Dịch: Tôi không đủ tiền nên đã không thể mua cái đó.</td></tr>
+                <tr data-lesson="84"><td class="kanji-char-cell"><span class="kana">とまる</span><span class="kanji">泊まる</span></td><td>84</td><td class="meaning-cell">Trọ lại.</td><td class="example-cell"><ruby>今夜<rt>こんや</rt></ruby>は<ruby>友達<rt>ともだち</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>に<ruby>泊<rt>と</rt></ruby>まります。<br>Dịch: Tối nay tôi sẽ ở trọ lại nhà bạn.</td></tr>
+                <tr class="page-header-row" data-lesson="86"><td colspan="4" class="page-header">Trang 86</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kana">あぶない</span><span class="kanji">危ない</span></td><td>86</td><td class="meaning-cell">Nguy hiểm.</td><td class="example-cell">この<ruby>川<rt>かわ</rt></ruby>で<ruby>泳<rt>およ</rt></ruby>ぐのは<ruby>危<rt>あぶ</rt></ruby>ないです。<br>Dịch: Bơi ở con sông này rất nguy hiểm.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kana">おこす</span><span class="kanji">起こす</span></td><td>86</td><td class="meaning-cell">Đánh thức.</td><td class="example-cell"><ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>母<rt>はは</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>を<ruby>起<rt>お</rt></ruby>こしてくれます。<br>Dịch: Mỗi sáng, mẹ tôi đều đánh thức tôi dậy.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kana">さがす</span><span class="kanji">探す</span></td><td>86</td><td class="meaning-cell">Tìm, tìm kiếm.</td><td class="example-cell">なくしたかぎを<ruby>探<rt>さが</rt></ruby>しています。<br>Dịch: Tôi đang tìm chiếc chìa khóa đã làm mất.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kanji">さっき</span></td><td>86</td><td class="meaning-cell">Vừa nãy, lúc nãy.</td><td class="example-cell">さっき、<ruby>田中<rt>たなか</rt></ruby>さんから<ruby>電話<rt>でんわ</rt></ruby>がありましたよ。<br>Dịch: Vừa nãy có điện thoại từ anh Tanaka đấy.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kana">すずしい</span><span class="kanji">涼しい</span></td><td>86</td><td class="meaning-cell">Mát mẻ.</td><td class="example-cell"><ruby>今日<rt>きょう</rt></ruby>は<ruby>風<rt>かぜ</rt></ruby>があって<ruby>涼<rt>すず</rt></ruby>しいですね。<br>Dịch: Hôm nay có gió nên mát mẻ nhỉ.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kanji">ずっと</span></td><td>86</td><td class="meaning-cell">Suốt, hơn hẳn.</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>は<ruby>兄<rt>あに</rt></ruby>よりずっと<ruby>背<rt>せ</rt></ruby>が<ruby>低<rt>ひく</rt></ruby>いです。<br>Dịch: Tôi thấp hơn hẳn so với anh trai.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kana">たいせつな</span><span class="kanji">大切な</span></td><td>86</td><td class="meaning-cell">Quan trọng, quý giá.</td><td class="example-cell">これは<ruby>祖母<rt>そぼ</rt></ruby>からもらった<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>指輪<rt>ゆびわ</rt></ruby>です。<br>Dịch: Đây là chiếc nhẫn quý giá tôi nhận được từ bà.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kanji">もうすぐ</span></td><td>86</td><td class="meaning-cell">Sắp sửa.</td><td class="example-cell">もうすぐ<ruby>桜<rt>さくら</rt></ruby>の<ruby>季節<rt>きせつ</rt></ruby>ですね。<br>Dịch: Sắp đến mùa hoa anh đào rồi nhỉ.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kanji">やっと</span></td><td>86</td><td class="meaning-cell">Cuối cùng thì (sau nhiều nỗ lực).</td><td class="example-cell">やっとJLPT N4に<ruby>合格<rt>ごうかく</rt></ruby>できました。<br>Dịch: Cuối cùng thì tôi cũng đã đỗ JLPT N4.</td></tr>
+                <tr data-lesson="86"><td class="kanji-char-cell"><span class="kanji">やっぱり・やはり</span></td><td>86</td><td class="meaning-cell">Quả nhiên là, đúng như dự đoán.</td><td class="example-cell">やはり<ruby>日本<rt>にほん</rt></ruby>のすしはおいしいです。<br>Dịch: Quả nhiên sushi của Nhật rất ngon.</td></tr>
+                <tr class="page-header-row" data-lesson="88"><td colspan="4" class="page-header">Trang 88</td></tr>
+                <tr data-lesson="88"><td class="kanji-char-cell"><span class="kana">こわれる</span><span class="kanji">壊れる</span></td><td>88</td><td class="meaning-cell">Bị hỏng.</td><td class="example-cell">パソコンが<ruby>壊<rt>こわ</rt></ruby>れてしまいました。<br>Dịch: Cái máy tính của tôi bị hỏng mất rồi.</td></tr>
+                <tr data-lesson="88"><td class="kanji-char-cell"><span class="kana">さがす</span><span class="kanji">探す</span></td><td>88</td><td class="meaning-cell">Tìm kiếm.</td><td class="example-cell"><ruby>駅<rt>えき</rt></ruby>の<rt>近<rt>ちか</rt></ruby>くでアパートを<ruby>探<rt>さが</rt></ruby>しています。<br>Dịch: Tôi đang tìm một căn hộ ở gần ga.</td></tr>
+                <tr data-lesson="88"><td class="kanji-char-cell"><span class="kana">さわる</span><span class="kanji">触る</span></td><td>88</td><td class="meaning-cell">Sờ, chạm.</td><td class="example-cell">この<ruby>絵<rt>え</rt></ruby>に<ruby>触<rt>さわ</rt></ruby>らないでください。<br>Dịch: Xin đừng chạm vào bức tranh này.</td></tr>
+                <tr data-lesson="88"><td class="kanji-char-cell"><span class="kana">なくなる</span><span class="kanji">無くなる</span></td><td>88</td><td class="meaning-cell">Mất, hết.</td><td class="example-cell">さいふがなくなってしまいました。<br>Dịch: Tôi bị mất ví rồi.</td></tr>
+                <tr data-lesson="88"><td class="kanji-char-cell"><span class="kana">ひろう</span><span class="kanji">拾う</span></td><td>88</td><td class="meaning-cell">Nhặt, lượm.</td><td class="example-cell"><ruby>道<rt>みち</rt></ruby>で100<ruby>円<rt>えん</rt></ruby>を<ruby>拾<rt>ひろ</rt></ruby>いました。<br>Dịch: Tôi đã nhặt được 100 yên trên đường.</td></tr>
+                <tr data-lesson="88"><td class="kanji-char-cell"><span class="kana">みつかる</span><span class="kanji">見つかる</span></td><td>88</td><td class="meaning-cell">Được tìm thấy.</td><td class="example-cell">なくなったかぎが、やっと<ruby>見<rt>み</rt></ruby>つかりました。<br>Dịch: Chiếc chìa khóa bị mất cuối cùng cũng được tìm thấy.</td></tr>
+                <tr class="page-header-row" data-lesson="90"><td colspan="4" class="page-header">Trang 90</td></tr>
+                <tr data-lesson="90"><td class="kanji-char-cell"><span class="kana">ながい</span><span class="kanji">長い</span></td><td>90</td><td class="meaning-cell">Dài.</td><td class="example-cell"><ruby>髪<rt>かみ</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いですね。<br>Dịch: Tóc bạn dài nhỉ.</td></tr>
+                <tr data-lesson="90"><td class="kanji-char-cell"><span class="kana">ならう</span><span class="kanji">習う</span></td><td>90</td><td class="meaning-cell">Học (từ ai đó).</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>は<ruby>鈴木<rt>すずき</rt></ruby><ruby>先生<rt>せんせい</rt></ruby>にピアノを<ruby>習<rt>なら</rt></ruby>っています。<br>Dịch: Tôi đang học piano từ cô Suzuki.</td></tr>
+                <tr data-lesson="90"><td class="kanji-char-cell"><span class="kana">たのしい</span><span class="kanji">楽しい</span></td><td>90</td><td class="meaning-cell">Vui vẻ.</td><td class="example-cell"><ruby>友達<rt>ともだち</rt></ruby>との<ruby>旅行<rt>りょこう</rt></ruby>はとても<ruby>楽<rt>たの</rt></ruby>しかったです。<br>Dịch: Chuyến du lịch với bạn bè đã rất vui.</td></tr>
+                <tr data-lesson="90"><td class="kanji-char-cell"><span class="kana">たつ</span><span class="kanji">建つ</span></td><td>90</td><td class="meaning-cell">Được xây dựng.</td><td class="example-cell"><ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>新<rt>あたら</rt></ruby>しいビルが<ruby>建<rt>た</rt></ruby>ちました。<br>Dịch: Một tòa nhà mới đã được xây dựng trước nhà ga.</td></tr>
+                <tr class="page-header-row" data-lesson="92"><td colspan="4" class="page-header">Trang 92</td></tr>
+                <tr data-lesson="92"><td class="kanji-char-cell"><span class="kana">ほしい</span><span class="kanji">欲しい</span></td><td>92</td><td class="meaning-cell">Muốn (thứ gì đó).</td><td class="example-cell"><ruby>新<rt>あたら</rt></ruby>しいパソコンが<ruby>欲<rt>ほ</rt></ruby>しいです。<br>Dịch: Tôi muốn một cái máy tính mới.</td></tr>
+                <tr data-lesson="92"><td class="kanji-char-cell"><span class="kana">ほそい</span><span class="kanji">細い</span></td><td>92</td><td class="meaning-cell">Gầy, mảnh, nhỏ.</td><td class="example-cell"><ruby>彼女<rt>かのじょ</rt></ruby>はモデルのように<ruby>細<rt>ほそ</rt></ruby>いです。<br>Dịch: Cô ấy mảnh mai như người mẫu.</td></tr>
+                <tr data-lesson="92"><td class="kanji-char-cell"><span class="kanji">まずい</span></td><td>92</td><td class="meaning-cell">Dở, không ngon.</td><td class="example-cell">この<ruby>料理<rt>りょうり</rt></ruby>はちょっとまずいです。<br>Dịch: Món ăn này hơi dở.</td></tr>
+                <tr class="page-header-row" data-lesson="94"><td colspan="4" class="page-header">Trang 94</td></tr>
+                <tr data-lesson="94"><td class="kanji-char-cell"><span class="kana">しらせる</span><span class="kanji">知らせる</span></td><td>94</td><td class="meaning-cell">Thông báo, báo cho biết.</td><td class="example-cell"><ruby>会議<rt>かいぎ</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>が<ruby>変<rt>か</rt></ruby>わったら、<ruby>知<rt>し</rt></ruby>らせてください。<br>Dịch: Nếu thời gian cuộc họp thay đổi, xin hãy báo cho tôi biết.</td></tr>
+                <tr data-lesson="94"><td class="kanji-char-cell"><span class="kana">ばあい</span><span class="kanji">場合</span></td><td>94</td><td class="meaning-cell">Trường hợp.</td><td class="example-cell"><ruby>雨<rt>あめ</rt></ruby>の<ruby>場合<rt>ばあい</rt></ruby>は、イベントは<ruby>中止<rt>ちゅうし</rt></ruby>になります。<br>Dịch: Trong trường hợp trời mưa, sự kiện sẽ bị hủy.</td></tr>
+                <tr data-lesson="94"><td class="kanji-char-cell"><span class="kana">よてい</span><span class="kanji">予定</span></td><td>94</td><td class="meaning-cell">Dự định, kế hoạch.</td><td class="example-cell"><ruby>今週末<rt>こんしゅうまつ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>か<ruby>予定<rt>よてい</rt></ruby>がありますか。<br>Dịch: Cuối tuần này bạn có dự định gì không?</td></tr>
+                <tr data-lesson="94"><td class="kanji-char-cell"><span class="kana">よやくする</span><span class="kanji">予約する</span></td><td>94</td><td class="meaning-cell">Đặt trước, hẹn trước.</td><td class="example-cell">レストランを<ruby>予約<rt>よやく</rt></ruby>しておきました。<br>Dịch: Tôi đã đặt trước nhà hàng rồi.</td></tr>
+                <tr data-lesson="94"><td class="kanji-char-cell"><span class="kana">まちがえる</span><span class="kanji">間違える</span></td><td>94</td><td class="meaning-cell">Nhầm lẫn, sai.</td><td class="example-cell"><ruby>道<rt>みち</rt></ruby>を<ruby>間違<rt>まちが</rt></ruby>えてしまいました。<br>Dịch: Tôi đã nhầm đường mất rồi.</td></tr>
+                <tr data-lesson="94"><td class="kanji-char-cell"><span class="kana">とまる</span><span class="kanji">泊まる</span></td><td>94</td><td class="meaning-cell">Trọ lại.</td><td class="example-cell">きょうとでホテルに<ruby>泊<rt>と</rt></ruby>まります。<br>Dịch: Tôi sẽ ở lại khách sạn tại Kyoto.</td></tr>
+                <tr class="page-header-row" data-lesson="96"><td colspan="4" class="page-header">Trang 96</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kanji">クリーニング</span></td><td>96</td><td class="meaning-cell">Giặt ủi, giặt khô.</td><td class="example-cell">このセーターはクリーニングに<ruby>出<rt>だ</rt></ruby>さないといけません。<br>Dịch: Cái áo len này phải mang đi giặt khô.</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kanji">グラム</span></td><td>96</td><td class="meaning-cell">Gram.</td><td class="example-cell"><ruby>豚肉<rt>ぶたにく</rt></ruby>を200グラムください。<br>Dịch: Cho tôi 200 gram thịt lợn.</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kana">きもちわるい</span><span class="kanji">気持ち悪い</span></td><td>96</td><td class="meaning-cell">Khó chịu, kinh tởm, buồn nôn.</td><td class="example-cell"><ruby>船<rt>ふね</rt></ruby>に<ruby>乗<rt>の</rt></ruby>って、<ruby>気持<rt>きも</rt></ruby>ち<ruby>悪<rt>わる</rt></ruby>くなりました。<br>Dịch: Tôi đi thuyền và cảm thấy buồn nôn.</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kana">だいじょうぶな</span><span class="kanji">大丈夫な</span></td><td>96</td><td class="meaning-cell">Ổn, không sao.</td><td class="example-cell">A: <ruby>大丈夫<rt>だいじょうぶ</rt></ruby>ですか。 B: はい、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。ありがとう。<br>Dịch: A: Bạn có sao không? B: Vâng, tôi ổn. Cảm ơn.</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kana">たかい</span><span class="kanji">高い</span></td><td>96</td><td class="meaning-cell">Cao, đắt.</td><td class="example-cell">このビルはとても<ruby>高<rt>たか</rt></ruby>いです。<br>Dịch: Tòa nhà này rất cao.</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kana">ひろさ</span><span class="kanji">広さ</span></td><td>96</td><td class="meaning-cell">Độ rộng, diện tích.</td><td class="example-cell">この<ruby>部屋<rt>へや</rt></ruby>の<ruby>広<rt>ひろ</rt></ruby>さはどのくらいですか。<br>Dịch: Độ rộng của căn phòng này là bao nhiêu?</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kana">わかす</span><span class="kanji">沸かす</span></td><td>96</td><td class="meaning-cell">Đun sôi.</td><td class="example-cell">お<ruby>湯<rt>ゆ</rt></ruby>を<ruby>沸<rt>わ</rt></ruby>かしてください。<br>Dịch: Xin hãy đun sôi nước.</td></tr>
+                <tr data-lesson="96"><td class="kanji-char-cell"><span class="kana">わく</span><span class="kanji">沸く</span></td><td>96</td><td class="meaning-cell">Sôi.</td><td class="example-cell">お<ruby>湯<rt>ゆ</rt></ruby>が<ruby>沸<rt>わ</rt></ruby>きましたよ。<br>Dịch: Nước sôi rồi đấy.</td></tr>
+                <tr class="page-header-row" data-lesson="98"><td colspan="4" class="page-header">Trang 98</td></tr>
+                <tr data-lesson="98"><td class="kanji-char-cell"><span class="kana">あさい</span><span class="kanji">浅い</span></td><td>98</td><td class="meaning-cell">Nông, cạn.</td><td class="example-cell">この<ruby>川<rt>かわ</rt></ruby>は<ruby>浅<rt>あさ</rt></ruby>いので、<ruby>子供<rt>こども</rt></ruby>でも<ruby>安心<rt>あんしん</rt></ruby>です。<br>Dịch: Con sông này nông nên trẻ em cũng có thể yên tâm.</td></tr>
+                <tr data-lesson="98"><td class="kanji-char-cell"><span class="kanji">いじめる</span></td><td>98</td><td class="meaning-cell">Bắt nạt, ăn hiếp.</td><td class="example-cell"><ruby>弱<rt>よわ</rt></ruby>い<ruby>者<rt>もの</rt></ruby>をいじめてはいけません。<br>Dịch: Không được bắt nạt kẻ yếu.</td></tr>
+                <tr data-lesson="98"><td class="kanji-char-cell"><span class="kana">にる</span><span class="kanji">似る</span></td><td>98</td><td class="meaning-cell">Giống.</td><td class="example-cell"><ruby>彼女<rt>かのじょ</rt></ruby>はお<ruby>母<rt>かあ</rt></ruby>さんにとてもよく<ruby>似<rt>に</rt></ruby>ています。<br>Dịch: Cô ấy rất giống mẹ mình.</td></tr>
+                <tr data-lesson="98"><td class="kanji-char-cell"><span class="kana">ぬれる</span><span class="kanji">濡れる</span></td><td>98</td><td class="meaning-cell">Bị ướt.</td><td class="example-cell"><ruby>急<rt>きゅう</rt></ruby>な<ruby>雨<rt>あめ</rt></ruby>で、<ruby>服<rt>ふく</rt></ruby>が<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>濡<rt>ぬ</rt></ruby>れてしまいました。<br>Dịch: Vì một cơn mưa bất chợt, quần áo của tôi đã bị ướt hết.</td></tr>
+                <tr data-lesson="98"><td class="kanji-char-cell"><span class="kana">くれる</span><span class="kanji">暮れる</span></td><td>98</td><td class="meaning-cell">Lặn (mặt trời), hết (ngày, năm).</td><td class="example-cell"><ruby>日<rt>ひ</rt></ruby>が<ruby>暮<rt>く</rt></ruby>れる<ruby>前<rt>まえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>りましょう。<br>Dịch: Chúng ta hãy về nhà trước khi mặt trời lặn.</td></tr>
+                <tr data-lesson="98"><td class="kanji-char-cell"><span class="kana">われる</span><span class="kanji">割れる</span></td><td>98</td><td class="meaning-cell">Bị vỡ.</td><td class="example-cell">コップが<ruby>床<rt>ゆか</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちて<ruby>割<rt>わ</rt></ruby>れてしまった。<br>Dịch: Cái cốc rơi xuống sàn và bị vỡ mất rồi.</td></tr>
+                <tr class="page-header-row" data-lesson="100"><td colspan="4" class="page-header">Trang 100</td></tr>
+                <tr data-lesson="100"><td class="kanji-char-cell"><span class="kana">かぎる</span><span class="kanji">限る</span></td><td>100</td><td class="meaning-cell">Giới hạn, chỉ.</td><td class="example-cell"><ruby>入場<rt>にゅうじょう</rt></ruby>は<ruby>女性<rt>じょせい</rt></ruby>に<ruby>限<rt>かぎ</rt></ruby>ります。<br>Dịch: Việc vào cửa chỉ giới hạn cho phụ nữ.</td></tr>
+                <tr data-lesson="100"><td class="kanji-char-cell"><span class="kana">うたう</span><span class="kanji">歌う</span></td><td>100</td><td class="meaning-cell">Hát.</td><td class="example-cell">カラオケでたくさん<ruby>歌<rt>うた</rt></ruby>を<ruby>歌<rt>うた</rt></ruby>いました。<br>Dịch: Tôi đã hát rất nhiều bài ở quán karaoke.</td></tr>
+                <tr data-lesson="100"><td class="kanji-char-cell"><span class="kana">くらべる</span><span class="kanji">比べる</span></td><td>100</td><td class="meaning-cell">So sánh.</td><td class="example-cell"><ruby>東京<rt>とうきょう</rt></ruby>と大阪を<ruby>比<rt>くら</rt></ruby>べると、どっちが<ruby>好<rt>す</rt></ruby>きですか。<br>Dịch: Nếu so sánh Tokyo và Osaka, bạn thích bên nào hơn?</td></tr>
+                <tr data-lesson="100"><td class="kanji-char-cell"><span class="kana">しかく</span><span class="kanji">四角</span></td><td>100</td><td class="meaning-cell">Hình tứ giác, hình vuông.</td><td class="example-cell"><ruby>紙<rt>かみ</rt></ruby>を<ruby>四角<rt>しかく</rt></ruby>に<ruby>切<rt>き</rt></ruby>ってください。<br>Dịch: Hãy cắt tờ giấy thành hình vuông.</td></tr>
+                <tr data-lesson="100"><td class="kanji-char-cell"><span class="kana">そだてる</span><span class="kanji">育てる</span></td><td>100</td><td class="meaning-cell">Nuôi, trồng.</td><td class="example-cell"><ruby>母<rt>はは</rt></ruby>は<ruby>庭<rt>にわ</rt></ruby>でたくさんの<ruby>花<rt>はな</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てています。<br>Dịch: Mẹ tôi đang trồng rất nhiều hoa trong vườn.</td></tr>
+                <tr data-lesson="100"><td class="kanji-char-cell"><span class="kana">むかし</span><span class="kanji">昔</span></td><td>100</td><td class="meaning-cell">Ngày xưa.</td><td class="example-cell"><ruby>昔<rt>むかし</rt></ruby>、このあたりは<ruby>海<rt>うみ</rt></ruby>でした。<br>Dịch: Ngày xưa, khu vực này là biển.</td></tr>
+                <tr class="page-header-row" data-lesson="102"><td colspan="4" class="page-header">Trang 102</td></tr>
+                <tr data-lesson="102"><td class="kanji-char-cell"><span class="kana">あんない</span><span class="kanji">案内</span></td><td>102</td><td class="meaning-cell">Hướng dẫn.</td><td class="example-cell"><ruby>駅<rt>えき</rt></ruby>に<ruby>観光<rt>かんこう</rt></ruby><ruby>案内所<rt>あんないじょ</rt></ruby>があります。<br>Dịch: Có một văn phòng hướng dẫn du lịch ở nhà ga.</td></tr>
+                <tr data-lesson="102"><td class="kanji-char-cell"><span class="kana">おいわい</span><span class="kanji">お祝い</span></td><td>102</td><td class="meaning-cell">Chúc mừng, quà mừng.</td><td class="example-cell"><ruby>友達<rt>ともだち</rt></ruby>の<ruby>結婚<rt>けっこん</rt></ruby>のお<ruby>祝<rt>いわ</rt></ruby>いにプレゼントを<ruby>送<rt>おく</rt></ruby>りました。<br>Dịch: Tôi đã gửi quà để chúc mừng đám cưới của bạn tôi.</td></tr>
+                <tr data-lesson="102"><td class="kanji-char-cell"><span class="kana">おみまい</span><span class="kanji">お見舞い</span></td><td>102</td><td class="meaning-cell">Thăm người bệnh.</td><td class="example-cell"><ruby>入院<rt>にゅういん</rt></ruby>している<ruby>先生<rt>せんせい</rt></ruby>のお<ruby>見舞<rt>みま</rt></ruby>いに<ruby>行<rt>い</rt></ruby>きました。<br>Dịch: Tôi đã đi thăm thầy giáo đang nằm viện.</td></tr>
+                <tr data-lesson="102"><td class="kanji-char-cell"><span class="kana">しぬ</span><span class="kanji">死ぬ</span></td><td>102</td><td class="meaning-cell">Chết.</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>の<ruby>飼<rt>か</rt></ruby>っていた<ruby>犬<rt>いぬ</rt></ruby>は<ruby>去年<rt>きょねん</rt></ruby><ruby>死<rt>し</rt></ruby>にました。<br>Dịch: Con chó tôi nuôi đã chết vào năm ngoái.</td></tr>
+                <tr data-lesson="102"><td class="kanji-char-cell"><span class="kana">つごう</span><span class="kanji">都合</span></td><td>102</td><td class="meaning-cell">Sự thuận tiện, hoàn cảnh.</td><td class="example-cell"><ruby>明日<rt>あした</rt></ruby>は<ruby>都合<rt>つごう</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いです。<br>Dịch: Ngày mai tôi không tiện.</td></tr>
+                <tr class="page-header-row" data-lesson="104"><td colspan="4" class="page-header">Trang 104</td></tr>
+                <tr data-lesson="104"><td class="kanji-char-cell"><span class="kana">えんりょする</span><span class="kanji">遠慮する</span></td><td>104</td><td class="meaning-cell">Ngại ngần, khách sáo, giữ ý.</td><td class="example-cell">どうぞ、<ruby>遠慮<rt>えんりょ</rt></ruby>しないで<ruby>食<rt>た</rt></ruby>べてください。<br>Dịch: Xin mời, cứ ăn tự nhiên đừng ngại.</td></tr>
+                <tr data-lesson="104"><td class="kanji-char-cell"><span class="kana">こしょうする</span><span class="kanji">故障する</span></td><td>104</td><td class="meaning-cell">Hỏng, trục trặc.</td><td class="example-cell">エアコンが<ruby>故障<rt>こしょう</rt></ruby>してしまいました。<br>Dịch: Cái máy lạnh bị hỏng mất rồi.</td></tr>
+                <tr data-lesson="104"><td class="kanji-char-cell"><span class="kana">そんけいする</span><span class="kanji">尊敬する</span></td><td>104</td><td class="meaning-cell">Kính trọng, tôn trọng.</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>は<ruby>両親<rt>りょうしん</rt></ruby>を<ruby>尊敬<rt>そんけい</rt></ruby>しています。<br>Dịch: Tôi kính trọng bố mẹ tôi.</td></tr>
+                <tr data-lesson="104"><td class="kanji-char-cell"><span class="kana">もす</span><span class="kanji">申す</span></td><td>104</td><td class="meaning-cell">Nói (khiêm nhường ngữ của 言う).</td><td class="example-cell"><ruby>私<rt>わたし</rt></ruby>は<ruby>田中<rt>たなか</rt></ruby>と<ruby>申<rt>もう</rt></ruby>します。<br>Dịch: Tôi tên là Tanaka.</td></tr>
+                <tr data-lesson="104"><td class="kanji-char-cell"><span class="kana">ていねいな</span><span class="kanji">丁寧な</span></td><td>104</td><td class="meaning-cell">Lịch sự, cẩn thận.</td><td class="example-cell"><ruby>彼<rt>かれ</rt></ruby>はいつも<ruby>丁寧<rt>ていねい</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>を<ruby>使<rt>つか</rt></ruby>います。<br>Dịch: Anh ấy luôn dùng những lời lẽ lịch sự.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="kanji-search-script.js"></script>
+</body>
+</html>
