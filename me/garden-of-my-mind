@@ -68,6 +68,14 @@
         .verse:nth-child(10) { animation-delay: 2.7s; }
         .verse:nth-child(11) { animation-delay: 3.0s; }
         .verse:nth-child(12) { animation-delay: 3.3s; }
+        .verse:nth-child(13) { animation-delay: 3.6s; }
+        .verse:nth-child(14) { animation-delay: 3.9s; }
+        .verse:nth-child(15) { animation-delay: 4.2s; }
+        .verse:nth-child(16) { animation-delay: 4.5s; }
+        .verse:nth-child(17) { animation-delay: 4.8s; }
+        .verse:nth-child(18) { animation-delay: 5.1s; }
+        .verse:nth-child(19) { animation-delay: 5.4s; }
+        .verse:nth-child(20) { animation-delay: 5.7s; }
 
         @keyframes fadeInUp {
             to {
@@ -229,7 +237,7 @@
             <div class="verse-title">Why I am not upset, angry anymore?</div>
             <div class="verse-lines">
                 <span class="line emphasis">You trained me to be loving…</span>
-                <span class="line">Are you surprised I am not upset,not get angry with you as before?</span>
+                <span class="line">Are you surprised I am not upset, not get angry with you as before?</span>
                 <span class="line">I complained when you did not come when you forget to call…</span>
                 <span class="line">I played the roles of a victim, who you took through your plans and words…</span>
             </div>
@@ -239,7 +247,7 @@
 
         <div class="verse">
             <div class="verse-lines">
-                <span class="line">Now I be here just smile,thinking about you, I feel grateful…</span>
+                <span class="line">Now I be here just smile, thinking about you, I feel grateful…</span>
                 <span class="line emphasis">you trained me to be caring…</span>
             </div>
         </div>
@@ -249,8 +257,8 @@
         <div class="verse">
             <div class="verse-title">Let us see how my mind change!</div>
             <div class="verse-lines">
-                <span class="line">How come there is not any more anger,sadness in me, </span>
-                <span class="line">no more upset,no miserable…</span>
+                <span class="line">How come there is not any more anger, sadness in me,</span>
+                <span class="line">no more upset, no miserable…</span>
                 <span class="line">It took me long, and you helped to train it…</span>
             </div>
         </div>
@@ -260,12 +268,9 @@
         <div class="verse metaphor-verse">
             <div class="verse-lines">
                 <span class="line">My mind is actually like a garden with various seeds,</span>
-              
                 <span class="line">there are good ones that you adore, cherish</span>
                 <span class="line">there are bad ones like grass, insects…that bring troubles</span>
-           
                 <span class="line">they all are seeds (or you can see them as states of mind in me)</span>
-           
                 <span class="line">inherited, collected over lives I gone through…</span>
                 <span class="line">they formed flows wrap, being around…</span>
             </div>
@@ -277,33 +282,28 @@
             <div class="verse-title">Have a look at our body and mind</div>
             <div class="verse-lines">
                 <span class="line">The seeds in these flows would blossom into love, care, sympathy,</span>
-           
                 <span class="line">hope, ambition, understanding, effort…when they got the right triggers</span>
-             
             </div>
         </div>
 
         <div class="verse">
             <div class="verse-lines">
                 <span class="line">At the same time would break in to anger, selfish, complaints, upset, sorrow,</span>
-           
                 <span class="line">worries, hopeless…when the dark ones got activated</span>
             </div>
         </div>
 
-
         <div class="verse">
             <div class="verse-lines">
-                <span class="line">Darling did you see I said I love you yesterday,several days then</span>
-                <span class="line"> </span>
-                <span class="line">I would turn a helpless child insisted parting,blame you don't care?</span>
-          
+                <span class="line">Darling did you see I said I love you yesterday, several days then</span>
+                <span class="line">I would turn a helpless child insisted parting, blame you don't care?</span>
                 <span class="line emphasis">Look straight at me</span>
             </div>
         </div>
 
+        <div class="stanza-break">✦</div>
 
-
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line"><strong>My body:</strong></span>
                 <span class="line nature-lines">I am a leaf, a flower, a fruit in the far forest</span>
@@ -312,16 +312,18 @@
                 <span class="line nature-lines">I am what I eat and breath</span>
                 <span class="line nature-lines">I am a rain drop, I am the ocean…</span>
             </div>
+        </div>
 
-
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line emphasis">I am inherited, collected over lives I gone through</span>
                 <span class="line emphasis">each substance seed</span>
                 <span class="line emphasis">I am back and forth</span>
                 <span class="line emphasis">of those factors…</span>
             </div>
-  
+        </div>
 
+        <div class="stanza-break">✦</div>
 
         <div class="verse metaphor-verse">
             <div class="verse-lines">
@@ -332,21 +334,27 @@
                 <span class="line">of "anger", "sadness", of "ignorance", of "greed", of "worries"…</span>
                 <span class="line">collected and inherited through lives I gone through…</span>
             </div>
-   
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
-                <span class="line">When I cared to help a child got lost,I got the seeds of "kind"</span>
-                <span class="line">when I stopped, talking to an old man,made him smile, </span>
+                <span class="line">When I cared to help a child got lost, I got the seeds of "kind"</span>
+                <span class="line">when I stopped, talking to an old man, made him smile,</span>
                 <span class="line">I got the seeds of "happy"</span>
                 <span class="line">when I felt small, hopeless, I collect the seed of "fear" and "anger"</span>
             </div>
-        
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
-                <span class="line">when I pulled me out of bed,kept my feet run on morning dew,</span>
+                <span class="line">when I pulled me out of bed, kept my feet run on morning dew,</span>
                 <span class="line">I planted the seed of "patient" "effort"</span>
                 <span class="line">when I kneel down embrace you, stay in and enjoyed the silence,</span>
-                <span class="line">I grew the seeds of "understanding",of "being together"…</span>
+                <span class="line">I grew the seeds of "understanding", of "being together"…</span>
             </div>
-            
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line">I have been unconsciously, and consciously</span>
                 <span class="line">collected, inherited, attracted all the seeds in me</span>
@@ -361,40 +369,44 @@
         <div class="verse">
             <div class="verse-title">How I practice to enlighten my mind</div>
             <div class="verse-lines">
-                <span class="line">When I want you to come to me,to embrace me, to protect me,</span>
+                <span class="line">When I want you to come to me, to embrace me, to protect me,</span>
                 <span class="line">when I got upset, and angry, when I worry you would be gone…</span>
                 <span class="line">when I feel scared, I feared…</span>
             </div>
-     
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line emphasis">That was not me truly,</span>
                 <span class="line">that was when the dark seeds got activated,</span>
-             
-                <span class="line">lured me together with them, </span>
+                <span class="line">lured me together with them,</span>
                 <span class="line">and twisted me to unstable feelings and emotions</span>
             </div>
-      
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
-                <span class="line">They were not me, yet they are over-powered in my mind, </span>
+                <span class="line">They were not me, yet they are over-powered in my mind,</span>
                 <span class="line">they urged me to fetch the comfortable feeling of being with you,</span>
                 <span class="line">the satisfaction you gave me…</span>
                 <span class="line">They made me thought that I were them,</span>
-                <span class="line">I were that "anger", "sadness",I was a victim, hopeless,</span>
-                <span class="line"></span>
+                <span class="line">I were that "anger", "sadness", I was a victim, hopeless,</span>
                 <span class="line">it blur my heart, it blur the real me…</span>
             </div>
-                 
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line">it made me struggle recalling the past, deny the future</span>
-              
                 <span class="line">…yesterday he just messaged so short,</span>
                 <span class="line">…last week he even did not call at all,</span>
                 <span class="line">…he forgot…</span>
                 <span class="line">…for months he left</span>
-                <span class="line">then it persuaded me he does not care,would not come even next year…</span>
-          
+                <span class="line">then it persuaded me he does not care, would not come even next year…</span>
             </div>
+        </div>
 
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line">…I fell into a struggle of my own…</span>
                 <span class="line emphasis">"That is silly!! No, I don't want,</span>
@@ -403,6 +415,8 @@
                 <span class="line emphasis">the inner me, of peace and stillness, waiting there always with grace as ever.</span>
             </div>
         </div>
+
+        <div class="stanza-break">✦</div>
 
         <div class="verse">
             <div class="verse-lines">
@@ -416,21 +430,25 @@
                 <span class="line">who made me waited on our first date</span>
                 <span class="line">cause you… worked hard!</span>
             </div>
-   
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line">Now you are still cool and smart, still work… harder</span>
                 <span class="line">you didn't changed at all!!!</span>
                 <span class="line">Then why I changed to get angry and upset,</span>
-                <span class="line">insisting to part,screaming like a helpless child.</span>
+                <span class="line">insisting to part, screaming like a helpless child.</span>
                 <span class="line">It is me who changed and it's me who complained what I loved at first, am I?</span>
             </div>
-   
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line emphasis">No I don't change either,</span>
                 <span class="line emphasis">I still love talking to you, taking care of you,</span>
                 <span class="line emphasis">I am still me, the me inside, of peace and grace, loving always</span>
                 <span class="line">I am sorry, I neglect to take care of me, of my garden</span>
-                <span class="line">I let those dark seeds grow,over me, stronger than me</span>
+                <span class="line">I let those dark seeds grow, over me, stronger than me</span>
                 <span class="line">causing you in trouble and me in misery</span>
             </div>
         </div>
@@ -445,6 +463,9 @@
                 <span class="line">I watch each seed, one by one, good or bad, light or dark…</span>
                 <span class="line">…I realized…</span>
             </div>
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line">you are a scene, crashing on me</span>
                 <span class="line">smart, cool, successful, sweet, and patient…</span>
@@ -453,24 +474,27 @@
                 <span class="line">to grow firm, safe, comfortable…</span>
                 <span class="line">and praised by people…</span>
             </div>
+        </div>
 
+        <div class="verse">
             <div class="verse-lines">
-                <span class="line">then the "unexpected" came,the seeds of "upset", "angry", "worries" led,</span>
-                
+                <span class="line">then the "unexpected" came, the seeds of "upset", "angry", "worries" led,</span>
                 <span class="line">they began to control</span>
-                <span class="line">I feared, I'm scared,I'm upset with you…</span>
+                <span class="line">I feared, I'm scared, I'm upset with you…</span>
                 <span class="line">This was not easy at all,</span>
                 <span class="line">but the moment I realized they are not me,</span>
                 <span class="line emphasis">they are states of my mind,</span>
             </div>
+        </div>
 
+        <div class="verse metaphor-verse">
             <div class="verse-lines">
                 <span class="line">I just watch and watched in stillness.</span>
                 <span class="line emphasis">I did not be with them anymore,</span>
                 <span class="line emphasis">I step back in stillness, and be the observer</span>
                 <span class="line emphasis">Amazing! they gone! (could not twist me in their swirling cycle)</span>
                 <span class="line emphasis">I realize Me,</span>
-                <span class="line emphasis"> the truth is I am the inner peace and stillness,</span>
+                <span class="line emphasis">the truth is I am the inner peace and stillness,</span>
                 <span class="line emphasis">being as ever</span>
             </div>
         </div>
@@ -491,10 +515,12 @@
             <div class="verse-lines">
                 <span class="line emphasis">Now I know I wanna plough the garden of my heart and mind,</span>
                 <span class="line emphasis">to understand each factor, each seed</span>
-                <span class="line emphasis">to patiently take care of the good ones,observe the dark ones and don't judge,</span>
+                <span class="line emphasis">to patiently take care of the good ones, observe the dark ones and don't judge,</span>
                 <span class="line emphasis">let them be and leave in their own Arise- exist- decay-cease cycle</span>
             </div>
-    
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line emphasis">And here is the reason I am not bound to any scene in samsara.</span>
                 <span class="line emphasis">No more.</span>
@@ -508,20 +534,22 @@
             <div class="verse-title">Purpose for each life</div>
             <div class="verse-lines">
                 <span class="line">I believe the well-being of all being in samsara is</span>
-                <span class="line"> ultimately the sum of all beings'gardens of mind and heart.</span>
+                <span class="line">ultimately the sum of all beings' gardens of mind and heart.</span>
                 <span class="line">Also when a mind garden is full of good seeds,</span>
-                <span class="line">it activates a resonance energy field to resonate, </span>
+                <span class="line">it activates a resonance energy field to resonate,</span>
                 <span class="line">to involve seeds in others' gardens</span>
             </div>
-       
+        </div>
+
+        <div class="verse">
             <div class="verse-lines">
                 <span class="line emphasis">The most important task for each being</span>
                 <span class="line emphasis">is to practice, to plough his/her mind garden</span>
                 <span class="line">to watch, to realize, to take care of each seed,</span>
                 <span class="line">seed of kind and love, seed of care, and share,</span>
-                <span class="line">of sympathy, understanding,of diligent, patient,</span>
+                <span class="line">of sympathy, understanding, of diligent, patient,</span>
                 <span class="line">to watch to understand, to realize the dark ones,</span>
-                <span class="line">seed of "expect", of "greed", of "worries",of doubt, of ignorance…</span>
+                <span class="line">seed of "expect", of "greed", of "worries", of doubt, of ignorance…</span>
             </div>
         </div>
 
@@ -531,7 +559,6 @@
                 <span class="line">to be patient not to feed energy for the dark ones</span>
                 <span class="line">to be patient to watch and not identify you as them</span>
                 <span class="line">to be patient to watch and wait for them to cease</span>
-          
                 <span class="line">to be patient not to join and give them energy</span>
                 <span class="line">at the same time to be patient to wait and trigger the good ones</span>
             </div>
@@ -546,5 +573,6 @@
             </div>
         </div>
 
+    </div>
 </body>
 </html>
