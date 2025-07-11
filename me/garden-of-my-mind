@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflections - A Poem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 25%, #a8edea 50%, #fed6e3 75%, #ffecd2 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .poem-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            padding: 60px 50px;
+            backdrop-filter: blur(15px);
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .poem-title {
+            font-size: 2.5em;
+            color: #d53f8c;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .verse {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .verse:nth-child(2) { animation-delay: 0.3s; }
+        .verse:nth-child(3) { animation-delay: 0.6s; }
+        .verse:nth-child(4) { animation-delay: 0.9s; }
+        .verse:nth-child(5) { animation-delay: 1.2s; }
+        .verse:nth-child(6) { animation-delay: 1.5s; }
+        .verse:nth-child(7) { animation-delay: 1.8s; }
+        .verse:nth-child(8) { animation-delay: 2.1s; }
+        .verse:nth-child(9) { animation-delay: 2.4s; }
+        .verse:nth-child(10) { animation-delay: 2.7s; }
+        .verse:nth-child(11) { animation-delay: 3.0s; }
+        .verse:nth-child(12) { animation-delay: 3.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse-title {
+            color: #e53e3e;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .verse-title::before,
+        .verse-title::after {
+            content: '✨';
+            color: #f6ad55;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
+
+        .verse-lines {
+            font-size: 1.1em;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .line {
+            display: block;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .line:hover {
+            color: #d53f8c;
+            transform: scale(1.02);
+            text-shadow: 1px 1px 3px rgba(213, 63, 140, 0.3);
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #e53e3e;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .metaphor-verse {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 218, 185, 0.3));
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            margin: 30px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nature-lines {
+            font-style: italic;
+            color: #38a169;
+            font-size: 1.05em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.3;
+            font-size: 2em;
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            animation-delay: 8s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 25%;
+            left: 20%;
+            animation-delay: 16s;
+        }
+
+        .floating-element:nth-child(4) {
+            top: 70%;
+            right: 30%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(5) {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 12s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-30px) rotate(10deg); }
+            50% { transform: translateY(-15px) rotate(-10deg); }
+            75% { transform: translateY(-25px) rotate(5deg); }
+        }
+
+        .stanza-break {
+            margin: 35px 0;
+            text-align: center;
+            color: #f6ad55;
+            font-size: 1.8em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .poem-container {
+                padding: 40px 30px;
+                margin: 10px;
+            }
+            
+            .poem-title {
+                font-size: 2em;
+            }
+            
+            .verse-lines {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">🌸</div>
+        <div class="floating-element">🌻</div>
+        <div class="floating-element">🦋</div>
+        <div class="floating-element">🌺</div>
+        <div class="floating-element">✨</div>
+    </div>
+
+    <div class="poem-container">
+        <h1 class="poem-title">Reflections</h1>
+        
+        <div class="verse">
+            <div class="verse-title">Why I am not upset, angry anymore?</div>
+            <div class="verse-lines">
+                <span class="line emphasis">You trained me to be loving…</span>
+                <span class="line">Are you surprised I am not upset,not get angry with you as before?</span>
+                <span class="line">I complained when you did not come when you forget to call…</span>
+                <span class="line">I played the roles of a victim, who you took through your plans and words…</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line">Now I be here just smile,thinking about you, I feel grateful…</span>
+                <span class="line emphasis">you trained me to be caring…</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse">
+            <div class="verse-title">Let us see how my mind change!</div>
+            <div class="verse-lines">
+                <span class="line">How come there is not any more anger,sadness in me, </span>
+                <span class="line">no more upset,no miserable…</span>
+                <span class="line">It took me long, and you helped to train it…</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse metaphor-verse">
+            <div class="verse-lines">
+                <span class="line">My mind is actually like a garden with various seeds,</span>
+              
+                <span class="line">there are good ones that you adore, cherish</span>
+                <span class="line">there are bad ones like grass, insects…that bring troubles</span>
+           
+                <span class="line">they all are seeds (or you can see them as states of mind in me)</span>
+           
+                <span class="line">inherited, collected over lives I gone through…</span>
+                <span class="line">they formed flows wrap, being around…</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse">
+            <div class="verse-title">Have a look at our body and mind</div>
+            <div class="verse-lines">
+                <span class="line">The seeds in these flows would blossom into love, care, sympathy,</span>
+           
+                <span class="line">hope, ambition, understanding, effort…when they got the right triggers</span>
+             
+            </div>
+        </div>
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line">At the same time would break in to anger, selfish, complaints, upset, sorrow,</span>
+           
+                <span class="line">worries, hopeless…when the dark ones got activated</span>
+            </div>
+        </div>
+
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line">Darling did you see I said I love you yesterday,several days then</span>
+                <span class="line"> </span>
+                <span class="line">I would turn a helpless child insisted parting,blame you don't care?</span>
+          
+                <span class="line emphasis">Look straight at me</span>
+            </div>
+        </div>
+
+
+
+            <div class="verse-lines">
+                <span class="line"><strong>My body:</strong></span>
+                <span class="line nature-lines">I am a leaf, a flower, a fruit in the far forest</span>
+                <span class="line nature-lines">I am a cloud, a wind, a sunlight on the peak of a mountain</span>
+                <span class="line nature-lines">I am mud, I am soil</span>
+                <span class="line nature-lines">I am what I eat and breath</span>
+                <span class="line nature-lines">I am a rain drop, I am the ocean…</span>
+            </div>
+
+
+            <div class="verse-lines">
+                <span class="line emphasis">I am inherited, collected over lives I gone through</span>
+                <span class="line emphasis">each substance seed</span>
+                <span class="line emphasis">I am back and forth</span>
+                <span class="line emphasis">of those factors…</span>
+            </div>
+  
+
+
+        <div class="verse metaphor-verse">
+            <div class="verse-lines">
+                <span class="line"><strong>My heart and my mind:</strong></span>
+                <span class="line">it is a garden nurturing all seeds</span>
+                <span class="line">of "love", of "care", of "understanding", "wisdom", sympathy,</span>
+                <span class="line">"grace", "brave", of "ambition", "effort"…</span>
+                <span class="line">of "anger", "sadness", of "ignorance", of "greed", of "worries"…</span>
+                <span class="line">collected and inherited through lives I gone through…</span>
+            </div>
+   
+            <div class="verse-lines">
+                <span class="line">When I cared to help a child got lost,I got the seeds of "kind"</span>
+                <span class="line">when I stopped, talking to an old man,made him smile, </span>
+                <span class="line">I got the seeds of "happy"</span>
+                <span class="line">when I felt small, hopeless, I collect the seed of "fear" and "anger"</span>
+            </div>
+        
+            <div class="verse-lines">
+                <span class="line">when I pulled me out of bed,kept my feet run on morning dew,</span>
+                <span class="line">I planted the seed of "patient" "effort"</span>
+                <span class="line">when I kneel down embrace you, stay in and enjoyed the silence,</span>
+                <span class="line">I grew the seeds of "understanding",of "being together"…</span>
+            </div>
+            
+            <div class="verse-lines">
+                <span class="line">I have been unconsciously, and consciously</span>
+                <span class="line">collected, inherited, attracted all the seeds in me</span>
+                <span class="line emphasis">Now it is time for me to live responsible for all those seeds,</span>
+                <span class="line emphasis">darling now I know how to take care of, how to plough the garden in me</span>
+                <span class="line emphasis">I make them blossom day by day, with patience and love…</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse">
+            <div class="verse-title">How I practice to enlighten my mind</div>
+            <div class="verse-lines">
+                <span class="line">When I want you to come to me,to embrace me, to protect me,</span>
+                <span class="line">when I got upset, and angry, when I worry you would be gone…</span>
+                <span class="line">when I feel scared, I feared…</span>
+            </div>
+     
+            <div class="verse-lines">
+                <span class="line emphasis">That was not me truly,</span>
+                <span class="line">that was when the dark seeds got activated,</span>
+             
+                <span class="line">lured me together with them, </span>
+                <span class="line">and twisted me to unstable feelings and emotions</span>
+            </div>
+      
+            <div class="verse-lines">
+                <span class="line">They were not me, yet they are over-powered in my mind, </span>
+                <span class="line">they urged me to fetch the comfortable feeling of being with you,</span>
+                <span class="line">the satisfaction you gave me…</span>
+                <span class="line">They made me thought that I were them,</span>
+                <span class="line">I were that "anger", "sadness",I was a victim, hopeless,</span>
+                <span class="line"></span>
+                <span class="line">it blur my heart, it blur the real me…</span>
+            </div>
+                 
+            <div class="verse-lines">
+                <span class="line">it made me struggle recalling the past, deny the future</span>
+              
+                <span class="line">…yesterday he just messaged so short,</span>
+                <span class="line">…last week he even did not call at all,</span>
+                <span class="line">…he forgot…</span>
+                <span class="line">…for months he left</span>
+                <span class="line">then it persuaded me he does not care,would not come even next year…</span>
+          
+            </div>
+
+            <div class="verse-lines">
+                <span class="line">…I fell into a struggle of my own…</span>
+                <span class="line emphasis">"That is silly!! No, I don't want,</span>
+                <span class="line emphasis">I'm not those feelings at all", I screamed</span>
+                <span class="line emphasis">…and darling that moment I met Me</span>
+                <span class="line emphasis">the inner me, of peace and stillness, waiting there always with grace as ever.</span>
+            </div>
+        </div>
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line emphasis">I won't forget the moment I am back to me,</span>
+                <span class="line emphasis">I am free of chasing "comfortable",</span>
+                <span class="line emphasis">"happy" outside, not bound anymore</span>
+                <span class="line">I asked myself about you and me,</span>
+                <span class="line">Why did I liked you adored you so much?</span>
+                <span class="line">You were cool, you were busy,</span>
+                <span class="line">you were hardworking, you were a gentleman…</span>
+                <span class="line">who made me waited on our first date</span>
+                <span class="line">cause you… worked hard!</span>
+            </div>
+   
+            <div class="verse-lines">
+                <span class="line">Now you are still cool and smart, still work… harder</span>
+                <span class="line">you didn't changed at all!!!</span>
+                <span class="line">Then why I changed to get angry and upset,</span>
+                <span class="line">insisting to part,screaming like a helpless child.</span>
+                <span class="line">It is me who changed and it's me who complained what I loved at first, am I?</span>
+            </div>
+   
+            <div class="verse-lines">
+                <span class="line emphasis">No I don't change either,</span>
+                <span class="line emphasis">I still love talking to you, taking care of you,</span>
+                <span class="line emphasis">I am still me, the me inside, of peace and grace, loving always</span>
+                <span class="line">I am sorry, I neglect to take care of me, of my garden</span>
+                <span class="line">I let those dark seeds grow,over me, stronger than me</span>
+                <span class="line">causing you in trouble and me in misery</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse metaphor-verse">
+            <div class="verse-lines">
+                <span class="line">The moment I met me again,</span>
+                <span class="line">I had the chance to sit still in peace to observe my garden,</span>
+                <span class="line">start to realize each seed,</span>
+                <span class="line">I watch each seed, one by one, good or bad, light or dark…</span>
+                <span class="line">…I realized…</span>
+            </div>
+            <div class="verse-lines">
+                <span class="line">you are a scene, crashing on me</span>
+                <span class="line">smart, cool, successful, sweet, and patient…</span>
+                <span class="line">those of a mr right defined by people</span>
+                <span class="line">so the seed of "fragile", of "expect" in me, it wanted to dive in you</span>
+                <span class="line">to grow firm, safe, comfortable…</span>
+                <span class="line">and praised by people…</span>
+            </div>
+
+            <div class="verse-lines">
+                <span class="line">then the "unexpected" came,the seeds of "upset", "angry", "worries" led,</span>
+                
+                <span class="line">they began to control</span>
+                <span class="line">I feared, I'm scared,I'm upset with you…</span>
+                <span class="line">This was not easy at all,</span>
+                <span class="line">but the moment I realized they are not me,</span>
+                <span class="line emphasis">they are states of my mind,</span>
+            </div>
+
+            <div class="verse-lines">
+                <span class="line">I just watch and watched in stillness.</span>
+                <span class="line emphasis">I did not be with them anymore,</span>
+                <span class="line emphasis">I step back in stillness, and be the observer</span>
+                <span class="line emphasis">Amazing! they gone! (could not twist me in their swirling cycle)</span>
+                <span class="line emphasis">I realize Me,</span>
+                <span class="line emphasis"> the truth is I am the inner peace and stillness,</span>
+                <span class="line emphasis">being as ever</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line">What has brought me here…</span>
+                <span class="line">it was you all as the comfortable, proud scenes I expected and crashed,</span>
+                <span class="line">it was Buddha's teachings, show me how to plough to take care of my mind garden</span>
+                <span class="line">(nurturing all states of minds collected and inherited…through my lives)</span>
+                <span class="line">it was my practice, my dare to believe and face me till I saw the truth.</span>
+            </div>
+        </div>
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line emphasis">Now I know I wanna plough the garden of my heart and mind,</span>
+                <span class="line emphasis">to understand each factor, each seed</span>
+                <span class="line emphasis">to patiently take care of the good ones,observe the dark ones and don't judge,</span>
+                <span class="line emphasis">let them be and leave in their own Arise- exist- decay-cease cycle</span>
+            </div>
+    
+            <div class="verse-lines">
+                <span class="line emphasis">And here is the reason I am not bound to any scene in samsara.</span>
+                <span class="line emphasis">No more.</span>
+                <span class="line emphasis">I hold the key, I knew the rule to enjoy the samsara play</span>
+            </div>
+        </div>
+
+        <div class="stanza-break">✦</div>
+
+        <div class="verse">
+            <div class="verse-title">Purpose for each life</div>
+            <div class="verse-lines">
+                <span class="line">I believe the well-being of all being in samsara is</span>
+                <span class="line"> ultimately the sum of all beings'gardens of mind and heart.</span>
+                <span class="line">Also when a mind garden is full of good seeds,</span>
+                <span class="line">it activates a resonance energy field to resonate, </span>
+                <span class="line">to involve seeds in others' gardens</span>
+            </div>
+       
+            <div class="verse-lines">
+                <span class="line emphasis">The most important task for each being</span>
+                <span class="line emphasis">is to practice, to plough his/her mind garden</span>
+                <span class="line">to watch, to realize, to take care of each seed,</span>
+                <span class="line">seed of kind and love, seed of care, and share,</span>
+                <span class="line">of sympathy, understanding,of diligent, patient,</span>
+                <span class="line">to watch to understand, to realize the dark ones,</span>
+                <span class="line">seed of "expect", of "greed", of "worries",of doubt, of ignorance…</span>
+            </div>
+        </div>
+
+        <div class="verse">
+            <div class="verse-lines">
+                <span class="line">to be patient to understand each to understand its cycle Arise- exist- decay-cease</span>
+                <span class="line">to be patient not to feed energy for the dark ones</span>
+                <span class="line">to be patient to watch and not identify you as them</span>
+                <span class="line">to be patient to watch and wait for them to cease</span>
+          
+                <span class="line">to be patient not to join and give them energy</span>
+                <span class="line">at the same time to be patient to wait and trigger the good ones</span>
+            </div>
+        </div>
+
+        <div class="verse metaphor-verse">
+            <div class="verse-lines">
+                <span class="line emphasis">I found the formula for the well-being</span>
+                <span class="line emphasis">of all beings, resonating enlightening garden</span>
+                <span class="line nature-lines">Compassionate Resonation Field Strength =</span>
+                <span class="line nature-lines">∑H(Mi​)+ ∑​I(Mi​,Mj​)* H(Mj​)​</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
