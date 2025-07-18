@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 25%, #a8edea 50%, #fed6e3 75%, #ffecd2 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.poem-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    padding: 60px 50px;
+    backdrop-filter: blur(15px);
+    text-align: left;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.poem-title {
+    font-size: 2.5em;
+    color: #d53f8c;
+    margin-bottom: 50px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.verse {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.verse:nth-child(2) { animation-delay: 0.3s; }
+.verse:nth-child(3) { animation-delay: 0.6s; }
+.verse:nth-child(4) { animation-delay: 0.9s; }
+.verse:nth-child(5) { animation-delay: 1.2s; }
+.verse:nth-child(6) { animation-delay: 1.5s; }
+.verse:nth-child(7) { animation-delay: 1.8s; }
+.verse:nth-child(8) { animation-delay: 2.1s; }
+.verse:nth-child(9) { animation-delay: 2.4s; }
+.verse:nth-child(10) { animation-delay: 2.7s; }
+.verse:nth-child(11) { animation-delay: 3.0s; }
+.verse:nth-child(12) { animation-delay: 3.3s; }
+.verse:nth-child(13) { animation-delay: 3.6s; }
+.verse:nth-child(14) { animation-delay: 3.9s; }
+.verse:nth-child(15) { animation-delay: 4.2s; }
+.verse:nth-child(16) { animation-delay: 4.5s; }
+.verse:nth-child(17) { animation-delay: 4.8s; }
+.verse:nth-child(18) { animation-delay: 5.1s; }
+.verse:nth-child(19) { animation-delay: 5.4s; }
+.verse:nth-child(20) { animation-delay: 5.7s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Giữ 5 tiêu đề chính màu đỏ */
+.verse-title {
+    color: #e53e3e;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.verse-title::before,
+.verse-title::after {
+    content: '✨';
+    color: #f6ad55;
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+
+.verse-lines {
+    font-size: 1.1em;
+    color: #2d3748;
+    line-height: 1.8;
+}
+
+.line {
+    display: block;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.line:hover {
+    color: #d53f8c;
+    transform: scale(1.02);
+    text-shadow: 1px 1px 3px rgba(213, 63, 140, 0.3);
+}
+
+/* <<< THAY ĐỔI Ở ĐÂY: Chuyển các phần nhấn mạnh khác sang màu xanh */
+.emphasis {
+    font-style: italic;
+    color: #38a169; /* Đổi từ màu đỏ (#e53e3e) sang màu xanh lá */
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.metaphor-verse {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 218, 185, 0.3));
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 105, 180, 0.4);
+    margin: 30px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nature-lines {
+    font-style: italic;
+    color: #38a169;
+    font-size: 1.05em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-element {
+    position: absolute;
+    opacity: 0.3;
+    font-size: 2em;
+    animation: float 25s infinite ease-in-out;
+}
+
+.floating-element:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 40%;
+    right: 15%;
+    animation-delay: 8s;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 25%;
+    left: 20%;
+    animation-delay: 16s;
+}
+
+.floating-element:nth-child(4) {
+    top: 70%;
+    right: 30%;
+    animation-delay: 4s;
+}
+
+.floating-element:nth-child(5) {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 12s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-30px) rotate(10deg); }
+    50% { transform: translateY(-15px) rotate(-10deg); }
+    75% { transform: translateY(-25px) rotate(5deg); }
+}
+
+.stanza-break {
+    margin: 35px 0;
+    text-align: center;
+    color: #f6ad55;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .poem-container {
+        padding: 40px 30px;
+        margin: 10px;
+    }
+    
+    .poem-title {
+        font-size: 2em;
+    }
+    
+    .verse-lines {
+        font-size: 1em;
+    }
+}
+
+
+
+/* === THÊM CÁC ĐOẠN MÃ NÀY VÀO CUỐI Tệp style.css CỦA BẠN === */
+
+/* Định dạng cho ảnh đại diện */
+.author-image-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.author-image {
+    width: 150px;
+    height: 220px;
+    border-radius: 50%; /* Bo tròn ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    border: 4px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Định dạng cho khối trích dẫn */
+.quote-block {
+    text-align: center;
+}
+
+.quote-vietnamese {
+    font-weight: bold;
+    color: #4a5568; /* Màu chữ đậm hơn một chút */
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.quote-english {
+    font-style: italic;
+    color: #718096; /* Màu chữ nhạt hơn */
+    line-height: 1.7;
+}
+
+/* Định dạng cho danh sách các bài thơ */
+.poem-list {
+    list-style-type: none; /* Bỏ các dấu chấm đầu dòng mặc định */
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.poem-list li {
+    margin-bottom: 15px; /* Tạo khoảng cách giữa các bài thơ */
+}
+
+.poem-list li a {
+    text-decoration: none; /* Bỏ gạch chân của link */
+    font-size: 1.15em;
+    font-weight: 500;
+    display: block; /* Biến link thành khối để dễ dàng click */
+}
+/* === KẾT THÚC PHẦN THÊM VÀO === */
