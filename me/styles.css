@@ -270,4 +270,21 @@ body {
     font-weight: 500;
     display: block; /* Biến link thành khối để dễ dàng click */
 }
+
 /* === KẾT THÚC PHẦN THÊM VÀO === */
+
+
+/* === ĐỊNH DẠNG CHO HÌNH ẢNH TRONG BÀI THƠ === */
+.poem-image-container {
+    text-align: center; /* Căn giữa hình ảnh */
+    margin: 50px 0; /* Tạo khoảng trống trên và dưới ảnh */
+}
+
+.poem-image {
+    max-width: 80%; /* Giới hạn chiều rộng tối đa của ảnh là 80% chiều rộng của hộp chứa */
+    height: auto; /* Chiều cao tự động điều chỉnh để ảnh không bị méo */
+    border-radius: 15px; /* Bo tròn các góc ảnh cho mềm mại */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Thêm hiệu ứng đổ bóng tinh tế */
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Thêm viền trắng mờ */
+}
+
