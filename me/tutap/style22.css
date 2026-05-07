@@ -91,16 +91,25 @@ button:hover { opacity: 0.8; }
 }
 
 /* Hiệu ứng vùng đọc nét (Focus Lens) */
+
+/* Hiệu ứng vùng đọc nét (Tạo dải sương mù vàng nhạt bao trọn 2 dòng giữa) */
 #focus-lens {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     pointer-events: none;
     background: linear-gradient(
         to bottom,
-        rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.9) 20%, 
-        rgba(18, 18, 18, 0) 45%, rgba(18, 18, 18, 0) 55%, 
-        rgba(18, 18, 18, 0.9) 80%, rgba(18, 18, 18, 1) 100%
+        rgba(18, 18, 18, 1) 0%,        /* Đen đặc */
+        rgba(18, 18, 18, 0.85) 35%,    /* Mờ dần */
+        rgba(255, 160, 0, 0.035) 43%,  /* Bắt đầu dải: Màu ánh nến cực nhạt (3.5% đã đủ hiện sắc ấm) */
+        rgba(255, 160, 0, 0.07) 50%,   /* Tâm điểm: Tạo dải sương ấm áp như đèn dầu/ánh nến (7%) */
+        rgba(255, 160, 0, 0.035) 57%,  /* Kết thúc dải */
+        rgba(18, 18, 18, 0.85) 65%,    /* Mờ dần */
+        rgba(18, 18, 18, 1) 100%       /* Đen đặc */
     );
 }
+
+
+
 
 .center-line {
     position: absolute; top: 50%; left: 15%; right: 15%;
@@ -129,9 +138,10 @@ body:hover #controls { opacity: 1; }
 /* Chữ đang được đọc (Sáng rực lên) */
 /* Chữ đang được đọc (Chỉ đổi màu, đứng yên, không phóng to) */
 .word.highlight {
-    color: #FFD700; /* Màu vàng kim */
+    color:  #FFF9C4; /* Vàng chanh nhạt (Pastel Yellow) #FDE047 ,  #FFF1C5 */ /*  #FFD700 Màu vàng kim */
  
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Tỏa sáng nhẹ nhàng */
+    text-shadow: 0 0 8px rgba(253, 224, 71, 0.25); /* Tỏa sáng rất nhẹ, không gắt */  
+                /* 0 0 10px rgba(255, 215, 0, 0.5Tỏa sáng nhẹ nhàng */
     /* Đã bỏ transform: scale(1.1) để chữ không bị nhảy múa */
     transition: color 0.1s;
 }
