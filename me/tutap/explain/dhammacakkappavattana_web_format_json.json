@@ -1,0 +1,374 @@
+{
+  "sutta": "Dhammacakkappavattana Sutta",
+  "slug": "dhammacakkappavattana",
+  "language": "pi",
+  "display": {
+    "showPaliByDefault": true,
+    "showGlossByDefault": false,
+    "showStructureByDefault": false
+  },
+  "segments": [
+    {
+      "id": 1,
+      "title": "Mở đầu bối cảnh",
+      "pali": "Evaṁ me sutaṁ — ekaṁ samayaṁ bhagavā bārāṇasiyaṁ viharati isipatane migadāye. Tatra kho bhagavā pañcavaggiye bhikkhū āmantesi.",
+      "gloss": [
+        ["Evaṁ me sutaṁ", "như vậy, bởi tôi, đã được nghe = tôi nghe như vầy"],
+        ["ekaṁ samayaṁ", "vào một thời"],
+        ["bhagavā", "Thế Tôn"],
+        ["bārāṇasiyaṁ", "tại Bārāṇasī"],
+        ["viharati", "đang cư trú, đang ở"],
+        ["isipatane migadāye", "ở Isipatana, vườn Nai"],
+        ["Tatra kho bhagavā", "ở đó, thật vậy, Thế Tôn"],
+        ["pañcavaggiye bhikkhū", "các tỳ-kheo nhóm năm vị"],
+        ["āmantesi", "đã gọi, đã nói với"]
+      ],
+      "structure": "[công thức mở đầu] + [thời gian] + [chủ thể] + [địa điểm] + [động từ] + [địa điểm cụ thể]; rồi [mở cảnh] + [chủ thể] + [đối tượng] + [động từ]"
+    },
+    {
+      "id": 2,
+      "title": "Hai cực đoan không nên theo",
+      "pali": "Dvem’me, bhikkhave, antā pabbajitena na sevitabbā.",
+      "gloss": [
+        ["Dve ime, bhikkhave, antā", "này các Tỳ-kheo, hai cực đoan này"],
+        ["pabbajitena", "bởi người xuất gia, đối với người xuất gia"],
+        ["na sevitabbā", "không nên được theo, không nên thực hành"]
+      ],
+      "structure": "[đối tượng được nêu] + [người liên hệ] + [điều không nên làm]"
+    },
+    {
+      "id": 3,
+      "title": "Hỏi: hai cực đoan ấy là gì?",
+      "pali": "Katame dve?",
+      "gloss": [
+        ["Katame", "những cái nào?"],
+        ["dve", "hai"]
+      ],
+      "structure": "[từ để hỏi] + [số lượng]"
+    },
+    {
+      "id": 4,
+      "title": "Cực đoan thứ nhất: đắm dục lạc",
+      "pali": "Yo cāyaṁ kāmesu kāmasukhallikānuyogo hīno gammo pothujjaniko anariyo anatthasaṁhito.",
+      "gloss": [
+        ["Yo cāyaṁ", "đó là cái này, cái nào mà chính là cái này"],
+        ["kāmesu", "trong các dục"],
+        ["kāmasukhallikānuyogo", "sự theo đuổi khoái lạc trong dục"],
+        ["hīno", "thấp hèn"],
+        ["gammo", "phàm tục, thô lậu"],
+        ["pothujjaniko", "thuộc về phàm phu"],
+        ["anariyo", "không cao quý, không phải Thánh"],
+        ["anatthasaṁhito", "không dẫn đến lợi ích"]
+      ],
+      "structure": "[cụm dẫn nhập] + [phạm vi] + [tên cực đoan] + [chuỗi tính chất đánh giá]"
+    },
+    {
+      "id": 5,
+      "title": "Cực đoan thứ hai: hành xác",
+      "pali": "Yo cāyaṁ attakilamathānuyogo dukkho anariyo anatthasaṁhito.",
+      "gloss": [
+        ["Yo cāyaṁ", "đó là cái này"],
+        ["attakilamathānuyogo", "sự theo đuổi việc hành hạ, làm khổ chính mình"],
+        ["dukkho", "khổ đau"],
+        ["anariyo", "không cao quý"],
+        ["anatthasaṁhito", "không dẫn đến lợi ích"]
+      ],
+      "structure": "[cụm dẫn nhập] + [tên cực đoan] + [chuỗi tính chất đánh giá]"
+    },
+    {
+      "id": 6,
+      "title": "Không rơi vào hai cực đoan, Như Lai giác ngộ Trung đạo",
+      "pali": "Ete te, bhikkhave, ubho ante anupagamma majjhimā paṭipadā tathāgatena abhisambuddhā.",
+      "gloss": [
+        ["Ete te, bhikkhave, ubho ante", "này các Tỳ-kheo, chính hai cực đoan ấy"],
+        ["anupagamma", "không đi vào, không rơi vào"],
+        ["majjhimā paṭipadā", "con đường thực hành trung đạo"],
+        ["tathāgatena", "bởi Như Lai"],
+        ["abhisambuddhā", "đã được giác ngộ trọn vẹn"]
+      ],
+      "structure": "[nhắc lại hai cực đoan] + [không rơi vào] + [Trung đạo] + [bởi Như Lai] + [được giác ngộ]"
+    },
+    {
+      "id": 7,
+      "title": "Trung đạo đưa đến điều gì",
+      "pali": "Cakkhukaraṇī ñāṇakaraṇī upasamāya abhiññāya sambodhāya nibbānāya saṁvattati.",
+      "gloss": [
+        ["Cakkhukaraṇī", "làm phát sinh con mắt thấy"],
+        ["ñāṇakaraṇī", "làm phát sinh trí biết"],
+        ["upasamāya", "cho an tịnh, cho sự lắng dịu"],
+        ["abhiññāya", "cho thắng trí"],
+        ["sambodhāya", "cho giác ngộ"],
+        ["nibbānāya", "cho Niết-bàn"],
+        ["saṁvattati", "dẫn đến"]
+      ],
+      "structure": "[chuỗi công năng / đích đến] + [động từ chốt]"
+    },
+    {
+      "id": 8,
+      "title": "Hỏi: Trung đạo ấy là gì?",
+      "pali": "Katamā ca sā, bhikkhave, majjhimā paṭipadā?",
+      "gloss": [
+        ["Katamā ca sā", "và cái ấy là gì?"],
+        ["bhikkhave", "này các Tỳ-kheo"],
+        ["majjhimā paṭipadā", "con đường thực hành trung đạo"]
+      ],
+      "structure": "[từ để hỏi] + [xưng hô] + [đối tượng được hỏi]"
+    },
+    {
+      "id": 9,
+      "title": "Trung đạo chính là Bát Thánh đạo",
+      "pali": "Ayam’eva ariyo aṭṭhaṅgiko maggo.",
+      "gloss": [
+        ["Ayam’eva", "chính đây"],
+        ["ariyo", "Thánh, cao quý"],
+        ["aṭṭhaṅgiko", "có tám chi phần"],
+        ["maggo", "đạo lộ, con đường"]
+      ],
+      "structure": "[chỉ đích xác] + [phẩm tính] + [phẩm tính] + [danh từ chính]"
+    },
+    {
+      "id": 10,
+      "title": "Tám chi của Bát Thánh đạo",
+      "pali": "Seyyathidaṁ—sammādiṭṭhi, sammāsaṅkappo, sammāvācā, sammākammanto, sammāājīvo, sammāvāyāmo, sammāsati, sammāsamādhi.",
+      "gloss": [
+        ["Seyyathidaṁ", "tức là như sau"],
+        ["sammādiṭṭhi", "chánh kiến"],
+        ["sammāsaṅkappo", "chánh tư duy"],
+        ["sammāvācā", "chánh ngữ"],
+        ["sammākammanto", "chánh nghiệp"],
+        ["sammāājīvo", "chánh mạng"],
+        ["sammāvāyāmo", "chánh tinh tấn"],
+        ["sammāsati", "chánh niệm"],
+        ["sammāsamādhi", "chánh định"]
+      ],
+      "structure": "[mở đầu liệt kê] + [các mục song song có cùng tiền tố sammā-]"
+    },
+    {
+      "id": 11,
+      "title": "Khổ đế",
+      "pali": "Idaṁ dukkhaṁ ariyasaccaṁ.",
+      "gloss": [
+        ["Idaṁ", "đây"],
+        ["dukkhaṁ ariyasaccaṁ", "Thánh đế về khổ"]
+      ],
+      "structure": "[chỉ định] + [đế được xác định]"
+    },
+    {
+      "id": 12,
+      "title": "Định nghĩa Khổ đế",
+      "pali": "Jātipi dukkhā, jarāpi dukkhā, byādhipi dukkho, maraṇampi dukkhaṁ, appiyehi sampayogo dukkho, piyehi vippayogo dukkho, yampicchaṁ na labhati tampi dukkhaṁ; saṅkhittena pañcupādānakkhandhā dukkhā.",
+      "gloss": [
+        ["Jātipi dukkhā", "sinh cũng là khổ"],
+        ["jarāpi dukkhā", "già cũng là khổ"],
+        ["byādhipi dukkho", "bệnh cũng là khổ"],
+        ["maraṇampi dukkhaṁ", "chết cũng là khổ"],
+        ["appiyehi sampayogo dukkho", "gặp gỡ với cái không ưa là khổ"],
+        ["piyehi vippayogo dukkho", "xa lìa cái mình yêu là khổ"],
+        ["yampicchaṁ na labhati tampi dukkhaṁ", "điều gì mong mà không được, điều ấy cũng là khổ"],
+        ["saṅkhittena", "tóm lại"],
+        ["pañcupādānakkhandhā", "năm thủ uẩn"],
+        ["dukkhā", "là khổ"]
+      ],
+      "structure": "[chuỗi liệt kê các mặt của khổ] + [kết luận tóm lược]"
+    },
+    {
+      "id": 13,
+      "title": "Tập đế",
+      "pali": "Idaṁ dukkhasamudayaṁ ariyasaccaṁ.",
+      "gloss": [
+        ["Idaṁ", "đây"],
+        ["dukkhasamudayaṁ ariyasaccaṁ", "Thánh đế về nguồn gốc của khổ"]
+      ],
+      "structure": "[chỉ định] + [đế được xác định]"
+    },
+    {
+      "id": 14,
+      "title": "Định nghĩa Tập đế",
+      "pali": "Yāyaṁ taṇhā ponobbhavikā nandirāgasahagatā tatratatrābhinandinī, seyyathidaṁ—kāmataṇhā, bhavataṇhā, vibhavataṇhā.",
+      "gloss": [
+        ["Yāyaṁ taṇhā", "chính ái này"],
+        ["ponobbhavikā", "dẫn đến tái hữu"],
+        ["nandirāgasahagatā", "đi cùng hoan hỷ và tham ái"],
+        ["tatratatrābhinandinī", "vui thích chỗ này chỗ kia"],
+        ["seyyathidaṁ", "tức là như sau"],
+        ["kāmataṇhā", "dục ái"],
+        ["bhavataṇhā", "hữu ái"],
+        ["vibhavataṇhā", "phi hữu ái"]
+      ],
+      "structure": "[đối tượng chính] + [chuỗi bổ nghĩa] + [mở liệt kê] + [ba loại]"
+    },
+    {
+      "id": 15,
+      "title": "Diệt đế",
+      "pali": "Idaṁ dukkhanirodhaṁ ariyasaccaṁ.",
+      "gloss": [
+        ["Idaṁ", "đây"],
+        ["dukkhanirodhaṁ ariyasaccaṁ", "Thánh đế về sự diệt khổ"]
+      ],
+      "structure": "[chỉ định] + [đế được xác định]"
+    },
+    {
+      "id": 16,
+      "title": "Định nghĩa Diệt đế",
+      "pali": "Yo tassāyeva taṇhāya asesa-virāga-nirodho cāgo paṭinissaggo mutti anālayo.",
+      "gloss": [
+        ["Yo tassāyeva taṇhāya", "chính đối với ái ấy"],
+        ["asesa-virāga-nirodho", "sự ly tham và chấm dứt không dư tàn"],
+        ["cāgo", "từ bỏ"],
+        ["paṭinissaggo", "buông xả"],
+        ["mutti", "giải thoát"],
+        ["anālayo", "không chấp trước"]
+      ],
+      "structure": "[đối tượng liên hệ] + [cụm định nghĩa chính] + [chuỗi từ đồng quy nghĩa]"
+    },
+    {
+      "id": 17,
+      "title": "Đạo đế",
+      "pali": "Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ.",
+      "gloss": [
+        ["Idaṁ", "đây"],
+        ["dukkhanirodhagāminī paṭipadā ariyasaccaṁ", "Thánh đế về con đường thực hành dẫn đến diệt khổ"]
+      ],
+      "structure": "[chỉ định] + [đế được xác định]"
+    },
+    {
+      "id": 18,
+      "title": "Ba chuyển của Khổ đế",
+      "pali": "Idaṁ dukkhaṁ ariyasaccaṁ … Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ pariññeyyaṁ … Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ pariññātaṁ … cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.",
+      "gloss": [
+        ["Idaṁ dukkhaṁ ariyasaccaṁ", "đây là Thánh đế về khổ"],
+        ["Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ", "thật vậy, chính Khổ đế này"],
+        ["pariññeyyaṁ", "cần được liễu tri"],
+        ["pariññātaṁ", "đã được liễu tri"],
+        ["cakkhuṁ udapādi", "con mắt phát sanh"],
+        ["ñāṇaṁ udapādi", "trí biết phát sanh"],
+        ["paññā udapādi", "tuệ phát sanh"],
+        ["vijjā udapādi", "minh phát sanh"],
+        ["āloko udapādi", "ánh sáng phát sanh"]
+      ],
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất] + [chuỗi 'udapādi' lặp lại]"
+    },
+    {
+      "id": 19,
+      "title": "Ba chuyển của Tập đế",
+      "pali": "Idaṁ dukkhasamudayaṁ ariyasaccaṁ … Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ pahātabbaṁ … Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ pahīnaṁ.",
+      "gloss": [
+        ["Idaṁ dukkhasamudayaṁ ariyasaccaṁ", "đây là Thánh đế về nguồn gốc của khổ"],
+        ["Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ", "thật vậy, chính Tập đế này"],
+        ["pahātabbaṁ", "cần được đoạn trừ"],
+        ["pahīnaṁ", "đã được đoạn trừ"]
+      ],
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]"
+    },
+    {
+      "id": 20,
+      "title": "Ba chuyển của Diệt đế",
+      "pali": "Idaṁ dukkhanirodhaṁ ariyasaccaṁ … Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ sacchikātabbaṁ … Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ sacchikataṁ.",
+      "gloss": [
+        ["Idaṁ dukkhanirodhaṁ ariyasaccaṁ", "đây là Thánh đế về sự diệt khổ"],
+        ["Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ", "thật vậy, chính Diệt đế này"],
+        ["sacchikātabbaṁ", "cần được chứng ngộ"],
+        ["sacchikataṁ", "đã được chứng ngộ"]
+      ],
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]"
+    },
+    {
+      "id": 21,
+      "title": "Ba chuyển của Đạo đế",
+      "pali": "Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ … Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ bhāvetabbaṁ … Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ bhāvitaṁ.",
+      "gloss": [
+        ["Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ", "đây là Thánh đế về con đường thực hành dẫn đến diệt khổ"],
+        ["Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ", "thật vậy, chính Đạo đế này"],
+        ["bhāvetabbaṁ", "cần được tu tập"],
+        ["bhāvitaṁ", "đã được tu tập"]
+      ],
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]"
+    },
+    {
+      "id": 22,
+      "title": "Ba chuyển mười hai hành tướng: chưa tuyên bố giác ngộ",
+      "pali": "Yāvakīvañca me, bhikkhave, imesu catūsu ariyasaccesu evaṁ tiparivaṭṭaṁ dvādasākāraṁ yathābhūtaṁ ñāṇadassanaṁ na suvisuddhaṁ ahosi, neva tāvāhaṁ … anuttaraṁ sammāsambodhiṁ abhisambuddho paccaññāsiṁ.",
+      "gloss": [
+        ["Yāvakīvañca me, bhikkhave", "này các Tỳ-kheo, chừng nào nơi Ta"],
+        ["imesu catūsu ariyasaccesu", "đối với bốn Thánh đế này"],
+        ["evaṁ tiparivaṭṭaṁ dvādasākāraṁ", "theo ba chuyển mười hai hành tướng như vậy"],
+        ["yathābhūtaṁ ñāṇadassanaṁ", "tri kiến như thật"],
+        ["na suvisuddhaṁ ahosi", "còn chưa hoàn toàn thanh tịnh"],
+        ["neva tāvāhaṁ", "thì chừng ấy Ta chưa"],
+        ["anuttaraṁ sammāsambodhiṁ", "Vô thượng Chánh đẳng Chánh giác"],
+        ["abhisambuddho paccaññāsiṁ", "tuyên bố rằng đã chứng ngộ"]
+      ],
+      "structure": "[vế điều kiện: chừng nào … chưa thanh tịnh] + [vế hệ quả: chừng ấy chưa tuyên bố]"
+    },
+    {
+      "id": 23,
+      "title": "Khi tri kiến thanh tịnh, Đức Phật tuyên bố giác ngộ",
+      "pali": "Yato ca kho me, bhikkhave, imesu catūsu ariyasaccesu evaṁ tiparivaṭṭaṁ dvādasākāraṁ yathābhūtaṁ ñāṇadassanaṁ suvisuddhaṁ ahosi, athāhaṁ … anuttaraṁ sammāsambodhiṁ abhisambuddho paccaññāsiṁ.",
+      "gloss": [
+        ["Yato ca kho me, bhikkhave", "này các Tỳ-kheo, khi nào nơi Ta"],
+        ["imesu catūsu ariyasaccesu", "đối với bốn Thánh đế này"],
+        ["evaṁ tiparivaṭṭaṁ dvādasākāraṁ", "theo ba chuyển mười hai hành tướng như vậy"],
+        ["yathābhūtaṁ ñāṇadassanaṁ", "tri kiến như thật"],
+        ["suvisuddhaṁ ahosi", "đã hoàn toàn thanh tịnh"],
+        ["athāhaṁ", "thì khi ấy Ta"],
+        ["anuttaraṁ sammāsambodhiṁ", "Vô thượng Chánh đẳng Chánh giác"],
+        ["abhisambuddho paccaññāsiṁ", "đã tuyên bố rằng đã chứng ngộ"]
+      ],
+      "structure": "[vế điều kiện: khi nào … đã thanh tịnh] + [vế hệ quả: khi ấy tuyên bố]"
+    },
+    {
+      "id": 24,
+      "title": "Đoạn kết ngắn: năm vị hoan hỷ, Koṇḍañña phát pháp nhãn",
+      "pali": "Idamavoca bhagavā. Attamanā pañcavaggiyā bhikkhū bhagavato bhāsitaṁ abhinanduṁ. Imasmiñca pana veyyākaraṇasmiṁ bhaññamāne āyasmato koṇḍaññassa virajaṁ vītamalaṁ dhammacakkhuṁ udapādi: ‘Yaṁ kiñci samudayadhammaṁ, sabbaṁ taṁ nirodhadhamman’ti.",
+      "gloss": [
+        ["Idamavoca bhagavā", "Thế Tôn đã nói như vậy"],
+        ["Attamanā pañcavaggiyā bhikkhū", "năm vị tỳ-kheo nhóm năm người, với tâm hoan hỷ"],
+        ["bhagavato bhāsitaṁ", "lời được Thế Tôn nói"],
+        ["abhinanduṁ", "đã hoan nghênh, vui mừng đón nhận"],
+        ["Imasmiñca pana veyyākaraṇasmiṁ bhaññamāne", "và trong khi lời giải thích này đang được nói ra"],
+        ["āyasmato koṇḍaññassa", "nơi Tôn giả Koṇḍañña"],
+        ["virajaṁ vītamalaṁ dhammacakkhuṁ", "pháp nhãn không bụi, xa cấu uế"],
+        ["udapādi", "đã phát sanh"],
+        ["Yaṁ kiñci samudayadhammaṁ", "bất cứ pháp gì có bản chất sinh khởi"],
+        ["sabbaṁ taṁ nirodhadhammaṁ", "tất cả pháp ấy đều có bản chất chấm dứt"]
+      ],
+      "structure": "[Thế Tôn nói xong] + [đại chúng hoan hỷ] + [ngay trong khi nghe pháp, pháp nhãn phát sinh] + [nội dung pháp nhãn]"
+    },
+    {
+      "id": 25,
+      "title": "Đoạn kết dài: Pháp luân được chuyển vận, chư thiên loan báo",
+      "pali": "Pavattite ca pana bhagavatā dhammacakke bhummā devā saddamanussāvesuṁ: ‘Etaṁ bhagavatā bārāṇasiyaṁ isipatane migadāye anuttaraṁ dhammacakkaṁ pavattitaṁ appaṭivattiyaṁ samaṇena vā brāhmaṇena vā devena vā mārena vā brahmunā vā kenaci vā lokasmin’ti.",
+      "gloss": [
+        ["Pavattite ca pana bhagavatā dhammacakke", "khi Pháp luân đã được Thế Tôn chuyển vận"],
+        ["bhummā devā", "chư thiên cõi đất"],
+        ["saddam anussāvesuṁ", "đã cất tiếng loan báo"],
+        ["Etaṁ bhagavatā", "Pháp luân này, bởi Thế Tôn"],
+        ["bārāṇasiyaṁ isipatane migadāye", "tại Bārāṇasī, Isipatana, vườn Nai"],
+        ["anuttaraṁ dhammacakkaṁ", "Pháp luân vô thượng"],
+        ["pavattitaṁ", "đã được chuyển vận"],
+        ["appaṭivattiyaṁ", "không thể bị quay ngược lại"],
+        ["samaṇena vā brāhmaṇena vā devena vā mārena vā brahmunā vā kenaci vā lokasmin", "bởi bất cứ sa-môn, bà-la-môn, chư thiên, Ma, Phạm thiên hay ai trong đời"]
+      ],
+      "structure": "[khi Pháp luân được chuyển] + [chủ thể loan báo] + [nội dung lời loan báo]"
+    },
+    {
+      "id": 26,
+      "title": "Hệ thế giới rung động, Koṇḍañña được xác nhận là người đã hiểu",
+      "pali": "Ayañca dasasahassī lokadhātu saṅkampi sampakampi sampavedhi, appamāṇo ca uḷāro obhāso loke pāturahosi atikkamma devānaṁ devānubhāvaṁ. Atha kho bhagavā imaṁ udānaṁ udānesi: ‘Aññāsi vata bho Koṇḍañño, aññāsi vata bho Koṇḍañño’ti. Iti hidaṁ āyasmato koṇḍaññassa ‘Aññāsikoṇḍañño’ tveva nāmaṁ ahosi.",
+      "gloss": [
+        ["Ayañca dasasahassī lokadhātu", "và hệ thế giới mười ngàn thế giới này"],
+        ["saṅkampi sampakampi sampavedhi", "rung động, chấn động, lay động mạnh"],
+        ["appamāṇo ca uḷāro obhāso", "và một ánh sáng vô lượng, rộng lớn"],
+        ["loke pāturahosi", "xuất hiện trên đời"],
+        ["atikkamma devānaṁ devānubhāvaṁ", "vượt qua uy quang của chư thiên"],
+        ["Atha kho bhagavā", "bấy giờ, thật vậy, Thế Tôn"],
+        ["imaṁ udānaṁ udānesi", "đã thốt lên lời cảm hứng này"],
+        ["Aññāsi vata bho Koṇḍañño", "Koṇḍañña đã hiểu rồi, quả thật Koṇḍañña đã hiểu rồi"],
+        ["Iti hidaṁ āyasmato koṇḍaññassa", "vì vậy nơi Tôn giả Koṇḍañña này"],
+        ["Aññāsikoṇḍañño", "Koṇḍañña-đã-hiểu"],
+        ["nāmaṁ ahosi", "tên đã thành"]
+      ],
+      "structure": "[thế giới rung động, ánh sáng hiện ra] + [Thế Tôn cảm thán] + [tên hiệu mới được thành]"
+    }
+  ]
+}
