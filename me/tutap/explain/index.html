@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kinh Chuyển Pháp Luân - Giải thích theo 26 segment</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --primary: #0f172a;
+        --primary-soft: #e2e8f0;
+        --accent: #f59e0b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+      }
+
+      .header p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .card-header {
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .card-header h2 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+
+      .card-header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .card-content {
+        padding: 16px 18px;
+      }
+
+      .segment-list {
+        max-height: 72vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .segment-btn {
+        width: 100%;
+        text-align: left;
+        border: 1px solid var(--border);
+        background: #fff;
+        border-radius: 14px;
+        padding: 12px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .segment-btn:hover {
+        border-color: #94a3b8;
+        background: #f8fafc;
+      }
+
+      .segment-btn.active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+
+      .segment-btn .seg-id {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+
+      .segment-btn .seg-title {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .controls {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--border);
+        background: #fff;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .viewer-section {
+        border: 1px solid var(--border);
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      .viewer-section h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+      }
+
+      .pali-text {
+        font-size: 20px;
+        line-height: 1.9;
+      }
+
+      .gloss-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .gloss-item {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px;
+        background: #fff;
+      }
+
+      .gloss-pali {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .gloss-meaning {
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      .structure-box {
+        background: #fffbeb;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .error {
+        color: #b91c1c;
+        font-weight: 600;
+      }
+
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .segment-list {
+          max-height: 300px;
+        }
+
+        .pali-text {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Kinh Chuyển Pháp Luân — Giải thích theo 26 segment</h1>
+        <p>
+          Trang này đọc file TXT chia segment và file JSON giải thích, rồi ghép
+          theo <strong>id</strong>. Bấm vào từng segment để xem Pāli, dịch sát
+          nghĩa theo cụm, và cấu trúc câu.
+        </p>
+      </div>
+
+      <div id="app" class="layout">
+        <div class="card">
+          <div class="card-header">
+            <h2>Danh sách segment</h2>
+            <p id="segment-count">Đang tải dữ liệu...</p>
+          </div>
+          <div class="card-content">
+            <div id="segment-list" class="segment-list"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 id="viewer-title">Đang tải...</h2>
+            <p id="viewer-subtitle" class="muted"></p>
+          </div>
+          <div class="card-content">
+            <div class="controls">
+              <label class="toggle">
+                <input type="checkbox" id="toggle-gloss" checked />
+                Hiện nghĩa sát
+              </label>
+
+              <label class="toggle">
+                <input type="checkbox" id="toggle-structure" checked />
+                Hiện cấu trúc câu
+              </label>
+            </div>
+
+            <div id="viewer-content">
+              <p class="muted">Đang tải nội dung...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./viewer.js"></script>
+  </body>
+</html>
