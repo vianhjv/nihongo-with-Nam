@@ -1065,7 +1065,97 @@ Như thế mới là chân Sám hối
 Nam mô Cầu Sám Hối Bồ Tát
 Nam mô Cầu Sám Hối Bồ Tát 
 Nam mô Cầu Sám Hối Bồ Tát, Ma Ha Tát. )`,
+  "Giải Thích Kinh Chuyển Pháp Luân ... ": `...[SEGMENT 1] Mở đầu bối cảnh
+Evaṁ me sutaṁ — ekaṁ samayaṁ bhagavā bārāṇasiyaṁ viharati isipatane migadāye. Tatra kho bhagavā pañcavaggiye bhikkhū āmantesi.
+
+[SEGMENT 2] Hai cực đoan không nên theo
+Dvem’me, bhikkhave, antā pabbajitena na sevitabbā.
+
+[SEGMENT 3] Hỏi: hai cực đoan ấy là gì?
+Katame dve?
+
+[SEGMENT 4] Cực đoan thứ nhất: đắm dục lạc
+Yo cāyaṁ kāmesu kāmasukhallikānuyogo hīno gammo pothujjaniko anariyo anatthasaṁhito.
+
+[SEGMENT 5] Cực đoan thứ hai: hành xác
+Yo cāyaṁ attakilamathānuyogo dukkho anariyo anatthasaṁhito.
+
+[SEGMENT 6] Không rơi vào hai cực đoan, Như Lai giác ngộ Trung đạo
+Ete te, bhikkhave, ubho ante anupagamma majjhimā paṭipadā tathāgatena abhisambuddhā.
+
+[SEGMENT 7] Trung đạo đưa đến điều gì
+Cakkhukaraṇī ñāṇakaraṇī upasamāya abhiññāya sambodhāya nibbānāya saṁvattati.
+
+[SEGMENT 8] Hỏi: Trung đạo ấy là gì?
+Katamā ca sā, bhikkhave, majjhimā paṭipadā?
+
+[SEGMENT 9] Trung đạo chính là Bát Thánh đạo
+Ayam’eva ariyo aṭṭhaṅgiko maggo.
+
+[SEGMENT 10] Tám chi của Bát Thánh đạo
+Seyyathidaṁ—sammādiṭṭhi, sammāsaṅkappo, sammāvācā, sammākammanto, sammāājīvo, sammāvāyāmo, sammāsati, sammāsamādhi.
+
+[SEGMENT 11] Khổ đế
+Idaṁ dukkhaṁ ariyasaccaṁ.
+
+[SEGMENT 12] Định nghĩa Khổ đế
+Jātipi dukkhā, jarāpi dukkhā, byādhipi dukkho, maraṇampi dukkhaṁ, appiyehi sampayogo dukkho, piyehi vippayogo dukkho, yampicchaṁ na labhati tampi dukkhaṁ; saṅkhittena pañcupādānakkhandhā dukkhā.
+
+[SEGMENT 13] Tập đế
+Idaṁ dukkhasamudayaṁ ariyasaccaṁ.
+
+[SEGMENT 14] Định nghĩa Tập đế
+Yāyaṁ taṇhā ponobbhavikā nandirāgasahagatā tatratatrābhinandinī, seyyathidaṁ—kāmataṇhā, bhavataṇhā, vibhavataṇhā.
+
+[SEGMENT 15] Diệt đế
+Idaṁ dukkhanirodhaṁ ariyasaccaṁ.
+
+[SEGMENT 16] Định nghĩa Diệt đế
+Yo tassāyeva taṇhāya asesa-virāga-nirodho cāgo paṭinissaggo mutti anālayo.
+
+[SEGMENT 17] Đạo đế
+Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ.
+
+[SEGMENT 18] Ba chuyển của Khổ đế
+‘Idaṁ dukkhaṁ ariyasaccan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ pariññeyyan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ pariññātan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+
+[SEGMENT 19] Ba chuyển của Tập đế
+‘Idaṁ dukkhasamudayaṁ ariyasaccan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ pahātabban’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ pahīnan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+
+[SEGMENT 20] Ba chuyển của Diệt đế
+‘Idaṁ dukkhanirodhaṁ ariyasaccan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ sacchikātabban’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ sacchikatan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+
+[SEGMENT 21] Ba chuyển của Đạo đế
+‘Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ bhāvetabban’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+‘Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ bhāvitan’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.
+
+[SEGMENT 22] Ba chuyển mười hai hành tướng: chưa tuyên bố giác ngộ
+Yāvakīvañca me, bhikkhave, imesu catūsu ariyasaccesu evaṁ tiparivaṭṭaṁ dvādasākāraṁ yathābhūtaṁ ñāṇadassanaṁ na suvisuddhaṁ ahosi, neva tāvāhaṁ, bhikkhave, sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddho paccaññāsiṁ.
+
+[SEGMENT 23] Khi tri kiến thanh tịnh, Đức Phật tuyên bố giác ngộ
+Yato ca kho me, bhikkhave, imesu catūsu ariyasaccesu evaṁ tiparivaṭṭaṁ dvādasākāraṁ yathābhūtaṁ ñāṇadassanaṁ suvisuddhaṁ ahosi, athāhaṁ, bhikkhave, sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddho paccaññāsiṁ.
+
+[SEGMENT 24] Đoạn kết ngắn: năm vị hoan hỷ, Koṇḍañña phát pháp nhãn
+Idamavoca bhagavā. Attamanā pañcavaggiyā bhikkhū bhagavato bhāsitaṁ abhinanduṁ. Imasmiñca pana veyyākaraṇasmiṁ bhaññamāne āyasmato koṇḍaññassa virajaṁ vītamalaṁ dhammacakkhuṁ udapādi: “Yaṁ kiñci samudayadhammaṁ, sabbaṁ taṁ nirodhadhamman”ti.
+
+[SEGMENT 25] Đoạn kết dài: Pháp luân được chuyển vận, chư thiên loan báo
+Pavattite ca pana bhagavatā dhammacakke bhummā devā saddamanussāvesuṁ: “Etaṁ bhagavatā bārāṇasiyaṁ isipatane migadāye anuttaraṁ dhammacakkaṁ pavattitaṁ appaṭivattiyaṁ samaṇena vā brāhmaṇena vā devena vā mārena vā brahmunā vā kenaci vā lokasmin”ti.
+
+[SEGMENT 26] Hệ thế giới rung động, Koṇḍañña được xác nhận là người đã hiểu
+Ayañca dasasahassī lokadhātu saṅkampi sampakampi sampavedhi, appamāṇo ca uḷāro obhāso loke pāturahosi atikkamma devānaṁ devānubhāvaṁ. Atha kho bhagavā imaṁ udānaṁ udānesi: “Aññāsi vata bho Koṇḍañño, aññāsi vata bho Koṇḍañño”ti. Iti hidaṁ āyasmato koṇḍaññassa “Aññāsikoṇḍañño” tveva nāmaṁ ahosi.
+)`,
+
   "Kinh ... ... ": `...)`,
+  "Kinh ... ... ": `...)`,
+  "Kinh ... ... ": `...)`,
+  "Kinh ... ... ": `...)`, 
   "Kinh ... ... ": `...)`,
   "Kinh ... ... ": `...)`,
   "Kinh ... ... ": `...)`,
