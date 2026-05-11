@@ -1456,7 +1456,7 @@ Nói với cả mọi người
 Như món quà cao quý.
 Nam Mô Bổn Sư Thích Ca Mâu Ni Phật (3 lần)
 )`,
-  "Kinh Bát Chánh Đạo phiên bản ca hát ": `...KHAI KINH
+  "Kinh Bát Chánh Đạo  ": `
 Ai hiểu đời là Khổ
 Tức là đã hiểu rằng
 Có một cõi Niết Bàn
