@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Cụ Tụng Kinh - Giai Đoạn 1</title>
+    <link rel="stylesheet" href="style22.css">
+</head>
+<body>
 
+    <!-- MÀN HÌNH 1: NHẬP LIỆU & QUẢN LÝ NỘI DUNG -->
+    <div id="setup-screen" class="screen active">
+        <h1>Quản Lý Bản Kinh</h1>
+        
+        <div class="setup-container">
+            <!-- Khu vực 1: Chọn file từ máy tính -->
+            <div class="box">
+                <h3>1. Chọn file từ máy tính (.txt)</h3>
+                <input type="file" id="file-input" accept=".txt">
+            </div>
+
+            <!-- Khu vực 2: Chọn từ danh sách đã lưu (Dropdown) -->
+            <div class="box">
+                <h3>2. Hoặc chọn bản kinh đã lưu</h3>
+                <select id="saved-scripts-dropdown">
+                    <option value="">-- Chọn bản kinh --</option>
+                </select>
+                <button id="btn-delete-saved" class="btn-danger">Xóa bản kinh này</button>
+            </div>
+
+            <!-- Khu vực 3: Ô nhập liệu (Copy/Paste) -->
+            <div class="box full-width">
+                <h3>3. Nội dung bản kinh (Có thể Copy/Paste vào đây)</h3>
+                <input type="text" id="script-title" placeholder="Nhập tên bản kinh để lưu (VD: Kinh Bát Nhã)...">
+                <textarea id="script-content" placeholder="Dán nội dung bản kinh vào đây..."></textarea>
+                <div class="action-buttons">
+                    <button id="btn-save-script" class="btn-secondary">Lưu vào danh sách</button>
+ 
+                    <!-- Nút Ghi Âm màu xanh lá -->
+                  <button id="btn-record-audio-setup" class="btn-secondary" style="background-color: #2e8b57; margin-right: 10px;">🎙️ Ghi Âm</button>
+
+                 <!-- Thêm nút Ghi hình ở đây -->
+
+                    <button id="btn-record-setup" class="btn-danger" style="background-color: #8b0000; margin-right: 10px;">🔴 Ghi Hình</button>
+
+                    <button id="btn-start-reading" class="btn-primary">BẮT ĐẦU TỤNG KINH</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH 2: MÀN HÌNH TỤNG KINH (SCROLLING) -->
+    <div id="reading-screen" class="screen">
+        <div id="teleprompter-container">
+            <div id="text-display"></div>
+            <div id="focus-lens"></div>
+           
+        </div>
+
+        <div id="controls">
+            <button id="btn-back">⬅ Quay lại</button>
+
+                <!-- Nút Ghi Âm -->
+             <button id="btn-record-audio" style="background-color: #2e8b57; color: white; border: none; border-radius: 4px; padding: 10px 15px; cursor: pointer; font-weight: bold;">🎙️ Ghi Âm</button>
+
+            <button id="btn-record" style="background-color: #8b0000;">🔴 Ghi Hình</button>
+            <button id="btn-play">Bắt đầu cuộn</button>
+            <button id="btn-ai-track" style="background-color: #4B0082; color: #fff; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+   🎙️ Đọc bằng AI
+</button>
+            
+            <!-- <div class="control-group">
+                <label>Tốc độ: <span id="speed-display">2</span></label>
+                <input type="range" id="speed-slider" min="0.5" max="5" step="0.5" value="2">
+            </div> -->
+
+
+          <!-- Thêm khối này vào cạnh khối Tốc độ cuộn -->
+        <div class="control-group">
+            <label>Tốc độ Đọc: <span id="wpm-display">120</span> từ/p</label>
+            <input type="range" id="wpm-slider" min="60" max="300" step="10" value="120">
+        </div>
+  
+            <div class="control-group">
+                <label>Cỡ chữ: <span id="size-display">40</span>px</label>
+                <input type="range" id="size-slider" min="20" max="80" step="2" value="40">
+            </div>
+        </div>
+    </div>
+     <!-- Đảm bảo gọi data.js TRƯỚC script.js -->
+     <script src="data-kinh.js"></script>
+    <script src="script-tutap-final0505.js"></script>
+</body>
+</html>
