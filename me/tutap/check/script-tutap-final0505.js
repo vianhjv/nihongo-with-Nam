@@ -401,173 +401,103 @@ if (btnRecordAudioSetup) btnRecordAudioSetup.addEventListener('click', toggleAud
 // ==========================================
 // 5. GIAI ĐOẠN 2: AI VOICE TRACKING (FUZZY MATCHING & SLIDING WINDOW)
 // ==========================================
-const btnAITrack = document.getElementById('btn-ai-track');
-let recognition;
-let isAITracking = false;
 
-// 5.1. BỘ LỌC TIẾNG VIỆT (Chuyển "Ngài" -> "ngai", "Xong" -> "xong")
-function normalizeText(str) {
-    if (!str) return "";
-    str = str.toLowerCase();
-    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-    str = str.replace(/đ/g, "d");
-    // Đặc trị đồng âm Tiếng Việt
-    str = str.replace(/^x/, "s"); // Xong -> Song
-    str = str.replace(/^gi/, "d").replace(/^r/, "d").replace(/^v/, "d"); // Gia -> Da
-    str = str.replace(/^tr/, "ch"); // Trong -> Chong
-    // Xóa dấu câu
-    str = str.replace(/[.,!?;:()\[\]"']/g, "");
-    return str.trim();
-}
-
-const windowSpeech = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-if (windowSpeech) {
-    recognition = new windowSpeech();
-    recognition.continuous = true; 
-    recognition.interimResults = true; 
-    recognition.lang = 'vi-VN';
-
-    recognition.onstart = function() {
-        console.log("🟢 AI Đã kết nối Mic.");
-    };
-
-    recognition.onresult = function(event) {
-        let interimTranscript = '';
-        let finalTranscript = '';
-
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-            if (event.results[i].isFinal) finalTranscript += event.results[i][0].transcript;
-            else interimTranscript += event.results[i][0].transcript;
-        }
-
-        let currentSpokenText = finalTranscript || interimTranscript;
-        
-        if (currentSpokenText.trim()) {
-            // Chạy thuật toán so khớp mờ
-            processFuzzyMatching(currentSpokenText);
-        }
-    };
-
-    recognition.onerror = function(event) {
-        // Đã tắt cảnh báo Alert gây phiền nhiễu. Chỉ in log để debug
-        console.warn("⚠️ AI Cảnh báo:", event.error);
-        
-        // Nếu lỗi do mạng, tự động khởi động lại âm thầm
-        if(event.error === 'network' && isAITracking) {
-            setTimeout(() => { 
-                try { recognition.start(); } catch(e){} 
-            }, 1000);
-        }
-    };
-
-    recognition.onend = function() {
-        // Tự động bật lại nếu người dùng chưa bấm tắt
-        if (isAITracking) {
-            try { recognition.start(); } catch(e){}
-        }
-    };
-} else {
-    btnAITrack.style.display = 'none';
-}
-
-// Xử lý nút bật/tắt
-btnAITrack.addEventListener('click', () => {
-    if (!windowSpeech) return alert("Trình duyệt không hỗ trợ AI. Hãy dùng Chrome!");
-    
-    isAITracking = !isAITracking;
-    if (isAITracking) {
-        btnAITrack.textContent = "🛑 Tắt AI Bám Chữ";
-        btnAITrack.style.backgroundColor = "#ff4500";
-        try { recognition.start(); } catch(e){}
-        
-        if (isPlaying) { isPlaying = false; btnPlay.textContent = "Bắt đầu cuộn"; clearTimeout(karaokeTimeout); }
-        
-        // Buộc màn hình dịch chuyển đến vị trí hiện tại ngay khi bật
-        moveStageToCurrentWord();
-    } else {
-        btnAITrack.textContent = "🎙️ Đọc bằng AI";
-        btnAITrack.style.backgroundColor = "#4B0082";
-        recognition.stop();
-    }
-});
-
-// 5.2. THUẬT TOÁN CỬA SỔ TRƯỢT (SLIDING WINDOW) & SO KHỚP MỜ
+// ==========================================
+// 5.2. THUẬT TOÁN CỬA SỔ TRƯỢT (SLIDING WINDOW) & SO KHỚP MỜ - ĐÃ NÂNG CẤP
+// ==========================================
 function processFuzzyMatching(spokenText) {
     if (currentWordIndex >= masterWords.length) return;
 
     // 1. Làm sạch câu vừa nói
     let spokenWordsRaw = spokenText.split(' ').filter(w => w.length > 0);
-    // Chỉ lấy 7 từ nói gần nhất (để không bị lưu cữu từ cũ)
-    let recentSpokenWords = spokenWordsRaw.slice(-7).map(w => normalizeText(w)); 
     
-    if (recentSpokenWords.length === 0) return;
+    // GIẢI PHÁP CHỐNG NHẢY CÓC 1: Chỉ lấy 5 từ nói gần nhất (Thay vì 7) để bộ nhớ đệm (buffer) không lưu lời cũ quá lâu
+    let recentSpokenWords = spokenWordsRaw.slice(-5).map(w => normalizeText(w)); 
+    
+    if (recentSpokenWords.length < 2) return;
 
-    // 2. Lấy 15 từ tiếp theo trong kịch bản (Tạo cửa sổ trượt rộng để chống kẹt)
-    let lookAheadWindow = 15;
+    // GIẢI PHÁP CHỐNG NHẢY CÓC 2: Thu hẹp "Cửa sổ nhìn trước" từ 15 xuống 7 từ. 
+    // Nếu cửa sổ quá rộng, AI sẽ nhìn thấy các chữ "Nam mô" ở dòng tiếp theo và nhảy cóc.
+    let lookAheadWindow = 7; 
     let scriptWords =[];
     
     for (let i = currentWordIndex; i < currentWordIndex + lookAheadWindow; i++) {
         if (masterWords[i]) {
             scriptWords.push({
-                index: i, // Vị trí thật trong masterWords
-                text: normalizeText(masterWords[i].text) // Từ đã lọc dấu
+                index: i, 
+                text: normalizeText(masterWords[i].text) 
             });
         }
     }
 
-    // 3. Quét kiểm tra: Tìm xem trong "chuỗi từ vừa nói" có CỤM 2 TỪ liên tiếp nào 
-    // khớp với "chuỗi kịch bản" không? (Yêu cầu 2 từ liên tiếp để chống tạp âm/nói chuyện)
-    
     let matchedScriptIndex = -1;
 
-    for (let i = 0; i < recentSpokenWords.length - 1; i++) {
-        let pairToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1]; // Ghép 2 từ
+    // 3. Quét kiểm tra: Quét từ Kịch bản (Script) trước, sau đó mới so với lời nói.
+    // Điều này đảm bảo ta luôn ưu tiên khớp những từ ở NGAY SÁT vị trí hiện tại.
+    for (let j = 0; j < scriptWords.length - 1; j++) {
+        let scriptPair = scriptWords[j].text + " " + scriptWords[j+1].text;
         
-        for (let j = 0; j < scriptWords.length - 1; j++) {
-            let scriptPair = scriptWords[j].text + " " + scriptWords[j+1].text;
+        for (let i = 0; i < recentSpokenWords.length - 1; i++) {
+            let pairToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1];
             
             if (pairToMatch === scriptPair) {
-                // TÌM THẤY! Lưu lại vị trí của từ này trong kịch bản gốc
-                matchedScriptIndex = scriptWords[j + 1].index; // +1 để nhảy đến chữ tiếp theo
-                break;
+                // Đã tìm thấy điểm khớp sát nhất!
+                // Cộng 1 để xác nhận ta đã nói XONG từ này.
+                matchedScriptIndex = scriptWords[j].index + 1; 
+                break; // Thoát vòng lặp trong ngay lập tức
             }
         }
-        if (matchedScriptIndex !== -1) break;
+        // GIẢI PHÁP CHỐNG NHẢY CÓC 3: Có kết quả cái là thoát Vòng lặp ngoài luôn, KHÔNG đi tìm các chữ "Nam mô" phía sau nữa.
+        if (matchedScriptIndex !== -1) break; 
     }
 
-    // Nếu tìm thấy sự trùng khớp, ta đẩy currentWordIndex lên
     if (matchedScriptIndex !== -1 && matchedScriptIndex > currentWordIndex) {
         currentWordIndex = matchedScriptIndex;
         moveStageToCurrentWord();
     }
 }
 
-// 5.3. DỊCH CHUYỂN SÂN KHẤU VÀ TÔ MÀU
+// ==========================================
+// 5.3. DỊCH CHUYỂN SÂN KHẤU VÀ TÔ MÀU - GIẢI PHÁP "DẪN ĐƯỜNG" (LEAD THE READER)
+// ==========================================
 function moveStageToCurrentWord() {
     if (currentWordIndex >= masterWords.length) return;
 
-    let currentWordObj = masterWords[currentWordIndex];
-    let currentEl = document.getElementById(`word-${currentWordIndex}`);
-    let chunkDiv = document.querySelector(`.word-chunk[data-id="${currentWordObj.chunkId}"]`);
+    // GIẢI PHÁP TRỊ BỆNH "THEO ĐUÔI": 
+    // Thay vì Highlight từ VỪA ĐỌC, ta sẽ Highlight từ TIẾP THEO (Lead Index)
+    // Giúp mắt người đọc luôn được chuẩn bị trước 1-2 từ.
+    let leadIndex = currentWordIndex; 
     
-    if (currentEl && chunkDiv) {
-        // Cuộn mượt màn hình
-        targetY = (window.innerHeight / 2) - chunkDiv.offsetTop - currentEl.offsetTop - (currentEl.offsetHeight / 2);
+    let leadWordObj = masterWords[leadIndex];
+    let leadEl = document.getElementById(`word-${leadIndex}`);
+    
+    // Tìm tọa độ cụm (chunk) chứa chữ SẮP ĐỌC
+    let chunkDiv = null;
+    if(leadWordObj) {
+        chunkDiv = document.querySelector(`.word-chunk[data-id="${leadWordObj.chunkId}"]`);
+    }
+    
+    if (leadEl && chunkDiv) {
+        // Cuộn màn hình lấy trọng tâm là chữ SẮP ĐỌC (Màn hình luôn đi trước giọng nói 1 chút)
+        targetY = (window.innerHeight / 2) - chunkDiv.offsetTop - leadEl.offsetTop - (leadEl.offsetHeight / 2);
         
-        // Quản lý màu sắc
+        // Quản lý màu sắc: Dẫn đường cho mắt
         document.querySelectorAll('.word').forEach(el => {
             el.classList.remove('highlight', 'upcoming', 'read');
             let idx = parseInt(el.dataset.index);
             
-            if (idx < currentWordIndex) el.classList.add('read');
-            if (idx === currentWordIndex) el.classList.add('highlight'); // Đang đọc
-            if (idx > currentWordIndex && idx <= currentWordIndex + 2) el.classList.add('upcoming'); // Chuẩn bị đọc
+            if (idx < currentWordIndex) {
+                // Những chữ đã đọc qua -> Tô màu xám/mờ (Read)
+                el.classList.add('read');
+            } 
+            else if (idx === currentWordIndex) {
+                // Chữ đang chuẩn bị phát âm -> TÔ SÁNG RỰC (Highlight)
+                el.classList.add('highlight'); 
+            } 
+            else if (idx > currentWordIndex && idx <= currentWordIndex + 3) {
+                // 3 chữ tiếp theo -> Tô sáng vừa (Upcoming) để mắt chuẩn bị
+                el.classList.add('upcoming'); 
+            }
         });
     }
 }
