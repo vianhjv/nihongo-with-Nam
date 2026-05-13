@@ -405,6 +405,105 @@ if (btnRecordAudioSetup) btnRecordAudioSetup.addEventListener('click', toggleAud
 // ==========================================
 // 5.2. THUẬT TOÁN CỬA SỔ TRƯỢT (SLIDING WINDOW) & SO KHỚP MỜ - ĐÃ NÂNG CẤP
 // ==========================================
+const btnAITrack = document.getElementById('btn-ai-track');
+let recognition;
+let isAITracking = false;
+
+// 5.1. BỘ LỌC TIẾNG VIỆT (Chuyển "Ngài" -> "ngai", "Xong" -> "xong")
+function normalizeText(str) {
+    if (!str) return "";
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    // Đặc trị đồng âm Tiếng Việt
+    str = str.replace(/^x/, "s"); // Xong -> Song
+    str = str.replace(/^gi/, "d").replace(/^r/, "d").replace(/^v/, "d"); // Gia -> Da
+    str = str.replace(/^tr/, "ch"); // Trong -> Chong
+    // Xóa dấu câu
+    str = str.replace(/[.,!?;:()\[\]"']/g, "");
+    return str.trim();
+}
+
+const windowSpeech = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (windowSpeech) {
+    recognition = new windowSpeech();
+    recognition.continuous = true; 
+    recognition.interimResults = true; 
+    recognition.lang = 'vi-VN';
+
+    recognition.onstart = function() {
+        console.log("🟢 AI Đã kết nối Mic.");
+    };
+
+    recognition.onresult = function(event) {
+        let interimTranscript = '';
+        let finalTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) finalTranscript += event.results[i][0].transcript;
+            else interimTranscript += event.results[i][0].transcript;
+        }
+
+        let currentSpokenText = finalTranscript || interimTranscript;
+        
+        if (currentSpokenText.trim()) {
+            // Chạy thuật toán so khớp mờ
+            processFuzzyMatching(currentSpokenText);
+        }
+    };
+
+    recognition.onerror = function(event) {
+        // Đã tắt cảnh báo Alert gây phiền nhiễu. Chỉ in log để debug
+        console.warn("⚠️ AI Cảnh báo:", event.error);
+        
+        // Nếu lỗi do mạng, tự động khởi động lại âm thầm
+        if(event.error === 'network' && isAITracking) {
+            setTimeout(() => { 
+                try { recognition.start(); } catch(e){} 
+            }, 1000);
+        }
+    };
+
+    recognition.onend = function() {
+        // Tự động bật lại nếu người dùng chưa bấm tắt
+        if (isAITracking) {
+            try { recognition.start(); } catch(e){}
+        }
+    };
+} else {
+    btnAITrack.style.display = 'none';
+}
+
+// Xử lý nút bật/tắt
+btnAITrack.addEventListener('click', () => {
+    if (!windowSpeech) return alert("Trình duyệt không hỗ trợ AI. Hãy dùng Chrome!");
+    
+    isAITracking = !isAITracking;
+    if (isAITracking) {
+        btnAITrack.textContent = "🛑 Tắt AI Bám Chữ";
+        btnAITrack.style.backgroundColor = "#ff4500";
+        try { recognition.start(); } catch(e){}
+        
+        if (isPlaying) { isPlaying = false; btnPlay.textContent = "Bắt đầu cuộn"; clearTimeout(karaokeTimeout); }
+        
+        // Buộc màn hình dịch chuyển đến vị trí hiện tại ngay khi bật
+        moveStageToCurrentWord();
+    } else {
+        btnAITrack.textContent = "🎙️ Đọc bằng AI";
+        btnAITrack.style.backgroundColor = "#4B0082";
+        recognition.stop();
+    }
+});
+
+
+
+
 function processFuzzyMatching(spokenText) {
     if (currentWordIndex >= masterWords.length) return;
 
