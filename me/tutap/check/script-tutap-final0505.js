@@ -505,101 +505,100 @@ btnAITrack.addEventListener('click', () => {
 
 
 // ==========================================
-// 5.2. THUẬT TOÁN SO KHỚP LAI (HYBRID MATCHING) - TỐI ĐA ĐỘ NHẠY
+// 5.2. THUẬT TOÁN SO KHỚP (GIỮ SỰ CHUẨN XÁC CỦA BẢN MVP) + KHÓA BỘ NHỚ TRỐNG NHẢY CÓC
 // ==========================================
+let lastMatchedText = ""; // Chốt chặn: Ghi nhớ cụm từ AI vừa dùng để chống dùng lại (chống nhảy cóc)
+
 function processFuzzyMatching(spokenText) {
-    if (currentWordIndex >= masterWords.length - 1) return;
+    if (currentWordIndex >= masterWords.length) return;
+
+    // LÀM SẠCH VÀ CHỐNG "NHAI LẠI": 
+    // Nếu AI trả về nguyên xi câu cũ (chưa có từ mới), bỏ qua ngay lập tức để chống nhảy dòng lung tung
+    if (spokenText === lastMatchedText) return; 
 
     let spokenWordsRaw = spokenText.split(' ').filter(w => w.length > 0);
-    // Lấy 6 từ vừa nói gần nhất để xử lý
-    let recentSpokenWords = spokenWordsRaw.slice(-6).map(w => normalizeText(w)); 
+    // Vẫn dùng 7 từ như bản MVP gốc vì nó rất ổn định
+    let recentSpokenWords = spokenWordsRaw.slice(-7).map(w => normalizeText(w)); 
     if (recentSpokenWords.length === 0) return;
 
-    let maxLookAhead = 12; // Nhìn xa 12 từ để bù đắp độ trễ mạng của Google AI
+    // Cửa sổ trượt 15 từ (như bản cũ)
+    let lookAheadWindow = 15;
     let scriptWords =[];
     
-    // CHỈ quét từ chữ TIẾP THEO trở đi (Không quét lại chữ đang đứng)
-    for (let i = currentWordIndex + 1; i <= currentWordIndex + maxLookAhead; i++) {
+    for (let i = currentWordIndex; i < currentWordIndex + lookAheadWindow; i++) {
         if (masterWords[i]) {
             scriptWords.push({
                 index: i,
-                text: normalizeText(masterWords[i].text),
-                distance: i - currentWordIndex // Khoảng cách: 1, 2, 3...
+                text: normalizeText(masterWords[i].text)
             });
         }
     }
 
-    let bestMatchIndex = -1;
+    let matchedScriptIndex = -1;
 
-    for (let j = 0; j < scriptWords.length; j++) {
-        let sWord = scriptWords[j].text;
-        let distance = scriptWords[j].distance;
+    // VẪN DÙNG THUẬT TOÁN BẢN CŨ: Bắt buộc khớp CỤM 2 TỪ LIÊN TIẾP để đảm bảo độ chuẩn xác tuyệt đối
+    for (let i = 0; i < recentSpokenWords.length - 1; i++) {
+        let pairToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1];
         
-        // Tìm xem từ kịch bản này có nằm trong những từ vừa nói không
-        let foundInSpoken = recentSpokenWords.lastIndexOf(sWord);
-
-        if (foundInSpoken !== -1) {
-            // TẦNG 1: SIÊU NHẠY
-            // Nếu từ này nằm ngay sát (1, 2, hoặc 3 từ tiếp theo), chỉ cần khớp 1 từ là chấp nhận ngay!
-            if (distance <= 3) {
-                bestMatchIndex = scriptWords[j].index;
-            } 
-            // TẦNG 2: CHỐNG NHẢY CÓC
-            // Nếu từ này nằm ở xa (dòng dưới), bắt buộc phải khớp 2 từ liên tiếp mới được nhảy đến
-            else if (j < scriptWords.length - 1 && foundInSpoken < recentSpokenWords.length - 1) {
-                if (scriptWords[j+1].text === recentSpokenWords[foundInSpoken+1]) {
-                    bestMatchIndex = scriptWords[j+1].index;
-                }
+        for (let j = 0; j < scriptWords.length - 1; j++) {
+            let scriptPair = scriptWords[j].text + " " + scriptWords[j+1].text;
+            
+            if (pairToMatch === scriptPair) {
+                // TÌM THẤY! Lưu lại vị trí của từ
+                matchedScriptIndex = scriptWords[j + 1].index;
+                // Khóa cụm từ này lại, AI không được lấy nó để so khớp cho dòng dưới nữa
+                lastMatchedText = spokenText; 
+                break;
             }
         }
-        
-        // Đã tìm thấy từ khớp gần nhất thì thoát ngay, không tìm các từ lặp lại ở phía sau nữa
-        if (bestMatchIndex !== -1) break; 
+        if (matchedScriptIndex !== -1) break;
     }
 
-    if (bestMatchIndex !== -1 && bestMatchIndex > currentWordIndex) {
-        currentWordIndex = bestMatchIndex;
-        moveStageToCurrentWord();
+    // Nếu tìm thấy sự trùng khớp, đẩy vị trí của AI lên
+    if (matchedScriptIndex !== -1 && matchedScriptIndex > currentWordIndex) {
+        currentWordIndex = matchedScriptIndex;
+        moveStageToCurrentWord(); // Gọi hàm dịch chuyển giao diện
     }
 }
 
 // ==========================================
-// 5.3. DỊCH CHUYỂN VÀ TÔ MÀU - CHẾ ĐỘ "NGƯỜI DẪN ĐƯỜNG" CHUẨN MỰC
+// 5.3. DỊCH CHUYỂN VÀ TÔ MÀU (HIGHLIGHT CỤM TỪ ĐI TRƯỚC THEO ĐÚNG Ý TƯỞNG CỦA BẠN)
 // ==========================================
 function moveStageToCurrentWord() {
     if (currentWordIndex >= masterWords.length) return;
 
-    // Trọng tâm màn hình: Từ CHUẨN BỊ ĐỌC (Tức là từ ngay sau từ AI vừa nhận diện xong)
-    let leadIndex = currentWordIndex + 1; 
-    if (leadIndex >= masterWords.length) leadIndex = currentWordIndex; // Fallback nếu là chữ cuối cùng
+    // Ý TƯỞNG ĐỘT PHÁ CỦA BẠN: AI xác nhận đến `currentWordIndex`, nhưng ta CỘNG THÊM để dẫn đường
+    let leadIndex1 = currentWordIndex + 1; // Chữ thứ 1 chuẩn bị đọc
+    let leadIndex2 = currentWordIndex + 2; // Chữ thứ 2 chuẩn bị đọc
+    let leadIndex3 = currentWordIndex + 3; // Chữ thứ 3 chuẩn bị đọc
+    
+    // An toàn: Nếu đi quá giới hạn bản kinh thì lùi lại
+    if (leadIndex1 >= masterWords.length) leadIndex1 = currentWordIndex;
 
-    let leadWordObj = masterWords[leadIndex];
-    let leadEl = document.getElementById(`word-${leadIndex}`);
+    let targetWordObj = masterWords[leadIndex1];
+    let targetEl = document.getElementById(`word-${leadIndex1}`);
     
     let chunkDiv = null;
-    if(leadWordObj) {
-        chunkDiv = document.querySelector(`.word-chunk[data-id="${leadWordObj.chunkId}"]`);
+    if(targetWordObj) {
+        chunkDiv = document.querySelector(`.word-chunk[data-id="${targetWordObj.chunkId}"]`);
     }
     
-    if (leadEl && chunkDiv) {
-        // Cuộn màn hình lấy trọng tâm là chữ TIẾP THEO
-        targetY = (window.innerHeight / 2) - chunkDiv.offsetTop - leadEl.offsetTop - (leadEl.offsetHeight / 2);
+    if (targetEl && chunkDiv) {
+        // Trượt màn hình lấy chữ đi trước làm trọng tâm, giúp bạn luôn thấy đường xa
+        targetY = (window.innerHeight / 2) - chunkDiv.offsetTop - targetEl.offsetTop - (targetEl.offsetHeight / 2);
         
         document.querySelectorAll('.word').forEach(el => {
             el.classList.remove('highlight', 'upcoming', 'read');
             let idx = parseInt(el.dataset.index);
             
             if (idx <= currentWordIndex) {
-                // Những chữ đã đọc -> Tô mờ
+                // Những chữ AI đã nghe xong -> Tô mờ (xám)
                 el.classList.add('read');
             } 
-            else if (idx === leadIndex) {
-                // Chữ NGAY TIẾP THEO chuẩn bị đọc -> Tô sáng RỰC
+            else if (idx === leadIndex1 || idx === leadIndex2 || idx === leadIndex3) {
+                // HIGHLIGHT NGUYÊN MỘT CỤM 3 TỪ TƯƠNG LAI
+                // (Gán class 'highlight' cho cả 3 từ để nó tạo thành một dải sáng)
                 el.classList.add('highlight'); 
-            } 
-            else if (idx === leadIndex + 1 || idx === leadIndex + 2) {
-                // 2 chữ tiếp theo nữa -> Tô sáng VỪA để mắt chuẩn bị
-                el.classList.add('upcoming'); 
             }
         });
     }
