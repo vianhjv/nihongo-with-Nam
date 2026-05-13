@@ -504,97 +504,101 @@ btnAITrack.addEventListener('click', () => {
 
 
 
+// ==========================================
+// 5.2. THUẬT TOÁN SO KHỚP LAI (HYBRID MATCHING) - TỐI ĐA ĐỘ NHẠY
+// ==========================================
 function processFuzzyMatching(spokenText) {
-    if (currentWordIndex >= masterWords.length) return;
+    if (currentWordIndex >= masterWords.length - 1) return;
 
-    // 1. Làm sạch câu vừa nói
     let spokenWordsRaw = spokenText.split(' ').filter(w => w.length > 0);
-    
-    // GIẢI PHÁP CHỐNG NHẢY CÓC 1: Chỉ lấy 5 từ nói gần nhất (Thay vì 7) để bộ nhớ đệm (buffer) không lưu lời cũ quá lâu
-    let recentSpokenWords = spokenWordsRaw.slice(-5).map(w => normalizeText(w)); 
-    
-    if (recentSpokenWords.length < 2) return;
+    // Lấy 6 từ vừa nói gần nhất để xử lý
+    let recentSpokenWords = spokenWordsRaw.slice(-6).map(w => normalizeText(w)); 
+    if (recentSpokenWords.length === 0) return;
 
-    // GIẢI PHÁP CHỐNG NHẢY CÓC 2: Thu hẹp "Cửa sổ nhìn trước" từ 15 xuống 7 từ. 
-    // Nếu cửa sổ quá rộng, AI sẽ nhìn thấy các chữ "Nam mô" ở dòng tiếp theo và nhảy cóc.
-    let lookAheadWindow = 7; 
+    let maxLookAhead = 12; // Nhìn xa 12 từ để bù đắp độ trễ mạng của Google AI
     let scriptWords =[];
     
-    for (let i = currentWordIndex; i < currentWordIndex + lookAheadWindow; i++) {
+    // CHỈ quét từ chữ TIẾP THEO trở đi (Không quét lại chữ đang đứng)
+    for (let i = currentWordIndex + 1; i <= currentWordIndex + maxLookAhead; i++) {
         if (masterWords[i]) {
             scriptWords.push({
-                index: i, 
-                text: normalizeText(masterWords[i].text) 
+                index: i,
+                text: normalizeText(masterWords[i].text),
+                distance: i - currentWordIndex // Khoảng cách: 1, 2, 3...
             });
         }
     }
 
-    let matchedScriptIndex = -1;
+    let bestMatchIndex = -1;
 
-    // 3. Quét kiểm tra: Quét từ Kịch bản (Script) trước, sau đó mới so với lời nói.
-    // Điều này đảm bảo ta luôn ưu tiên khớp những từ ở NGAY SÁT vị trí hiện tại.
-    for (let j = 0; j < scriptWords.length - 1; j++) {
-        let scriptPair = scriptWords[j].text + " " + scriptWords[j+1].text;
+    for (let j = 0; j < scriptWords.length; j++) {
+        let sWord = scriptWords[j].text;
+        let distance = scriptWords[j].distance;
         
-        for (let i = 0; i < recentSpokenWords.length - 1; i++) {
-            let pairToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1];
-            
-            if (pairToMatch === scriptPair) {
-                // Đã tìm thấy điểm khớp sát nhất!
-                // Cộng 1 để xác nhận ta đã nói XONG từ này.
-                matchedScriptIndex = scriptWords[j].index + 1; 
-                break; // Thoát vòng lặp trong ngay lập tức
+        // Tìm xem từ kịch bản này có nằm trong những từ vừa nói không
+        let foundInSpoken = recentSpokenWords.lastIndexOf(sWord);
+
+        if (foundInSpoken !== -1) {
+            // TẦNG 1: SIÊU NHẠY
+            // Nếu từ này nằm ngay sát (1, 2, hoặc 3 từ tiếp theo), chỉ cần khớp 1 từ là chấp nhận ngay!
+            if (distance <= 3) {
+                bestMatchIndex = scriptWords[j].index;
+            } 
+            // TẦNG 2: CHỐNG NHẢY CÓC
+            // Nếu từ này nằm ở xa (dòng dưới), bắt buộc phải khớp 2 từ liên tiếp mới được nhảy đến
+            else if (j < scriptWords.length - 1 && foundInSpoken < recentSpokenWords.length - 1) {
+                if (scriptWords[j+1].text === recentSpokenWords[foundInSpoken+1]) {
+                    bestMatchIndex = scriptWords[j+1].index;
+                }
             }
         }
-        // GIẢI PHÁP CHỐNG NHẢY CÓC 3: Có kết quả cái là thoát Vòng lặp ngoài luôn, KHÔNG đi tìm các chữ "Nam mô" phía sau nữa.
-        if (matchedScriptIndex !== -1) break; 
+        
+        // Đã tìm thấy từ khớp gần nhất thì thoát ngay, không tìm các từ lặp lại ở phía sau nữa
+        if (bestMatchIndex !== -1) break; 
     }
 
-    if (matchedScriptIndex !== -1 && matchedScriptIndex > currentWordIndex) {
-        currentWordIndex = matchedScriptIndex;
+    if (bestMatchIndex !== -1 && bestMatchIndex > currentWordIndex) {
+        currentWordIndex = bestMatchIndex;
         moveStageToCurrentWord();
     }
 }
 
 // ==========================================
-// 5.3. DỊCH CHUYỂN SÂN KHẤU VÀ TÔ MÀU - GIẢI PHÁP "DẪN ĐƯỜNG" (LEAD THE READER)
+// 5.3. DỊCH CHUYỂN VÀ TÔ MÀU - CHẾ ĐỘ "NGƯỜI DẪN ĐƯỜNG" CHUẨN MỰC
 // ==========================================
 function moveStageToCurrentWord() {
     if (currentWordIndex >= masterWords.length) return;
 
-    // GIẢI PHÁP TRỊ BỆNH "THEO ĐUÔI": 
-    // Thay vì Highlight từ VỪA ĐỌC, ta sẽ Highlight từ TIẾP THEO (Lead Index)
-    // Giúp mắt người đọc luôn được chuẩn bị trước 1-2 từ.
-    let leadIndex = currentWordIndex; 
-    
+    // Trọng tâm màn hình: Từ CHUẨN BỊ ĐỌC (Tức là từ ngay sau từ AI vừa nhận diện xong)
+    let leadIndex = currentWordIndex + 1; 
+    if (leadIndex >= masterWords.length) leadIndex = currentWordIndex; // Fallback nếu là chữ cuối cùng
+
     let leadWordObj = masterWords[leadIndex];
     let leadEl = document.getElementById(`word-${leadIndex}`);
     
-    // Tìm tọa độ cụm (chunk) chứa chữ SẮP ĐỌC
     let chunkDiv = null;
     if(leadWordObj) {
         chunkDiv = document.querySelector(`.word-chunk[data-id="${leadWordObj.chunkId}"]`);
     }
     
     if (leadEl && chunkDiv) {
-        // Cuộn màn hình lấy trọng tâm là chữ SẮP ĐỌC (Màn hình luôn đi trước giọng nói 1 chút)
+        // Cuộn màn hình lấy trọng tâm là chữ TIẾP THEO
         targetY = (window.innerHeight / 2) - chunkDiv.offsetTop - leadEl.offsetTop - (leadEl.offsetHeight / 2);
         
-        // Quản lý màu sắc: Dẫn đường cho mắt
         document.querySelectorAll('.word').forEach(el => {
             el.classList.remove('highlight', 'upcoming', 'read');
             let idx = parseInt(el.dataset.index);
             
-            if (idx < currentWordIndex) {
-                // Những chữ đã đọc qua -> Tô màu xám/mờ (Read)
+            if (idx <= currentWordIndex) {
+                // Những chữ đã đọc -> Tô mờ
                 el.classList.add('read');
             } 
-            else if (idx === currentWordIndex) {
-                // Chữ đang chuẩn bị phát âm -> TÔ SÁNG RỰC (Highlight)
+            else if (idx === leadIndex) {
+                // Chữ NGAY TIẾP THEO chuẩn bị đọc -> Tô sáng RỰC
                 el.classList.add('highlight'); 
             } 
-            else if (idx > currentWordIndex && idx <= currentWordIndex + 3) {
-                // 3 chữ tiếp theo -> Tô sáng vừa (Upcoming) để mắt chuẩn bị
+            else if (idx === leadIndex + 1 || idx === leadIndex + 2) {
+                // 2 chữ tiếp theo nữa -> Tô sáng VỪA để mắt chuẩn bị
                 el.classList.add('upcoming'); 
             }
         });
