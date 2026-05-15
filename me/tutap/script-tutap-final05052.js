@@ -222,11 +222,24 @@ const chunkObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '1000px 0px 1000px 0px' }); 
 
 btnStart.addEventListener('click', () => {
-    let content = scriptContent.value; // KHÔNG dùng .trim() ở đây để giữ lại lề của đoạn đầu tiên
+
+        let content = "";
+    let selectedValue = dropdown.value;
+    
+    // Tùy thuộc vào nguồn, lấy dữ liệu từ RAM hay từ ô Textarea
+    if (selectedValue && selectedValue.startsWith('SYSTEM|')) {
+        content = currentSystemScriptContent; 
+    } else {
+        content = scriptContent.value;
+    }
+
     if (!content.trim()) { alert("Nội dung trống!"); return; }
     
     // Reset hệ thống
     textDisplay.innerHTML = ''; masterWords = []; chunksData = []; currentWordIndex = 0; 
+    
+  ///phần Cũ phần Cũ phần Cũ phần Cũ phần Cũ phần Cũ phần Cũ 
+    
     
     // SỬA LỚN NHẤT Ở ĐÂY: Tách văn bản nhưng GIỮ LẠI toàn bộ khoảng trắng, dấu tab, dấu xuống dòng
     let tokens = content.split(/(\s+)/); 
