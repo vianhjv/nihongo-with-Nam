@@ -483,3 +483,184 @@ async function toggleAudioRecording() { /* Khối code thu âm cũ */
 }
 if (btnRecordAudio) btnRecordAudio.addEventListener('click', toggleAudioRecording);
 if (btnRecordAudioSetup) btnRecordAudioSetup.addEventListener('click', toggleAudioRecording);
+
+
+// ==========================================
+// 5. GIAI ĐOẠN 2: AI VOICE TRACKING (ADAPTIVE SLIDING WINDOW - CHỐNG NHẢY CÓC)
+// ==========================================
+
+const btnAITrack = document.getElementById('btn-ai-track');
+let recognition;
+let isAITracking = false;
+
+// 5.1. BỘ LỌC TIẾNG VIỆT
+function normalizeText(str) {
+    if (!str) return "";
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(/^x/, "s");
+    str = str.replace(/^gi/, "d").replace(/^r/, "d").replace(/^v/, "d");
+    str = str.replace(/^tr/, "ch");
+    str = str.replace(/[.,!?;:()\[\]"']/g, "");
+    return str.trim();
+}
+
+const windowSpeech = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (windowSpeech) {
+    recognition = new windowSpeech();
+    recognition.continuous = true; 
+    recognition.interimResults = true; 
+    recognition.lang = 'vi-VN';
+
+    recognition.onstart = function() { console.log("🟢 AI Đã kết nối Mic."); };
+
+    recognition.onresult = function(event) {
+        let interimTranscript = ''; let finalTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) finalTranscript += event.results[i][0].transcript;
+            else interimTranscript += event.results[i][0].transcript;
+        }
+        let currentSpokenText = finalTranscript || interimTranscript;
+        if (currentSpokenText.trim()) processFuzzyMatching(currentSpokenText);
+    };
+
+    recognition.onerror = function(event) {
+        console.warn("⚠️ AI Cảnh báo:", event.error);
+        if(event.error === 'network' && isAITracking) {
+            setTimeout(() => { try { recognition.start(); } catch(e){} }, 1000);
+        }
+    };
+
+    recognition.onend = function() {
+        if (isAITracking) { try { recognition.start(); } catch(e){} }
+    };
+} else {
+    btnAITrack.style.display = 'none';
+}
+
+btnAITrack.addEventListener('click', () => {
+    if (!windowSpeech) return alert("Trình duyệt không hỗ trợ AI. Hãy dùng Chrome!");
+    isAITracking = !isAITracking;
+    if (isAITracking) {
+        btnAITrack.textContent = "🛑 Tắt AI Bám Chữ"; btnAITrack.style.backgroundColor = "#ff4500";
+        try { recognition.start(); } catch(e){}
+        if (isPlaying) { isPlaying = false; btnPlay.textContent = "Bắt đầu cuộn"; clearTimeout(karaokeTimeout); }
+        moveStageToCurrentWord();
+    } else {
+        btnAITrack.textContent = "🎙️ Đọc bằng AI"; btnAITrack.style.backgroundColor = "#4B0082";
+        recognition.stop();
+    }
+});
+
+
+// ==========================================
+// 5.2. THUẬT TOÁN SO KHỚP CHỐNG NHẢY CÓC (ADAPTIVE N-GRAM)
+// ==========================================
+let lastMatchedText = ""; 
+
+function processFuzzyMatching(spokenText) {
+    if (currentWordIndex >= masterWords.length) return;
+    if (spokenText === lastMatchedText) return; 
+
+    let spokenWordsRaw = spokenText.split(' ').filter(w => w.length > 0);
+    // Tăng bộ nhớ ngắn hạn lên 10 từ để bắt được các cụm 3-4 từ dài
+    let recentSpokenWords = spokenWordsRaw.slice(-10).map(w => normalizeText(w)); 
+    if (recentSpokenWords.length < 2) return;
+
+    let lookAheadWindow = 15; // Tầm nhìn xa
+    let scriptWords = [];
+    
+    for (let i = currentWordIndex; i < currentWordIndex + lookAheadWindow; i++) {
+        if (masterWords[i]) {
+            scriptWords.push({ index: i, text: normalizeText(masterWords[i].text) });
+        }
+    }
+
+    let matchedScriptIndex = -1;
+
+    // ƯU TIÊN 1: Tìm cụm 4 từ liên tiếp (Nếu khớp, cho phép nhảy cực xa trong phạm vi 15 từ)
+    if (matchedScriptIndex === -1 && recentSpokenWords.length >= 4) {
+        for (let i = 0; i < recentSpokenWords.length - 3; i++) {
+            let quadToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1] + " " + recentSpokenWords[i+2] + " " + recentSpokenWords[i+3];
+            for (let j = 0; j < scriptWords.length - 3; j++) {
+                let scriptQuad = scriptWords[j].text + " " + scriptWords[j+1].text + " " + scriptWords[j+2].text + " " + scriptWords[j+3].text;
+                if (quadToMatch === scriptQuad) { matchedScriptIndex = scriptWords[j + 3].index; break; }
+            }
+            if (matchedScriptIndex !== -1) break;
+        }
+    }
+
+    // ƯU TIÊN 2: Tìm cụm 3 từ liên tiếp (Vẫn cho phép nhảy xa 15 từ)
+    if (matchedScriptIndex === -1 && recentSpokenWords.length >= 3) {
+        for (let i = 0; i < recentSpokenWords.length - 2; i++) {
+            let trioToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1] + " " + recentSpokenWords[i+2];
+            for (let j = 0; j < scriptWords.length - 2; j++) {
+                let scriptTrio = scriptWords[j].text + " " + scriptWords[j+1].text + " " + scriptWords[j+2].text;
+                if (trioToMatch === scriptTrio) { matchedScriptIndex = scriptWords[j + 2].index; break; }
+            }
+            if (matchedScriptIndex !== -1) break;
+        }
+    }
+
+    // ƯU TIÊN 3: Tìm cụm 2 từ liên tiếp (CHỈ CHO PHÉP TÌM TRONG 4 TỪ GẦN NHẤT ĐỂ CHỐNG NHẢY CÓC)
+    if (matchedScriptIndex === -1) {
+        for (let i = 0; i < recentSpokenWords.length - 1; i++) {
+            let pairToMatch = recentSpokenWords[i] + " " + recentSpokenWords[i+1];
+            
+            // LƯỚI BẢO VỆ CHỐNG NHẢY CÓC: Chỉ quét 4 từ kế tiếp, không quét sâu xuống dưới
+            let safeWindowLimit = Math.min(4, scriptWords.length - 1); 
+            
+            for (let j = 0; j < safeWindowLimit; j++) {
+                let scriptPair = scriptWords[j].text + " " + scriptWords[j+1].text;
+                if (pairToMatch === scriptPair) { matchedScriptIndex = scriptWords[j + 1].index; break; }
+            }
+            if (matchedScriptIndex !== -1) break;
+        }
+    }
+
+    if (matchedScriptIndex !== -1 && matchedScriptIndex > currentWordIndex) {
+        currentWordIndex = matchedScriptIndex;
+        lastMatchedText = spokenText; // Khóa bộ nhớ
+        moveStageToCurrentWord(); 
+    }
+}
+
+// ==========================================
+// 5.3. DỊCH CHUYỂN VÀ TÔ MÀU 
+// ==========================================
+function moveStageToCurrentWord() {
+    if (currentWordIndex >= masterWords.length) return;
+
+    let leadIndex1 = currentWordIndex + 1; 
+    let leadIndex2 = currentWordIndex + 2; 
+    let leadIndex3 = currentWordIndex + 3; 
+    
+    if (leadIndex1 >= masterWords.length) leadIndex1 = currentWordIndex;
+
+    let targetWordObj = masterWords[leadIndex1];
+    let targetEl = document.getElementById(`word-${leadIndex1}`);
+    
+    let chunkDiv = null;
+    if(targetWordObj) {
+        chunkDiv = document.querySelector(`.word-chunk[data-id="${targetWordObj.chunkId}"]`);
+    }
+    
+    if (targetEl && chunkDiv) {
+        targetY = (window.innerHeight / 2) - chunkDiv.offsetTop - targetEl.offsetTop - (targetEl.offsetHeight / 2);
+        
+        document.querySelectorAll('.word').forEach(el => {
+            el.classList.remove('highlight', 'upcoming', 'read');
+            let idx = parseInt(el.dataset.index);
+            
+            if (idx <= currentWordIndex) el.classList.add('read');
+            else if (idx === leadIndex1 || idx === leadIndex2 || idx === leadIndex3) el.classList.add('highlight');
+        });
+    }
+}
