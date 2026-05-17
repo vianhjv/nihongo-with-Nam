@@ -221,12 +221,14 @@ const chunkObserver = new IntersectionObserver((entries) => {
     });
 }, { rootMargin: '1000px 0px 1000px 0px' }); 
 
-btnStart.addEventListener('click', () => {
-
-        let content = "";
+// ==========================================
+// CẬP NHẬT: XỬ LÝ DỮ LIỆU KHÔNG ĐỒNG BỘ (CHỐNG ĐƠ MÁY)
+// ==========================================
+btnStart.addEventListener('click', async () => {
+    let content = "";
     let selectedValue = dropdown.value;
     
-    // Tùy thuộc vào nguồn, lấy dữ liệu từ RAM hay từ ô Textarea
+    // 1. Lấy dữ liệu
     if (selectedValue && selectedValue.startsWith('SYSTEM|')) {
         content = currentSystemScriptContent; 
     } else {
@@ -235,32 +237,40 @@ btnStart.addEventListener('click', () => {
 
     if (!content.trim()) { alert("Nội dung trống!"); return; }
     
+    // 2. Hiện trạng thái Đang tải (Giúp người dùng không bị hoang mang)
+    const originalText = btnStart.textContent;
+    btnStart.textContent = "⏳ Đang chuẩn bị sân khấu...";
+    btnStart.disabled = true;
+    btnStart.style.backgroundColor = "#555";
+    
+    // Cho phép trình duyệt nghỉ 50 mili-giây để vẽ lại cái nút hiển thị chữ "Đang chuẩn bị"
+    await new Promise(resolve => setTimeout(resolve, 50)); 
+
     // Reset hệ thống
     textDisplay.innerHTML = ''; masterWords = []; chunksData = []; currentWordIndex = 0; 
     
-  ///phần Cũ phần Cũ phần Cũ phần Cũ phần Cũ phần Cũ phần Cũ 
-    
-    
-    // SỬA LỚN NHẤT Ở ĐÂY: Tách văn bản nhưng GIỮ LẠI toàn bộ khoảng trắng, dấu tab, dấu xuống dòng
+    // Tách văn bản giữ nguyên khoảng trắng
     let tokens = content.split(/(\s+)/); 
-
     let currentChunk = [];
-    let globalWordCounter = 0; // Chỉ đếm những chữ thật sự, không đếm khoảng trắng
+    let globalWordCounter = 0;
 
-    tokens.forEach((token, index) => {
-        if (token === '') return; // Bỏ qua mảng rỗng do thuật toán split tạo ra
+    // 3. THUẬT TOÁN "NHAI TỪNG MIẾNG" (YIELDING BATCH PROCESSING)
+    // Cứ xử lý 1000 token, chúng ta cho máy tính nghỉ 1 mili-giây để tránh treo trình duyệt
+    const BATCH_SIZE = 1000; 
+    
+    for (let index = 0; index < tokens.length; index++) {
+        let token = tokens[index];
+        if (token === '') continue; 
 
-        let isWord = token.trim() !== ''; // Kiểm tra xem đây là Chữ hay là Khoảng trắng/Xuống dòng
-        
+        let isWord = token.trim() !== ''; 
         let itemObj = { 
             text: token, 
             isWord: isWord,
             chunkId: Math.floor(index / CHUNK_SIZE) 
         };
 
-        // Nếu là Chữ, đưa vào danh sách masterWords để Karaoke đếm nhịp
         if (isWord) {
-            itemObj.syllables = countSyllables(token);
+            itemObj.syllables = countSyllables(token); // Đếm âm tiết
             itemObj.globalWordIndex = globalWordCounter;
             masterWords.push(itemObj);
             globalWordCounter++;
@@ -268,29 +278,42 @@ btnStart.addEventListener('click', () => {
 
         currentChunk.push(itemObj);
         
-        // Cắt cụm dựa trên tổng số token (Chữ + Khoảng trắng)
         if (currentChunk.length === CHUNK_SIZE || index === tokens.length - 1) {
-            // Cập nhật đúng chunkId cho toàn bộ phần tử trong cụm này
             let currentChunkId = chunksData.length;
             currentChunk.forEach(i => i.chunkId = currentChunkId);
-            
             chunksData.push(currentChunk);
             currentChunk = [];
         }
-    });
 
-    // Tạo các "Chiếc hộp rỗng" cho Sân khấu ảo
+        // Bí quyết chống đơ: Cứ 1000 vòng lặp thì nhường quyền cho trình duyệt thở
+        if (index % BATCH_SIZE === 0) {
+            await new Promise(resolve => setTimeout(resolve, 0));
+        }
+    }
+
+    // 4. Tạo các Chiếc hộp rỗng siêu tốc
+    let fragment = document.createDocumentFragment();
     chunksData.forEach((chunk, i) => {
         let chunkDiv = document.createElement('div');
         chunkDiv.className = 'word-chunk';
         chunkDiv.dataset.id = i;
-        textDisplay.appendChild(chunkDiv);
-        chunkObserver.observe(chunkDiv); // Giao cho Trạm gác quản lý
+        fragment.appendChild(chunkDiv);
     });
+    textDisplay.appendChild(fragment);
     
-    setupScreen.classList.remove('active'); readingScreen.classList.add('active');
+    // Đưa Trạm gác vào quan sát
+    document.querySelectorAll('.word-chunk').forEach(div => chunkObserver.observe(div));
+
+    // 5. Mở màn hình đọc kinh
+    setupScreen.classList.remove('active'); 
+    readingScreen.classList.add('active');
     currentY = window.innerHeight; targetY = window.innerHeight;
     textDisplay.style.transform = `translateY(${currentY}px) translateZ(0)`; 
+
+    // Phục hồi lại nút
+    btnStart.textContent = originalText;
+    btnStart.disabled = false;
+    btnStart.style.backgroundColor = "";
 });
 
 
