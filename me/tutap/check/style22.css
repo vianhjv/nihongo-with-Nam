@@ -130,8 +130,8 @@ body:hover #controls { opacity: 1; }
 
 /* --- HIỆU ỨNG KARAOKE --- */
 .word {
-    transition: color 0.1s, text-shadow 0.1s; /* Chuyển màu mượt mà */
-    display: inline-block;
+color: rgba(255, 255, 255, 0.9); /* Sáng rõ */
+    transition: all 0.2s ease;
     margin-right: 8px; /* Khoảng cách giữa các chữ */
 }
 
@@ -150,7 +150,7 @@ body:hover #controls { opacity: 1; }
 
 /* Chữ đã đọc qua (Hơi mờ đi để nhường chỗ cho chữ mới) */
 .word.read {
-    color: #888;
+     color: rgba(255, 255, 255, 0.3); /* Mờ đi như ý bạn muốn color: #888*/ 
 }
 
 
