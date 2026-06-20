@@ -36,6 +36,7 @@ function mergeData(textSegments, jsonData) {
       pali: txt.pali || meta?.pali || "",
       gloss: meta?.gloss || [],
       structure: meta?.structure || "",
+      phrase_explanations: meta?.phrase_explanations || [],
       hasJson: !!meta,
     };
   });
@@ -54,7 +55,7 @@ function renderSegmentList() {
     btn.className = "segment-btn" + (seg.id === selectedId ? " active" : "");
     btn.innerHTML = `
       <div class="seg-id">Segment ${seg.id}</div>
-      <div class="seg-title">${seg.title}</div>
+      <div class="seg-title">${escapeHtml(seg.title)}</div>
     `;
 
     btn.addEventListener("click", () => {
@@ -74,6 +75,7 @@ function renderViewer() {
   const contentEl = document.getElementById("viewer-content");
   const showGloss = document.getElementById("toggle-gloss").checked;
   const showStructure = document.getElementById("toggle-structure").checked;
+  const showDeep = document.getElementById("toggle-deep").checked;
 
   if (!segment) {
     titleEl.textContent = "Không có dữ liệu";
@@ -131,11 +133,97 @@ function renderViewer() {
     `;
   }
 
+  if (showDeep) {
+    html += renderPhraseExplanations(segment.phrase_explanations);
+  }
+
   contentEl.innerHTML = html;
 }
 
+function renderPhraseExplanations(items) {
+  if (!items || !items.length) {
+    return `
+      <div class="viewer-section deep-box">
+        <h3>Giải thích sâu từ vựng & ngữ pháp</h3>
+        <p class="muted">Segment này chưa có phân tích sâu.</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="viewer-section deep-box">
+      <h3>Giải thích sâu từ vựng & ngữ pháp</h3>
+      <div class="deep-list">
+        ${items.map(renderPhraseCard).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderPhraseCard(item) {
+  const breakdown = Array.isArray(item.breakdown) ? item.breakdown : [];
+  const morphology = item.morphology || {};
+
+  return `
+    <article class="phrase-card">
+      <div class="phrase-head">
+        <div>
+          <div class="phrase-pali">${escapeHtml(item.phrase || "")}</div>
+          <div class="phrase-label">→ ${escapeHtml(item.label_vi || item.meaning_vi || "")}</div>
+        </div>
+      </div>
+
+      ${
+        breakdown.length
+          ? `<div class="breakdown-table-wrap">
+              <table class="breakdown-table">
+                <thead>
+                  <tr>
+                    <th>Thành phần</th>
+                    <th>Loại</th>
+                    <th>Ngữ pháp</th>
+                    <th>Nghĩa</th>
+                    <th>Ghi chú vai trò</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${breakdown.map(renderBreakdownRow).join("")}
+                </tbody>
+              </table>
+            </div>`
+          : ""
+      }
+
+      ${
+        morphology.formula || morphology.sandhi_or_sound_change
+          ? `<div class="morphology-box">
+              ${morphology.formula ? `<div><strong>Công thức ghép:</strong> ${escapeHtml(morphology.formula)}</div>` : ""}
+              ${morphology.sandhi_or_sound_change ? `<div><strong>Biến âm / nối âm:</strong> ${escapeHtml(morphology.sandhi_or_sound_change)}</div>` : ""}
+            </div>`
+          : ""
+      }
+
+      ${item.grammar_note ? `<p class="deep-note"><strong>Grammar note:</strong> ${escapeHtml(item.grammar_note)}</p>` : ""}
+      ${item.memory_hint ? `<p class="deep-note"><strong>Mẹo nhớ:</strong> ${escapeHtml(item.memory_hint)}</p>` : ""}
+      ${item.dhamma_note ? `<p class="deep-note dhamma-note"><strong>Ý pháp:</strong> ${escapeHtml(item.dhamma_note)}</p>` : ""}
+    </article>
+  `;
+}
+
+function renderBreakdownRow(part) {
+  return `
+    <tr>
+      <td class="token-cell">${escapeHtml(part.token || "")}</td>
+      <td>${escapeHtml(part.kind || "")}</td>
+      <td>${escapeHtml(part.grammar || "")}</td>
+      <td>${escapeHtml(part.meaning_vi || "")}</td>
+      <td>${escapeHtml(part.role_note || "")}</td>
+    </tr>
+  `;
+}
+
 function escapeHtml(str) {
-  return String(str)
+  return String(str ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -181,5 +269,6 @@ async function loadData() {
 
 document.getElementById("toggle-gloss").addEventListener("change", renderViewer);
 document.getElementById("toggle-structure").addEventListener("change", renderViewer);
+document.getElementById("toggle-deep").addEventListener("change", renderViewer);
 
 loadData();
