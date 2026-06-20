@@ -5,7 +5,8 @@
   "display": {
     "showPaliByDefault": true,
     "showGlossByDefault": false,
-    "showStructureByDefault": false
+    "showStructureByDefault": false,
+    "showPhraseExplanationsByDefault": false
   },
   "segments": [
     {
@@ -13,362 +14,2887 @@
       "title": "Mở đầu bối cảnh",
       "pali": "Evaṁ me sutaṁ — ekaṁ samayaṁ bhagavā bārāṇasiyaṁ viharati isipatane migadāye. Tatra kho bhagavā pañcavaggiye bhikkhū āmantesi.",
       "gloss": [
-        ["Evaṁ me sutaṁ", "như vậy, bởi tôi, đã được nghe = tôi nghe như vầy"],
-        ["ekaṁ samayaṁ", "vào một thời"],
-        ["bhagavā", "Thế Tôn"],
-        ["bārāṇasiyaṁ", "tại Bārāṇasī"],
-        ["viharati", "đang cư trú, đang ở"],
-        ["isipatane migadāye", "ở Isipatana, vườn Nai"],
-        ["Tatra kho bhagavā", "ở đó, thật vậy, Thế Tôn"],
-        ["pañcavaggiye bhikkhū", "các tỳ-kheo nhóm năm vị"],
-        ["āmantesi", "đã gọi, đã nói với"]
+        [
+          "Evaṁ me sutaṁ",
+          "như vậy, bởi tôi, đã được nghe = tôi nghe như vầy"
+        ],
+        [
+          "ekaṁ samayaṁ",
+          "vào một thời"
+        ],
+        [
+          "bhagavā",
+          "Thế Tôn"
+        ],
+        [
+          "bārāṇasiyaṁ",
+          "tại Bārāṇasī"
+        ],
+        [
+          "viharati",
+          "đang cư trú, đang ở"
+        ],
+        [
+          "isipatane migadāye",
+          "ở Isipatana, vườn Nai"
+        ],
+        [
+          "Tatra kho bhagavā",
+          "ở đó, thật vậy, Thế Tôn"
+        ],
+        [
+          "pañcavaggiye bhikkhū",
+          "các tỳ-kheo nhóm năm vị"
+        ],
+        [
+          "āmantesi",
+          "đã gọi, đã nói với"
+        ]
       ],
-      "structure": "[công thức mở đầu] + [thời gian] + [chủ thể] + [địa điểm] + [động từ] + [địa điểm cụ thể]; rồi [mở cảnh] + [chủ thể] + [đối tượng] + [động từ]"
+      "structure": "[công thức mở đầu] + [thời gian] + [chủ thể] + [địa điểm] + [động từ] + [địa điểm cụ thể]; rồi [mở cảnh] + [chủ thể] + [đối tượng] + [động từ]",
+      "phrase_explanations": [
+        {
+          "phrase": "Evaṁ me sutaṁ",
+          "label_vi": "tôi nghe như vầy",
+          "meaning_vi": "tôi nghe như vầy",
+          "breakdown": [
+            {
+              "token": "evaṁ",
+              "kind": "indeclinable",
+              "grammar": "trạng từ bất biến",
+              "meaning_vi": "như vậy, như thế",
+              "role_note": ""
+            },
+            {
+              "token": "me",
+              "kind": "pronoun",
+              "grammar": "đại từ ngôi 1, sở hữu/cách gián tiếp",
+              "meaning_vi": "của tôi, bởi tôi, đối với tôi",
+              "role_note": ""
+            },
+            {
+              "token": "sutaṁ",
+              "kind": "past participle",
+              "grammar": "quá khứ phân từ trung tính",
+              "meaning_vi": "đã được nghe",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "evaṁ + me + sutaṁ",
+            "sandhi_or_sound_change": "Không biến âm quan trọng; đây là công thức mở đầu kinh."
+          },
+          "grammar_note": "“sutaṁ” là dạng bị động/quá khứ phân từ: điều này đã được nghe.",
+          "memory_hint": "evaṁ = như vậy; me = tôi; sutaṁ = đã nghe → lời truyền tụng khiêm cung.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "pañcavaggiye bhikkhū",
+          "label_vi": "các tỳ-kheo nhóm năm vị",
+          "meaning_vi": "các tỳ-kheo nhóm năm vị",
+          "breakdown": [
+            {
+              "token": "pañca",
+              "kind": "numeral",
+              "grammar": "số từ",
+              "meaning_vi": "năm",
+              "role_note": ""
+            },
+            {
+              "token": "vaggiya",
+              "kind": "adjective/noun",
+              "grammar": "thuộc nhóm, phe, bộ",
+              "meaning_vi": "thuộc nhóm",
+              "role_note": ""
+            },
+            {
+              "token": "-e",
+              "kind": "case ending",
+              "grammar": "đuôi đối cách số nhiều nam tính",
+              "meaning_vi": "chỉ nhóm người là đối tượng được gọi",
+              "role_note": ""
+            },
+            {
+              "token": "bhikkhū",
+              "kind": "noun",
+              "grammar": "danh từ nam tính số nhiều",
+              "meaning_vi": "các tỳ-kheo",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "pañca + vaggiya + -e; bhikkhu + -ū",
+            "sandhi_or_sound_change": "pañca + vaggiya → pañcavaggiya: thuộc nhóm năm."
+          },
+          "grammar_note": "“pañcavaggiye bhikkhū” là đối tượng của động từ “āmantesi”.",
+          "memory_hint": "pañca = năm; vaggiya = thuộc nhóm; bhikkhū = các vị tỳ-kheo.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 2,
       "title": "Hai cực đoan không nên theo",
       "pali": "Dvem’me, bhikkhave, antā pabbajitena na sevitabbā.",
       "gloss": [
-        ["Dve ime, bhikkhave, antā", "này các Tỳ-kheo, hai cực đoan này"],
-        ["pabbajitena", "bởi người xuất gia, đối với người xuất gia"],
-        ["na sevitabbā", "không nên được theo, không nên thực hành"]
+        [
+          "Dve ime, bhikkhave, antā",
+          "này các Tỳ-kheo, hai cực đoan này"
+        ],
+        [
+          "pabbajitena",
+          "bởi người xuất gia, đối với người xuất gia"
+        ],
+        [
+          "na sevitabbā",
+          "không nên được theo, không nên thực hành"
+        ]
       ],
-      "structure": "[đối tượng được nêu] + [người liên hệ] + [điều không nên làm]"
+      "structure": "[đối tượng được nêu] + [người liên hệ] + [điều không nên làm]",
+      "phrase_explanations": [
+        {
+          "phrase": "Dvem’me antā",
+          "label_vi": "hai cực đoan này",
+          "meaning_vi": "hai cực đoan này",
+          "breakdown": [
+            {
+              "token": "dve",
+              "kind": "numeral",
+              "grammar": "số từ",
+              "meaning_vi": "hai",
+              "role_note": ""
+            },
+            {
+              "token": "ime",
+              "kind": "pronoun",
+              "grammar": "đại từ chỉ định số nhiều",
+              "meaning_vi": "những cái này",
+              "role_note": ""
+            },
+            {
+              "token": "antā",
+              "kind": "noun",
+              "grammar": "danh từ nam tính số nhiều",
+              "meaning_vi": "các đầu mút, cực đoan",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "dve + ime + antā",
+            "sandhi_or_sound_change": "dve ime trong tụng đọc có thể thành dvem’me."
+          },
+          "grammar_note": "“antā” nghĩa gốc là đầu mút; trong giáo pháp là hai phía cực đoan.",
+          "memory_hint": "antā như hai bờ mép: lệch về hưởng dục hoặc lệch về hành xác.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "pabbajitena na sevitabbā",
+          "label_vi": "không nên được theo bởi người xuất gia",
+          "meaning_vi": "không nên được theo bởi người xuất gia",
+          "breakdown": [
+            {
+              "token": "pabbajita",
+              "kind": "noun/participle",
+              "grammar": "người đã xuất gia",
+              "meaning_vi": "bậc rời đời sống gia đình",
+              "role_note": ""
+            },
+            {
+              "token": "-ena",
+              "kind": "case ending",
+              "grammar": "đuôi công cụ cách số ít",
+              "meaning_vi": "bởi, đối với",
+              "role_note": ""
+            },
+            {
+              "token": "na",
+              "kind": "particle",
+              "grammar": "phủ định từ",
+              "meaning_vi": "không",
+              "role_note": ""
+            },
+            {
+              "token": "sevitabbā",
+              "kind": "gerundive",
+              "grammar": "nên/đáng được thực hành; ở đây phủ định là không nên theo",
+              "meaning_vi": "cần được dùng/thực hành",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "pabbajita + -ena; na + sevitabbā",
+            "sandhi_or_sound_change": "Không biến âm lớn."
+          },
+          "grammar_note": "“sevitabbā” là dạng chỉ điều nên làm; thêm “na” thành điều không nên làm.",
+          "memory_hint": "Không phải ghét bỏ, mà là không nuôi dưỡng hai thói quen lệch.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 3,
       "title": "Hỏi: hai cực đoan ấy là gì?",
       "pali": "Katame dve?",
       "gloss": [
-        ["Katame", "những cái nào?"],
-        ["dve", "hai"]
+        [
+          "Katame",
+          "những cái nào?"
+        ],
+        [
+          "dve",
+          "hai"
+        ]
       ],
-      "structure": "[từ để hỏi] + [số lượng]"
+      "structure": "[từ để hỏi] + [số lượng]",
+      "phrase_explanations": [
+        {
+          "phrase": "Katame dve",
+          "label_vi": "hai cái nào?",
+          "meaning_vi": "hai cái nào?",
+          "breakdown": [
+            {
+              "token": "katame",
+              "kind": "interrogative pronoun",
+              "grammar": "đại từ nghi vấn số nhiều",
+              "meaning_vi": "những cái nào",
+              "role_note": ""
+            },
+            {
+              "token": "dve",
+              "kind": "numeral",
+              "grammar": "số từ",
+              "meaning_vi": "hai",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "katame + dve",
+            "sandhi_or_sound_change": "Không biến âm."
+          },
+          "grammar_note": "Câu hỏi rất ngắn: nghi vấn từ + số lượng.",
+          "memory_hint": "Trí tuệ bắt đầu bằng câu hỏi rõ ràng: cái nào cần tránh?",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 4,
       "title": "Cực đoan thứ nhất: đắm dục lạc",
       "pali": "Yo cāyaṁ kāmesu kāmasukhallikānuyogo hīno gammo pothujjaniko anariyo anatthasaṁhito.",
       "gloss": [
-        ["Yo cāyaṁ", "đó là cái này, cái nào mà chính là cái này"],
-        ["kāmesu", "trong các dục"],
-        ["kāmasukhallikānuyogo", "sự theo đuổi khoái lạc trong dục"],
-        ["hīno", "thấp hèn"],
-        ["gammo", "phàm tục, thô lậu"],
-        ["pothujjaniko", "thuộc về phàm phu"],
-        ["anariyo", "không cao quý, không phải Thánh"],
-        ["anatthasaṁhito", "không dẫn đến lợi ích"]
+        [
+          "Yo cāyaṁ",
+          "đó là cái này, cái nào mà chính là cái này"
+        ],
+        [
+          "kāmesu",
+          "trong các dục"
+        ],
+        [
+          "kāmasukhallikānuyogo",
+          "sự theo đuổi khoái lạc trong dục"
+        ],
+        [
+          "hīno",
+          "thấp hèn"
+        ],
+        [
+          "gammo",
+          "phàm tục, thô lậu"
+        ],
+        [
+          "pothujjaniko",
+          "thuộc về phàm phu"
+        ],
+        [
+          "anariyo",
+          "không cao quý, không phải Thánh"
+        ],
+        [
+          "anatthasaṁhito",
+          "không dẫn đến lợi ích"
+        ]
       ],
-      "structure": "[cụm dẫn nhập] + [phạm vi] + [tên cực đoan] + [chuỗi tính chất đánh giá]"
+      "structure": "[cụm dẫn nhập] + [phạm vi] + [tên cực đoan] + [chuỗi tính chất đánh giá]",
+      "phrase_explanations": [
+        {
+          "phrase": "Yo cāyaṁ",
+          "label_vi": "cái này đây, tức là...",
+          "meaning_vi": "cái này đây, tức là...",
+          "breakdown": [
+            {
+              "token": "yo",
+              "kind": "relative pronoun",
+              "grammar": "đại từ quan hệ nam tính số ít",
+              "meaning_vi": "cái nào, người nào, điều nào",
+              "role_note": ""
+            },
+            {
+              "token": "ca",
+              "kind": "particle",
+              "grammar": "liên từ bất biến",
+              "meaning_vi": "và, còn",
+              "role_note": ""
+            },
+            {
+              "token": "ayaṁ",
+              "kind": "demonstrative pronoun",
+              "grammar": "đại từ chỉ định",
+              "meaning_vi": "cái này đây",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "yo + ca + ayaṁ",
+            "sandhi_or_sound_change": "ca + ayaṁ trong tụng đọc thành cāyaṁ."
+          },
+          "grammar_note": "Đây là lối nêu đối tượng: “cái này đây, tức là…”.",
+          "memory_hint": "yo cāyaṁ giúp tâm chỉ thẳng vào đối tượng đang được định nghĩa.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "kāmasukhallikānuyogo",
+          "label_vi": "sự theo đuổi khoái lạc trong dục",
+          "meaning_vi": "sự theo đuổi khoái lạc trong dục",
+          "breakdown": [
+            {
+              "token": "kāma",
+              "kind": "noun",
+              "grammar": "danh từ/yếu tố ghép",
+              "meaning_vi": "dục, đối tượng ham muốn",
+              "role_note": ""
+            },
+            {
+              "token": "sukha",
+              "kind": "noun/adjective",
+              "grammar": "hạnh phúc, lạc thọ",
+              "meaning_vi": "sự dễ chịu",
+              "role_note": ""
+            },
+            {
+              "token": "-llika",
+              "kind": "suffix/adjectival",
+              "grammar": "yếu tố tạo nghĩa thiên về, thuộc về",
+              "meaning_vi": "thuộc lạc thú",
+              "role_note": ""
+            },
+            {
+              "token": "anuyoga",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "sự theo đuổi, chuyên chú thực hành",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "kāma + sukha + allika + anuyoga",
+            "sandhi_or_sound_change": "Trong hợp từ, nguyên âm và phụ âm được nối để thành kāmasukhallikānuyoga."
+          },
+          "grammar_note": "“anuyogo” là danh từ chính: không chỉ dục lạc, mà là sự theo đuổi dục lạc.",
+          "memory_hint": "kāma = dục; sukha = lạc; anuyoga = theo đuổi → chạy theo khoái lạc.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "anatthasaṁhito",
+          "label_vi": "không dẫn đến lợi ích",
+          "meaning_vi": "không dẫn đến lợi ích",
+          "breakdown": [
+            {
+              "token": "an- / a-",
+              "kind": "prefix",
+              "grammar": "tiền tố phủ định",
+              "meaning_vi": "không, phi",
+              "role_note": ""
+            },
+            {
+              "token": "attha",
+              "kind": "noun",
+              "grammar": "lợi ích, mục đích, ý nghĩa",
+              "meaning_vi": "điều có ích",
+              "role_note": ""
+            },
+            {
+              "token": "saṁhita",
+              "kind": "past participle/adjective",
+              "grammar": "được nối với, liên hệ với, dẫn đến",
+              "meaning_vi": "gắn với",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "an- + attha + saṁhita",
+            "sandhi_or_sound_change": "a- trước attha thành anattha; saṁhita giữ nghĩa gắn/liên hệ."
+          },
+          "grammar_note": "anattha là không lợi ích; saṁhita là liên hệ/dẫn đến.",
+          "memory_hint": "Thấy quả: pháp nào không dẫn đến lợi ích thì không nên nương theo.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 5,
       "title": "Cực đoan thứ hai: hành xác",
       "pali": "Yo cāyaṁ attakilamathānuyogo dukkho anariyo anatthasaṁhito.",
       "gloss": [
-        ["Yo cāyaṁ", "đó là cái này"],
-        ["attakilamathānuyogo", "sự theo đuổi việc hành hạ, làm khổ chính mình"],
-        ["dukkho", "khổ đau"],
-        ["anariyo", "không cao quý"],
-        ["anatthasaṁhito", "không dẫn đến lợi ích"]
+        [
+          "Yo cāyaṁ",
+          "đó là cái này"
+        ],
+        [
+          "attakilamathānuyogo",
+          "sự theo đuổi việc hành hạ, làm khổ chính mình"
+        ],
+        [
+          "dukkho",
+          "khổ đau"
+        ],
+        [
+          "anariyo",
+          "không cao quý"
+        ],
+        [
+          "anatthasaṁhito",
+          "không dẫn đến lợi ích"
+        ]
       ],
-      "structure": "[cụm dẫn nhập] + [tên cực đoan] + [chuỗi tính chất đánh giá]"
+      "structure": "[cụm dẫn nhập] + [tên cực đoan] + [chuỗi tính chất đánh giá]",
+      "phrase_explanations": [
+        {
+          "phrase": "attakilamathānuyogo",
+          "label_vi": "sự theo đuổi việc hành hạ chính mình",
+          "meaning_vi": "sự theo đuổi việc hành hạ chính mình",
+          "breakdown": [
+            {
+              "token": "atta",
+              "kind": "noun",
+              "grammar": "danh từ/yếu tố ghép",
+              "meaning_vi": "tự thân, chính mình",
+              "role_note": ""
+            },
+            {
+              "token": "kilamatha",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "sự mệt nhọc, kiệt sức, hành hạ",
+              "role_note": ""
+            },
+            {
+              "token": "anuyoga",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "sự theo đuổi, chuyên tâm thực hành",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "atta + kilamatha + anuyoga",
+            "sandhi_or_sound_change": "kilamatha + anuyoga nối thành kilamathānuyoga do nguyên âm kéo dài trong hợp từ."
+          },
+          "grammar_note": "“anuyogo” là danh từ chính; atta-kilamatha bổ nghĩa: theo đuổi việc làm khổ mình.",
+          "memory_hint": "atta = mình; kilamatha = làm mệt/khổ; anuyoga = theo đuổi.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "dukkho anariyo anatthasaṁhito",
+          "label_vi": "khổ, không Thánh, không lợi ích",
+          "meaning_vi": "khổ, không Thánh, không lợi ích",
+          "breakdown": [
+            {
+              "token": "dukkha",
+              "kind": "adjective/noun",
+              "grammar": "tính từ/danh từ",
+              "meaning_vi": "khổ, khó chịu, bất toàn",
+              "role_note": ""
+            },
+            {
+              "token": "an- + ariya",
+              "kind": "prefix + adjective",
+              "grammar": "phủ định + cao quý",
+              "meaning_vi": "không thuộc bậc Thánh",
+              "role_note": ""
+            },
+            {
+              "token": "an- + attha + saṁhita",
+              "kind": "compound",
+              "grammar": "không + lợi ích + gắn với",
+              "meaning_vi": "không đưa đến lợi ích",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "dukkha; an-ariya; an-attha-saṁhita",
+            "sandhi_or_sound_change": "an- trước nguyên âm tạo dạng phủ định rõ: anariyo, anattha."
+          },
+          "grammar_note": "Chuỗi ba tính chất phủ định giá trị tu tập của hành xác.",
+          "memory_hint": "Không phải khổ nào cũng giải thoát; khổ do chấp thủ vào khổ hạnh vẫn là cực đoan.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 6,
       "title": "Không rơi vào hai cực đoan, Như Lai giác ngộ Trung đạo",
       "pali": "Ete te, bhikkhave, ubho ante anupagamma majjhimā paṭipadā tathāgatena abhisambuddhā.",
       "gloss": [
-        ["Ete te, bhikkhave, ubho ante", "này các Tỳ-kheo, chính hai cực đoan ấy"],
-        ["anupagamma", "không đi vào, không rơi vào"],
-        ["majjhimā paṭipadā", "con đường thực hành trung đạo"],
-        ["tathāgatena", "bởi Như Lai"],
-        ["abhisambuddhā", "đã được giác ngộ trọn vẹn"]
+        [
+          "Ete te, bhikkhave, ubho ante",
+          "này các Tỳ-kheo, chính hai cực đoan ấy"
+        ],
+        [
+          "anupagamma",
+          "không đi vào, không rơi vào"
+        ],
+        [
+          "majjhimā paṭipadā",
+          "con đường thực hành trung đạo"
+        ],
+        [
+          "tathāgatena",
+          "bởi Như Lai"
+        ],
+        [
+          "abhisambuddhā",
+          "đã được giác ngộ trọn vẹn"
+        ]
       ],
-      "structure": "[nhắc lại hai cực đoan] + [không rơi vào] + [Trung đạo] + [bởi Như Lai] + [được giác ngộ]"
+      "structure": "[nhắc lại hai cực đoan] + [không rơi vào] + [Trung đạo] + [bởi Như Lai] + [được giác ngộ]",
+      "phrase_explanations": [
+        {
+          "phrase": "anupagamma",
+          "label_vi": "không đi vào, không tiếp cận",
+          "meaning_vi": "không đi vào, không tiếp cận",
+          "breakdown": [
+            {
+              "token": "an-",
+              "kind": "prefix",
+              "grammar": "tiền tố phủ định",
+              "meaning_vi": "không",
+              "role_note": ""
+            },
+            {
+              "token": "upa",
+              "kind": "prefix",
+              "grammar": "tiền tố hướng gần",
+              "meaning_vi": "đến gần, tiếp cận",
+              "role_note": ""
+            },
+            {
+              "token": "gacchati / gam",
+              "kind": "verb root",
+              "grammar": "gốc động từ",
+              "meaning_vi": "đi",
+              "role_note": ""
+            },
+            {
+              "token": "-amma",
+              "kind": "absolutive/gerund",
+              "grammar": "dạng bất biến chỉ hành động phụ",
+              "meaning_vi": "sau khi đi/đến; ở đây: không đi vào",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "an- + upa + gam + -ma/-amma",
+            "sandhi_or_sound_change": "upa + gam tạo ý “đi đến gần”; an- phủ định."
+          },
+          "grammar_note": "anupagamma là trạng ngữ hành động: không đi vào hai cực đoan rồi Trung đạo được chứng ngộ.",
+          "memory_hint": "upa = lại gần; gam = đi; an- = không → không đi vào.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "majjhimā paṭipadā",
+          "label_vi": "con đường thực hành trung đạo",
+          "meaning_vi": "con đường thực hành trung đạo",
+          "breakdown": [
+            {
+              "token": "majjhima",
+              "kind": "adjective",
+              "grammar": "tính từ giống cái",
+              "meaning_vi": "ở giữa, trung dung",
+              "role_note": ""
+            },
+            {
+              "token": "-ā",
+              "kind": "case ending",
+              "grammar": "đuôi chủ cách giống cái số ít",
+              "meaning_vi": "phù hợp với paṭipadā",
+              "role_note": ""
+            },
+            {
+              "token": "paṭipadā",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "con đường thực hành, lối tu",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "majjhima + -ā; paṭipadā",
+            "sandhi_or_sound_change": "majjhimā hòa hợp giống/cách/số với paṭipadā."
+          },
+          "grammar_note": "Trung đạo không chỉ là thái độ ở giữa, mà là một lối thực hành.",
+          "memory_hint": "majjhima = giữa; paṭipadā = đường đi thực hành.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 7,
       "title": "Trung đạo đưa đến điều gì",
       "pali": "Cakkhukaraṇī ñāṇakaraṇī upasamāya abhiññāya sambodhāya nibbānāya saṁvattati.",
       "gloss": [
-        ["Cakkhukaraṇī", "làm phát sinh con mắt thấy"],
-        ["ñāṇakaraṇī", "làm phát sinh trí biết"],
-        ["upasamāya", "cho an tịnh, cho sự lắng dịu"],
-        ["abhiññāya", "cho thắng trí"],
-        ["sambodhāya", "cho giác ngộ"],
-        ["nibbānāya", "cho Niết-bàn"],
-        ["saṁvattati", "dẫn đến"]
+        [
+          "Cakkhukaraṇī",
+          "làm phát sinh con mắt thấy"
+        ],
+        [
+          "ñāṇakaraṇī",
+          "làm phát sinh trí biết"
+        ],
+        [
+          "upasamāya",
+          "cho an tịnh, cho sự lắng dịu"
+        ],
+        [
+          "abhiññāya",
+          "cho thắng trí"
+        ],
+        [
+          "sambodhāya",
+          "cho giác ngộ"
+        ],
+        [
+          "nibbānāya",
+          "cho Niết-bàn"
+        ],
+        [
+          "saṁvattati",
+          "dẫn đến"
+        ]
       ],
-      "structure": "[chuỗi công năng / đích đến] + [động từ chốt]"
+      "structure": "[chuỗi công năng / đích đến] + [động từ chốt]",
+      "phrase_explanations": [
+        {
+          "phrase": "Cakkhukaraṇī ñāṇakaraṇī",
+          "label_vi": "làm phát sinh mắt thấy và trí biết",
+          "meaning_vi": "làm phát sinh mắt thấy và trí biết",
+          "breakdown": [
+            {
+              "token": "cakkhu",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "con mắt; khả năng thấy",
+              "role_note": ""
+            },
+            {
+              "token": "karaṇī",
+              "kind": "adjective/agentive",
+              "grammar": "dạng tạo tác giống cái",
+              "meaning_vi": "làm ra, tạo ra",
+              "role_note": ""
+            },
+            {
+              "token": "ñāṇa",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "trí biết, nhận thức",
+              "role_note": ""
+            },
+            {
+              "token": "karaṇī",
+              "kind": "adjective/agentive",
+              "grammar": "làm phát sinh",
+              "meaning_vi": "tạo ra",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "cakkhu + karaṇī; ñāṇa + karaṇī",
+            "sandhi_or_sound_change": "Hai hợp từ song song cùng kết thúc bằng karaṇī."
+          },
+          "grammar_note": "Do paṭipadā là giống cái, các tính từ công năng cũng ở dạng giống cái.",
+          "memory_hint": "Con đường đúng không làm ta mù tín, mà mở mắt và sinh trí.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "upasamāya abhiññāya sambodhāya nibbānāya",
+          "label_vi": "cho an tịnh, thắng trí, giác ngộ, Niết-bàn",
+          "meaning_vi": "cho an tịnh, thắng trí, giác ngộ, Niết-bàn",
+          "breakdown": [
+            {
+              "token": "upa-sama",
+              "kind": "noun",
+              "grammar": "sự lắng dịu, an tịnh",
+              "meaning_vi": "làm yên xuống",
+              "role_note": ""
+            },
+            {
+              "token": "-āya",
+              "kind": "dative ending",
+              "grammar": "đuôi chỉ mục đích/đích đến",
+              "meaning_vi": "cho, để, hướng đến",
+              "role_note": ""
+            },
+            {
+              "token": "abhiññā",
+              "kind": "noun",
+              "grammar": "thắng trí, biết trực tiếp",
+              "meaning_vi": "biết vượt lên",
+              "role_note": ""
+            },
+            {
+              "token": "sambodhi",
+              "kind": "noun",
+              "grammar": "giác ngộ trọn vẹn",
+              "meaning_vi": "tỉnh thức viên mãn",
+              "role_note": ""
+            },
+            {
+              "token": "nibbāna",
+              "kind": "noun",
+              "grammar": "Niết-bàn",
+              "meaning_vi": "sự tắt lửa tham sân si",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "upasama/abhiññā/sambodhi/nibbāna + -āya",
+            "sandhi_or_sound_change": "Các từ đích đến dùng đuôi -āya."
+          },
+          "grammar_note": "Chuỗi mục đích đi trước động từ saṁvattati: con đường dẫn đến những quả này.",
+          "memory_hint": "-āya nhắc con: tất cả đều là hướng đến, không phải trang trí ngôn từ.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 8,
       "title": "Hỏi: Trung đạo ấy là gì?",
       "pali": "Katamā ca sā, bhikkhave, majjhimā paṭipadā?",
       "gloss": [
-        ["Katamā ca sā", "và cái ấy là gì?"],
-        ["bhikkhave", "này các Tỳ-kheo"],
-        ["majjhimā paṭipadā", "con đường thực hành trung đạo"]
+        [
+          "Katamā ca sā",
+          "và cái ấy là gì?"
+        ],
+        [
+          "bhikkhave",
+          "này các Tỳ-kheo"
+        ],
+        [
+          "majjhimā paṭipadā",
+          "con đường thực hành trung đạo"
+        ]
       ],
-      "structure": "[từ để hỏi] + [xưng hô] + [đối tượng được hỏi]"
+      "structure": "[từ để hỏi] + [xưng hô] + [đối tượng được hỏi]",
+      "phrase_explanations": [
+        {
+          "phrase": "Katamā ca sā majjhimā paṭipadā",
+          "label_vi": "và Trung đạo ấy là gì?",
+          "meaning_vi": "và Trung đạo ấy là gì?",
+          "breakdown": [
+            {
+              "token": "katamā",
+              "kind": "interrogative pronoun",
+              "grammar": "nghi vấn từ giống cái",
+              "meaning_vi": "cái nào?",
+              "role_note": ""
+            },
+            {
+              "token": "ca",
+              "kind": "particle",
+              "grammar": "liên từ",
+              "meaning_vi": "và",
+              "role_note": ""
+            },
+            {
+              "token": "sā",
+              "kind": "demonstrative pronoun",
+              "grammar": "đại từ chỉ định giống cái",
+              "meaning_vi": "ấy, cái ấy",
+              "role_note": ""
+            },
+            {
+              "token": "majjhimā paṭipadā",
+              "kind": "noun phrase",
+              "grammar": "cụm danh từ giống cái",
+              "meaning_vi": "con đường thực hành trung đạo",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "katamā + ca + sā + majjhimā paṭipadā",
+            "sandhi_or_sound_change": "Không biến âm quan trọng."
+          },
+          "grammar_note": "katamā, sā, majjhimā đều hòa hợp giống cái với paṭipadā.",
+          "memory_hint": "Đức Phật không để khái niệm mơ hồ: hỏi rõ rồi chỉ rõ.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 9,
       "title": "Trung đạo chính là Bát Thánh đạo",
       "pali": "Ayam’eva ariyo aṭṭhaṅgiko maggo.",
       "gloss": [
-        ["Ayam’eva", "chính đây"],
-        ["ariyo", "Thánh, cao quý"],
-        ["aṭṭhaṅgiko", "có tám chi phần"],
-        ["maggo", "đạo lộ, con đường"]
+        [
+          "Ayam’eva",
+          "chính đây"
+        ],
+        [
+          "ariyo",
+          "Thánh, cao quý"
+        ],
+        [
+          "aṭṭhaṅgiko",
+          "có tám chi phần"
+        ],
+        [
+          "maggo",
+          "đạo lộ, con đường"
+        ]
       ],
-      "structure": "[chỉ đích xác] + [phẩm tính] + [phẩm tính] + [danh từ chính]"
+      "structure": "[chỉ đích xác] + [phẩm tính] + [phẩm tính] + [danh từ chính]",
+      "phrase_explanations": [
+        {
+          "phrase": "Ayam’eva ariyo aṭṭhaṅgiko maggo",
+          "label_vi": "chính đây là con đường Thánh tám chi",
+          "meaning_vi": "chính đây là con đường Thánh tám chi",
+          "breakdown": [
+            {
+              "token": "ayaṁ",
+              "kind": "demonstrative pronoun",
+              "grammar": "đại từ chỉ định nam tính số ít",
+              "meaning_vi": "đây, cái này",
+              "role_note": ""
+            },
+            {
+              "token": "eva",
+              "kind": "particle",
+              "grammar": "nhấn mạnh từ",
+              "meaning_vi": "chính, đúng là",
+              "role_note": ""
+            },
+            {
+              "token": "ariya",
+              "kind": "adjective",
+              "grammar": "tính từ",
+              "meaning_vi": "cao quý, Thánh",
+              "role_note": ""
+            },
+            {
+              "token": "aṭṭha",
+              "kind": "numeral",
+              "grammar": "số từ",
+              "meaning_vi": "tám",
+              "role_note": ""
+            },
+            {
+              "token": "aṅga",
+              "kind": "noun",
+              "grammar": "chi phần, yếu tố",
+              "meaning_vi": "bộ phận",
+              "role_note": ""
+            },
+            {
+              "token": "-ika",
+              "kind": "suffix",
+              "grammar": "hậu tố tính từ",
+              "meaning_vi": "có tính, gồm có",
+              "role_note": ""
+            },
+            {
+              "token": "maggo",
+              "kind": "noun",
+              "grammar": "danh từ nam tính chủ cách số ít",
+              "meaning_vi": "con đường",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "ayaṁ + eva; aṭṭha + aṅga + ika",
+            "sandhi_or_sound_change": "ayaṁ eva trong tụng đọc thành ayam’eva; aṭṭha+aṅga tạo aṭṭhaṅga."
+          },
+          "grammar_note": "maggo là danh từ chính; ariyo và aṭṭhaṅgiko bổ nghĩa cho maggo.",
+          "memory_hint": "eva = chính; aṭṭhaṅgika = có tám chi; maggo = đường.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 10,
       "title": "Tám chi của Bát Thánh đạo",
       "pali": "Seyyathidaṁ—sammādiṭṭhi, sammāsaṅkappo, sammāvācā, sammākammanto, sammāājīvo, sammāvāyāmo, sammāsati, sammāsamādhi.",
       "gloss": [
-        ["Seyyathidaṁ", "tức là như sau"],
-        ["sammādiṭṭhi", "chánh kiến"],
-        ["sammāsaṅkappo", "chánh tư duy"],
-        ["sammāvācā", "chánh ngữ"],
-        ["sammākammanto", "chánh nghiệp"],
-        ["sammāājīvo", "chánh mạng"],
-        ["sammāvāyāmo", "chánh tinh tấn"],
-        ["sammāsati", "chánh niệm"],
-        ["sammāsamādhi", "chánh định"]
+        [
+          "Seyyathidaṁ",
+          "tức là như sau"
+        ],
+        [
+          "sammādiṭṭhi",
+          "chánh kiến"
+        ],
+        [
+          "sammāsaṅkappo",
+          "chánh tư duy"
+        ],
+        [
+          "sammāvācā",
+          "chánh ngữ"
+        ],
+        [
+          "sammākammanto",
+          "chánh nghiệp"
+        ],
+        [
+          "sammāājīvo",
+          "chánh mạng"
+        ],
+        [
+          "sammāvāyāmo",
+          "chánh tinh tấn"
+        ],
+        [
+          "sammāsati",
+          "chánh niệm"
+        ],
+        [
+          "sammāsamādhi",
+          "chánh định"
+        ]
       ],
-      "structure": "[mở đầu liệt kê] + [các mục song song có cùng tiền tố sammā-]"
+      "structure": "[mở đầu liệt kê] + [các mục song song có cùng tiền tố sammā-]",
+      "phrase_explanations": [
+        {
+          "phrase": "sammā-",
+          "label_vi": "tiền tố/chỉ phẩm tính chánh",
+          "meaning_vi": "tiền tố/chỉ phẩm tính chánh",
+          "breakdown": [
+            {
+              "token": "sammā",
+              "kind": "adverb/prefix-like",
+              "grammar": "trạng từ đi trước danh từ/động từ",
+              "meaning_vi": "đúng đắn, chân chánh, trọn vẹn",
+              "role_note": ""
+            },
+            {
+              "token": "diṭṭhi",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "kiến, cái thấy",
+              "role_note": ""
+            },
+            {
+              "token": "saṅkappa",
+              "kind": "noun",
+              "grammar": "danh từ nam tính",
+              "meaning_vi": "tư duy, ý hướng",
+              "role_note": ""
+            },
+            {
+              "token": "vācā",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "lời nói",
+              "role_note": ""
+            },
+            {
+              "token": "kammanta",
+              "kind": "noun",
+              "grammar": "danh từ nam tính",
+              "meaning_vi": "hành động, nghiệp",
+              "role_note": ""
+            },
+            {
+              "token": "ājīva",
+              "kind": "noun",
+              "grammar": "danh từ nam tính",
+              "meaning_vi": "sinh kế",
+              "role_note": ""
+            },
+            {
+              "token": "vāyāma",
+              "kind": "noun",
+              "grammar": "danh từ nam tính",
+              "meaning_vi": "nỗ lực",
+              "role_note": ""
+            },
+            {
+              "token": "sati",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "niệm, nhớ biết",
+              "role_note": ""
+            },
+            {
+              "token": "samādhi",
+              "kind": "noun",
+              "grammar": "danh từ nam tính",
+              "meaning_vi": "định",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "sammā + diṭṭhi/saṅkappa/vācā/kammanta/ājīva/vāyāma/sati/samādhi",
+            "sandhi_or_sound_change": "Khi viết liền, sammā giữ nguyên nghĩa “chánh/đúng”."
+          },
+          "grammar_note": "Tám chi song song; cùng một phẩm tính sammā chiếu vào tám lĩnh vực đời sống.",
+          "memory_hint": "sammā không chỉ là “đúng” theo luật, mà là đúng hướng giải thoát.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 11,
       "title": "Khổ đế",
       "pali": "Idaṁ dukkhaṁ ariyasaccaṁ.",
       "gloss": [
-        ["Idaṁ", "đây"],
-        ["dukkhaṁ ariyasaccaṁ", "Thánh đế về khổ"]
+        [
+          "Idaṁ",
+          "đây"
+        ],
+        [
+          "dukkhaṁ ariyasaccaṁ",
+          "Thánh đế về khổ"
+        ]
       ],
-      "structure": "[chỉ định] + [đế được xác định]"
+      "structure": "[chỉ định] + [đế được xác định]",
+      "phrase_explanations": [
+        {
+          "phrase": "Idaṁ dukkhaṁ ariyasaccaṁ",
+          "label_vi": "đây là Thánh đế về khổ",
+          "meaning_vi": "đây là Thánh đế về khổ",
+          "breakdown": [
+            {
+              "token": "idaṁ",
+              "kind": "demonstrative pronoun",
+              "grammar": "đại từ chỉ định trung tính",
+              "meaning_vi": "đây, điều này",
+              "role_note": ""
+            },
+            {
+              "token": "dukkhaṁ",
+              "kind": "noun/adjective",
+              "grammar": "trung tính chủ/đối cách số ít",
+              "meaning_vi": "khổ, điều bất toại nguyện",
+              "role_note": ""
+            },
+            {
+              "token": "ariya",
+              "kind": "adjective",
+              "grammar": "cao quý, thuộc bậc Thánh",
+              "meaning_vi": "Thánh",
+              "role_note": ""
+            },
+            {
+              "token": "saccaṁ",
+              "kind": "noun",
+              "grammar": "danh từ trung tính",
+              "meaning_vi": "sự thật, chân lý",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "idaṁ + dukkhaṁ + ariya + saccaṁ",
+            "sandhi_or_sound_change": "ariya + saccaṁ thành ariyasaccaṁ."
+          },
+          "grammar_note": "idaṁ, dukkhaṁ, saccaṁ cùng dạng trung tính; ariya bổ nghĩa cho saccaṁ.",
+          "memory_hint": "Đây không phải bi quan; đây là nhìn thẳng sự thật.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 12,
       "title": "Định nghĩa Khổ đế",
       "pali": "Jātipi dukkhā, jarāpi dukkhā, byādhipi dukkho, maraṇampi dukkhaṁ, appiyehi sampayogo dukkho, piyehi vippayogo dukkho, yampicchaṁ na labhati tampi dukkhaṁ; saṅkhittena pañcupādānakkhandhā dukkhā.",
       "gloss": [
-        ["Jātipi dukkhā", "sinh cũng là khổ"],
-        ["jarāpi dukkhā", "già cũng là khổ"],
-        ["byādhipi dukkho", "bệnh cũng là khổ"],
-        ["maraṇampi dukkhaṁ", "chết cũng là khổ"],
-        ["appiyehi sampayogo dukkho", "gặp gỡ với cái không ưa là khổ"],
-        ["piyehi vippayogo dukkho", "xa lìa cái mình yêu là khổ"],
-        ["yampicchaṁ na labhati tampi dukkhaṁ", "điều gì mong mà không được, điều ấy cũng là khổ"],
-        ["saṅkhittena", "tóm lại"],
-        ["pañcupādānakkhandhā", "năm thủ uẩn"],
-        ["dukkhā", "là khổ"]
+        [
+          "Jātipi dukkhā",
+          "sinh cũng là khổ"
+        ],
+        [
+          "jarāpi dukkhā",
+          "già cũng là khổ"
+        ],
+        [
+          "byādhipi dukkho",
+          "bệnh cũng là khổ"
+        ],
+        [
+          "maraṇampi dukkhaṁ",
+          "chết cũng là khổ"
+        ],
+        [
+          "appiyehi sampayogo dukkho",
+          "gặp gỡ với cái không ưa là khổ"
+        ],
+        [
+          "piyehi vippayogo dukkho",
+          "xa lìa cái mình yêu là khổ"
+        ],
+        [
+          "yampicchaṁ na labhati tampi dukkhaṁ",
+          "điều gì mong mà không được, điều ấy cũng là khổ"
+        ],
+        [
+          "saṅkhittena",
+          "tóm lại"
+        ],
+        [
+          "pañcupādānakkhandhā",
+          "năm thủ uẩn"
+        ],
+        [
+          "dukkhā",
+          "là khổ"
+        ]
       ],
-      "structure": "[chuỗi liệt kê các mặt của khổ] + [kết luận tóm lược]"
+      "structure": "[chuỗi liệt kê các mặt của khổ] + [kết luận tóm lược]",
+      "phrase_explanations": [
+        {
+          "phrase": "Jātipi dukkhā",
+          "label_vi": "sinh cũng là khổ",
+          "meaning_vi": "sinh cũng là khổ",
+          "breakdown": [
+            {
+              "token": "jāti",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "sự sinh, sinh ra",
+              "role_note": ""
+            },
+            {
+              "token": "pi",
+              "kind": "particle",
+              "grammar": "tiểu từ nhấn mạnh",
+              "meaning_vi": "cũng, ngay cả",
+              "role_note": ""
+            },
+            {
+              "token": "dukkhā",
+              "kind": "adjective",
+              "grammar": "tính từ giống cái",
+              "meaning_vi": "khổ",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "jāti + pi → jātipi",
+            "sandhi_or_sound_change": "pi gắn sau từ trước để nhấn mạnh “cũng”."
+          },
+          "grammar_note": "dukkhā hòa hợp giống cái với jāti.",
+          "memory_hint": "pi như tiếng chuông lặp: sinh cũng khổ, già cũng khổ.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "appiyehi sampayogo",
+          "label_vi": "gặp gỡ với điều không ưa",
+          "meaning_vi": "gặp gỡ với điều không ưa",
+          "breakdown": [
+            {
+              "token": "a-",
+              "kind": "prefix",
+              "grammar": "tiền tố phủ định",
+              "meaning_vi": "không, bất",
+              "role_note": ""
+            },
+            {
+              "token": "piya",
+              "kind": "adjective/noun",
+              "grammar": "tính từ/danh từ",
+              "meaning_vi": "thân yêu, dễ mến",
+              "role_note": ""
+            },
+            {
+              "token": "-ehi",
+              "kind": "case ending",
+              "grammar": "đuôi công cụ cách số nhiều",
+              "meaning_vi": "với, cùng với",
+              "role_note": ""
+            },
+            {
+              "token": "saṃ- / sam-",
+              "kind": "prefix",
+              "grammar": "tiền tố hội tụ",
+              "meaning_vi": "cùng, gom lại, kết hợp",
+              "role_note": ""
+            },
+            {
+              "token": "payoga / yoga",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "sự nối kết, áp dụng, kết hợp",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "a- + piya + -ehi = appiyehi; saṃ- + payoga = sampayoga",
+            "sandhi_or_sound_change": "a- phủ định piya; phụ âm p có thể được nhân đôi: appiya. saṃ trước p biến thành sam-, rồi sampayoga."
+          },
+          "grammar_note": "appiyehi là cách công cụ/liên hệ số nhiều: “với những điều không ưa”. sampayogo là danh từ chủ cách số ít: sự gặp gỡ/kết hợp.",
+          "memory_hint": "a- làm piya thành không ưa; sam- kéo lại gần; payoga là nối kết → bị nối với điều không ưa.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "piyehi vippayogo",
+          "label_vi": "xa lìa điều thương yêu",
+          "meaning_vi": "xa lìa điều thương yêu",
+          "breakdown": [
+            {
+              "token": "piya",
+              "kind": "adjective/noun",
+              "grammar": "thân yêu, đáng mến",
+              "meaning_vi": "điều ưa thích",
+              "role_note": ""
+            },
+            {
+              "token": "-ehi",
+              "kind": "case ending",
+              "grammar": "công cụ cách số nhiều",
+              "meaning_vi": "với, khỏi, liên hệ đến",
+              "role_note": ""
+            },
+            {
+              "token": "vi-",
+              "kind": "prefix",
+              "grammar": "tiền tố phân ly",
+              "meaning_vi": "tách ra, chia ra, khác ra",
+              "role_note": ""
+            },
+            {
+              "token": "payoga / yoga",
+              "kind": "noun",
+              "grammar": "sự kết hợp, nối kết",
+              "meaning_vi": "sự gắn nối",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "piya + -ehi = piyehi; vi- + payoga = vippayoga",
+            "sandhi_or_sound_change": "vi- trước p thường làm p nhân đôi: vippayoga."
+          },
+          "grammar_note": "Đối lại với sampayoga là vippayoga: một bên hội ngộ, một bên ly biệt.",
+          "memory_hint": "sam- = tụ lại; vi- = tách ra. Hai nỗi khổ đi thành cặp.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "pañcupādānakkhandhā",
+          "label_vi": "năm thủ uẩn",
+          "meaning_vi": "năm thủ uẩn",
+          "breakdown": [
+            {
+              "token": "pañca",
+              "kind": "numeral",
+              "grammar": "năm",
+              "meaning_vi": "số lượng",
+              "role_note": ""
+            },
+            {
+              "token": "upādāna",
+              "kind": "noun",
+              "grammar": "sự chấp thủ, nắm lấy",
+              "meaning_vi": "thủ",
+              "role_note": ""
+            },
+            {
+              "token": "khandha",
+              "kind": "noun",
+              "grammar": "uẩn, khối, nhóm",
+              "meaning_vi": "năm nhóm thân tâm",
+              "role_note": ""
+            },
+            {
+              "token": "-ā",
+              "kind": "case ending",
+              "grammar": "chủ cách số nhiều",
+              "meaning_vi": "các uẩn",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "pañca + upādāna + khandhā → pañcupādānakkhandhā",
+            "sandhi_or_sound_change": "pañca + upādāna rút/nối thành pañcupādāna trong hợp từ."
+          },
+          "grammar_note": "Đây là kết luận tóm tắt: năm uẩn bị chấp thủ là khổ.",
+          "memory_hint": "Khổ không chỉ ở sự kiện bên ngoài, mà ở năm uẩn khi bị nắm giữ.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 13,
       "title": "Tập đế",
       "pali": "Idaṁ dukkhasamudayaṁ ariyasaccaṁ.",
       "gloss": [
-        ["Idaṁ", "đây"],
-        ["dukkhasamudayaṁ ariyasaccaṁ", "Thánh đế về nguồn gốc của khổ"]
+        [
+          "Idaṁ",
+          "đây"
+        ],
+        [
+          "dukkhasamudayaṁ ariyasaccaṁ",
+          "Thánh đế về nguồn gốc của khổ"
+        ]
       ],
-      "structure": "[chỉ định] + [đế được xác định]"
+      "structure": "[chỉ định] + [đế được xác định]",
+      "phrase_explanations": [
+        {
+          "phrase": "dukkhasamudayaṁ ariyasaccaṁ",
+          "label_vi": "Thánh đế về nguồn gốc của khổ",
+          "meaning_vi": "Thánh đế về nguồn gốc của khổ",
+          "breakdown": [
+            {
+              "token": "dukkha",
+              "kind": "noun",
+              "grammar": "danh từ/yếu tố ghép",
+              "meaning_vi": "khổ",
+              "role_note": ""
+            },
+            {
+              "token": "sam-",
+              "kind": "prefix",
+              "grammar": "tiền tố gom tụ",
+              "meaning_vi": "cùng, hợp lại",
+              "role_note": ""
+            },
+            {
+              "token": "udaya",
+              "kind": "noun",
+              "grammar": "sự sinh khởi, trỗi dậy",
+              "meaning_vi": "nguồn phát sinh",
+              "role_note": ""
+            },
+            {
+              "token": "ariya-saccaṁ",
+              "kind": "compound noun",
+              "grammar": "danh từ trung tính",
+              "meaning_vi": "Thánh đế",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "dukkha + sam + udaya = dukkhasamudaya",
+            "sandhi_or_sound_change": "sam + udaya tạo nghĩa “sự sinh khởi/gom thành nguồn phát sinh”."
+          },
+          "grammar_note": "samudaya là danh từ chính trong hợp từ dukkhasamudaya.",
+          "memory_hint": "Muốn hết khổ phải thấy nguồn sinh khổ, không chỉ nhìn quả khổ.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 14,
       "title": "Định nghĩa Tập đế",
       "pali": "Yāyaṁ taṇhā ponobbhavikā nandirāgasahagatā tatratatrābhinandinī, seyyathidaṁ—kāmataṇhā, bhavataṇhā, vibhavataṇhā.",
       "gloss": [
-        ["Yāyaṁ taṇhā", "chính ái này"],
-        ["ponobbhavikā", "dẫn đến tái hữu"],
-        ["nandirāgasahagatā", "đi cùng hoan hỷ và tham ái"],
-        ["tatratatrābhinandinī", "vui thích chỗ này chỗ kia"],
-        ["seyyathidaṁ", "tức là như sau"],
-        ["kāmataṇhā", "dục ái"],
-        ["bhavataṇhā", "hữu ái"],
-        ["vibhavataṇhā", "phi hữu ái"]
+        [
+          "Yāyaṁ taṇhā",
+          "chính ái này"
+        ],
+        [
+          "ponobbhavikā",
+          "dẫn đến tái hữu"
+        ],
+        [
+          "nandirāgasahagatā",
+          "đi cùng hoan hỷ và tham ái"
+        ],
+        [
+          "tatratatrābhinandinī",
+          "vui thích chỗ này chỗ kia"
+        ],
+        [
+          "seyyathidaṁ",
+          "tức là như sau"
+        ],
+        [
+          "kāmataṇhā",
+          "dục ái"
+        ],
+        [
+          "bhavataṇhā",
+          "hữu ái"
+        ],
+        [
+          "vibhavataṇhā",
+          "phi hữu ái"
+        ]
       ],
-      "structure": "[đối tượng chính] + [chuỗi bổ nghĩa] + [mở liệt kê] + [ba loại]"
+      "structure": "[đối tượng chính] + [chuỗi bổ nghĩa] + [mở liệt kê] + [ba loại]",
+      "phrase_explanations": [
+        {
+          "phrase": "Yāyaṁ taṇhā",
+          "label_vi": "chính ái này",
+          "meaning_vi": "chính ái này",
+          "breakdown": [
+            {
+              "token": "yā",
+              "kind": "relative pronoun",
+              "grammar": "đại từ quan hệ giống cái",
+              "meaning_vi": "cái mà, thứ mà",
+              "role_note": ""
+            },
+            {
+              "token": "ayaṁ",
+              "kind": "demonstrative pronoun",
+              "grammar": "đại từ chỉ định giống cái",
+              "meaning_vi": "này đây",
+              "role_note": ""
+            },
+            {
+              "token": "taṇhā",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "khát ái, sự thèm muốn",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "yā + ayaṁ + taṇhā = yāyaṁ taṇhā",
+            "sandhi_or_sound_change": "yā + ayaṁ hòa âm thành yāyaṁ trong tụng đọc."
+          },
+          "grammar_note": "yā và ayaṁ đều chỉ về taṇhā giống cái; tác dụng là chỉ đích danh: chính ái này.",
+          "memory_hint": "yāyaṁ giống ngón tay chỉ thẳng: không nói chung chung, mà chỉ ngay ái này.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "ponobbhavikā",
+          "label_vi": "dẫn đến tái hữu",
+          "meaning_vi": "dẫn đến tái hữu",
+          "breakdown": [
+            {
+              "token": "puna / pono",
+              "kind": "adverb/prefix element",
+              "grammar": "yếu tố chỉ lặp lại",
+              "meaning_vi": "lại, nữa, tái diễn",
+              "role_note": ""
+            },
+            {
+              "token": "bhava",
+              "kind": "noun",
+              "grammar": "danh từ",
+              "meaning_vi": "hữu, hiện hữu, trở thành",
+              "role_note": ""
+            },
+            {
+              "token": "-ika / -ikā",
+              "kind": "suffix",
+              "grammar": "hậu tố tính từ giống cái",
+              "meaning_vi": "có tính chất, thuộc về, đưa đến",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "puna/pono + bhava + -ikā = ponobbhavikā",
+            "sandhi_or_sound_change": "Trong hợp từ có biến âm và nhân đôi b: pono + bhava → ponobbhava; thêm -ikā thành ponobbhavikā."
+          },
+          "grammar_note": "ponobbhavikā là tính từ giống cái bổ nghĩa cho taṇhā: ái có tính đưa đến tái hữu.",
+          "memory_hint": "Con thấy đúng: bhavikā liên hệ với bhava. Ái này làm dòng hiện hữu lặp lại.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "nandirāgasahagatā",
+          "label_vi": "đi cùng hoan hỷ và tham ái",
+          "meaning_vi": "đi cùng hoan hỷ và tham ái",
+          "breakdown": [
+            {
+              "token": "nandi",
+              "kind": "noun",
+              "grammar": "sự vui thích, hoan hỷ bám mắc",
+              "meaning_vi": "niềm vui có dính mắc",
+              "role_note": ""
+            },
+            {
+              "token": "rāga",
+              "kind": "noun",
+              "grammar": "tham, nhiễm ái",
+              "meaning_vi": "sắc thái đam mê",
+              "role_note": ""
+            },
+            {
+              "token": "saha",
+              "kind": "prefix/indeclinable",
+              "grammar": "cùng với",
+              "meaning_vi": "đi kèm",
+              "role_note": ""
+            },
+            {
+              "token": "gata",
+              "kind": "past participle",
+              "grammar": "đã đi, đi cùng",
+              "meaning_vi": "được đi kèm",
+              "role_note": ""
+            },
+            {
+              "token": "-ā",
+              "kind": "ending",
+              "grammar": "giống cái chủ cách số ít",
+              "meaning_vi": "hòa hợp với taṇhā",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "nandi + rāga + saha + gata + -ā",
+            "sandhi_or_sound_change": "saha + gata → sahagata: đi cùng, kèm theo."
+          },
+          "grammar_note": "Tính từ giống cái bổ nghĩa cho taṇhā: ái đi kèm nandi và rāga.",
+          "memory_hint": "Ái không đi một mình; nó kéo theo vị ngọt và dính mắc.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "kāmataṇhā bhavataṇhā vibhavataṇhā",
+          "label_vi": "dục ái, hữu ái, phi hữu ái",
+          "meaning_vi": "dục ái, hữu ái, phi hữu ái",
+          "breakdown": [
+            {
+              "token": "kāma",
+              "kind": "noun",
+              "grammar": "dục, đối tượng dục",
+              "meaning_vi": "ham muốn cảm giác",
+              "role_note": ""
+            },
+            {
+              "token": "bhava",
+              "kind": "noun",
+              "grammar": "hữu, hiện hữu, trở thành",
+              "meaning_vi": "muốn tồn tại/trở thành",
+              "role_note": ""
+            },
+            {
+              "token": "vi-",
+              "kind": "prefix",
+              "grammar": "tách khỏi, phủ nhận, đối nghịch",
+              "meaning_vi": "ly, phi, diệt",
+              "role_note": ""
+            },
+            {
+              "token": "taṇhā",
+              "kind": "noun",
+              "grammar": "khát ái",
+              "meaning_vi": "năng lượng thèm muốn",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "kāma/bhava/vi+bhava + taṇhā",
+            "sandhi_or_sound_change": "vi- + bhava tạo vibhava: phi hữu, muốn không hiện hữu/diệt mất."
+          },
+          "grammar_note": "Ba từ là ba hợp từ song song, đều lấy taṇhā làm danh từ chính.",
+          "memory_hint": "kāma muốn hưởng; bhava muốn thành; vibhava muốn xóa bỏ. Cả ba vẫn là ái.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 15,
       "title": "Diệt đế",
       "pali": "Idaṁ dukkhanirodhaṁ ariyasaccaṁ.",
       "gloss": [
-        ["Idaṁ", "đây"],
-        ["dukkhanirodhaṁ ariyasaccaṁ", "Thánh đế về sự diệt khổ"]
+        [
+          "Idaṁ",
+          "đây"
+        ],
+        [
+          "dukkhanirodhaṁ ariyasaccaṁ",
+          "Thánh đế về sự diệt khổ"
+        ]
       ],
-      "structure": "[chỉ định] + [đế được xác định]"
+      "structure": "[chỉ định] + [đế được xác định]",
+      "phrase_explanations": [
+        {
+          "phrase": "dukkhanirodhaṁ ariyasaccaṁ",
+          "label_vi": "Thánh đế về sự diệt khổ",
+          "meaning_vi": "Thánh đế về sự diệt khổ",
+          "breakdown": [
+            {
+              "token": "dukkha",
+              "kind": "noun",
+              "grammar": "khổ",
+              "meaning_vi": "điều bất toại nguyện",
+              "role_note": ""
+            },
+            {
+              "token": "ni-",
+              "kind": "prefix",
+              "grammar": "tiền tố hướng xuống/vào/trọn",
+              "meaning_vi": "xuống, vào, chấm xuống",
+              "role_note": ""
+            },
+            {
+              "token": "rodha",
+              "kind": "noun/root-related",
+              "grammar": "sự ngăn, sự dừng",
+              "meaning_vi": "chấm dứt, diệt",
+              "role_note": ""
+            },
+            {
+              "token": "ariya-saccaṁ",
+              "kind": "compound noun",
+              "grammar": "Thánh đế",
+              "meaning_vi": "chân lý cao quý",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "dukkha + nirodha + ariyasaccaṁ",
+            "sandhi_or_sound_change": "dukkha + nirodha thành dukkhanirodha."
+          },
+          "grammar_note": "nirodha là sự chấm dứt; trong cụm này là sự diệt của khổ.",
+          "memory_hint": "Thấy khổ, thấy nguồn khổ, rồi thấy khả năng khổ chấm dứt.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 16,
       "title": "Định nghĩa Diệt đế",
       "pali": "Yo tassāyeva taṇhāya asesa-virāga-nirodho cāgo paṭinissaggo mutti anālayo.",
       "gloss": [
-        ["Yo tassāyeva taṇhāya", "chính đối với ái ấy"],
-        ["asesa-virāga-nirodho", "sự ly tham và chấm dứt không dư tàn"],
-        ["cāgo", "từ bỏ"],
-        ["paṭinissaggo", "buông xả"],
-        ["mutti", "giải thoát"],
-        ["anālayo", "không chấp trước"]
+        [
+          "Yo tassāyeva taṇhāya",
+          "chính đối với ái ấy"
+        ],
+        [
+          "asesa-virāga-nirodho",
+          "sự ly tham và chấm dứt không dư tàn"
+        ],
+        [
+          "cāgo",
+          "từ bỏ"
+        ],
+        [
+          "paṭinissaggo",
+          "buông xả"
+        ],
+        [
+          "mutti",
+          "giải thoát"
+        ],
+        [
+          "anālayo",
+          "không chấp trước"
+        ]
       ],
-      "structure": "[đối tượng liên hệ] + [cụm định nghĩa chính] + [chuỗi từ đồng quy nghĩa]"
+      "structure": "[đối tượng liên hệ] + [cụm định nghĩa chính] + [chuỗi từ đồng quy nghĩa]",
+      "phrase_explanations": [
+        {
+          "phrase": "tassāyeva taṇhāya",
+          "label_vi": "chính đối với ái ấy",
+          "meaning_vi": "chính đối với ái ấy",
+          "breakdown": [
+            {
+              "token": "tassā",
+              "kind": "pronoun",
+              "grammar": "đại từ giống cái sở hữu/cách liên hệ",
+              "meaning_vi": "của cái ấy, đối với cái ấy",
+              "role_note": ""
+            },
+            {
+              "token": "eva",
+              "kind": "particle",
+              "grammar": "tiểu từ nhấn mạnh",
+              "meaning_vi": "chính, đúng là",
+              "role_note": ""
+            },
+            {
+              "token": "taṇhā",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "ái",
+              "role_note": ""
+            },
+            {
+              "token": "-ya / -āya",
+              "kind": "case ending",
+              "grammar": "đuôi cách gián tiếp/sở hữu",
+              "meaning_vi": "của/đối với",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "tassā + eva = tassāyeva; taṇhā + -āya = taṇhāya",
+            "sandhi_or_sound_change": "eva nối sau tassā tạo tassāyeva."
+          },
+          "grammar_note": "Cụm này chỉ rõ đối tượng của sự đoạn diệt: chính ái ấy.",
+          "memory_hint": "Không cần diệt đời sống; cần buông chính ái đang trói tâm.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "asesa-virāga-nirodho",
+          "label_vi": "sự ly tham và chấm dứt không dư tàn",
+          "meaning_vi": "sự ly tham và chấm dứt không dư tàn",
+          "breakdown": [
+            {
+              "token": "a-",
+              "kind": "prefix",
+              "grammar": "phủ định",
+              "meaning_vi": "không",
+              "role_note": ""
+            },
+            {
+              "token": "sesa",
+              "kind": "noun",
+              "grammar": "phần còn lại, dư sót",
+              "meaning_vi": "dư tàn",
+              "role_note": ""
+            },
+            {
+              "token": "virāga",
+              "kind": "noun",
+              "grammar": "ly tham, phai màu tham ái",
+              "meaning_vi": "rời nhiễm",
+              "role_note": ""
+            },
+            {
+              "token": "nirodha",
+              "kind": "noun",
+              "grammar": "sự diệt, chấm dứt",
+              "meaning_vi": "dừng lại",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "a- + sesa = asesa; virāga + nirodha",
+            "sandhi_or_sound_change": "a- phủ định sesa: không còn dư sót."
+          },
+          "grammar_note": "asesa bổ nghĩa cho mức độ trọn vẹn: không dư tàn; virāga và nirodha đồng quy về chấm dứt ái.",
+          "memory_hint": "rāga là nhuộm màu; virāga là phai màu. Khi hết nhuộm, tâm nhẹ.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "cāgo paṭinissaggo mutti anālayo",
+          "label_vi": "từ bỏ, buông xả, giải thoát, không chấp trước",
+          "meaning_vi": "từ bỏ, buông xả, giải thoát, không chấp trước",
+          "breakdown": [
+            {
+              "token": "cāga",
+              "kind": "noun",
+              "grammar": "sự từ bỏ, xả thí",
+              "meaning_vi": "buông ra",
+              "role_note": ""
+            },
+            {
+              "token": "paṭi-",
+              "kind": "prefix",
+              "grammar": "trở lại, ngược lại, đối ứng",
+              "meaning_vi": "quay lại/xả trả",
+              "role_note": ""
+            },
+            {
+              "token": "nissagga",
+              "kind": "noun",
+              "grammar": "sự buông bỏ, xả ly",
+              "meaning_vi": "thả ra",
+              "role_note": ""
+            },
+            {
+              "token": "mutti",
+              "kind": "noun",
+              "grammar": "sự giải thoát",
+              "meaning_vi": "được mở khỏi trói buộc",
+              "role_note": ""
+            },
+            {
+              "token": "an-",
+              "kind": "prefix",
+              "grammar": "phủ định",
+              "meaning_vi": "không",
+              "role_note": ""
+            },
+            {
+              "token": "ālaya",
+              "kind": "noun",
+              "grammar": "chỗ nương, chỗ bám, chấp trước",
+              "meaning_vi": "ổ bám",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "paṭi + nissagga; an + ālaya = anālayo",
+            "sandhi_or_sound_change": "an- trước ālaya thành anālaya."
+          },
+          "grammar_note": "Đây là chuỗi danh từ đồng hướng: càng nói càng làm rõ trạng thái buông ái.",
+          "memory_hint": "cāga là buông; mutti là tự do; anālaya là không dựng tổ trong ái.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 17,
       "title": "Đạo đế",
       "pali": "Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ.",
       "gloss": [
-        ["Idaṁ", "đây"],
-        ["dukkhanirodhagāminī paṭipadā ariyasaccaṁ", "Thánh đế về con đường thực hành dẫn đến diệt khổ"]
+        [
+          "Idaṁ",
+          "đây"
+        ],
+        [
+          "dukkhanirodhagāminī paṭipadā ariyasaccaṁ",
+          "Thánh đế về con đường thực hành dẫn đến diệt khổ"
+        ]
       ],
-      "structure": "[chỉ định] + [đế được xác định]"
+      "structure": "[chỉ định] + [đế được xác định]",
+      "phrase_explanations": [
+        {
+          "phrase": "dukkhanirodhagāminī paṭipadā ariyasaccaṁ",
+          "label_vi": "Thánh đế về con đường dẫn đến diệt khổ",
+          "meaning_vi": "Thánh đế về con đường dẫn đến diệt khổ",
+          "breakdown": [
+            {
+              "token": "dukkha",
+              "kind": "noun",
+              "grammar": "khổ",
+              "meaning_vi": "đối tượng được diệt",
+              "role_note": ""
+            },
+            {
+              "token": "nirodha",
+              "kind": "noun",
+              "grammar": "sự diệt, chấm dứt",
+              "meaning_vi": "mục tiêu",
+              "role_note": ""
+            },
+            {
+              "token": "gāminī",
+              "kind": "adjective/participle",
+              "grammar": "tính từ giống cái",
+              "meaning_vi": "đi đến, dẫn đến",
+              "role_note": ""
+            },
+            {
+              "token": "paṭipadā",
+              "kind": "noun",
+              "grammar": "danh từ giống cái",
+              "meaning_vi": "con đường thực hành",
+              "role_note": ""
+            },
+            {
+              "token": "ariya-saccaṁ",
+              "kind": "compound noun",
+              "grammar": "Thánh đế",
+              "meaning_vi": "chân lý cao quý",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "dukkha + nirodha + gāminī + paṭipadā + ariyasaccaṁ",
+            "sandhi_or_sound_change": "dukkhanirodha + gāminī thành dukkhanirodhagāminī."
+          },
+          "grammar_note": "gāminī bổ nghĩa cho paṭipadā: con đường có tính dẫn đến diệt khổ. Nó không phải giới từ.",
+          "memory_hint": "gāminī = đi đến; paṭipadā = đường thực hành → đường đi đến diệt khổ.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 18,
       "title": "Ba chuyển của Khổ đế",
       "pali": "Idaṁ dukkhaṁ ariyasaccaṁ … Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ pariññeyyaṁ … Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ pariññātaṁ … cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi.",
       "gloss": [
-        ["Idaṁ dukkhaṁ ariyasaccaṁ", "đây là Thánh đế về khổ"],
-        ["Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ", "thật vậy, chính Khổ đế này"],
-        ["pariññeyyaṁ", "cần được liễu tri"],
-        ["pariññātaṁ", "đã được liễu tri"],
-        ["cakkhuṁ udapādi", "con mắt phát sanh"],
-        ["ñāṇaṁ udapādi", "trí biết phát sanh"],
-        ["paññā udapādi", "tuệ phát sanh"],
-        ["vijjā udapādi", "minh phát sanh"],
-        ["āloko udapādi", "ánh sáng phát sanh"]
+        [
+          "Idaṁ dukkhaṁ ariyasaccaṁ",
+          "đây là Thánh đế về khổ"
+        ],
+        [
+          "Taṁ kho panidaṁ dukkhaṁ ariyasaccaṁ",
+          "thật vậy, chính Khổ đế này"
+        ],
+        [
+          "pariññeyyaṁ",
+          "cần được liễu tri"
+        ],
+        [
+          "pariññātaṁ",
+          "đã được liễu tri"
+        ],
+        [
+          "cakkhuṁ udapādi",
+          "con mắt phát sanh"
+        ],
+        [
+          "ñāṇaṁ udapādi",
+          "trí biết phát sanh"
+        ],
+        [
+          "paññā udapādi",
+          "tuệ phát sanh"
+        ],
+        [
+          "vijjā udapādi",
+          "minh phát sanh"
+        ],
+        [
+          "āloko udapādi",
+          "ánh sáng phát sanh"
+        ]
       ],
-      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất] + [chuỗi 'udapādi' lặp lại]"
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất] + [chuỗi 'udapādi' lặp lại]",
+      "phrase_explanations": [
+        {
+          "phrase": "pariññeyyaṁ / pariññātaṁ",
+          "label_vi": "cần được liễu tri / đã được liễu tri",
+          "meaning_vi": "cần được liễu tri / đã được liễu tri",
+          "breakdown": [
+            {
+              "token": "pari-",
+              "kind": "prefix",
+              "grammar": "tiền tố trọn vẹn, bao quanh",
+              "meaning_vi": "toàn diện, khắp",
+              "role_note": ""
+            },
+            {
+              "token": "ñā",
+              "kind": "verb root",
+              "grammar": "gốc động từ",
+              "meaning_vi": "biết",
+              "role_note": ""
+            },
+            {
+              "token": "-eyyaṁ",
+              "kind": "gerundive ending",
+              "grammar": "đuôi chỉ việc cần làm",
+              "meaning_vi": "cần được",
+              "role_note": ""
+            },
+            {
+              "token": "-ātaṁ",
+              "kind": "past participle ending",
+              "grammar": "quá khứ phân từ",
+              "meaning_vi": "đã được",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "pari + ñā + eyyaṁ = pariññeyyaṁ; pari + ñā + taṁ = pariññātaṁ",
+            "sandhi_or_sound_change": "ñā kết hợp với các hậu tố tạo các dạng biết trọn."
+          },
+          "grammar_note": "Khổ đế có nhiệm vụ: cần được liễu tri, rồi đã được liễu tri.",
+          "memory_hint": "Không phải ghét khổ; phải biết khổ trọn vẹn.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "cakkhuṁ udapādi, ñāṇaṁ udapādi...",
+          "label_vi": "con mắt, trí, tuệ, minh, ánh sáng phát sinh",
+          "meaning_vi": "con mắt, trí, tuệ, minh, ánh sáng phát sinh",
+          "breakdown": [
+            {
+              "token": "ud-",
+              "kind": "prefix",
+              "grammar": "hướng lên, xuất hiện",
+              "meaning_vi": "trồi lên, phát sinh",
+              "role_note": ""
+            },
+            {
+              "token": "apādi",
+              "kind": "verb",
+              "grammar": "động từ quá khứ",
+              "meaning_vi": "đã phát sinh",
+              "role_note": ""
+            },
+            {
+              "token": "cakkhuṁ",
+              "kind": "noun",
+              "grammar": "con mắt/nhãn",
+              "meaning_vi": "cái thấy",
+              "role_note": ""
+            },
+            {
+              "token": "ñāṇaṁ",
+              "kind": "noun",
+              "grammar": "trí biết",
+              "meaning_vi": "nhận thức",
+              "role_note": ""
+            },
+            {
+              "token": "paññā",
+              "kind": "noun",
+              "grammar": "tuệ",
+              "meaning_vi": "hiểu biết thấu suốt",
+              "role_note": ""
+            },
+            {
+              "token": "vijjā",
+              "kind": "noun",
+              "grammar": "minh",
+              "meaning_vi": "ánh sáng hiểu biết đối trị vô minh",
+              "role_note": ""
+            },
+            {
+              "token": "āloka",
+              "kind": "noun",
+              "grammar": "ánh sáng",
+              "meaning_vi": "sự sáng tỏ",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "ud + apādi = udapādi",
+            "sandhi_or_sound_change": "ud- tạo ý đi lên/xuất hiện."
+          },
+          "grammar_note": "Động từ udapādi được lặp như nhịp chuông: cái thấy phát sinh nhiều tầng.",
+          "memory_hint": "Mỗi lần hiểu đúng một đế, ánh sáng nội tâm phát sinh.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 19,
       "title": "Ba chuyển của Tập đế",
       "pali": "Idaṁ dukkhasamudayaṁ ariyasaccaṁ … Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ pahātabbaṁ … Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ pahīnaṁ.",
       "gloss": [
-        ["Idaṁ dukkhasamudayaṁ ariyasaccaṁ", "đây là Thánh đế về nguồn gốc của khổ"],
-        ["Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ", "thật vậy, chính Tập đế này"],
-        ["pahātabbaṁ", "cần được đoạn trừ"],
-        ["pahīnaṁ", "đã được đoạn trừ"]
+        [
+          "Idaṁ dukkhasamudayaṁ ariyasaccaṁ",
+          "đây là Thánh đế về nguồn gốc của khổ"
+        ],
+        [
+          "Taṁ kho panidaṁ dukkhasamudayaṁ ariyasaccaṁ",
+          "thật vậy, chính Tập đế này"
+        ],
+        [
+          "pahātabbaṁ",
+          "cần được đoạn trừ"
+        ],
+        [
+          "pahīnaṁ",
+          "đã được đoạn trừ"
+        ]
       ],
-      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]"
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]",
+      "phrase_explanations": [
+        {
+          "phrase": "pahātabbaṁ / pahīnaṁ",
+          "label_vi": "cần đoạn trừ / đã đoạn trừ",
+          "meaning_vi": "cần đoạn trừ / đã đoạn trừ",
+          "breakdown": [
+            {
+              "token": "pa-",
+              "kind": "prefix",
+              "grammar": "tiền tố hướng ra, tiến tới",
+              "meaning_vi": "ra đi, rời bỏ",
+              "role_note": ""
+            },
+            {
+              "token": "hā",
+              "kind": "verb root",
+              "grammar": "gốc động từ",
+              "meaning_vi": "bỏ, từ bỏ",
+              "role_note": ""
+            },
+            {
+              "token": "-tabbaṁ",
+              "kind": "gerundive ending",
+              "grammar": "đuôi chỉ điều phải làm",
+              "meaning_vi": "cần được",
+              "role_note": ""
+            },
+            {
+              "token": "hīnaṁ",
+              "kind": "past participle",
+              "grammar": "quá khứ phân từ",
+              "meaning_vi": "đã bị bỏ, đã đoạn",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "pa + hā + tabbaṁ = pahātabbaṁ; pa + hā → pahīnaṁ",
+            "sandhi_or_sound_change": "Gốc hā biến âm trong quá khứ phân từ thành hīna."
+          },
+          "grammar_note": "Tập đế không chỉ để hiểu; nhiệm vụ của nó là được đoạn trừ.",
+          "memory_hint": "Thấy nguồn khổ rồi phải buông nguồn ấy.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 20,
       "title": "Ba chuyển của Diệt đế",
       "pali": "Idaṁ dukkhanirodhaṁ ariyasaccaṁ … Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ sacchikātabbaṁ … Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ sacchikataṁ.",
       "gloss": [
-        ["Idaṁ dukkhanirodhaṁ ariyasaccaṁ", "đây là Thánh đế về sự diệt khổ"],
-        ["Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ", "thật vậy, chính Diệt đế này"],
-        ["sacchikātabbaṁ", "cần được chứng ngộ"],
-        ["sacchikataṁ", "đã được chứng ngộ"]
+        [
+          "Idaṁ dukkhanirodhaṁ ariyasaccaṁ",
+          "đây là Thánh đế về sự diệt khổ"
+        ],
+        [
+          "Taṁ kho panidaṁ dukkhanirodhaṁ ariyasaccaṁ",
+          "thật vậy, chính Diệt đế này"
+        ],
+        [
+          "sacchikātabbaṁ",
+          "cần được chứng ngộ"
+        ],
+        [
+          "sacchikataṁ",
+          "đã được chứng ngộ"
+        ]
       ],
-      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]"
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]",
+      "phrase_explanations": [
+        {
+          "phrase": "sacchikātabbaṁ / sacchikataṁ",
+          "label_vi": "cần được chứng ngộ / đã được chứng ngộ",
+          "meaning_vi": "cần được chứng ngộ / đã được chứng ngộ",
+          "breakdown": [
+            {
+              "token": "sacchi",
+              "kind": "indeclinable/adverbial element",
+              "grammar": "trực tiếp, trước mắt",
+              "meaning_vi": "hiển hiện như tự thấy",
+              "role_note": ""
+            },
+            {
+              "token": "karoti / kata",
+              "kind": "verb/root participle",
+              "grammar": "làm, làm thành",
+              "meaning_vi": "thực hiện",
+              "role_note": ""
+            },
+            {
+              "token": "-tabbaṁ",
+              "kind": "gerundive ending",
+              "grammar": "cần được làm",
+              "meaning_vi": "cần chứng nghiệm",
+              "role_note": ""
+            },
+            {
+              "token": "-taṁ",
+              "kind": "past participle ending",
+              "grammar": "đã được làm",
+              "meaning_vi": "đã chứng nghiệm",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "sacchi + kātabbaṁ = sacchikātabbaṁ; sacchi + kataṁ = sacchikataṁ",
+            "sandhi_or_sound_change": "kātabbaṁ từ gốc karoti: điều cần làm."
+          },
+          "grammar_note": "Diệt đế không chỉ là ý niệm; nó cần được chứng nghiệm trực tiếp.",
+          "memory_hint": "Nirodha không phải để tranh luận, mà để thấy tận nơi.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 21,
       "title": "Ba chuyển của Đạo đế",
       "pali": "Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ … Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ bhāvetabbaṁ … Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ bhāvitaṁ.",
       "gloss": [
-        ["Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ", "đây là Thánh đế về con đường thực hành dẫn đến diệt khổ"],
-        ["Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ", "thật vậy, chính Đạo đế này"],
-        ["bhāvetabbaṁ", "cần được tu tập"],
-        ["bhāvitaṁ", "đã được tu tập"]
+        [
+          "Idaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ",
+          "đây là Thánh đế về con đường thực hành dẫn đến diệt khổ"
+        ],
+        [
+          "Taṁ kho panidaṁ dukkhanirodhagāminī paṭipadā ariyasaccaṁ",
+          "thật vậy, chính Đạo đế này"
+        ],
+        [
+          "bhāvetabbaṁ",
+          "cần được tu tập"
+        ],
+        [
+          "bhāvitaṁ",
+          "đã được tu tập"
+        ]
       ],
-      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]"
+      "structure": "[đây là đế] + [chính đế ấy + việc phải làm] + [chính đế ấy + việc đã hoàn tất]",
+      "phrase_explanations": [
+        {
+          "phrase": "bhāvetabbaṁ / bhāvitaṁ",
+          "label_vi": "cần tu tập / đã tu tập",
+          "meaning_vi": "cần tu tập / đã tu tập",
+          "breakdown": [
+            {
+              "token": "bhāve-",
+              "kind": "verb stem",
+              "grammar": "thân động từ từ bhāveti",
+              "meaning_vi": "tu tập, làm cho phát triển",
+              "role_note": ""
+            },
+            {
+              "token": "-tabbaṁ",
+              "kind": "gerundive ending",
+              "grammar": "cần được",
+              "meaning_vi": "việc phải làm",
+              "role_note": ""
+            },
+            {
+              "token": "-itaṁ",
+              "kind": "past participle ending",
+              "grammar": "đã được",
+              "meaning_vi": "việc hoàn tất",
+              "role_note": ""
+            },
+            {
+              "token": "paṭipadā",
+              "kind": "noun",
+              "grammar": "con đường thực hành",
+              "meaning_vi": "đối tượng được tu tập",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "bhāve + tabbaṁ = bhāvetabbaṁ; bhāve + itaṁ = bhāvitaṁ",
+            "sandhi_or_sound_change": "e + i có thể rút trong bhāvitaṁ."
+          },
+          "grammar_note": "Đạo đế có nhiệm vụ là tu tập, không chỉ biết tên tám chi.",
+          "memory_hint": "Con đường chỉ thành đường khi có bước chân.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 22,
       "title": "Ba chuyển mười hai hành tướng: chưa tuyên bố giác ngộ",
       "pali": "Yāvakīvañca me, bhikkhave, imesu catūsu ariyasaccesu evaṁ tiparivaṭṭaṁ dvādasākāraṁ yathābhūtaṁ ñāṇadassanaṁ na suvisuddhaṁ ahosi, neva tāvāhaṁ … anuttaraṁ sammāsambodhiṁ abhisambuddho paccaññāsiṁ.",
       "gloss": [
-        ["Yāvakīvañca me, bhikkhave", "này các Tỳ-kheo, chừng nào nơi Ta"],
-        ["imesu catūsu ariyasaccesu", "đối với bốn Thánh đế này"],
-        ["evaṁ tiparivaṭṭaṁ dvādasākāraṁ", "theo ba chuyển mười hai hành tướng như vậy"],
-        ["yathābhūtaṁ ñāṇadassanaṁ", "tri kiến như thật"],
-        ["na suvisuddhaṁ ahosi", "còn chưa hoàn toàn thanh tịnh"],
-        ["neva tāvāhaṁ", "thì chừng ấy Ta chưa"],
-        ["anuttaraṁ sammāsambodhiṁ", "Vô thượng Chánh đẳng Chánh giác"],
-        ["abhisambuddho paccaññāsiṁ", "tuyên bố rằng đã chứng ngộ"]
+        [
+          "Yāvakīvañca me, bhikkhave",
+          "này các Tỳ-kheo, chừng nào nơi Ta"
+        ],
+        [
+          "imesu catūsu ariyasaccesu",
+          "đối với bốn Thánh đế này"
+        ],
+        [
+          "evaṁ tiparivaṭṭaṁ dvādasākāraṁ",
+          "theo ba chuyển mười hai hành tướng như vậy"
+        ],
+        [
+          "yathābhūtaṁ ñāṇadassanaṁ",
+          "tri kiến như thật"
+        ],
+        [
+          "na suvisuddhaṁ ahosi",
+          "còn chưa hoàn toàn thanh tịnh"
+        ],
+        [
+          "neva tāvāhaṁ",
+          "thì chừng ấy Ta chưa"
+        ],
+        [
+          "anuttaraṁ sammāsambodhiṁ",
+          "Vô thượng Chánh đẳng Chánh giác"
+        ],
+        [
+          "abhisambuddho paccaññāsiṁ",
+          "tuyên bố rằng đã chứng ngộ"
+        ]
       ],
-      "structure": "[vế điều kiện: chừng nào … chưa thanh tịnh] + [vế hệ quả: chừng ấy chưa tuyên bố]"
+      "structure": "[vế điều kiện: chừng nào … chưa thanh tịnh] + [vế hệ quả: chừng ấy chưa tuyên bố]",
+      "phrase_explanations": [
+        {
+          "phrase": "tiparivaṭṭaṁ dvādasākāraṁ",
+          "label_vi": "ba chuyển, mười hai hành tướng",
+          "meaning_vi": "ba chuyển, mười hai hành tướng",
+          "breakdown": [
+            {
+              "token": "ti",
+              "kind": "numeral/prefix",
+              "grammar": "số ba",
+              "meaning_vi": "ba",
+              "role_note": ""
+            },
+            {
+              "token": "parivaṭṭa",
+              "kind": "noun",
+              "grammar": "vòng xoay, chuyển vận",
+              "meaning_vi": "chuyển",
+              "role_note": ""
+            },
+            {
+              "token": "dvādasa",
+              "kind": "numeral",
+              "grammar": "mười hai",
+              "meaning_vi": "12",
+              "role_note": ""
+            },
+            {
+              "token": "ākāra",
+              "kind": "noun",
+              "grammar": "hình thức, khía cạnh, hành tướng",
+              "meaning_vi": "cách thức",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "ti + parivaṭṭaṁ; dvādasa + ākāraṁ = dvādasākāraṁ",
+            "sandhi_or_sound_change": "dvādasa + ākāra nối nguyên âm thành dvādasākāra."
+          },
+          "grammar_note": "Ba chuyển × bốn đế = mười hai hành tướng.",
+          "memory_hint": "Biết, việc phải làm, việc đã xong: đó là vòng xoay trọn vẹn của trí.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "yathābhūtaṁ ñāṇadassanaṁ",
+          "label_vi": "tri kiến như thật",
+          "meaning_vi": "tri kiến như thật",
+          "breakdown": [
+            {
+              "token": "yathā",
+              "kind": "indeclinable",
+              "grammar": "bất biến từ",
+              "meaning_vi": "như, theo như",
+              "role_note": ""
+            },
+            {
+              "token": "bhūta",
+              "kind": "past participle/noun",
+              "grammar": "đã hiện hữu, sự thật hiện có",
+              "meaning_vi": "như nó là",
+              "role_note": ""
+            },
+            {
+              "token": "ñāṇa",
+              "kind": "noun",
+              "grammar": "trí biết",
+              "meaning_vi": "biết",
+              "role_note": ""
+            },
+            {
+              "token": "dassana",
+              "kind": "noun",
+              "grammar": "thấy, kiến",
+              "meaning_vi": "cái thấy",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "yathā + bhūtaṁ; ñāṇa + dassanaṁ",
+            "sandhi_or_sound_change": "yathābhūtaṁ là một trạng ngữ/tính từ: đúng như thực tại."
+          },
+          "grammar_note": "ñāṇa-dassana không chỉ biết bằng ý, mà vừa biết vừa thấy.",
+          "memory_hint": "Tuệ giác là thấy sự vật như nó là, không như tham sân muốn nó là.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 23,
       "title": "Khi tri kiến thanh tịnh, Đức Phật tuyên bố giác ngộ",
       "pali": "Yato ca kho me, bhikkhave, imesu catūsu ariyasaccesu evaṁ tiparivaṭṭaṁ dvādasākāraṁ yathābhūtaṁ ñāṇadassanaṁ suvisuddhaṁ ahosi, athāhaṁ … anuttaraṁ sammāsambodhiṁ abhisambuddho paccaññāsiṁ.",
       "gloss": [
-        ["Yato ca kho me, bhikkhave", "này các Tỳ-kheo, khi nào nơi Ta"],
-        ["imesu catūsu ariyasaccesu", "đối với bốn Thánh đế này"],
-        ["evaṁ tiparivaṭṭaṁ dvādasākāraṁ", "theo ba chuyển mười hai hành tướng như vậy"],
-        ["yathābhūtaṁ ñāṇadassanaṁ", "tri kiến như thật"],
-        ["suvisuddhaṁ ahosi", "đã hoàn toàn thanh tịnh"],
-        ["athāhaṁ", "thì khi ấy Ta"],
-        ["anuttaraṁ sammāsambodhiṁ", "Vô thượng Chánh đẳng Chánh giác"],
-        ["abhisambuddho paccaññāsiṁ", "đã tuyên bố rằng đã chứng ngộ"]
+        [
+          "Yato ca kho me, bhikkhave",
+          "này các Tỳ-kheo, khi nào nơi Ta"
+        ],
+        [
+          "imesu catūsu ariyasaccesu",
+          "đối với bốn Thánh đế này"
+        ],
+        [
+          "evaṁ tiparivaṭṭaṁ dvādasākāraṁ",
+          "theo ba chuyển mười hai hành tướng như vậy"
+        ],
+        [
+          "yathābhūtaṁ ñāṇadassanaṁ",
+          "tri kiến như thật"
+        ],
+        [
+          "suvisuddhaṁ ahosi",
+          "đã hoàn toàn thanh tịnh"
+        ],
+        [
+          "athāhaṁ",
+          "thì khi ấy Ta"
+        ],
+        [
+          "anuttaraṁ sammāsambodhiṁ",
+          "Vô thượng Chánh đẳng Chánh giác"
+        ],
+        [
+          "abhisambuddho paccaññāsiṁ",
+          "đã tuyên bố rằng đã chứng ngộ"
+        ]
       ],
-      "structure": "[vế điều kiện: khi nào … đã thanh tịnh] + [vế hệ quả: khi ấy tuyên bố]"
+      "structure": "[vế điều kiện: khi nào … đã thanh tịnh] + [vế hệ quả: khi ấy tuyên bố]",
+      "phrase_explanations": [
+        {
+          "phrase": "suvisuddhaṁ ahosi",
+          "label_vi": "đã hoàn toàn thanh tịnh",
+          "meaning_vi": "đã hoàn toàn thanh tịnh",
+          "breakdown": [
+            {
+              "token": "su-",
+              "kind": "prefix",
+              "grammar": "tiền tố tăng cường/tốt đẹp",
+              "meaning_vi": "rất, khéo, hoàn toàn",
+              "role_note": ""
+            },
+            {
+              "token": "visuddha",
+              "kind": "past participle/adjective",
+              "grammar": "thanh tịnh, trong sạch",
+              "meaning_vi": "đã được làm sạch",
+              "role_note": ""
+            },
+            {
+              "token": "ahosi",
+              "kind": "verb",
+              "grammar": "động từ quá khứ của hoti",
+              "meaning_vi": "đã là, đã trở thành",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "su + visuddhaṁ; ahosi",
+            "sandhi_or_sound_change": "su- tăng cường nghĩa visuddha."
+          },
+          "grammar_note": "Vế điều kiện chuyển từ “na suvisuddhaṁ” sang “suvisuddhaṁ”: khi tri kiến thanh tịnh thì tuyên bố giác ngộ.",
+          "memory_hint": "Không vội nhận chứng đắc khi tri kiến chưa thanh tịnh.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 24,
       "title": "Đoạn kết ngắn: năm vị hoan hỷ, Koṇḍañña phát pháp nhãn",
       "pali": "Idamavoca bhagavā. Attamanā pañcavaggiyā bhikkhū bhagavato bhāsitaṁ abhinanduṁ. Imasmiñca pana veyyākaraṇasmiṁ bhaññamāne āyasmato koṇḍaññassa virajaṁ vītamalaṁ dhammacakkhuṁ udapādi: ‘Yaṁ kiñci samudayadhammaṁ, sabbaṁ taṁ nirodhadhamman’ti.",
       "gloss": [
-        ["Idamavoca bhagavā", "Thế Tôn đã nói như vậy"],
-        ["Attamanā pañcavaggiyā bhikkhū", "năm vị tỳ-kheo nhóm năm người, với tâm hoan hỷ"],
-        ["bhagavato bhāsitaṁ", "lời được Thế Tôn nói"],
-        ["abhinanduṁ", "đã hoan nghênh, vui mừng đón nhận"],
-        ["Imasmiñca pana veyyākaraṇasmiṁ bhaññamāne", "và trong khi lời giải thích này đang được nói ra"],
-        ["āyasmato koṇḍaññassa", "nơi Tôn giả Koṇḍañña"],
-        ["virajaṁ vītamalaṁ dhammacakkhuṁ", "pháp nhãn không bụi, xa cấu uế"],
-        ["udapādi", "đã phát sanh"],
-        ["Yaṁ kiñci samudayadhammaṁ", "bất cứ pháp gì có bản chất sinh khởi"],
-        ["sabbaṁ taṁ nirodhadhammaṁ", "tất cả pháp ấy đều có bản chất chấm dứt"]
+        [
+          "Idamavoca bhagavā",
+          "Thế Tôn đã nói như vậy"
+        ],
+        [
+          "Attamanā pañcavaggiyā bhikkhū",
+          "năm vị tỳ-kheo nhóm năm người, với tâm hoan hỷ"
+        ],
+        [
+          "bhagavato bhāsitaṁ",
+          "lời được Thế Tôn nói"
+        ],
+        [
+          "abhinanduṁ",
+          "đã hoan nghênh, vui mừng đón nhận"
+        ],
+        [
+          "Imasmiñca pana veyyākaraṇasmiṁ bhaññamāne",
+          "và trong khi lời giải thích này đang được nói ra"
+        ],
+        [
+          "āyasmato koṇḍaññassa",
+          "nơi Tôn giả Koṇḍañña"
+        ],
+        [
+          "virajaṁ vītamalaṁ dhammacakkhuṁ",
+          "pháp nhãn không bụi, xa cấu uế"
+        ],
+        [
+          "udapādi",
+          "đã phát sanh"
+        ],
+        [
+          "Yaṁ kiñci samudayadhammaṁ",
+          "bất cứ pháp gì có bản chất sinh khởi"
+        ],
+        [
+          "sabbaṁ taṁ nirodhadhammaṁ",
+          "tất cả pháp ấy đều có bản chất chấm dứt"
+        ]
       ],
-      "structure": "[Thế Tôn nói xong] + [đại chúng hoan hỷ] + [ngay trong khi nghe pháp, pháp nhãn phát sinh] + [nội dung pháp nhãn]"
+      "structure": "[Thế Tôn nói xong] + [đại chúng hoan hỷ] + [ngay trong khi nghe pháp, pháp nhãn phát sinh] + [nội dung pháp nhãn]",
+      "phrase_explanations": [
+        {
+          "phrase": "Idamavoca bhagavā",
+          "label_vi": "Thế Tôn đã nói điều này",
+          "meaning_vi": "Thế Tôn đã nói điều này",
+          "breakdown": [
+            {
+              "token": "idaṁ",
+              "kind": "pronoun",
+              "grammar": "đại từ chỉ định trung tính",
+              "meaning_vi": "điều này",
+              "role_note": ""
+            },
+            {
+              "token": "avoca",
+              "kind": "verb",
+              "grammar": "động từ quá khứ",
+              "meaning_vi": "đã nói",
+              "role_note": ""
+            },
+            {
+              "token": "bhagavā",
+              "kind": "noun/title",
+              "grammar": "danh hiệu chủ cách",
+              "meaning_vi": "Thế Tôn",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "idaṁ + avoca = idamavoca",
+            "sandhi_or_sound_change": "ṃ trước nguyên âm có thể hiện thành m khi nối âm."
+          },
+          "grammar_note": "Câu kết: đối tượng lời nói + động từ + chủ thể.",
+          "memory_hint": "Pháp đã được nói ra; việc còn lại là người nghe có mắt pháp hay không.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "virajaṁ vītamalaṁ dhammacakkhuṁ",
+          "label_vi": "pháp nhãn không bụi, xa cấu uế",
+          "meaning_vi": "pháp nhãn không bụi, xa cấu uế",
+          "breakdown": [
+            {
+              "token": "vi-",
+              "kind": "prefix",
+              "grammar": "tách khỏi, không còn",
+              "meaning_vi": "ly, xa",
+              "role_note": ""
+            },
+            {
+              "token": "raja",
+              "kind": "noun",
+              "grammar": "bụi, bụi trần",
+              "meaning_vi": "cấu nhiễm thô",
+              "role_note": ""
+            },
+            {
+              "token": "vīta",
+              "kind": "past participle/adjective",
+              "grammar": "đã vượt khỏi, xa lìa",
+              "meaning_vi": "không còn",
+              "role_note": ""
+            },
+            {
+              "token": "mala",
+              "kind": "noun",
+              "grammar": "vết nhơ, cấu uế",
+              "meaning_vi": "nhiễm ô",
+              "role_note": ""
+            },
+            {
+              "token": "dhamma",
+              "kind": "noun",
+              "grammar": "pháp",
+              "meaning_vi": "sự thật/giáo pháp",
+              "role_note": ""
+            },
+            {
+              "token": "cakkhu",
+              "kind": "noun",
+              "grammar": "con mắt",
+              "meaning_vi": "khả năng thấy",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "vi + raja = viraja; vīta + mala = vītamala; dhamma + cakkhu = dhammacakkhu",
+            "sandhi_or_sound_change": "dhammacakkhu là hợp từ: mắt pháp."
+          },
+          "grammar_note": "virajaṁ và vītamalaṁ đều bổ nghĩa cho dhammacakkhuṁ.",
+          "memory_hint": "Mắt pháp mở khi bụi chấp và vết nhơ kiến chấp lắng xuống.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "samudayadhammaṁ / nirodhadhammaṁ",
+          "label_vi": "có bản chất sinh khởi / có bản chất chấm dứt",
+          "meaning_vi": "có bản chất sinh khởi / có bản chất chấm dứt",
+          "breakdown": [
+            {
+              "token": "samudaya",
+              "kind": "noun",
+              "grammar": "sinh khởi, nguồn sinh",
+              "meaning_vi": "sự xuất hiện",
+              "role_note": ""
+            },
+            {
+              "token": "nirodha",
+              "kind": "noun",
+              "grammar": "sự diệt, chấm dứt",
+              "meaning_vi": "sự tắt đi",
+              "role_note": ""
+            },
+            {
+              "token": "dhamma",
+              "kind": "noun/suffix-like",
+              "grammar": "pháp, bản chất, tính chất",
+              "meaning_vi": "có bản chất",
+              "role_note": ""
+            },
+            {
+              "token": "-ṁ",
+              "kind": "case ending",
+              "grammar": "trung tính đối/chủ cách số ít",
+              "meaning_vi": "dạng ngữ pháp trong câu",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "samudaya + dhammaṁ; nirodha + dhammaṁ",
+            "sandhi_or_sound_change": "Không biến âm lớn."
+          },
+          "grammar_note": "Ở đây dhamma mang nghĩa “có bản chất là”.",
+          "memory_hint": "Cái gì có bản chất sinh thì cũng có bản chất diệt.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 25,
       "title": "Đoạn kết dài: Pháp luân được chuyển vận, chư thiên loan báo",
       "pali": "Pavattite ca pana bhagavatā dhammacakke bhummā devā saddamanussāvesuṁ: ‘Etaṁ bhagavatā bārāṇasiyaṁ isipatane migadāye anuttaraṁ dhammacakkaṁ pavattitaṁ appaṭivattiyaṁ samaṇena vā brāhmaṇena vā devena vā mārena vā brahmunā vā kenaci vā lokasmin’ti.",
       "gloss": [
-        ["Pavattite ca pana bhagavatā dhammacakke", "khi Pháp luân đã được Thế Tôn chuyển vận"],
-        ["bhummā devā", "chư thiên cõi đất"],
-        ["saddam anussāvesuṁ", "đã cất tiếng loan báo"],
-        ["Etaṁ bhagavatā", "Pháp luân này, bởi Thế Tôn"],
-        ["bārāṇasiyaṁ isipatane migadāye", "tại Bārāṇasī, Isipatana, vườn Nai"],
-        ["anuttaraṁ dhammacakkaṁ", "Pháp luân vô thượng"],
-        ["pavattitaṁ", "đã được chuyển vận"],
-        ["appaṭivattiyaṁ", "không thể bị quay ngược lại"],
-        ["samaṇena vā brāhmaṇena vā devena vā mārena vā brahmunā vā kenaci vā lokasmin", "bởi bất cứ sa-môn, bà-la-môn, chư thiên, Ma, Phạm thiên hay ai trong đời"]
+        [
+          "Pavattite ca pana bhagavatā dhammacakke",
+          "khi Pháp luân đã được Thế Tôn chuyển vận"
+        ],
+        [
+          "bhummā devā",
+          "chư thiên cõi đất"
+        ],
+        [
+          "saddam anussāvesuṁ",
+          "đã cất tiếng loan báo"
+        ],
+        [
+          "Etaṁ bhagavatā",
+          "Pháp luân này, bởi Thế Tôn"
+        ],
+        [
+          "bārāṇasiyaṁ isipatane migadāye",
+          "tại Bārāṇasī, Isipatana, vườn Nai"
+        ],
+        [
+          "anuttaraṁ dhammacakkaṁ",
+          "Pháp luân vô thượng"
+        ],
+        [
+          "pavattitaṁ",
+          "đã được chuyển vận"
+        ],
+        [
+          "appaṭivattiyaṁ",
+          "không thể bị quay ngược lại"
+        ],
+        [
+          "samaṇena vā brāhmaṇena vā devena vā mārena vā brahmunā vā kenaci vā lokasmin",
+          "bởi bất cứ sa-môn, bà-la-môn, chư thiên, Ma, Phạm thiên hay ai trong đời"
+        ]
       ],
-      "structure": "[khi Pháp luân được chuyển] + [chủ thể loan báo] + [nội dung lời loan báo]"
+      "structure": "[khi Pháp luân được chuyển] + [chủ thể loan báo] + [nội dung lời loan báo]",
+      "phrase_explanations": [
+        {
+          "phrase": "Pavattite dhammacakke",
+          "label_vi": "khi Pháp luân đã được chuyển vận",
+          "meaning_vi": "khi Pháp luân đã được chuyển vận",
+          "breakdown": [
+            {
+              "token": "pa-",
+              "kind": "prefix",
+              "grammar": "tiến ra, khởi lên",
+              "meaning_vi": "bắt đầu, vận hành",
+              "role_note": ""
+            },
+            {
+              "token": "vattita",
+              "kind": "past participle",
+              "grammar": "đã được quay/chuyển",
+              "meaning_vi": "đã vận hành",
+              "role_note": ""
+            },
+            {
+              "token": "dhamma",
+              "kind": "noun",
+              "grammar": "Pháp",
+              "meaning_vi": "giáo pháp/sự thật",
+              "role_note": ""
+            },
+            {
+              "token": "cakka",
+              "kind": "noun",
+              "grammar": "bánh xe, luân",
+              "meaning_vi": "vòng quay",
+              "role_note": ""
+            },
+            {
+              "token": "-e",
+              "kind": "locative ending",
+              "grammar": "định sở cách số ít",
+              "meaning_vi": "khi/ở trong",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "pa + vattita; dhamma + cakka + -e = dhammacakke",
+            "sandhi_or_sound_change": "dhamma + cakka thành dhammacakka."
+          },
+          "grammar_note": "Locative absolute: khi Pháp luân đã được chuyển.",
+          "memory_hint": "Pháp luân là bánh xe của sự thật: một khi chuyển, không dễ quay ngược.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "appaṭivattiyaṁ",
+          "label_vi": "không thể bị quay ngược",
+          "meaning_vi": "không thể bị quay ngược",
+          "breakdown": [
+            {
+              "token": "a-",
+              "kind": "prefix",
+              "grammar": "phủ định",
+              "meaning_vi": "không",
+              "role_note": ""
+            },
+            {
+              "token": "paṭi-",
+              "kind": "prefix",
+              "grammar": "ngược lại, trở lại",
+              "meaning_vi": "quay lại",
+              "role_note": ""
+            },
+            {
+              "token": "vattiya",
+              "kind": "gerundive/adjective",
+              "grammar": "có thể được quay/chuyển",
+              "meaning_vi": "có thể đảo chuyển",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "a- + paṭi + vattiyaṁ = appaṭivattiyaṁ",
+            "sandhi_or_sound_change": "a + paṭi có thể làm p nhân đôi: appaṭi-."
+          },
+          "grammar_note": "Đây là tính chất của Pháp luân vô thượng: không ai trong đời đảo ngược được.",
+          "memory_hint": "a- phủ định; paṭi- quay lại; vattiya = có thể chuyển → không thể đảo chuyển.",
+          "dhamma_note": ""
+        }
+      ]
     },
     {
       "id": 26,
       "title": "Hệ thế giới rung động, Koṇḍañña được xác nhận là người đã hiểu",
       "pali": "Ayañca dasasahassī lokadhātu saṅkampi sampakampi sampavedhi, appamāṇo ca uḷāro obhāso loke pāturahosi atikkamma devānaṁ devānubhāvaṁ. Atha kho bhagavā imaṁ udānaṁ udānesi: ‘Aññāsi vata bho Koṇḍañño, aññāsi vata bho Koṇḍañño’ti. Iti hidaṁ āyasmato koṇḍaññassa ‘Aññāsikoṇḍañño’ tveva nāmaṁ ahosi.",
       "gloss": [
-        ["Ayañca dasasahassī lokadhātu", "và hệ thế giới mười ngàn thế giới này"],
-        ["saṅkampi sampakampi sampavedhi", "rung động, chấn động, lay động mạnh"],
-        ["appamāṇo ca uḷāro obhāso", "và một ánh sáng vô lượng, rộng lớn"],
-        ["loke pāturahosi", "xuất hiện trên đời"],
-        ["atikkamma devānaṁ devānubhāvaṁ", "vượt qua uy quang của chư thiên"],
-        ["Atha kho bhagavā", "bấy giờ, thật vậy, Thế Tôn"],
-        ["imaṁ udānaṁ udānesi", "đã thốt lên lời cảm hứng này"],
-        ["Aññāsi vata bho Koṇḍañño", "Koṇḍañña đã hiểu rồi, quả thật Koṇḍañña đã hiểu rồi"],
-        ["Iti hidaṁ āyasmato koṇḍaññassa", "vì vậy nơi Tôn giả Koṇḍañña này"],
-        ["Aññāsikoṇḍañño", "Koṇḍañña-đã-hiểu"],
-        ["nāmaṁ ahosi", "tên đã thành"]
+        [
+          "Ayañca dasasahassī lokadhātu",
+          "và hệ thế giới mười ngàn thế giới này"
+        ],
+        [
+          "saṅkampi sampakampi sampavedhi",
+          "rung động, chấn động, lay động mạnh"
+        ],
+        [
+          "appamāṇo ca uḷāro obhāso",
+          "và một ánh sáng vô lượng, rộng lớn"
+        ],
+        [
+          "loke pāturahosi",
+          "xuất hiện trên đời"
+        ],
+        [
+          "atikkamma devānaṁ devānubhāvaṁ",
+          "vượt qua uy quang của chư thiên"
+        ],
+        [
+          "Atha kho bhagavā",
+          "bấy giờ, thật vậy, Thế Tôn"
+        ],
+        [
+          "imaṁ udānaṁ udānesi",
+          "đã thốt lên lời cảm hứng này"
+        ],
+        [
+          "Aññāsi vata bho Koṇḍañño",
+          "Koṇḍañña đã hiểu rồi, quả thật Koṇḍañña đã hiểu rồi"
+        ],
+        [
+          "Iti hidaṁ āyasmato koṇḍaññassa",
+          "vì vậy nơi Tôn giả Koṇḍañña này"
+        ],
+        [
+          "Aññāsikoṇḍañño",
+          "Koṇḍañña-đã-hiểu"
+        ],
+        [
+          "nāmaṁ ahosi",
+          "tên đã thành"
+        ]
       ],
-      "structure": "[thế giới rung động, ánh sáng hiện ra] + [Thế Tôn cảm thán] + [tên hiệu mới được thành]"
+      "structure": "[thế giới rung động, ánh sáng hiện ra] + [Thế Tôn cảm thán] + [tên hiệu mới được thành]",
+      "phrase_explanations": [
+        {
+          "phrase": "saṅkampi sampakampi sampavedhi",
+          "label_vi": "rung động, chấn động, lay động mạnh",
+          "meaning_vi": "rung động, chấn động, lay động mạnh",
+          "breakdown": [
+            {
+              "token": "saṃ- / sam-",
+              "kind": "prefix",
+              "grammar": "cùng, toàn diện, mạnh lên",
+              "meaning_vi": "cùng khắp",
+              "role_note": ""
+            },
+            {
+              "token": "kampi",
+              "kind": "verb",
+              "grammar": "đã rung động",
+              "meaning_vi": "rung",
+              "role_note": ""
+            },
+            {
+              "token": "pa-",
+              "kind": "prefix",
+              "grammar": "tiến tới, mạnh lên",
+              "meaning_vi": "làm rõ/mạnh",
+              "role_note": ""
+            },
+            {
+              "token": "vedhi",
+              "kind": "verb",
+              "grammar": "đã chấn động/xuyên động",
+              "meaning_vi": "lay động sâu",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "saṃ + kampi; sam + pa + kampi; sam + pa + vedhi",
+            "sandhi_or_sound_change": "saṃ trước k/p biến âm thành saṅ/sam tùy âm sau."
+          },
+          "grammar_note": "Ba động từ tăng cấp diễn tả toàn hệ thế giới rung chuyển.",
+          "memory_hint": "Tuệ giác của một người có thể làm rung động cả thế giới nhận thức.",
+          "dhamma_note": ""
+        },
+        {
+          "phrase": "Aññāsi vata bho Koṇḍañño",
+          "label_vi": "Koṇḍañña đã hiểu rồi!",
+          "meaning_vi": "Koṇḍañña đã hiểu rồi!",
+          "breakdown": [
+            {
+              "token": "aññāsi",
+              "kind": "verb",
+              "grammar": "động từ quá khứ",
+              "meaning_vi": "đã hiểu, đã biết",
+              "role_note": ""
+            },
+            {
+              "token": "vata",
+              "kind": "particle",
+              "grammar": "tiểu từ cảm thán",
+              "meaning_vi": "quả thật, thay",
+              "role_note": ""
+            },
+            {
+              "token": "bho",
+              "kind": "vocative particle",
+              "grammar": "tiếng gọi/cảm thán",
+              "meaning_vi": "này, ôi",
+              "role_note": ""
+            },
+            {
+              "token": "Koṇḍañño",
+              "kind": "proper noun",
+              "grammar": "tên riêng chủ/hô cách",
+              "meaning_vi": "Koṇḍañña",
+              "role_note": ""
+            }
+          ],
+          "morphology": {
+            "formula": "aññā + si; vata + bho + Koṇḍañño",
+            "sandhi_or_sound_change": "Không biến âm quan trọng."
+          },
+          "grammar_note": "Đây là lời cảm thán xác nhận pháp nhãn của Koṇḍañña.",
+          "memory_hint": "Hiểu pháp không chỉ là nhớ lời, mà là thấy trực tiếp sinh-diệt.",
+          "dhamma_note": ""
+        }
+      ]
     }
-  ]
+  ],
+  "schemaVersion": "2.0-deep-phrase",
+  "notes": "Added phrase_explanations for deeper Pāli morphology, grammar, vocabulary, and dhamma notes."
 }
